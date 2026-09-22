@@ -1,0 +1,69 @@
+{% extends "backend/base.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+
+<style>
+    .container {
+        margin: 40px auto;
+        background-color: white;
+        padding: 24px;
+        width: 350px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    img {
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        margin-top: 10px;
+    }
+
+    p {
+        color: #333;
+        margin: 10px 0;
+    }
+
+    a {
+        color: #007bff;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    .g_id_signin {
+        margin-top: 20px;
+    }
+</style>
+
+<div class="container">
+    {% if request.user.is_authenticated %}
+    <div>
+        <p>Hi {{ request.user.first_name }}</p>
+        <p>Your email is {{ request.user.email }}</p>
+
+        <p><a href="{% url 'sign_out' %}">Sign out</a></p>
+
+    </div>
+
+    {% else %}
+    <div>
+        <button class="btn primary" hx-get="/api/login/google/modal/" hx-target="#modal" hx-swap="innerHTML">
+            Sign in with Google
+        </button>
+
+        <div id="modal"></div>
+
+
+    </div>
+    {% endif %}
+</div>
+
+{% endblock %}

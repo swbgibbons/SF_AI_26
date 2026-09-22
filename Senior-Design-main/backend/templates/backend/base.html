@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}StateFarm Drone Vision{% endblock %}</title>
+
+    {% load static %}
+
+    <!-- Google Auth -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+
+    <!-- HTMX -->
+    <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.8/dist/htmx.min.js"
+        integrity="sha384-/TgkGk7p307TH7EXJDuUlgG3Ce1UVolAOFopFekQkkXihi5u/6OCvVKyz1W+idaz"
+        crossorigin="anonymous"></script>
+
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #e41e26;
+            color: #fff;
+            padding: 12px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 3px solid #b2151b;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: opacity 0.2s;
+        }
+
+        nav a:hover {
+            opacity: 0.7;
+        }
+
+        .page-content {
+            padding: 40px;
+        }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(2px);
+            z-index: 50;
+        }
+
+        .modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            width: 360px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            z-index: 100;
+        }
+    </style>
+</head>
+
+<body>
+
+    {% include "backend/components/header.html" %}
+
+    <div id="content" class="page-content">
+        {% block content %}{% endblock %}
+    </div>
+
+</body>
+<script>
+    document.body.addEventListener("htmx:afterSwap", (event) => {
+        // If modal was inserted into the DOM, re-run Google auto-render
+        if (document.getElementById("g_id_onload")) {
+            google.accounts.id.initialize({
+                client_id: "42686524573-nrvt4mpcf1m8lc6q8ftai2ibspi6tqka.apps.googleusercontent.com",
+                ux_mode: "redirect",
+                login_uri: "{{ sign_in_url }}",
+            });
+
+            google.accounts.id.renderButton(
+                document.querySelector(".g_id_signin"),
+                {
+                    theme: "filled_black",
+                    size: "large",
+                    shape: "pill",
+                    text: "signin_with"
+                }
+            );
+        }
+    });
+</script>
+
+</html>

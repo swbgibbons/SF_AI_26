@@ -1,0 +1,72 @@
+[project]
+name = "senior-design"
+version = "0.1.0"
+requires-python = ">=3.11"
+
+# ============================================================
+# RUNTIME DEPENDENCIES (what the backend actually runs)
+# ============================================================
+dependencies = [
+    # Django backend
+    "django>=5.0",
+    "djangorestframework>=3.16",
+    "django-cors-headers>=4.9",
+    "djangorestframework-simplejwt>=5.5",
+    # Database
+    "psycopg>=3.2.12",
+    # Google Cloud
+    "google-cloud-storage>=3.5.0",
+    "google-auth>=2.43.0",
+    # ONNX GPU inference
+    "onnx>=1.19.1",
+    "onnxruntime-gpu>=1.23.2",
+    # Image processing
+    "opencv-python-headless>=4.10.0",
+    "pillow>=11.0",
+    "numpy>=2.0",
+    # Utilities
+    "requests",
+    "python-dotenv",
+    # Geometry / detection utils
+    "shapely>=2.1.2",
+    "pycocotools>=2.0.10",
+    "pydantic>=2.12.5",
+    "gunicorn>=23.0.0",
+    "psycopg-binary>=3.3.2",
+    "hf-xet>=1.2.0",
+    "django-phonenumber-field>=8.4.0",
+    "phonenumbers>=9.0.23",
+    "django-extensions>=4.1",
+    "pytest-flakes>=4.0.5",
+    "pytest-django>=4.12.0",
+]
+
+# ============================================================
+# OPTIONAL DEPENDENCIES (NOT INSTALLED IN PRODUCTION)
+# ============================================================
+[project.optional-dependencies]
+
+# Research / training / experimentation ONLY
+research = [
+    "hf-xet>=1.2.0",
+]
+
+# Optional CPU-only fallback (if you ever need it)
+cpu = [
+    "onnxruntime>=1.19.1",
+]
+
+# ============================================================
+# CUDA / PYTORCH INDEX (SCOPED TO RESEARCH ONLY)
+# ============================================================
+[[tool.uv.index]]
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true
+groups = ["research"]
+
+# ============================================================
+# LOCAL SOURCE OVERRIDES
+# ============================================================
+[tool.uv.sources]
+

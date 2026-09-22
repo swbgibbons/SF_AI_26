@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Run Prediction Demo</title>
+</head>
+
+<body style="font-family: Arial; margin: 40px;">
+
+    <h2>Run RF-DETR Prediction</h2>
+
+    <label>House ID:</label><br>
+    {% if house_id %}
+    <input id="houseId" type="text" value="{{ house_id }}" style="width: 200px;"><br><br>
+    {% endif %}
+    {% for image in images %}
+    <div style="margin-bottom: 20px;">
+        <strong>Image ID: {{ image.id }}</strong><br>
+        <img src="{{ image.image_url }}" alt="Image {{ image.id }}"
+            style="max-width: 600px; border: 1px solid #ccc; padding: 5px;"><br>
+        {% if image.predicted_url != null %}
+        <strong>Predicted Output at {{ image.predicted_at }}:</strong><br>
+        <img src="{{ image.predicted_url }}" alt="Image {{ image.id }} Uploaded"
+            style="max-width: 600px; border: 1px solid #ccc; padding: 5px; margin-top: 10px;"><br>
+        {% endif %}
+    </div>
+    {% endfor %}
+    <label>Mode:</label><br>
+    <select id="mode" style="width: 200px;">
+        <option value="normal">normal</option>
+        <option value="tiled">tiled</option>
+    </select><br><br>
+
+    <label>Threshold:</label><br>
+    <input id="threshold" type="number" step="0.05" value="0.4" style="width: 200px;"><br><br>
+
+    <label for="tileSize">Tile Size:</label><br>
+    <select id="tileSize" style="width: 200px;">
+        <option value="560" selected>Default (560)</option>
+        <option value="224">Small (224)</option>
+        <option value="336">Medium (336)</option>
+    </select>
+    <br><br>
+
+
+    <button onclick="runPrediction()" style="padding: 10px 15px;">Run Prediction</button>
+
+    <h3>Response:</h3>
+    <pre id="output" style="
+        background: #f4f4f4; 
+        padding: 15px; 
+        border-radius: 6px;
+        width: 600px;
+        height: 350px;
+        overflow: auto;
+    "></pre>
+
+    <script>
+        function runPrediction() {
+
+            const houseId = document.getElementById("houseId").value;
+            const mode = document.getElementById("mode").value;
+            const threshold = parseFloat(document.getElementById("threshold").value);
+            const tileSize = parseInt(document.getElementById("tileSize").value);
+
+            if (!houseId) {
+                alert("House ID is required.");
+                return;
+            }
+
+            const data = {
+                mode: mode,
+                threshold: threshold,
+                tile_size: tileSize
+            };
+
+            const url = `/api/houses/${houseId}/run_prediction/`;
+
+            fetch(url, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            })
+                .then(async (res) => {
+                    const raw = await res.text();
+
+                    try {
+                        return JSON.parse(raw);
+                    } catch (e) {
+                        // Surface HTML/error bodies instead of throwing JSON parse errors
+                        throw new Error(`Non-JSON response (${res.status}): ${raw.slice(0, 400)}`);
+                    }
+                })
+                .then(json => {
+                    document.getElementById("output").textContent = JSON.stringify(json, null, 2);
+                })
+                .catch(err => {
+                    document.getElementById("output").textContent = "Error: " + err;
+                });
+        }
+    </script>
+
+</body>
+
+</html>
