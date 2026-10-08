@@ -1,0 +1,4 @@
+data/
+runs/
+*.onnx
+.venv/
