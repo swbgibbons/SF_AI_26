@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+datasets/
+runs/
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.onnx.data
+.env
