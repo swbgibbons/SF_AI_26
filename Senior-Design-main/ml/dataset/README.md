@@ -14,6 +14,7 @@ need a human check, starting with everything not marked `high`.
 | confidence | high / medium / low: how sure the first pass is. Review low and medium first |
 | material | asphalt, clay_tile, concrete_tile, slate, wood_shake, metal, flat, mixed |
 | damage_hint | wind, hail, missing_broken, none: a head start on phase 2, not checked carefully |
+| damage_type | hail / wind / missing_shingles for damaged photos (one per photo, see below) |
 | notes | what the labeler saw |
 | idx | photo number used on the review contact sheets in the project files |
 
@@ -48,25 +49,26 @@ Damage hints: 127 wind, 61 missing/broken, only 5 possible hail (all low confide
 
 ## Damage types (phase 2, first pass 2026-10-09)
 
-Damaged rows have three 0/1 columns, so one photo can carry several types:
+Each damaged photo has exactly one damage type, in `damage_type` (hail, wind or missing_shingles),
+mirrored in three 0/1 columns `hail`, `wind`, `missing_shingles`.
 
-| column | tagged when |
+| type | tagged when |
 |---|---|
+| wind | lifted, creased, folded or peeled-back shingles, or storm stripping. **Wind wins:** when wind tore shingles off, the photo is wind, not missing_shingles |
+| missing_shingles | shingles, tiles or slates missing, broken or cracked with no sign of wind (age, rot, impact, neglect) |
 | hail | round bruises, granule loss or impact marks with no torn edges |
-| wind | lifted, creased, folded or peeled-back shingles, or storm stripping (hurricane photos) |
-| missing_shingles | any shingle, tile or slate missing, broken, cracked, torn or exposing deck/battens |
 
-`types_confidence` is high / medium / low for the tags (all hail tags are low).
+`types_confidence` is high / medium / low for the type (all hail tags are low).
 Undamaged and unusable rows leave these blank.
 
-| combination | photos |
-|---|---|
-| wind + missing | 123 |
-| missing only | 70 (mostly old or broken clay tile, slate, concrete tile) |
-| wind only | 7 (lifted or creased shingles, nothing missing) |
-| hail only | 5 (all low confidence) |
+| type | total | train | val | test |
+|---|---|---|---|---|
+| wind | 130 | 99 | 14 | 17 |
+| missing_shingles | 70 | 47 | 13 | 10 |
+| hail | 5 | 1 | 2 | 2 |
 
-Totals: wind 130, missing_shingles 193, hail 5. Contact sheets per combination are in the project files. Hail is too rare to train on; it needs its own photos.
+Most missing_shingles photos are old or broken clay tile, slate or concrete tile; most wind photos
+are hurricane-stripped asphalt. Hail is too rare to train on; it needs its own photos.
 
 These are whole-photo tags. Locating the damage (phase 3) needs boxes drawn around each damaged
 area, for example in CVAT, Label Studio or Roboflow, exported as COCO or YOLO.

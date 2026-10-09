@@ -1,240 +1,240 @@
-path,label,group,split,confidence,hail,wind,missing_shingles,types_confidence,material,damage_hint,notes,source,idx
-images/istock-843393164.jpg,damaged,g000,train,high,0,0,1,high,clay_tile,missing_broken,"broken and displaced tiles, old roof",istock,0
-images/istock-870471802.jpg,damaged,g001,train,high,0,0,1,high,clay_tile,missing_broken,"many broken tiles, holes",istock,1
-images/istock-901953504.jpg,unusable,g002,train,low,,,,,metal,none,"metal-sheet tile roof, out of scope material; no damage visible",istock,2
-images/istock-926907682.jpg,unusable,g003,train,low,,,,,wood_shake,none,re-roofing in progress (old and new shakes); not a damage state,istock,3
-images/istock-960214058.jpg,damaged,g004,val,high,0,0,1,high,clay_tile,missing_broken,hole with exposed battens,istock,4
-images/istock-963180436.jpg,damaged,g006,test,high,0,0,1,high,clay_tile,missing_broken,several missing tiles,istock,6
-images/istock-966403608.jpg,damaged,g007,val,high,0,0,1,high,clay_tile,missing_broken,partially collapsed roof,istock,7
-images/istock-976623908.jpg,damaged,g008,train,medium,0,0,1,medium,clay_tile,missing_broken,"collapsed section, whole building in frame",istock,8
-images/istock-1025651754.jpg,damaged,g009,test,medium,0,0,1,medium,slate,missing_broken,"broken edge slates, moss",istock,9
-images/istock-1047265210.jpg,undamaged,g010,train,high,,,,,clay_tile,none,new tile roof,istock,10
-images/istock-1135068321.jpg,damaged,g011,train,high,0,0,1,high,clay_tile,missing_broken,"holes, abandoned building",istock,11
-images/istock-1137049278.jpg,damaged,g012,train,high,0,0,1,high,clay_tile,missing_broken,broken tiles at eave,istock,12
-images/istock-1149004248.jpg,damaged,g013,train,high,0,1,1,high,asphalt,wind,torn/missing tabs,istock,13
-images/istock-1149004255.jpg,damaged,g013,train,high,0,1,1,high,asphalt,wind,torn/missing tabs,istock,14
-images/istock-1149004258.jpg,damaged,g013,train,high,0,1,1,high,asphalt,wind,torn tab,istock,15
-images/istock-1149004265.jpg,damaged,g013,train,high,0,1,1,high,asphalt,wind,"torn tab, wet",istock,16
-images/istock-1163541715.jpg,damaged,g017,train,high,0,0,1,high,clay_tile,missing_broken,large hole,istock,17
-images/istock-1166226378.jpg,damaged,g018,train,high,0,1,1,high,asphalt,wind,missing shingles exposing mat,istock,18
-images/istock-1166227778.jpg,damaged,g019,train,high,0,1,1,high,asphalt,wind,missing shingles,istock,19
-images/istock-1166557173.jpg,damaged,g020,train,high,0,1,1,high,asphalt,wind,missing shingle pieces,istock,20
-images/istock-1166557175.jpg,damaged,g020,train,high,0,1,1,high,asphalt,wind,missing shingles,istock,21
-images/istock-1166557177.jpg,damaged,g020,train,high,0,1,1,high,asphalt,wind,torn tab,istock,22
-images/istock-1168463503.jpg,damaged,g023,test,high,0,1,1,high,asphalt,wind,large missing area,istock,23
-images/istock-1173974318.jpg,undamaged,g024,train,low,,,,,asphalt,none,"eave close-up, shallow focus; shingles look intact (peeling fascia paint)",istock,24
-images/istock-1176692984.jpg,damaged,g025,train,high,0,1,1,high,asphalt,wind,lifted/missing shingles exposing underlayment,istock,25
-images/istock-1203508980.jpg,undamaged,g026,train,high,,,,,asphalt,none,new house gable,istock,26
-images/istock-1205391887.jpg,damaged,g027,val,high,0,0,1,high,clay_tile,missing_broken,displaced tiles,istock,27
-images/istock-1207133677.jpg,damaged,g028,train,medium,0,0,1,medium,clay_tile,missing_broken,displaced tiles near ridge,istock,28
-images/istock-1208166607.jpg,damaged,g030,train,high,0,0,1,high,asphalt,missing_broken,hole exposing wood,istock,30
-images/istock-1208398222.jpg,damaged,g032,test,medium,0,1,1,medium,asphalt,wind,curled/torn shingle edge,istock,32
-images/istock-1210486822.jpg,damaged,g032,test,medium,0,1,1,medium,asphalt,wind,"curled/torn shingle edge, same shoot as 32",istock,34
-images/istock-1214762496.jpg,damaged,g035,train,high,0,0,1,high,clay_tile,missing_broken,"aerial/drone view, collapsed roof section",istock,35
-images/istock-1227220566.jpg,damaged,g036,train,high,0,0,1,high,clay_tile,missing_broken,heavily broken tiles,istock,36
-images/istock-1247229250.jpg,damaged,g037,val,high,0,0,1,high,clay_tile,missing_broken,holes in tile roof,istock,37
-images/istock-1253783035.jpg,damaged,g038,val,medium,0,0,1,medium,clay_tile,missing_broken,"small holes near ridge, distant shot",istock,38
-images/istock-1254608275.jpg,damaged,g039,train,high,0,1,1,high,clay_tile,wind,storm damage around roof windows,istock,39
-images/istock-1254608276.jpg,damaged,g039,train,high,0,1,1,high,clay_tile,wind,"same building as 39, wider view",istock,40
-images/istock-1254608277.jpg,damaged,g039,train,high,0,1,1,high,clay_tile,wind,same building as 39,istock,41
-images/istock-1254608279.jpg,damaged,g039,train,high,0,1,1,high,clay_tile,wind,same building as 39,istock,42
-images/istock-1254608283.jpg,damaged,g039,train,high,0,1,1,high,clay_tile,wind,same building as 39,istock,43
-images/istock-1270046255.jpg,undamaged,g044,train,low,,,,,clay_tile,none,"aerial, old mossy roof, no clear damage",istock,44
-images/istock-1270047481.jpg,undamaged,g045,test,medium,,,,,slate,none,aerial slate roof,istock,45
-images/istock-1270047548.jpg,undamaged,g046,train,medium,,,,,concrete_tile,none,aerial,istock,46
-images/istock-1270047698.jpg,undamaged,g047,train,medium,,,,,concrete_tile,none,aerial,istock,47
-images/istock-1270047773.jpg,undamaged,g048,val,low,,,,,concrete_tile,none,"aerial, mossy roof, no clear damage",istock,48
-images/istock-1289183330.jpg,damaged,g049,test,high,0,0,1,high,clay_tile,missing_broken,missing tiles exposing battens,istock,49
-images/istock-1292591243.jpg,damaged,g049,test,high,0,0,1,high,clay_tile,missing_broken,same roof as 49,istock,50
-images/istock-1309402031.jpg,unusable,g052,train,low,,,,,mixed,none,"building facade, roof under re-roofing (felt), no damage state to judge",istock,52
-images/istock-1314392387.jpg,undamaged,g053,train,medium,,,,,clay_tile,none,new tile roof (ridge caps not fitted yet),istock,53
-images/istock-1316463534.jpg,damaged,g054,train,medium,0,0,1,medium,clay_tile,missing_broken,collapsed derelict building,istock,54
-images/istock-1316808663.jpg,damaged,g055,test,high,0,1,1,high,asphalt,wind,missing shingle near ridge,istock,55
-images/istock-1316808688.jpg,damaged,g055,test,high,0,1,1,high,asphalt,wind,same roof as 55,istock,56
-images/istock-1325745938.jpg,unusable,g052,train,low,,,,,mixed,none,"same building as 52, re-roofing in progress",istock,57
-images/istock-1326039993.jpg,damaged,g058,train,high,0,0,1,high,asphalt,missing_broken,"holes and broken shingles, moss",istock,58
-images/istock-1331208026.jpg,undamaged,g059,val,medium,,,,,asphalt,none,intact shingle field,istock,59
-images/istock-1331208030.jpg,damaged,g059,val,medium,0,1,0,medium,asphalt,wind,creased/lifted tabs,istock,60
-images/istock-1331208037.jpg,damaged,g059,val,high,0,1,0,medium,asphalt,wind,lifted tabs,istock,61
-images/istock-1349092417.jpg,undamaged,g062,train,medium,,,,,asphalt,none,"pine needles in gutter, shingles intact",istock,62
-images/istock-1349092428.jpg,undamaged,g062,train,medium,,,,,asphalt,none,same roof as 62,istock,63
-images/istock-1352665344.jpg,damaged,g064,train,medium,0,0,1,medium,clay_tile,missing_broken,broken tiles under storm sky,istock,64
-images/istock-1352860256.jpg,damaged,g065,train,high,0,0,1,high,clay_tile,missing_broken,slipped and broken tiles,istock,65
-images/istock-1362475010.jpg,undamaged,g066,val,medium,,,,,asphalt,none,chimney and intact shingles,istock,66
-images/istock-1365774784.jpg,damaged,g067,train,high,0,0,1,high,slate,missing_broken,missing slates near ridge,istock,67
-images/istock-1366169754.jpg,unusable,g068,train,low,,,,,asphalt,none,"backlit, roof surface too dark to inspect",istock,68
-images/istock-1368251153.jpg,damaged,g069,train,high,0,0,1,high,clay_tile,missing_broken,collapsed roof with plants growing,istock,69
-images/istock-1368251260.jpg,damaged,g049,test,high,0,0,1,high,clay_tile,missing_broken,"missing tiles, same roof as 49",istock,70
-images/istock-1388131267.jpg,damaged,g071,train,high,0,0,1,high,clay_tile,missing_broken,broken tiles,istock,71
-images/istock-1388919750.jpg,damaged,g072,train,high,0,0,1,high,clay_tile,missing_broken,partly collapsed,istock,72
-images/istock-1389107095.jpg,unusable,g073,test,low,,,,,flat,none,flat-roof edge and gutter with debris; not a pitched roof surface,istock,73
-images/istock-1409254869.jpg,damaged,g074,train,medium,0,0,1,medium,clay_tile,missing_broken,broken ridge tile,istock,74
-images/istock-1424889257.jpg,damaged,g075,train,medium,0,0,1,medium,concrete_tile,missing_broken,broken tiles,istock,75
-images/istock-1431078234.jpg,damaged,g076,train,high,0,1,1,high,flat,wind,"aerial, roof torn off, structural damage",istock,76
-images/istock-1431317417.jpg,damaged,g064,train,medium,0,0,1,medium,clay_tile,missing_broken,"broken tiles at eave, same shoot as 64",istock,77
-images/istock-1431442479.jpg,damaged,g078,train,high,0,1,1,high,asphalt,wind,"hurricane, shingles stripped",istock,78
-images/istock-1431442516.jpg,damaged,g085,train,high,0,1,1,high,asphalt,wind,"hurricane, shingles stripped",istock,79
-images/istock-1431442518.jpg,damaged,g085,train,high,0,1,1,high,asphalt,wind,"hurricane, shingles stripped",istock,80
-images/istock-1431442519.jpg,damaged,g085,train,high,0,1,1,high,asphalt,wind,"hurricane, shingles stripped",istock,81
-images/istock-1431442522.jpg,damaged,g085,train,high,0,1,1,high,asphalt,wind,"hurricane, underlayment and deck exposed",istock,82
-images/istock-1431442524.jpg,damaged,g085,train,high,0,1,1,high,asphalt,wind,"hurricane, shingles stripped",istock,83
-images/istock-1431442536.jpg,damaged,g085,train,high,0,1,1,high,asphalt,wind,"hurricane, shingles stripped",istock,84
-images/istock-1432276850.jpg,damaged,g085,train,high,0,1,1,high,asphalt,wind,whole roof stripped to deck,istock,85
-images/istock-1432276851.jpg,damaged,g085,train,high,0,1,1,high,asphalt,wind,large deck areas exposed,istock,86
-images/istock-1432276860.jpg,damaged,g085,train,high,0,1,1,high,asphalt,wind,same roof as 82,istock,87
-images/istock-1432276861.jpg,damaged,g085,train,high,0,1,1,high,asphalt,wind,"hurricane, shingles stripped",istock,88
-images/istock-1432276921.jpg,damaged,g089,train,high,0,1,1,high,asphalt,wind,"hurricane, deck exposed",istock,89
-images/istock-1434825061.jpg,damaged,g090,train,high,0,1,1,high,asphalt,wind,"aerial, green shingles stripped",istock,90
-images/istock-1434825146.jpg,damaged,g091,val,high,0,1,1,high,asphalt,wind,"hurricane, shingles stripped",istock,91
-images/istock-1447377166.jpg,damaged,g092,test,medium,0,1,1,medium,asphalt,wind,damage along hip ridge,istock,92
-images/istock-1447377185.jpg,damaged,g092,test,high,0,1,1,high,asphalt,wind,"hurricane, deck exposed",istock,93
-images/istock-1447531962.jpg,damaged,g094,train,high,0,1,1,high,asphalt,wind,deck exposed in patches,istock,94
-images/istock-1447531980.jpg,damaged,g094,train,high,0,1,1,high,asphalt,wind,deck exposed near vent,istock,95
-images/istock-1447531998.jpg,damaged,g094,train,high,0,1,1,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,96
-images/istock-1447532019.jpg,damaged,g094,train,high,0,1,1,high,asphalt,wind,deck exposed near vents; near-duplicate of 95,istock,97
-images/istock-1447532036.jpg,damaged,g094,train,high,0,1,1,high,asphalt,wind,near-duplicate of 95/97,istock,98
-images/istock-1447532048.jpg,damaged,g094,train,high,0,1,1,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,99
-images/istock-1447532056.jpg,damaged,g094,train,high,0,1,1,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,100
-images/istock-1447532064.jpg,damaged,g094,train,high,0,1,1,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,101
-images/istock-1449198349.jpg,damaged,g102,test,high,0,1,1,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,102
-images/istock-1452245401.jpg,damaged,g103,test,high,0,1,1,high,asphalt,wind,"aerial, blue tarp, missing shingles",istock,103
-images/istock-1452245425.jpg,damaged,g103,test,high,0,1,1,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,104
-images/istock-1452778254.jpg,damaged,g105,test,high,0,1,1,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,105
-images/istock-1455358883.jpg,damaged,g106,val,high,0,1,1,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,106
-images/istock-1456888171.jpg,damaged,g107,val,high,0,1,1,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,107
-images/istock-1459503332.jpg,damaged,g108,train,high,0,1,1,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,108
-images/istock-1459503373.jpg,damaged,g109,train,high,0,1,1,high,asphalt,wind,"aerial whole house, missing shingles",istock,109
-images/istock-1464549794.jpg,damaged,g110,test,high,0,0,1,high,clay_tile,missing_broken,dormer roof broken open,istock,110
-images/istock-1467038695.jpg,damaged,g111,val,high,0,1,1,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,111
-images/istock-1471244668.jpg,damaged,g112,train,high,0,1,1,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,112
-images/istock-1479437312.jpg,damaged,g113,train,high,0,1,1,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,113
-images/istock-1485169427.jpg,undamaged,g114,train,low,,,,,asphalt,none,"aerial, stained but no clear damage (post-storm series, check)",istock,114
-images/istock-1485169449.jpg,damaged,g114,train,medium,0,1,0,medium,asphalt,wind,"aerial, lifted shingles at left corner",istock,115
-images/istock-1485169475.jpg,damaged,g114,train,medium,0,1,0,medium,asphalt,wind,"aerial, damage at left corner",istock,116
-images/istock-1485169890.jpg,undamaged,g117,train,low,,,,,asphalt,none,"aerial, stained edges, no clear damage (check)",istock,117
-images/istock-1493142235.jpg,damaged,g064,train,medium,0,0,1,medium,clay_tile,missing_broken,"broken tiles under storm sky, same shoot as 64",istock,118
-images/istock-1493306458.jpg,damaged,g119,val,high,0,1,1,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,119
-images/istock-1494674459.jpg,damaged,g120,train,high,0,1,1,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,120
-images/istock-1495893443.jpg,damaged,g121,train,high,0,1,1,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,121
-images/istock-1495893475.jpg,damaged,g122,train,high,0,1,1,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,122
-images/istock-1497989013.jpg,damaged,g123,train,high,0,1,1,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,123
-images/istock-1500177250.jpg,damaged,g124,train,high,0,1,1,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,124
-images/istock-1500177260.jpg,damaged,g124,train,high,0,1,1,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,125
-images/istock-1507696702.jpg,damaged,g126,train,high,0,1,1,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,126
-images/istock-1512134652.jpg,damaged,g127,train,high,0,1,1,high,asphalt,wind,"roof deck gone, trusses exposed",istock,127
-images/istock-1535250110.jpg,damaged,g128,train,high,0,1,1,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,128
-images/istock-1549562078.jpg,damaged,g129,train,high,0,0,1,high,concrete_tile,missing_broken,cracked tile close-up,istock,129
-images/istock-1564836647.jpg,damaged,g130,train,medium,0,0,1,medium,slate,missing_broken,holes in dark shingle/slate roof,istock,130
-images/istock-1578733504.jpg,unusable,g131,val,low,,,,,clay_tile,none,collage of two photos in one image,istock,131
-images/istock-1594392874.jpg,damaged,g132,train,medium,0,1,1,medium,asphalt,wind,damage along ridge,istock,132
-images/istock-1603866595.jpg,damaged,g133,train,high,0,1,1,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,133
-images/istock-1612631850.jpg,damaged,g134,train,high,0,1,1,high,asphalt,wind,"roof deck gone, trusses exposed",istock,134
-images/istock-1612631857.jpg,damaged,g134,train,high,0,1,1,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,135
-images/istock-1621206938.jpg,damaged,g136,train,high,0,0,1,high,concrete_tile,missing_broken,missing tiles exposing battens,istock,136
-images/istock-1621912024.jpg,damaged,g134,train,high,0,1,1,high,asphalt,wind,"roof deck gone, trusses exposed, same as 134",istock,137
-images/istock-1647371466.jpg,damaged,g138,val,high,0,1,1,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,138
-images/istock-1651862000.jpg,damaged,g139,train,high,0,1,1,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,139
-images/istock-1676462641.jpg,damaged,g140,val,high,0,1,1,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,140
-images/istock-1689217118.jpg,damaged,g141,train,high,0,1,1,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,141
-images/istock-1695883379.jpg,damaged,g142,train,high,0,1,1,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,142
-images/istock-1701597682.jpg,damaged,g143,train,high,0,1,1,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,143
-images/istock-1716357742.jpg,damaged,g144,train,medium,0,0,1,medium,clay_tile,missing_broken,"gazebo roof from below, missing tiles at edge",istock,144
-images/istock-1717873658.jpg,undamaged,g145,train,high,,,,,asphalt,none,intact red shingles close-up,istock,145
-images/istock-1729897613.jpg,damaged,g146,train,high,0,1,1,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,146
-images/istock-1735811111.jpg,damaged,g147,train,high,0,1,1,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,147
-images/istock-1742127967.jpg,damaged,g148,val,high,0,1,1,high,asphalt,wind,single lifted/torn shingle,istock,148
-images/istock-1765760659.jpg,damaged,g149,train,high,0,1,1,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,149
-images/istock-1785819742.jpg,damaged,g150,train,high,0,1,1,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,150
-images/istock-1792139853.jpg,damaged,g151,train,high,0,1,1,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,151
-images/istock-1828696176.jpg,damaged,g152,test,medium,0,1,1,medium,clay_tile,wind,"aerial, broken tiles after hurricane",istock,152
-images/istock-1828696701.jpg,damaged,g152,test,medium,0,1,1,medium,clay_tile,wind,same roof as 152,istock,153
-images/istock-1830558520.jpg,damaged,g154,train,high,0,1,1,high,asphalt,wind,"aerial whole property, missing shingles",istock,154
-images/istock-1838258304.jpg,unusable,g155,val,low,,,,,wood_shake,none,"re-roofing in progress, same kind of shot as #3",istock,155
-images/istock-1846104084.jpg,damaged,g156,train,high,0,1,1,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,156
-images/istock-1846105692.jpg,damaged,g157,train,high,0,1,1,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,157
-images/istock-1860386162.jpg,damaged,g158,train,high,0,1,1,high,asphalt,wind,"roof deck gone, trusses exposed",istock,158
-images/istock-1917061649.jpg,damaged,g159,train,high,0,1,1,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,159
-images/istock-1926386919.jpg,damaged,g160,test,high,0,1,1,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,160
-images/istock-1938382841.jpg,damaged,g161,train,high,0,1,1,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,161
-images/istock-1963259169.jpg,damaged,g162,train,high,0,1,1,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,162
-images/istock-1998007671.jpg,damaged,g163,val,high,0,1,1,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,163
-images/istock-2041204017.jpg,undamaged,g164,test,medium,,,,,asphalt,none,"aerial whole house, no visible damage",istock,164
-images/istock-2124071652.jpg,damaged,g165,train,high,0,1,1,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,165
-images/istock-2124072165.jpg,damaged,g166,train,high,0,1,1,high,asphalt,wind,"roof deck gone, trusses exposed",istock,166
-images/istock-2124072181.jpg,damaged,g166,train,high,0,1,1,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,167
-images/istock-2136050586.jpg,damaged,g168,train,high,0,1,1,high,asphalt,wind,"aerial, collapsed roof",istock,168
-images/istock-2148752521.jpg,damaged,g169,test,high,0,1,1,high,asphalt,wind,"aerial, collapsed roof",istock,169
-images/istock-2148752555.jpg,damaged,g170,train,high,0,1,1,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,170
-images/istock-2149264135.jpg,unusable,g171,test,low,,,,,other,none,roof under construction (battens only),istock,171
-images/istock-2150829405.jpg,damaged,g172,train,high,0,1,1,high,asphalt,wind,"roof deck gone, trusses exposed",istock,172
-images/istock-2151920295.jpg,damaged,g173,train,high,0,1,1,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,173
-images/istock-2151920306.jpg,damaged,g173,train,high,0,1,1,high,asphalt,wind,deck panels torn off,istock,174
-images/istock-2156501258.jpg,damaged,g175,train,high,0,1,1,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,175
-images/istock-2156501281.jpg,damaged,g175,train,high,0,1,1,high,asphalt,wind,deck panels torn off,istock,176
-images/istock-2157065004.jpg,damaged,g129,train,high,0,0,1,high,concrete_tile,missing_broken,"cracked tile, same shoot as 129",istock,177
-images/istock-2157207383.jpg,damaged,g178,train,high,0,1,1,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,178
-images/istock-2157989679.jpg,damaged,g179,train,high,0,1,1,high,asphalt,wind,"aerial, collapsed roof and debris",istock,179
-images/istock-2158183855.jpg,damaged,g180,train,high,0,0,1,high,asphalt,missing_broken,hole punched through roof,istock,180
-images/istock-2158183869.jpg,damaged,g180,train,low,0,0,1,low,asphalt,missing_broken,scattered missing/mismatched tabs (could be old repairs),istock,181
-images/istock-2158303290.jpg,damaged,g180,train,low,0,0,1,low,asphalt,missing_broken,same roof as 181,istock,182
-images/istock-2159234972.jpg,damaged,g183,train,high,0,1,1,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,183
-images/istock-2161302398.jpg,damaged,g184,train,high,0,0,1,high,clay_tile,missing_broken,hole exposing rafters,istock,184
-images/istock-2161302404.jpg,damaged,g184,train,high,0,0,1,high,clay_tile,missing_broken,"aerial, holes in tile roof",istock,185
-images/istock-2166416857.jpg,damaged,g186,test,high,0,0,1,high,clay_tile,missing_broken,missing tiles,istock,186
-images/istock-2175511659.jpg,damaged,g187,val,high,0,1,1,high,asphalt,wind,missing shingles at rake edge,istock,187
-images/istock-2175511661.jpg,damaged,g187,val,high,0,1,1,high,asphalt,wind,same house as 187,istock,188
-images/istock-2175511666.jpg,damaged,g187,val,high,0,1,1,high,asphalt,wind,"same house as 187, deck exposed",istock,189
-images/istock-2178454321.jpg,damaged,g190,test,high,0,1,1,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,190
-images/istock-2181247313.jpg,damaged,g191,train,high,0,1,1,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,191
-images/istock-2181651559.jpg,damaged,g129,train,high,0,0,1,high,concrete_tile,missing_broken,"cracked tiles, same shoot as 129",istock,192
-images/istock-2183136122.jpg,damaged,g193,val,high,0,0,1,high,clay_tile,missing_broken,broken tiles,istock,193
-images/istock-2183136153.jpg,damaged,g194,train,high,0,0,1,high,clay_tile,missing_broken,broken/missing tile,istock,194
-images/istock-2187894193.jpg,damaged,g195,train,high,0,1,1,high,asphalt,wind,"aerial, deck exposed in patches",istock,195
-images/istock-2189140775.jpg,damaged,g196,train,high,0,0,1,high,clay_tile,missing_broken,collapsed old roof,istock,196
-images/istock-2215783932.jpg,undamaged,g197,test,low,,,,,asphalt,none,"pine debris in valley, shingles look intact",istock,197
-images/istock-2217176987.jpg,damaged,g198,test,high,0,1,1,high,asphalt,wind,lifted/torn ridge cap,istock,198
-images/istock-2217177155.jpg,damaged,g199,test,medium,0,0,1,medium,asphalt,missing_broken,torn shingle,istock,199
-images/istock-2220024937.jpg,damaged,g200,train,medium,0,0,1,medium,asphalt,missing_broken,"curling, heavy granule loss (wear vs storm unclear)",istock,200
-images/istock-2234328050.jpg,damaged,g201,test,low,1,0,0,low,asphalt,hail,"granule loss, possible hail or age",istock,201
-images/istock-2245753072.jpg,damaged,g202,test,medium,0,0,1,medium,asphalt,missing_broken,"worn, moss, torn piece",istock,202
-images/istock-2245753086.jpg,damaged,g202,test,low,1,0,0,low,asphalt,hail,"possible small impact marks, hard to see",istock,203
-images/istock-2259408039.jpg,damaged,g204,train,medium,0,1,0,medium,asphalt,wind,lifted shingles and sag at eave,istock,204
-images/istock-2259408071.jpg,damaged,g204,train,medium,0,1,0,medium,asphalt,wind,same house as 204,istock,205
-images/istock-2259408141.jpg,damaged,g204,train,medium,0,1,0,medium,asphalt,wind,same house as 204,istock,206
-images/istock-2259570788.jpg,damaged,g207,val,low,1,0,0,low,asphalt,hail,inspector chalk marks; damage itself not visible at this size,istock,207
-images/istock-2259570814.jpg,damaged,g207,val,low,1,0,0,low,asphalt,hail,"inspector chalk marks, same roof as 207",istock,208
-images/istock-2273401386.jpg,damaged,g209,train,high,0,0,1,high,clay_tile,missing_broken,hole by chimney,istock,209
-images/istock-2274097202.jpg,damaged,g210,val,high,0,0,1,high,concrete_tile,missing_broken,broken tile,istock,210
-images/istock-2274097203.jpg,damaged,g210,val,high,0,0,1,high,concrete_tile,missing_broken,"broken tile, same as 210",istock,211
-images/istock-2276365668.jpg,unusable,g212,train,low,,,,,asphalt,none,re-roofing in progress (underlayment showing),istock,212
-images/istock-2278550588.jpg,damaged,g213,val,high,0,0,1,high,clay_tile,missing_broken,collapsed,istock,213
-images/istock-2278550602.jpg,damaged,g213,val,high,0,0,1,high,clay_tile,missing_broken,"collapsed, same as 213",istock,214
-images/istock-2278810575.jpg,damaged,g215,train,high,0,0,1,high,clay_tile,missing_broken,holes along roof,istock,215
-images/istock-2279512691.jpg,damaged,g216,train,medium,1,0,0,low,asphalt,hail,"aerial, dark impact patches low on roof",istock,216
-images/istock-2284106202.jpg,damaged,g217,train,high,0,1,1,high,asphalt,wind,"roof deck gone, trusses exposed",istock,217
-images/istock-2286899096.jpg,damaged,g218,train,high,0,0,1,high,asphalt,missing_broken,"rotted edge, broken shingles",istock,218
-images/istock-2286899112.jpg,damaged,g218,train,high,0,0,1,high,asphalt,missing_broken,"rotted eave, missing tabs",istock,219
-images/istock-2287227974.jpg,damaged,g220,test,high,0,0,1,high,clay_tile,missing_broken,missing tiles,istock,220
-images/istock-2290760774.jpg,damaged,g221,train,medium,0,1,1,medium,asphalt,wind,scattered missing pieces,istock,221
-images/istock-2290760780.jpg,damaged,g221,train,medium,0,1,1,medium,asphalt,wind,same building as 221,istock,222
-images/istock-2292524199.jpg,damaged,g223,train,high,0,1,1,high,asphalt,wind,torn shingles,istock,223
-images/istock-2294973638.jpg,damaged,g224,train,high,0,1,1,high,asphalt,wind,"aerial, holes through roof",istock,224
-images/istock-2295449521.jpg,undamaged,g225,train,medium,,,,,slate,none,"mossy slate, intact",istock,225
-images/istock-2295449523.jpg,damaged,g225,train,low,0,0,1,low,slate,missing_broken,one chipped slate at corner,istock,226
-images/istock-2295449593.jpg,undamaged,g227,val,medium,,,,,slate,none,"mossy slate, intact",istock,227
-images/istock-104207957.jpg,damaged,istock-104207957,train,high,0,0,1,high,,,slate roof; broken and missing slates exposing battens,istock,
-images/istock-492968089.jpg,damaged,redtile-roof-A,val,high,0,0,1,high,,,clay tile; many broken/missing tiles; SAME ROOF as 493070879,istock,
-images/istock-493070879.jpg,damaged,redtile-roof-A,val,high,0,0,1,high,,,clay tile; closer shot of the same roof as 492968089,istock,
-images/istock-520939722.jpg,damaged,istock-520939722,train,high,0,0,1,high,,,torn gutter plus damaged edge tiles; mostly gutter damage (borderline),istock,
-images/istock-524530282.jpg,damaged,istock-524530282,train,high,0,1,1,high,,,asphalt shingle; lifted/torn shingles (wind-like),istock,
-images/istock-541830340.jpg,damaged,istock-541830340,train,high,0,1,1,high,,,asphalt shingle; shingles torn off exposing deck (wind / missing),istock,
-images/istock-669240502.jpg,damaged,istock-669240502,train,high,0,0,1,high,,,clay tile; tiles missing exposing battens,istock,
-images/istock-159262796.jpg,unusable,istock-159262796,train,high,,,,,,,wide village scene of stone-slab roofs; no roof close-up,istock,
-images/istock-826140462.jpg,unusable,istock-826140462,train,high,,,,,,,corrugated fibre-cement sheet roof (out of scope) with heavy lens flare,istock,
-images/istock-468992927.jpg,damaged,g-468992927,train,medium,0,1,1,medium,slate,wind,"coastal storm, missing slates near ridge, building in wider scene",istock,
-images/istock-477576151.jpg,unusable,g-477576151,train,low,,,,,corrugated,none,corrugated fibre-cement roof with broken sheets (out of scope material),istock,
-images/istock-492965351.jpg,damaged,redtile-roof-A,val,high,0,0,1,high,clay_tile,missing_broken,broken/slipped tiles; same photographer batch as 492968089,istock,
-images/istock-497853989.jpg,damaged,g-497853989,train,high,0,0,1,high,clay_tile,missing_broken,many missing tiles exposing battens,istock,
-images/istock-501645649.jpg,damaged,g-501645649,train,high,0,0,1,high,slate,missing_broken,"missing diamond slates, black patches",istock,
-images/istock-519530560.jpg,damaged,g-519530560,train,high,0,0,1,high,wood_shake,missing_broken,"derelict pyramid roof, many missing/loose shakes",istock,
-images/istock-667940946.jpg,unusable,g-667940946,train,low,,,,,corrugated,none,corrugated sheet roof with broken pieces (out of scope material),istock,
+path,label,group,split,confidence,hail,wind,missing_shingles,damage_type,types_confidence,material,damage_hint,notes,source,idx
+images/istock-843393164.jpg,damaged,g000,train,high,0,0,1,missing_shingles,high,clay_tile,missing_broken,"broken and displaced tiles, old roof",istock,0
+images/istock-870471802.jpg,damaged,g001,train,high,0,0,1,missing_shingles,high,clay_tile,missing_broken,"many broken tiles, holes",istock,1
+images/istock-901953504.jpg,unusable,g002,train,low,,,,,,metal,none,"metal-sheet tile roof, out of scope material; no damage visible",istock,2
+images/istock-926907682.jpg,unusable,g003,train,low,,,,,,wood_shake,none,re-roofing in progress (old and new shakes); not a damage state,istock,3
+images/istock-960214058.jpg,damaged,g004,val,high,0,0,1,missing_shingles,high,clay_tile,missing_broken,hole with exposed battens,istock,4
+images/istock-963180436.jpg,damaged,g006,test,high,0,0,1,missing_shingles,high,clay_tile,missing_broken,several missing tiles,istock,6
+images/istock-966403608.jpg,damaged,g007,val,high,0,0,1,missing_shingles,high,clay_tile,missing_broken,partially collapsed roof,istock,7
+images/istock-976623908.jpg,damaged,g008,train,medium,0,0,1,missing_shingles,medium,clay_tile,missing_broken,"collapsed section, whole building in frame",istock,8
+images/istock-1025651754.jpg,damaged,g009,test,medium,0,0,1,missing_shingles,medium,slate,missing_broken,"broken edge slates, moss",istock,9
+images/istock-1047265210.jpg,undamaged,g010,train,high,,,,,,clay_tile,none,new tile roof,istock,10
+images/istock-1135068321.jpg,damaged,g011,train,high,0,0,1,missing_shingles,high,clay_tile,missing_broken,"holes, abandoned building",istock,11
+images/istock-1137049278.jpg,damaged,g012,train,high,0,0,1,missing_shingles,high,clay_tile,missing_broken,broken tiles at eave,istock,12
+images/istock-1149004248.jpg,damaged,g013,train,high,0,1,0,wind,high,asphalt,wind,torn/missing tabs,istock,13
+images/istock-1149004255.jpg,damaged,g013,train,high,0,1,0,wind,high,asphalt,wind,torn/missing tabs,istock,14
+images/istock-1149004258.jpg,damaged,g013,train,high,0,1,0,wind,high,asphalt,wind,torn tab,istock,15
+images/istock-1149004265.jpg,damaged,g013,train,high,0,1,0,wind,high,asphalt,wind,"torn tab, wet",istock,16
+images/istock-1163541715.jpg,damaged,g017,train,high,0,0,1,missing_shingles,high,clay_tile,missing_broken,large hole,istock,17
+images/istock-1166226378.jpg,damaged,g018,train,high,0,1,0,wind,high,asphalt,wind,missing shingles exposing mat,istock,18
+images/istock-1166227778.jpg,damaged,g019,train,high,0,1,0,wind,high,asphalt,wind,missing shingles,istock,19
+images/istock-1166557173.jpg,damaged,g020,train,high,0,1,0,wind,high,asphalt,wind,missing shingle pieces,istock,20
+images/istock-1166557175.jpg,damaged,g020,train,high,0,1,0,wind,high,asphalt,wind,missing shingles,istock,21
+images/istock-1166557177.jpg,damaged,g020,train,high,0,1,0,wind,high,asphalt,wind,torn tab,istock,22
+images/istock-1168463503.jpg,damaged,g023,test,high,0,1,0,wind,high,asphalt,wind,large missing area,istock,23
+images/istock-1173974318.jpg,undamaged,g024,train,low,,,,,,asphalt,none,"eave close-up, shallow focus; shingles look intact (peeling fascia paint)",istock,24
+images/istock-1176692984.jpg,damaged,g025,train,high,0,1,0,wind,high,asphalt,wind,lifted/missing shingles exposing underlayment,istock,25
+images/istock-1203508980.jpg,undamaged,g026,train,high,,,,,,asphalt,none,new house gable,istock,26
+images/istock-1205391887.jpg,damaged,g027,val,high,0,0,1,missing_shingles,high,clay_tile,missing_broken,displaced tiles,istock,27
+images/istock-1207133677.jpg,damaged,g028,train,medium,0,0,1,missing_shingles,medium,clay_tile,missing_broken,displaced tiles near ridge,istock,28
+images/istock-1208166607.jpg,damaged,g030,train,high,0,0,1,missing_shingles,high,asphalt,missing_broken,hole exposing wood,istock,30
+images/istock-1208398222.jpg,damaged,g032,test,medium,0,1,0,wind,medium,asphalt,wind,curled/torn shingle edge,istock,32
+images/istock-1210486822.jpg,damaged,g032,test,medium,0,1,0,wind,medium,asphalt,wind,"curled/torn shingle edge, same shoot as 32",istock,34
+images/istock-1214762496.jpg,damaged,g035,train,high,0,0,1,missing_shingles,high,clay_tile,missing_broken,"aerial/drone view, collapsed roof section",istock,35
+images/istock-1227220566.jpg,damaged,g036,train,high,0,0,1,missing_shingles,high,clay_tile,missing_broken,heavily broken tiles,istock,36
+images/istock-1247229250.jpg,damaged,g037,val,high,0,0,1,missing_shingles,high,clay_tile,missing_broken,holes in tile roof,istock,37
+images/istock-1253783035.jpg,damaged,g038,val,medium,0,0,1,missing_shingles,medium,clay_tile,missing_broken,"small holes near ridge, distant shot",istock,38
+images/istock-1254608275.jpg,damaged,g039,train,high,0,1,0,wind,high,clay_tile,wind,storm damage around roof windows,istock,39
+images/istock-1254608276.jpg,damaged,g039,train,high,0,1,0,wind,high,clay_tile,wind,"same building as 39, wider view",istock,40
+images/istock-1254608277.jpg,damaged,g039,train,high,0,1,0,wind,high,clay_tile,wind,same building as 39,istock,41
+images/istock-1254608279.jpg,damaged,g039,train,high,0,1,0,wind,high,clay_tile,wind,same building as 39,istock,42
+images/istock-1254608283.jpg,damaged,g039,train,high,0,1,0,wind,high,clay_tile,wind,same building as 39,istock,43
+images/istock-1270046255.jpg,undamaged,g044,train,low,,,,,,clay_tile,none,"aerial, old mossy roof, no clear damage",istock,44
+images/istock-1270047481.jpg,undamaged,g045,test,medium,,,,,,slate,none,aerial slate roof,istock,45
+images/istock-1270047548.jpg,undamaged,g046,train,medium,,,,,,concrete_tile,none,aerial,istock,46
+images/istock-1270047698.jpg,undamaged,g047,train,medium,,,,,,concrete_tile,none,aerial,istock,47
+images/istock-1270047773.jpg,undamaged,g048,val,low,,,,,,concrete_tile,none,"aerial, mossy roof, no clear damage",istock,48
+images/istock-1289183330.jpg,damaged,g049,test,high,0,0,1,missing_shingles,high,clay_tile,missing_broken,missing tiles exposing battens,istock,49
+images/istock-1292591243.jpg,damaged,g049,test,high,0,0,1,missing_shingles,high,clay_tile,missing_broken,same roof as 49,istock,50
+images/istock-1309402031.jpg,unusable,g052,train,low,,,,,,mixed,none,"building facade, roof under re-roofing (felt), no damage state to judge",istock,52
+images/istock-1314392387.jpg,undamaged,g053,train,medium,,,,,,clay_tile,none,new tile roof (ridge caps not fitted yet),istock,53
+images/istock-1316463534.jpg,damaged,g054,train,medium,0,0,1,missing_shingles,medium,clay_tile,missing_broken,collapsed derelict building,istock,54
+images/istock-1316808663.jpg,damaged,g055,test,high,0,1,0,wind,high,asphalt,wind,missing shingle near ridge,istock,55
+images/istock-1316808688.jpg,damaged,g055,test,high,0,1,0,wind,high,asphalt,wind,same roof as 55,istock,56
+images/istock-1325745938.jpg,unusable,g052,train,low,,,,,,mixed,none,"same building as 52, re-roofing in progress",istock,57
+images/istock-1326039993.jpg,damaged,g058,train,high,0,0,1,missing_shingles,high,asphalt,missing_broken,"holes and broken shingles, moss",istock,58
+images/istock-1331208026.jpg,undamaged,g059,val,medium,,,,,,asphalt,none,intact shingle field,istock,59
+images/istock-1331208030.jpg,damaged,g059,val,medium,0,1,0,wind,medium,asphalt,wind,creased/lifted tabs,istock,60
+images/istock-1331208037.jpg,damaged,g059,val,high,0,1,0,wind,medium,asphalt,wind,lifted tabs,istock,61
+images/istock-1349092417.jpg,undamaged,g062,train,medium,,,,,,asphalt,none,"pine needles in gutter, shingles intact",istock,62
+images/istock-1349092428.jpg,undamaged,g062,train,medium,,,,,,asphalt,none,same roof as 62,istock,63
+images/istock-1352665344.jpg,damaged,g064,train,medium,0,0,1,missing_shingles,medium,clay_tile,missing_broken,broken tiles under storm sky,istock,64
+images/istock-1352860256.jpg,damaged,g065,train,high,0,0,1,missing_shingles,high,clay_tile,missing_broken,slipped and broken tiles,istock,65
+images/istock-1362475010.jpg,undamaged,g066,val,medium,,,,,,asphalt,none,chimney and intact shingles,istock,66
+images/istock-1365774784.jpg,damaged,g067,train,high,0,0,1,missing_shingles,high,slate,missing_broken,missing slates near ridge,istock,67
+images/istock-1366169754.jpg,unusable,g068,train,low,,,,,,asphalt,none,"backlit, roof surface too dark to inspect",istock,68
+images/istock-1368251153.jpg,damaged,g069,train,high,0,0,1,missing_shingles,high,clay_tile,missing_broken,collapsed roof with plants growing,istock,69
+images/istock-1368251260.jpg,damaged,g049,test,high,0,0,1,missing_shingles,high,clay_tile,missing_broken,"missing tiles, same roof as 49",istock,70
+images/istock-1388131267.jpg,damaged,g071,train,high,0,0,1,missing_shingles,high,clay_tile,missing_broken,broken tiles,istock,71
+images/istock-1388919750.jpg,damaged,g072,train,high,0,0,1,missing_shingles,high,clay_tile,missing_broken,partly collapsed,istock,72
+images/istock-1389107095.jpg,unusable,g073,test,low,,,,,,flat,none,flat-roof edge and gutter with debris; not a pitched roof surface,istock,73
+images/istock-1409254869.jpg,damaged,g074,train,medium,0,0,1,missing_shingles,medium,clay_tile,missing_broken,broken ridge tile,istock,74
+images/istock-1424889257.jpg,damaged,g075,train,medium,0,0,1,missing_shingles,medium,concrete_tile,missing_broken,broken tiles,istock,75
+images/istock-1431078234.jpg,damaged,g076,train,high,0,1,0,wind,high,flat,wind,"aerial, roof torn off, structural damage",istock,76
+images/istock-1431317417.jpg,damaged,g064,train,medium,0,0,1,missing_shingles,medium,clay_tile,missing_broken,"broken tiles at eave, same shoot as 64",istock,77
+images/istock-1431442479.jpg,damaged,g078,train,high,0,1,0,wind,high,asphalt,wind,"hurricane, shingles stripped",istock,78
+images/istock-1431442516.jpg,damaged,g085,train,high,0,1,0,wind,high,asphalt,wind,"hurricane, shingles stripped",istock,79
+images/istock-1431442518.jpg,damaged,g085,train,high,0,1,0,wind,high,asphalt,wind,"hurricane, shingles stripped",istock,80
+images/istock-1431442519.jpg,damaged,g085,train,high,0,1,0,wind,high,asphalt,wind,"hurricane, shingles stripped",istock,81
+images/istock-1431442522.jpg,damaged,g085,train,high,0,1,0,wind,high,asphalt,wind,"hurricane, underlayment and deck exposed",istock,82
+images/istock-1431442524.jpg,damaged,g085,train,high,0,1,0,wind,high,asphalt,wind,"hurricane, shingles stripped",istock,83
+images/istock-1431442536.jpg,damaged,g085,train,high,0,1,0,wind,high,asphalt,wind,"hurricane, shingles stripped",istock,84
+images/istock-1432276850.jpg,damaged,g085,train,high,0,1,0,wind,high,asphalt,wind,whole roof stripped to deck,istock,85
+images/istock-1432276851.jpg,damaged,g085,train,high,0,1,0,wind,high,asphalt,wind,large deck areas exposed,istock,86
+images/istock-1432276860.jpg,damaged,g085,train,high,0,1,0,wind,high,asphalt,wind,same roof as 82,istock,87
+images/istock-1432276861.jpg,damaged,g085,train,high,0,1,0,wind,high,asphalt,wind,"hurricane, shingles stripped",istock,88
+images/istock-1432276921.jpg,damaged,g089,train,high,0,1,0,wind,high,asphalt,wind,"hurricane, deck exposed",istock,89
+images/istock-1434825061.jpg,damaged,g090,train,high,0,1,0,wind,high,asphalt,wind,"aerial, green shingles stripped",istock,90
+images/istock-1434825146.jpg,damaged,g091,val,high,0,1,0,wind,high,asphalt,wind,"hurricane, shingles stripped",istock,91
+images/istock-1447377166.jpg,damaged,g092,test,medium,0,1,0,wind,medium,asphalt,wind,damage along hip ridge,istock,92
+images/istock-1447377185.jpg,damaged,g092,test,high,0,1,0,wind,high,asphalt,wind,"hurricane, deck exposed",istock,93
+images/istock-1447531962.jpg,damaged,g094,train,high,0,1,0,wind,high,asphalt,wind,deck exposed in patches,istock,94
+images/istock-1447531980.jpg,damaged,g094,train,high,0,1,0,wind,high,asphalt,wind,deck exposed near vent,istock,95
+images/istock-1447531998.jpg,damaged,g094,train,high,0,1,0,wind,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,96
+images/istock-1447532019.jpg,damaged,g094,train,high,0,1,0,wind,high,asphalt,wind,deck exposed near vents; near-duplicate of 95,istock,97
+images/istock-1447532036.jpg,damaged,g094,train,high,0,1,0,wind,high,asphalt,wind,near-duplicate of 95/97,istock,98
+images/istock-1447532048.jpg,damaged,g094,train,high,0,1,0,wind,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,99
+images/istock-1447532056.jpg,damaged,g094,train,high,0,1,0,wind,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,100
+images/istock-1447532064.jpg,damaged,g094,train,high,0,1,0,wind,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,101
+images/istock-1449198349.jpg,damaged,g102,test,high,0,1,0,wind,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,102
+images/istock-1452245401.jpg,damaged,g103,test,high,0,1,0,wind,high,asphalt,wind,"aerial, blue tarp, missing shingles",istock,103
+images/istock-1452245425.jpg,damaged,g103,test,high,0,1,0,wind,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,104
+images/istock-1452778254.jpg,damaged,g105,test,high,0,1,0,wind,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,105
+images/istock-1455358883.jpg,damaged,g106,val,high,0,1,0,wind,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,106
+images/istock-1456888171.jpg,damaged,g107,val,high,0,1,0,wind,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,107
+images/istock-1459503332.jpg,damaged,g108,train,high,0,1,0,wind,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,108
+images/istock-1459503373.jpg,damaged,g109,train,high,0,1,0,wind,high,asphalt,wind,"aerial whole house, missing shingles",istock,109
+images/istock-1464549794.jpg,damaged,g110,test,high,0,0,1,missing_shingles,high,clay_tile,missing_broken,dormer roof broken open,istock,110
+images/istock-1467038695.jpg,damaged,g111,val,high,0,1,0,wind,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,111
+images/istock-1471244668.jpg,damaged,g112,train,high,0,1,0,wind,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,112
+images/istock-1479437312.jpg,damaged,g113,train,high,0,1,0,wind,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,113
+images/istock-1485169427.jpg,undamaged,g114,train,low,,,,,,asphalt,none,"aerial, stained but no clear damage (post-storm series, check)",istock,114
+images/istock-1485169449.jpg,damaged,g114,train,medium,0,1,0,wind,medium,asphalt,wind,"aerial, lifted shingles at left corner",istock,115
+images/istock-1485169475.jpg,damaged,g114,train,medium,0,1,0,wind,medium,asphalt,wind,"aerial, damage at left corner",istock,116
+images/istock-1485169890.jpg,undamaged,g117,train,low,,,,,,asphalt,none,"aerial, stained edges, no clear damage (check)",istock,117
+images/istock-1493142235.jpg,damaged,g064,train,medium,0,0,1,missing_shingles,medium,clay_tile,missing_broken,"broken tiles under storm sky, same shoot as 64",istock,118
+images/istock-1493306458.jpg,damaged,g119,val,high,0,1,0,wind,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,119
+images/istock-1494674459.jpg,damaged,g120,train,high,0,1,0,wind,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,120
+images/istock-1495893443.jpg,damaged,g121,train,high,0,1,0,wind,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,121
+images/istock-1495893475.jpg,damaged,g122,train,high,0,1,0,wind,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,122
+images/istock-1497989013.jpg,damaged,g123,train,high,0,1,0,wind,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,123
+images/istock-1500177250.jpg,damaged,g124,train,high,0,1,0,wind,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,124
+images/istock-1500177260.jpg,damaged,g124,train,high,0,1,0,wind,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,125
+images/istock-1507696702.jpg,damaged,g126,train,high,0,1,0,wind,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,126
+images/istock-1512134652.jpg,damaged,g127,train,high,0,1,0,wind,high,asphalt,wind,"roof deck gone, trusses exposed",istock,127
+images/istock-1535250110.jpg,damaged,g128,train,high,0,1,0,wind,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,128
+images/istock-1549562078.jpg,damaged,g129,train,high,0,0,1,missing_shingles,high,concrete_tile,missing_broken,cracked tile close-up,istock,129
+images/istock-1564836647.jpg,damaged,g130,train,medium,0,0,1,missing_shingles,medium,slate,missing_broken,holes in dark shingle/slate roof,istock,130
+images/istock-1578733504.jpg,unusable,g131,val,low,,,,,,clay_tile,none,collage of two photos in one image,istock,131
+images/istock-1594392874.jpg,damaged,g132,train,medium,0,1,0,wind,medium,asphalt,wind,damage along ridge,istock,132
+images/istock-1603866595.jpg,damaged,g133,train,high,0,1,0,wind,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,133
+images/istock-1612631850.jpg,damaged,g134,train,high,0,1,0,wind,high,asphalt,wind,"roof deck gone, trusses exposed",istock,134
+images/istock-1612631857.jpg,damaged,g134,train,high,0,1,0,wind,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,135
+images/istock-1621206938.jpg,damaged,g136,train,high,0,0,1,missing_shingles,high,concrete_tile,missing_broken,missing tiles exposing battens,istock,136
+images/istock-1621912024.jpg,damaged,g134,train,high,0,1,0,wind,high,asphalt,wind,"roof deck gone, trusses exposed, same as 134",istock,137
+images/istock-1647371466.jpg,damaged,g138,val,high,0,1,0,wind,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,138
+images/istock-1651862000.jpg,damaged,g139,train,high,0,1,0,wind,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,139
+images/istock-1676462641.jpg,damaged,g140,val,high,0,1,0,wind,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,140
+images/istock-1689217118.jpg,damaged,g141,train,high,0,1,0,wind,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,141
+images/istock-1695883379.jpg,damaged,g142,train,high,0,1,0,wind,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,142
+images/istock-1701597682.jpg,damaged,g143,train,high,0,1,0,wind,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,143
+images/istock-1716357742.jpg,damaged,g144,train,medium,0,0,1,missing_shingles,medium,clay_tile,missing_broken,"gazebo roof from below, missing tiles at edge",istock,144
+images/istock-1717873658.jpg,undamaged,g145,train,high,,,,,,asphalt,none,intact red shingles close-up,istock,145
+images/istock-1729897613.jpg,damaged,g146,train,high,0,1,0,wind,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,146
+images/istock-1735811111.jpg,damaged,g147,train,high,0,1,0,wind,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,147
+images/istock-1742127967.jpg,damaged,g148,val,high,0,1,0,wind,high,asphalt,wind,single lifted/torn shingle,istock,148
+images/istock-1765760659.jpg,damaged,g149,train,high,0,1,0,wind,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,149
+images/istock-1785819742.jpg,damaged,g150,train,high,0,1,0,wind,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,150
+images/istock-1792139853.jpg,damaged,g151,train,high,0,1,0,wind,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,151
+images/istock-1828696176.jpg,damaged,g152,test,medium,0,1,0,wind,medium,clay_tile,wind,"aerial, broken tiles after hurricane",istock,152
+images/istock-1828696701.jpg,damaged,g152,test,medium,0,1,0,wind,medium,clay_tile,wind,same roof as 152,istock,153
+images/istock-1830558520.jpg,damaged,g154,train,high,0,1,0,wind,high,asphalt,wind,"aerial whole property, missing shingles",istock,154
+images/istock-1838258304.jpg,unusable,g155,val,low,,,,,,wood_shake,none,"re-roofing in progress, same kind of shot as #3",istock,155
+images/istock-1846104084.jpg,damaged,g156,train,high,0,1,0,wind,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,156
+images/istock-1846105692.jpg,damaged,g157,train,high,0,1,0,wind,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,157
+images/istock-1860386162.jpg,damaged,g158,train,high,0,1,0,wind,high,asphalt,wind,"roof deck gone, trusses exposed",istock,158
+images/istock-1917061649.jpg,damaged,g159,train,high,0,1,0,wind,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,159
+images/istock-1926386919.jpg,damaged,g160,test,high,0,1,0,wind,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,160
+images/istock-1938382841.jpg,damaged,g161,train,high,0,1,0,wind,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,161
+images/istock-1963259169.jpg,damaged,g162,train,high,0,1,0,wind,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,162
+images/istock-1998007671.jpg,damaged,g163,val,high,0,1,0,wind,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,163
+images/istock-2041204017.jpg,undamaged,g164,test,medium,,,,,,asphalt,none,"aerial whole house, no visible damage",istock,164
+images/istock-2124071652.jpg,damaged,g165,train,high,0,1,0,wind,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,165
+images/istock-2124072165.jpg,damaged,g166,train,high,0,1,0,wind,high,asphalt,wind,"roof deck gone, trusses exposed",istock,166
+images/istock-2124072181.jpg,damaged,g166,train,high,0,1,0,wind,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,167
+images/istock-2136050586.jpg,damaged,g168,train,high,0,1,0,wind,high,asphalt,wind,"aerial, collapsed roof",istock,168
+images/istock-2148752521.jpg,damaged,g169,test,high,0,1,0,wind,high,asphalt,wind,"aerial, collapsed roof",istock,169
+images/istock-2148752555.jpg,damaged,g170,train,high,0,1,0,wind,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,170
+images/istock-2149264135.jpg,unusable,g171,test,low,,,,,,other,none,roof under construction (battens only),istock,171
+images/istock-2150829405.jpg,damaged,g172,train,high,0,1,0,wind,high,asphalt,wind,"roof deck gone, trusses exposed",istock,172
+images/istock-2151920295.jpg,damaged,g173,train,high,0,1,0,wind,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,173
+images/istock-2151920306.jpg,damaged,g173,train,high,0,1,0,wind,high,asphalt,wind,deck panels torn off,istock,174
+images/istock-2156501258.jpg,damaged,g175,train,high,0,1,0,wind,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,175
+images/istock-2156501281.jpg,damaged,g175,train,high,0,1,0,wind,high,asphalt,wind,deck panels torn off,istock,176
+images/istock-2157065004.jpg,damaged,g129,train,high,0,0,1,missing_shingles,high,concrete_tile,missing_broken,"cracked tile, same shoot as 129",istock,177
+images/istock-2157207383.jpg,damaged,g178,train,high,0,1,0,wind,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,178
+images/istock-2157989679.jpg,damaged,g179,train,high,0,1,0,wind,high,asphalt,wind,"aerial, collapsed roof and debris",istock,179
+images/istock-2158183855.jpg,damaged,g180,train,high,0,0,1,missing_shingles,high,asphalt,missing_broken,hole punched through roof,istock,180
+images/istock-2158183869.jpg,damaged,g180,train,low,0,0,1,missing_shingles,low,asphalt,missing_broken,scattered missing/mismatched tabs (could be old repairs),istock,181
+images/istock-2158303290.jpg,damaged,g180,train,low,0,0,1,missing_shingles,low,asphalt,missing_broken,same roof as 181,istock,182
+images/istock-2159234972.jpg,damaged,g183,train,high,0,1,0,wind,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,183
+images/istock-2161302398.jpg,damaged,g184,train,high,0,0,1,missing_shingles,high,clay_tile,missing_broken,hole exposing rafters,istock,184
+images/istock-2161302404.jpg,damaged,g184,train,high,0,0,1,missing_shingles,high,clay_tile,missing_broken,"aerial, holes in tile roof",istock,185
+images/istock-2166416857.jpg,damaged,g186,test,high,0,0,1,missing_shingles,high,clay_tile,missing_broken,missing tiles,istock,186
+images/istock-2175511659.jpg,damaged,g187,val,high,0,1,0,wind,high,asphalt,wind,missing shingles at rake edge,istock,187
+images/istock-2175511661.jpg,damaged,g187,val,high,0,1,0,wind,high,asphalt,wind,same house as 187,istock,188
+images/istock-2175511666.jpg,damaged,g187,val,high,0,1,0,wind,high,asphalt,wind,"same house as 187, deck exposed",istock,189
+images/istock-2178454321.jpg,damaged,g190,test,high,0,1,0,wind,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,190
+images/istock-2181247313.jpg,damaged,g191,train,high,0,1,0,wind,high,asphalt,wind,"hurricane, shingles stripped / deck exposed",istock,191
+images/istock-2181651559.jpg,damaged,g129,train,high,0,0,1,missing_shingles,high,concrete_tile,missing_broken,"cracked tiles, same shoot as 129",istock,192
+images/istock-2183136122.jpg,damaged,g193,val,high,0,0,1,missing_shingles,high,clay_tile,missing_broken,broken tiles,istock,193
+images/istock-2183136153.jpg,damaged,g194,train,high,0,0,1,missing_shingles,high,clay_tile,missing_broken,broken/missing tile,istock,194
+images/istock-2187894193.jpg,damaged,g195,train,high,0,1,0,wind,high,asphalt,wind,"aerial, deck exposed in patches",istock,195
+images/istock-2189140775.jpg,damaged,g196,train,high,0,0,1,missing_shingles,high,clay_tile,missing_broken,collapsed old roof,istock,196
+images/istock-2215783932.jpg,undamaged,g197,test,low,,,,,,asphalt,none,"pine debris in valley, shingles look intact",istock,197
+images/istock-2217176987.jpg,damaged,g198,test,high,0,1,0,wind,high,asphalt,wind,lifted/torn ridge cap,istock,198
+images/istock-2217177155.jpg,damaged,g199,test,medium,0,0,1,missing_shingles,medium,asphalt,missing_broken,torn shingle,istock,199
+images/istock-2220024937.jpg,damaged,g200,train,medium,0,0,1,missing_shingles,medium,asphalt,missing_broken,"curling, heavy granule loss (wear vs storm unclear)",istock,200
+images/istock-2234328050.jpg,damaged,g201,test,low,1,0,0,hail,low,asphalt,hail,"granule loss, possible hail or age",istock,201
+images/istock-2245753072.jpg,damaged,g202,test,medium,0,0,1,missing_shingles,medium,asphalt,missing_broken,"worn, moss, torn piece",istock,202
+images/istock-2245753086.jpg,damaged,g202,test,low,1,0,0,hail,low,asphalt,hail,"possible small impact marks, hard to see",istock,203
+images/istock-2259408039.jpg,damaged,g204,train,medium,0,1,0,wind,medium,asphalt,wind,lifted shingles and sag at eave,istock,204
+images/istock-2259408071.jpg,damaged,g204,train,medium,0,1,0,wind,medium,asphalt,wind,same house as 204,istock,205
+images/istock-2259408141.jpg,damaged,g204,train,medium,0,1,0,wind,medium,asphalt,wind,same house as 204,istock,206
+images/istock-2259570788.jpg,damaged,g207,val,low,1,0,0,hail,low,asphalt,hail,inspector chalk marks; damage itself not visible at this size,istock,207
+images/istock-2259570814.jpg,damaged,g207,val,low,1,0,0,hail,low,asphalt,hail,"inspector chalk marks, same roof as 207",istock,208
+images/istock-2273401386.jpg,damaged,g209,train,high,0,0,1,missing_shingles,high,clay_tile,missing_broken,hole by chimney,istock,209
+images/istock-2274097202.jpg,damaged,g210,val,high,0,0,1,missing_shingles,high,concrete_tile,missing_broken,broken tile,istock,210
+images/istock-2274097203.jpg,damaged,g210,val,high,0,0,1,missing_shingles,high,concrete_tile,missing_broken,"broken tile, same as 210",istock,211
+images/istock-2276365668.jpg,unusable,g212,train,low,,,,,,asphalt,none,re-roofing in progress (underlayment showing),istock,212
+images/istock-2278550588.jpg,damaged,g213,val,high,0,0,1,missing_shingles,high,clay_tile,missing_broken,collapsed,istock,213
+images/istock-2278550602.jpg,damaged,g213,val,high,0,0,1,missing_shingles,high,clay_tile,missing_broken,"collapsed, same as 213",istock,214
+images/istock-2278810575.jpg,damaged,g215,train,high,0,0,1,missing_shingles,high,clay_tile,missing_broken,holes along roof,istock,215
+images/istock-2279512691.jpg,damaged,g216,train,medium,1,0,0,hail,low,asphalt,hail,"aerial, dark impact patches low on roof",istock,216
+images/istock-2284106202.jpg,damaged,g217,train,high,0,1,0,wind,high,asphalt,wind,"roof deck gone, trusses exposed",istock,217
+images/istock-2286899096.jpg,damaged,g218,train,high,0,0,1,missing_shingles,high,asphalt,missing_broken,"rotted edge, broken shingles",istock,218
+images/istock-2286899112.jpg,damaged,g218,train,high,0,0,1,missing_shingles,high,asphalt,missing_broken,"rotted eave, missing tabs",istock,219
+images/istock-2287227974.jpg,damaged,g220,test,high,0,0,1,missing_shingles,high,clay_tile,missing_broken,missing tiles,istock,220
+images/istock-2290760774.jpg,damaged,g221,train,medium,0,1,0,wind,medium,asphalt,wind,scattered missing pieces,istock,221
+images/istock-2290760780.jpg,damaged,g221,train,medium,0,1,0,wind,medium,asphalt,wind,same building as 221,istock,222
+images/istock-2292524199.jpg,damaged,g223,train,high,0,1,0,wind,high,asphalt,wind,torn shingles,istock,223
+images/istock-2294973638.jpg,damaged,g224,train,high,0,1,0,wind,high,asphalt,wind,"aerial, holes through roof",istock,224
+images/istock-2295449521.jpg,undamaged,g225,train,medium,,,,,,slate,none,"mossy slate, intact",istock,225
+images/istock-2295449523.jpg,damaged,g225,train,low,0,0,1,missing_shingles,low,slate,missing_broken,one chipped slate at corner,istock,226
+images/istock-2295449593.jpg,undamaged,g227,val,medium,,,,,,slate,none,"mossy slate, intact",istock,227
+images/istock-104207957.jpg,damaged,istock-104207957,train,high,0,0,1,missing_shingles,high,,,slate roof; broken and missing slates exposing battens,istock,
+images/istock-492968089.jpg,damaged,redtile-roof-A,val,high,0,0,1,missing_shingles,high,,,clay tile; many broken/missing tiles; SAME ROOF as 493070879,istock,
+images/istock-493070879.jpg,damaged,redtile-roof-A,val,high,0,0,1,missing_shingles,high,,,clay tile; closer shot of the same roof as 492968089,istock,
+images/istock-520939722.jpg,damaged,istock-520939722,train,high,0,0,1,missing_shingles,high,,,torn gutter plus damaged edge tiles; mostly gutter damage (borderline),istock,
+images/istock-524530282.jpg,damaged,istock-524530282,train,high,0,1,0,wind,high,,,asphalt shingle; lifted/torn shingles (wind-like),istock,
+images/istock-541830340.jpg,damaged,istock-541830340,train,high,0,1,0,wind,high,,,asphalt shingle; shingles torn off exposing deck (wind / missing),istock,
+images/istock-669240502.jpg,damaged,istock-669240502,train,high,0,0,1,missing_shingles,high,,,clay tile; tiles missing exposing battens,istock,
+images/istock-159262796.jpg,unusable,istock-159262796,train,high,,,,,,,,wide village scene of stone-slab roofs; no roof close-up,istock,
+images/istock-826140462.jpg,unusable,istock-826140462,train,high,,,,,,,,corrugated fibre-cement sheet roof (out of scope) with heavy lens flare,istock,
+images/istock-468992927.jpg,damaged,g-468992927,train,medium,0,1,0,wind,medium,slate,wind,"coastal storm, missing slates near ridge, building in wider scene",istock,
+images/istock-477576151.jpg,unusable,g-477576151,train,low,,,,,,corrugated,none,corrugated fibre-cement roof with broken sheets (out of scope material),istock,
+images/istock-492965351.jpg,damaged,redtile-roof-A,val,high,0,0,1,missing_shingles,high,clay_tile,missing_broken,broken/slipped tiles; same photographer batch as 492968089,istock,
+images/istock-497853989.jpg,damaged,g-497853989,train,high,0,0,1,missing_shingles,high,clay_tile,missing_broken,many missing tiles exposing battens,istock,
+images/istock-501645649.jpg,damaged,g-501645649,train,high,0,0,1,missing_shingles,high,slate,missing_broken,"missing diamond slates, black patches",istock,
+images/istock-519530560.jpg,damaged,g-519530560,train,high,0,0,1,missing_shingles,high,wood_shake,missing_broken,"derelict pyramid roof, many missing/loose shakes",istock,
+images/istock-667940946.jpg,unusable,g-667940946,train,low,,,,,,corrugated,none,corrugated sheet roof with broken pieces (out of scope material),istock,
