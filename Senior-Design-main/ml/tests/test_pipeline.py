@@ -86,3 +86,35 @@ def test_train_export_predict_smoke(tmp_path):
     assert clf.classes == CLASSES
     assert clf.predict(textured())["label"] in CLASSES
     assert clf.predict(textured((100, 100)))["reason"] == "quality_gate"
+
+
+def test_review_export_and_apply(tmp_path):
+    from roofml import review
+
+    root = tmp_path / "images"
+    root.mkdir()
+    fields = ["path", "label", "confidence", "damage_type", "hail", "wind", "missing_shingles", "types_confidence", "notes"]
+    rows = [
+        ["1000001.jpg", "damaged", "high", "wind", "0", "1", "0", "high", ""],
+        ["1000002.jpg", "undamaged", "medium", "", "", "", "", "", "looks fine"],
+    ]
+    for r in rows:
+        textured().save(root / r[0])
+    manifest = tmp_path / "m.csv"
+    with open(manifest, "w", newline="") as f:
+        w = csv.writer(f)
+        w.writerow(fields)
+        w.writerows(rows)
+
+    out = tmp_path / "review"
+    assert review.export(manifest, root, out) == {"wind": 1, "undamaged": 1}
+    assert (out / "wind" / "wind__1000001.jpg").exists()
+
+    # a reviewer moves the wind photo to hail
+    (out / "hail").mkdir()
+    (out / "wind" / "wind__1000001.jpg").rename(out / "hail" / "wind__1000001.jpg")
+    assert review.apply(manifest, out) == [("1000001", "wind", "hail")]
+    updated = {r["path"]: r for r in csv.DictReader(open(manifest))}
+    assert updated["1000001.jpg"]["damage_type"] == "hail"
+    assert (updated["1000001.jpg"]["hail"], updated["1000001.jpg"]["wind"]) == ("1", "0")
+    assert review.apply(manifest, out) == []

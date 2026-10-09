@@ -44,6 +44,12 @@ Edit the `group` column so **every photo of the same roof shares one group**; sp
 group, so near-identical shots never end up in both train and test. Re-run with
 `--manifest data/manifest.csv` to redo splits after editing (delete the `split` column first).
 
+## Reviewing labels
+
+`python -m roofml.review export ...` makes stamped copies sorted into one folder per label; move
+any mislabeled photo to the right folder and run `python -m roofml.review apply ...` to update the
+manifest. See `dataset/README.md`.
+
 ## Workflow
 
 ```bash

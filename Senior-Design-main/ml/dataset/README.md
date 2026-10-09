@@ -73,6 +73,16 @@ are hurricane-stripped asphalt. Hail is too rare to train on; it needs its own p
 These are whole-photo tags. Locating the damage (phase 3) needs boxes drawn around each damaged
 area, for example in CVAT, Label Studio or Roboflow, exported as COCO or YOLO.
 
+## Reviewing labels
+
+    python -m roofml.review export --manifest dataset/manifest.csv --images-root dataset --out review
+
+writes one folder per label (wind, missing_shingles, hail, undamaged, unusable) with every photo
+stamped with its label, photo id and confidence. Move wrongly labeled photos to the right folder,
+then apply the corrections to the manifest:
+
+    python -m roofml.review apply --manifest dataset/manifest.csv --review review
+
 ## Training
 
     cd Senior-Design-main/ml
