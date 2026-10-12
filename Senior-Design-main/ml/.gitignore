@@ -4,3 +4,6 @@ runs/
 .venv/
 !dataset/images/*.jpg
 review/
+reports/*/predictions/
+reports/*/val/
+*.cache
