@@ -1,0 +1,51 @@
+{
+  "weights": "runs/detect/v1s/weights/best.pt",
+  "split": "val",
+  "conf": 0.25,
+  "boxes": {
+    "mAP50": 0.295,
+    "mAP50_95": 0.148,
+    "per_class_AP50": {
+      "wind": 0.588,
+      "hail": 0.0,
+      "missing_shingles": 0.297
+    }
+  },
+  "photos": {
+    "photos": 33,
+    "type_accuracy_on_damaged": 0.586,
+    "damage_found_recall": 0.655,
+    "clean_roofs_left_clean": "4/4",
+    "per_type_recall": {
+      "wind": "8/14",
+      "hail": "0/2",
+      "missing_shingles": "9/13"
+    }
+  },
+  "confusion_truth_by_pred": {
+    "wind": {
+      "wind": 8,
+      "hail": 0,
+      "missing_shingles": 0,
+      "none": 6
+    },
+    "hail": {
+      "wind": 0,
+      "hail": 0,
+      "missing_shingles": 2,
+      "none": 0
+    },
+    "missing_shingles": {
+      "wind": 0,
+      "hail": 0,
+      "missing_shingles": 9,
+      "none": 4
+    },
+    "none": {
+      "wind": 0,
+      "hail": 0,
+      "missing_shingles": 0,
+      "none": 4
+    }
+  }
+}
