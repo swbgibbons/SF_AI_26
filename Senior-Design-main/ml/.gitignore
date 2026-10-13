@@ -1,0 +1,6 @@
+data/
+runs/
+*.onnx
+.venv/
+!dataset/images/*.jpg
+review/
