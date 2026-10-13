@@ -20,11 +20,15 @@ used as background (no boxes). Unusable photos are left out.
 ```bash
 cd Senior-Design-main/ml
 pip install ultralytics            # pulls in torch; install a CUDA torch first for a GPU
-python -m detect.build_dataset     # -> data/det/yolo (YOLO) and data/det/coco (COCO, RF-DETR layout)
+python -m detect.build_dataset --version v1 --out data/det   # frozen v1 -> YOLO + COCO (RF-DETR layout)
 python -m detect.train --name v1   # CPU works: ~170 photos at 640px
 python -m detect.evaluate --weights runs/detect/v1/weights/best.pt --split test --out reports/v1
 python -m detect.predict --weights runs/detect/v1/weights/best.pt --images path/to/photos --out preds
+pip install gradio && python -m detect.demo   # upload-a-photo demo at http://127.0.0.1:7860
 ```
+
+Trained v1 weights (`best.pt`, `best.onnx`) are kept out of git; ask the team for the copy in the
+project files (`models/v1/`) and place it at `runs/detect/v1/weights/`.
 
 `evaluate` reports box mAP per class and photo-level results (right type, damage found, clean
 roofs left clean), and saves every test photo with its predicted boxes, named

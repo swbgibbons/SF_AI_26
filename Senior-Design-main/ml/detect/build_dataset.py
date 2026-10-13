@@ -4,11 +4,16 @@ boxes.csv holds one row per box, coordinates normalized to 0-1 (x1, y1, x2, y2).
 Damaged photos get their boxes; undamaged photos go in as background (no boxes);
 unusable photos are left out. Splits come from the manifest, which splits by roof group.
 
-    python -m detect.build_dataset --out data/det
+    python -m detect.build_dataset --version v1 --out data/det-v1   # frozen snapshot
+    python -m detect.build_dataset --out data/det                   # working labels
+
+--version reads dataset/versions/<v>/ and checks every file against its SHA256SUMS first,
+so a model trained on v1 can always be rebuilt from exactly the same photos and labels.
 """
 
 import argparse
 import csv
+import hashlib
 import json
 import shutil
 from collections import Counter, defaultdict
@@ -21,16 +26,37 @@ CLASSES = ["wind", "hail", "missing_shingles"]
 SPLITS = {"train": "train", "val": "valid", "test": "test"}
 
 
-def load(dataset):
-    rows = list(csv.DictReader(open(dataset / "manifest.csv", newline="")))
+def verify(dataset, version):
+    """Raise if any file listed in versions/<version>/SHA256SUMS changed or is missing."""
+    sums = dataset / "versions" / version / "SHA256SUMS"
+    bad = []
+    for line in sums.read_text().splitlines():
+        digest, name = line.split(maxsplit=1)
+        path = dataset / name
+        if not path.is_file() or hashlib.sha256(path.read_bytes()).hexdigest() != digest:
+            bad.append(name)
+    if bad:
+        raise ValueError(f"dataset {version} changed ({len(bad)} files), e.g. {bad[:3]}. Frozen versions must not be edited.")
+
+
+def label_dir(dataset, version=None):
+    if version is None:
+        return dataset
+    verify(dataset, version)
+    return dataset / "versions" / version
+
+
+def load(dataset, version=None):
+    labels = label_dir(dataset, version)
+    rows = list(csv.DictReader(open(labels / "manifest.csv", newline="")))
     boxes = defaultdict(list)
-    for b in csv.DictReader(open(dataset / "boxes.csv", newline="")):
+    for b in csv.DictReader(open(labels / "boxes.csv", newline="")):
         boxes[b["path"]].append(b)
     return rows, boxes
 
 
-def build(dataset, out):
-    rows, boxes = load(dataset)
+def build(dataset, out, version=None):
+    rows, boxes = load(dataset, version)
     if out.exists():
         shutil.rmtree(out)
     coco = {s: {"images": [], "annotations": [], "categories": [{"id": i, "name": c} for i, c in enumerate(CLASSES)]}
@@ -77,9 +103,10 @@ def build(dataset, out):
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--dataset", type=Path, default=Path("dataset"))
+    parser.add_argument("--version", help="frozen label snapshot in dataset/versions/, e.g. v1")
     parser.add_argument("--out", type=Path, default=Path("data/det"))
     args = parser.parse_args()
-    counts = build(args.dataset, args.out)
+    counts = build(args.dataset, args.out, args.version)
     for split in SPLITS:
         print(split, {k: v for (s, k), v in sorted(counts.items()) if s == split})
     print(f"YOLO: {args.out / 'yolo' / 'data.yaml'}   COCO: {args.out / 'coco'}")

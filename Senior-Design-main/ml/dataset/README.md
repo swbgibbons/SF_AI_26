@@ -92,3 +92,19 @@ then apply the corrections to the manifest:
 
 The images are iStock preview downloads. Check iStock's terms before sharing this dataset publicly
 or using it beyond the class project.
+
+## Versions (read before adding photos)
+
+`versions/v1/` is frozen: it holds the labels model v1 was trained and tested on, plus `SHA256SUMS`
+for those labels and every photo they use. Never edit anything under `versions/`.
+`python -m detect.build_dataset --version v1` checks the sums first and stops if anything changed.
+
+Adding photos or fixing boxes:
+
+1. Put new photos in `images/` under new, unique file names. Never overwrite, rename or delete a
+   photo already there (v1 depends on it; the checksums catch it).
+2. Add their rows to the working `manifest.csv` and `boxes.csv` in this folder (box fixes go here
+   too). Give new roofs new `group` values.
+3. Photos that were `test` in an earlier version stay `test`, so scores stay comparable.
+4. When the batch is ready, freeze it: `python -m detect.freeze v2`. It refuses to overwrite a
+   version or move an old test photo.

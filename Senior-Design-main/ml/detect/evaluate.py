@@ -17,7 +17,7 @@ from pathlib import Path
 
 from ultralytics import YOLO
 
-from detect.build_dataset import CLASSES
+from detect.build_dataset import CLASSES, label_dir
 
 
 def photo_level(model, rows, dataset, conf, out):
@@ -59,6 +59,7 @@ def main():
     parser.add_argument("--weights", required=True)
     parser.add_argument("--data", default="data/det/yolo/data.yaml")
     parser.add_argument("--dataset", type=Path, default=Path("dataset"))
+    parser.add_argument("--version", help="frozen label snapshot the model was trained on, e.g. v1")
     parser.add_argument("--split", default="test", choices=("val", "test"))
     parser.add_argument("--conf", type=float, default=0.25)
     parser.add_argument("--out", type=Path, default=Path("reports/latest"))
@@ -71,11 +72,11 @@ def main():
     for i, c in enumerate(val.box.ap_class_index):
         boxes["per_class_AP50"][CLASSES[int(c)]] = round(float(val.box.ap50[i]), 3)
 
-    rows = [r for r in csv.DictReader(open(args.dataset / "manifest.csv", newline=""))
+    rows = [r for r in csv.DictReader(open(label_dir(args.dataset, args.version) / "manifest.csv", newline=""))
             if r["split"] == args.split and r["label"] != "unusable"]
     photos, confusion, details = photo_level(model, rows, args.dataset, args.conf, args.out)
 
-    report = {"weights": args.weights, "split": args.split, "conf": args.conf, "boxes": boxes, "photos": photos,
+    report = {"weights": args.weights, "dataset_version": args.version or "working", "split": args.split, "conf": args.conf, "boxes": boxes, "photos": photos,
               "confusion_truth_by_pred": confusion}
     json.dump(report, open(args.out / "metrics.json", "w"), indent=2)
     with open(args.out / "photos.csv", "w", newline="") as f:
