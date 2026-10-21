@@ -118,3 +118,40 @@ def test_review_export_and_apply(tmp_path):
     assert updated["1000001.jpg"]["damage_type"] == "hail"
     assert (updated["1000001.jpg"]["hail"], updated["1000001.jpg"]["wind"]) == ("1", "0")
     assert review.apply(manifest, out) == []
+
+
+def test_review_severe_folder(tmp_path):
+    from roofml import review
+
+    root = tmp_path / "images"
+    root.mkdir()
+    fields = ["path", "label", "confidence", "damage_type", "hail", "wind", "missing_shingles", "types_confidence", "notes"]
+    rows = [["1000001.jpg", "damaged", "high", "missing_shingles", "0", "0", "1", "high", ""],
+            ["1000002.jpg", "damaged", "high", "wind", "0", "1", "0", "high", ""]]
+    for r in rows:
+        textured().save(root / r[0])
+    manifest = tmp_path / "m.csv"
+    with open(manifest, "w", newline="") as f:
+        w = csv.writer(f)
+        w.writerow(fields)
+        w.writerows(rows)
+
+    out = tmp_path / "review"
+    review.export(manifest, root, out)
+    (out / "severe").mkdir()
+    (out / "missing_shingles" / "missing_shingles__1000001.jpg").rename(out / "severe" / "x__1000001.jpg")
+    assert review.apply(manifest, out) == [("1000001", "missing_shingles", "severe")]
+    updated = {r["path"]: r for r in csv.DictReader(open(manifest))}
+    assert updated["1000001.jpg"]["label"] == "unusable"
+    assert (updated["1000001.jpg"]["severe"], updated["1000001.jpg"]["damage_type"]) == ("1", "")
+    assert updated["1000002.jpg"]["severe"] == "0"
+
+
+def test_check_severe_rejects_severe_damage_rows():
+    from detect.build_dataset import check_severe
+
+    check_severe([{"path": "a.jpg", "label": "unusable", "severe": "1", "damage_type": ""},
+                  {"path": "b.jpg", "label": "damaged", "severe": "0", "damage_type": "wind", "wind": "1"},
+                  {"path": "c.jpg", "label": "damaged", "damage_type": "hail"}])
+    with pytest.raises(ValueError, match="severe"):
+        check_severe([{"path": "a.jpg", "label": "damaged", "severe": "1", "damage_type": "wind", "wind": "1"}])

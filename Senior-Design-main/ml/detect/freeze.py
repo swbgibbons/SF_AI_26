@@ -4,7 +4,8 @@
 
 Copies both files to dataset/versions/v2/ and writes SHA256SUMS covering them and every photo
 they reference. Refuses to overwrite an existing version, and refuses if a photo that an earlier
-version used has changed, or if a test photo from an earlier version moved to another split.
+version used has changed, if a test photo from an earlier version moved to another split, or if
+a photo marked severe is also labeled as wind, hail or missing_shingles.
 """
 
 import argparse
@@ -13,7 +14,7 @@ import hashlib
 import shutil
 from pathlib import Path
 
-from detect.build_dataset import verify
+from detect.build_dataset import check_severe, verify
 
 
 def main():
@@ -26,6 +27,7 @@ def main():
     if out.exists():
         raise SystemExit(f"{out} already exists; frozen versions are never overwritten.")
     rows = list(csv.DictReader(open(root / "manifest.csv", newline="")))
+    check_severe(rows)
     split_of = {r["path"]: r["split"] for r in rows}
     for old in sorted((root / "versions").iterdir()):
         verify(root, old.name)

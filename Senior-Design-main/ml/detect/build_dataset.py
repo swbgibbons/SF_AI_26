@@ -39,6 +39,19 @@ def verify(dataset, version):
         raise ValueError(f"dataset {version} changed ({len(bad)} files), e.g. {bad[:3]}. Frozen versions must not be edited.")
 
 
+def check_severe(rows):
+    """Raise if a photo marked severe also carries a damage label or type.
+
+    Severe structural damage (holes through the roof, collapse) is unusable by sponsor rule, so a
+    severe photo must not also be wind, hail or missing_shingles. Manifests without the column pass.
+    """
+    bad = [r["path"] for r in rows if r.get("severe") == "1" and (
+        r["label"] != "unusable" or r.get("damage_type") or any(r.get(c) == "1" for c in CLASSES))]
+    if bad:
+        raise ValueError(f"{len(bad)} severe photos are also labeled as damage, e.g. {bad[:3]}. "
+                         "Decide which it is: severe (label unusable, no damage type) or damaged (severe 0).")
+
+
 def label_dir(dataset, version=None):
     if version is None:
         return dataset
@@ -57,6 +70,7 @@ def load(dataset, version=None):
 
 def build(dataset, out, version=None):
     rows, boxes = load(dataset, version)
+    check_severe(rows)
     if out.exists():
         shutil.rmtree(out)
     coco = {s: {"images": [], "annotations": [], "categories": [{"id": i, "name": c} for i, c in enumerate(CLASSES)]}

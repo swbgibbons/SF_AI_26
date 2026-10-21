@@ -9,6 +9,7 @@ need a human check, starting with everything not marked `high`.
 |---|---|
 | path | relative to this folder (use `--images-root dataset`) |
 | label | damaged / undamaged / unusable (what the model trains on) |
+| severe | 1 when the photo is unusable because of severe structural damage (sponsor rule below), else 0 |
 | group | photos of the same roof or the same iStock upload batch share a group, so they never split across train/test |
 | split | train / val / test, assigned by group |
 | confidence | high / medium / low: how sure the first pass is. Review low and medium first |
@@ -41,6 +42,11 @@ checks that they are the exact files v1 was trained on.
   still covering) stays `damaged`. Reclassified rows keep their old type in `notes`
   ("severe structural damage, unusable per sponsor (was wind): ...") and keep their boxes in
   `boxes.csv`; unusable photos are left out of detector training and evaluation.
+  Mark these rows `severe` = 1. Before marking a new photo severe, check it against the damage
+  types: if the roof covering is still in place over its structure, it is wind, hail or
+  missing_shingles, not severe. `build_dataset` and `freeze` refuse a manifest where a severe photo
+  is also labeled damaged or has a damage type, and `roofml.review export` puts severe photos in
+  their own `severe` folder so they can be compared side by side with the damage folders.
 
 ## Review
 
