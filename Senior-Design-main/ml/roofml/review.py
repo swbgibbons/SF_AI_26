@@ -7,7 +7,10 @@ Review labels by eye, and apply corrections made by moving files between folders
     # after moving wrongly labeled photos into the right folder:
     python -m roofml.review apply --manifest dataset/manifest.csv --review review
 
-Folders: wind, missing_shingles, hail (damaged photos, one type each), undamaged, unusable.
+Folders: wind, missing_shingles, hail (damaged photos, one type each), undamaged, unusable, and
+severe (unusable because of holes through the roof or collapse, sponsor rule). Before leaving a photo
+in severe, check it against the damage folders: if the roof still covers its structure (shingles
+stripped to the deck, broken tiles in place), it belongs in wind, hail or missing_shingles instead.
 Files are named <folder>__<photo id>.jpg; only the folder a file sits in matters on apply.
 """
 
@@ -20,11 +23,12 @@ from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont, ImageOps
 
 DAMAGE_TYPES = ["wind", "missing_shingles", "hail"]
-FOLDERS = DAMAGE_TYPES + ["undamaged", "unusable"]
+FOLDERS = DAMAGE_TYPES + ["undamaged", "unusable", "severe"]
 COLORS = {"wind": (25, 118, 210), "missing_shingles": (230, 81, 0), "hail": (123, 31, 162),
-          "undamaged": (46, 125, 50), "unusable": (97, 97, 97)}
+          "undamaged": (46, 125, 50), "unusable": (97, 97, 97), "severe": (183, 28, 28)}
 TITLES = {"wind": "WIND DAMAGE", "missing_shingles": "MISSING / BROKEN SHINGLES",
-          "hail": "HAIL DAMAGE", "undamaged": "UNDAMAGED", "unusable": "UNUSABLE"}
+          "hail": "HAIL DAMAGE", "undamaged": "UNDAMAGED", "unusable": "UNUSABLE",
+          "severe": "SEVERE (UNUSABLE)"}
 
 
 def photo_id(path):
@@ -33,6 +37,8 @@ def photo_id(path):
 
 
 def folder_of(row):
+    if row.get("severe") == "1":
+        return "severe"
     if row["label"] == "damaged":
         return row.get("damage_type") or "wind"
     return row["label"]
@@ -95,6 +101,10 @@ def apply(manifest, review):
             if r is None or folder_of(r) == folder:
                 continue
             changes.append((photo_id(f), folder_of(r), folder))
+            if folder == "severe" or "severe" in r:
+                for row in rows:  # keep every row's columns the same
+                    row.setdefault("severe", "0")
+                r["severe"] = "1" if folder == "severe" else "0"
             if folder in DAMAGE_TYPES:
                 r["label"] = "damaged"
                 r["damage_type"] = folder
@@ -102,7 +112,7 @@ def apply(manifest, review):
                     r[t] = "1" if t == folder else "0"
                 r["types_confidence"] = "high"  # a person checked it
             else:
-                r["label"] = folder
+                r["label"] = "unusable" if folder == "severe" else folder
                 r["damage_type"] = r["types_confidence"] = ""
                 for t in DAMAGE_TYPES:
                     r[t] = ""
