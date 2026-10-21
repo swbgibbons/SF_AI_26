@@ -34,6 +34,13 @@ checks that they are the exact files v1 was trained on.
   inspectable roof, a collage, a roof under construction or being re-roofed, a flat or metal-sheet
   roof (out of scope), or a surface too dark to see. Technically bad photos (tiny, blurry, dark)
   are caught by the quality gate in code and don't need this label.
+- **Severe structural damage is unusable** (sponsor rule, 2026-10-21): when a hole goes through the
+  whole roof and the battens, rafters, trusses, attic or sky show through it, or the roof has
+  collapsed, label the photo `unusable`, not `damaged`. These roofs are past repair assessment.
+  Damage that stops at the deck or underlayment (shingles stripped to felt or plywood, broken tiles
+  still covering) stays `damaged`. Reclassified rows keep their old type in `notes`
+  ("severe structural damage, unusable per sponsor (was wind): ...") and keep their boxes in
+  `boxes.csv`; unusable photos are left out of detector training and evaluation.
 
 ## Review
 
@@ -45,10 +52,13 @@ red low): `undamaged_*.jpg`, `unusable_*.jpg`, `damaged_to_check_*.jpg`. To fix 
 
 | | damaged | undamaged | unusable |
 |---|---|---|---|
-| train | 147 | 13 | 10 |
-| val | 29 | 4 | 2 |
-| test | 29 | 3 | 2 |
-| total | 205 | 20 | 14 |
+| train | 106 | 13 | 51 |
+| val | 18 | 4 | 13 |
+| test | 21 | 3 | 10 |
+| total | 145 | 20 | 74 |
+
+These are the working labels after the severe-damage rule moved 60 photos from damaged to unusable
+(40 missing_shingles, 20 wind; 8 of them in test). v1 had 205 / 20 / 14.
 
 Damaged material: 134 asphalt, 47 clay tile, the rest concrete tile, slate and other.
 Damage hints: 127 wind, 61 missing/broken, only 5 possible hail (all low confidence).
@@ -69,9 +79,11 @@ Undamaged and unusable rows leave these blank.
 
 | type | total | train | val | test |
 |---|---|---|---|---|
-| wind | 130 | 99 | 14 | 17 |
-| missing_shingles | 70 | 47 | 13 | 10 |
+| wind | 110 | 80 | 14 | 16 |
+| missing_shingles | 30 | 25 | 2 | 3 |
 | hail | 5 | 1 | 2 | 2 |
+
+(v1: wind 130, missing_shingles 70, hail 5.)
 
 Most missing_shingles photos are old or broken clay tile, slate or concrete tile; most wind photos
 are hurricane-stripped asphalt. Hail is too rare to train on; it needs its own photos.
