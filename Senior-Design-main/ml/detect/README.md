@@ -30,6 +30,17 @@ pip install gradio && python -m detect.demo   # upload-a-photo demo at http://12
 Trained v1 weights (`best.pt`, `best.onnx`) are kept out of git; ask the team for the copy in the
 project files (`models/v1/`) and place it at `runs/detect/v1/weights/`.
 
+To train RF-DETR on the same data and score it against YOLO with one scorer
+(results in `reports/yolo_vs_rfdetr.md`):
+
+```bash
+pip install "rfdetr[train]"
+python -m detect.train_rfdetr --data data/det-v1/coco --size nano --epochs 40 --name rfdetr-n-v1
+python -m detect.compare --version v1 --split test --out reports/compare_v1_test \
+    --model yolo:runs/detect/v1/weights/best.pt \
+    --model rfdetr-nano:runs/rfdetr/rfdetr-n-v1/checkpoint_best_total.pth
+```
+
 `evaluate` reports box mAP per class and photo-level results (right type, damage found, clean
 roofs left clean), and saves every test photo with its predicted boxes, named
 `<truth>__as__<prediction>__<file>`.

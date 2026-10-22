@@ -1,0 +1,75 @@
+{
+  "split": "test",
+  "dataset_version": "v1",
+  "photos": 32,
+  "models": {
+    "yolo:runs/detect/v1-seed1/weights/best.pt": {
+      "boxes": {
+        "mAP50": 0.191,
+        "mAP50_95": 0.112,
+        "per_class_AP50": {
+          "wind": 0.414,
+          "hail": 0.0,
+          "missing_shingles": 0.16
+        }
+      },
+      "photos": {
+        "conf_0.25": {
+          "type_accuracy_on_damaged": "18/29",
+          "damage_found": "23/29",
+          "clean_roofs_left_clean": "1/3",
+          "per_type_recall": {
+            "wind": "11/17",
+            "hail": "0/2",
+            "missing_shingles": "7/10"
+          }
+        },
+        "conf_0.5": {
+          "type_accuracy_on_damaged": "8/29",
+          "damage_found": "9/29",
+          "clean_roofs_left_clean": "3/3",
+          "per_type_recall": {
+            "wind": "7/17",
+            "hail": "0/2",
+            "missing_shingles": "1/10"
+          }
+        }
+      },
+      "cpu_ms_per_photo": 43.4
+    },
+    "rfdetr-nano:runs/rfdetr/rfdetr-n-v1-seed1/checkpoint_best_ema.pth": {
+      "boxes": {
+        "mAP50": 0.24,
+        "mAP50_95": 0.136,
+        "per_class_AP50": {
+          "wind": 0.439,
+          "hail": 0.0,
+          "missing_shingles": 0.28
+        }
+      },
+      "photos": {
+        "conf_0.25": {
+          "type_accuracy_on_damaged": "22/29",
+          "damage_found": "26/29",
+          "clean_roofs_left_clean": "2/3",
+          "per_type_recall": {
+            "wind": "15/17",
+            "hail": "0/2",
+            "missing_shingles": "7/10"
+          }
+        },
+        "conf_0.5": {
+          "type_accuracy_on_damaged": "10/29",
+          "damage_found": "12/29",
+          "clean_roofs_left_clean": "2/3",
+          "per_type_recall": {
+            "wind": "7/17",
+            "hail": "0/2",
+            "missing_shingles": "3/10"
+          }
+        }
+      },
+      "cpu_ms_per_photo": 159.5
+    }
+  }
+}
