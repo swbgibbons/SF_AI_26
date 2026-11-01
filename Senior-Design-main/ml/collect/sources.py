@@ -40,6 +40,18 @@ NEGATIVE_WORDS = ("meme", "invoice", "quote me", "estimate", "price", "how much"
                   "metal roof", "tile roof", "car ", "windshield", "skylight leak")
 
 
+DAMAGE_WORDS = ("damage", "damaged", "storm", "hurricane", "tornado", "hail", "wind", "missing", "blown",
+                "torn", "broken", "repair", "tarp", "leak", "destroyed", "lifted", "creased")
+
+
+def is_damage_photo_title(text):
+    """Stricter check for library searches (Openverse, Wikimedia), whose full-text search also
+    matches old book scans and scenery: needs a roof word AND a damage word."""
+    t = " " + (text or "").lower() + " "
+    return any(w in t for w in ROOF_WORDS) and any(w in t for w in DAMAGE_WORDS) \
+        and not re.search(r"\((1[5-9]\d\d)\)", t)  # "Title (1905)" = Internet Archive book scan
+
+
 def guess_type(text):
     """Best-guess damage type from a title/description. Returns (type, relevant)."""
     t = " " + (text or "").lower() + " "
@@ -122,7 +134,9 @@ class Reddit:
                         "q": q, "restrict_sr": 1, "sort": "relevance", "t": self.time_filter,
                         "limit": 100, "after": after, "raw_json": 1, "type": "link"})
                     if not r.ok:
-                        print(f"  reddit r/{sub} '{q}': HTTP {r.status_code}, skipping")
+                        hint = " (Reddit blocks anonymous cloud requests: set REDDIT_CLIENT_ID/SECRET)" \
+                            if r.status_code == 403 and not self.headers else ""
+                        print(f"  reddit r/{sub} '{q}': HTTP {r.status_code}, skipping{hint}")
                         break
                     data = r.json()["data"]
                     for child in data["children"]:
@@ -191,7 +205,12 @@ def pin_id(url):
 
 
 class Pinterest:
-    """Pinterest without scraping search results (which Pinterest's terms forbid). Two inputs:
+    """Pinterest without scraping search results (which Pinterest's terms forbid).
+
+    Pinterest's robots.txt currently disallows every unlisted bot from the whole site (RSS feeds and
+    pin pages included), and the collector honours that, so in practice the route that works is the
+    official API: set PINTEREST_ACCESS_TOKEN and pass boards you own. The RSS and pin-page paths
+    stay for the case where Pinterest allows them again. Inputs:
 
     * boards: public board URLs. Pinterest publishes an RSS feed per board (the most recent ~25-50
       pins). Save pins you like to a board while browsing, then run this to fetch them all.
@@ -216,7 +235,12 @@ class Pinterest:
                 yield c
 
     def _board_rss(self, board):
-        r = self.net.get(board_rss_url(board))
+        rss = board_rss_url(board)
+        if not self.net.allowed(rss):
+            print(f"  pinterest: robots.txt disallows automated reads of {rss}. Set PINTEREST_ACCESS_TOKEN "
+                  "(official API, boards you own) instead; see collect/README.md")
+            return
+        r = self.net.get(rss)
         if not r.ok:
             print(f"  pinterest board {board}: HTTP {r.status_code} (is the board public?)")
             return
@@ -313,7 +337,8 @@ class Openverse:
                     yield Candidate("openverse", f"{it.get('source', 'ov')}_{it['id'][:12]}", it["url"],
                                     it.get("foreign_landing_url") or "", it.get("title") or "",
                                     it.get("creator") or "", lic, q,
-                                    extra={"text": text, "license_url": it.get("license_url") or ""})
+                                    extra={"text": text, "strict": True,
+                                           "license_url": it.get("license_url") or ""})
                 if len(results) < 20:
                     break
 
@@ -337,7 +362,7 @@ class Wikimedia:
             r = self.net.get(self.API, params={
                 "action": "query", "format": "json", "generator": "search", "gsrnamespace": 6,
                 "gsrsearch": f"{q} filetype:bitmap", "gsrlimit": self.per_query, "prop": "imageinfo",
-                "iiprop": "url|size|mime|extmetadata", "iiurlwidth": 1600})
+                "iiprop": "url|size|mime|extmetadata", "iiurlwidth": 1280})
             if not r.ok:
                 print(f"  wikimedia '{q}': HTTP {r.status_code}")
                 continue
@@ -351,7 +376,7 @@ class Wikimedia:
                 yield Candidate("wikimedia", str(page.get("pageid")), info.get("thumburl") or info["url"],
                                 info.get("descriptionurl", ""), title, strip("Artist"),
                                 strip("LicenseShortName"), q,
-                                extra={"text": f"{title} {strip('ImageDescription')} {strip('Categories')}"})
+                                extra={"text": f"{title} {strip('Categories')}", "strict": True})
 
 
 # ---------------------------------------------------------------- plain URL list

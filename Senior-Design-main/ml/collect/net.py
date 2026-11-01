@@ -56,7 +56,12 @@ class Http:
             self._wait(url)
             r = self.session.get(url, **kw)
             if r.status_code == 429 or r.status_code >= 500:
-                time.sleep(int(r.headers.get("Retry-After", 0) or 0) or 10 * (attempt + 1))
+                try:
+                    wait = int(r.headers.get("Retry-After", 0) or 0)
+                except ValueError:
+                    wait = 0
+                if attempt + 1 < retries:  # capped: one slow host shouldn't stall the whole run
+                    time.sleep(min(wait or 10 * (attempt + 1), 60))
                 continue
             return r
         return r

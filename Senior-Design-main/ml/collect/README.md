@@ -55,22 +55,28 @@ python -m collect --sources reddit \
   --reddit-url "https://www.reddit.com/r/Roofing/search/?q=wind+damage&type=media"
 ```
 
-### Pinterest: save pins to a board, then pull the board
+### Pinterest: save pins to a board, then pull the board with the official API
 
-Pinterest's terms forbid scraping search results, so the tool doesn't crawl Pinterest search.
-Instead it removes the tedious part: while browsing, **save pins to a board** (one click each), then
+Pinterest's terms forbid scraping, and its robots.txt disallows every unlisted bot from the whole
+site (search, pin pages and board RSS feeds). The collector honours that, so the route that works
+is Pinterest's **official API** for boards you own:
+
+1. While browsing, **save pins to one of your boards** (one click each).
+2. Create an app at <https://developers.pinterest.com/apps/> (trial access is enough to read your
+   own boards) and generate an access token with the `boards:read` and `pins:read` scopes.
+3. Run:
 
 ```bash
+export PINTEREST_ACCESS_TOKEN=pina_...
 python -m collect --sources pinterest --pinterest-board https://www.pinterest.com/<you>/<board>/
 ```
 
-- A public board is read from its RSS feed, which only lists the most recent ~25–50 pins, so run
-  it every so often or use a fresh board per batch.
-- To get every pin on a board you own, create an app at <https://developers.pinterest.com/>,
-  generate an access token with `boards:read` and `pins:read`, and set `PINTEREST_ACCESS_TOKEN`.
-- Or put pin links (including `pin.it` short links) in a text file, one per line, and pass
-  `--pin-list pins.txt`. The tool reads the image from the pin and downloads the full-size file
-  from Pinterest's image server; it never follows the pin to the original website.
+It downloads the full-size image of every pin on the board straight from Pinterest's image server,
+never the website the pin links to.
+
+If you'd rather not set up the API, right-click an image on Pinterest, choose "Copy image address",
+paste the `i.pinimg.com/...` links into a text file and run `--sources urls --url-list file.txt`; each
+link is upgraded to the full-size original.
 
 ## Common options
 

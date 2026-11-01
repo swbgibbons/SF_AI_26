@@ -115,7 +115,10 @@ def main(argv=None):
             print(f"== {name}")
             try:
                 for cand in source:
-                    kind, relevant = S.guess_type(cand.extra.get("text") or cand.title)
+                    text = cand.extra.get("text") or cand.title
+                    kind, relevant = S.guess_type(text)
+                    if cand.extra.get("strict"):
+                        relevant = S.is_damage_photo_title(text)
                     # Pinterest boards / URL lists are hand-picked, so they skip the topic filter.
                     if not relevant and cand.source in ("reddit", "openverse", "wikimedia") \
                             and not args.keep_off_topic:

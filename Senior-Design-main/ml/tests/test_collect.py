@@ -75,6 +75,13 @@ def test_guess_type():
     assert S.guess_type("Wind damage to my fence")[1] is False
 
 
+def test_library_titles_need_roof_and_damage_words():
+    assert S.is_damage_photo_title("Algiers Hurricane Isaac Damaged Roof 1.JPG")
+    assert not S.is_damage_photo_title("American homes and gardens (1905) roof")
+    assert not S.is_damage_photo_title("Coast watch (1979) storm roof damage")
+    assert not S.is_damage_photo_title("New roof on church")
+
+
 # ---------------------------------------------------------------- pinterest
 
 def test_pinimg_original_and_board_rss():
