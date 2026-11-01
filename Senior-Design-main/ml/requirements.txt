@@ -6,3 +6,4 @@ pillow>=10.0
 onnx>=1.16
 onnxruntime>=1.18
 pytest>=8.0
+requests>=2.31
