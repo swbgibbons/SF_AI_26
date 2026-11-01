@@ -44,6 +44,12 @@ Edit the `group` column so **every photo of the same roof shares one group**; sp
 group, so near-identical shots never end up in both train and test. Re-run with
 `--manifest data/manifest.csv` to redo splits after editing (delete the `split` column first).
 
+## Finding more photos
+
+`python -m collect` downloads wind / missing-shingle / hail photos from Reddit, Pinterest boards,
+Openverse and Wikimedia into a review folder, deduplicated against what we already have. See
+`collect/README.md`.
+
 ## Reviewing labels
 
 `python -m roofml.review export ...` makes stamped copies sorted into one folder per label; move
