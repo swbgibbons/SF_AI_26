@@ -1,0 +1,264 @@
+image_id,file,label,confidence,labeled_by,source,license,folder
+p5-001,s2_DJI_0212size11900464_jpg.rf.3c60711c05e3be1f3aa8fb366a026ba5.jpg,none,5,Hugo (validated),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),no_damage_train
+p5-002,s2_DJI_0212size11900464_jpg.rf.a28e070cb9058c5eb3d34d3ddc3f5928.jpg,none,5,Hugo (validated),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),no_damage_train
+p5-003,s2_DJI_0218size11341347_jpg.rf.552a85df62fcf000e1290103dfee5b03.jpg,none,4,Hugo (validated),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),no_damage_train
+p5-004,s2_DJI_0218size11341347_jpg.rf.ca3889375392a05aa0ea9687e08a62ff.jpg,none,4,Hugo (validated),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),no_damage_train
+p5-005,s2_DJIw_379_jpg.rf.e799566b16ca71fcdd1d3283e312f4a1.jpg,none,5,Hugo (validated),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),no_damage_train
+p5-006,s2_DJIw_382_jpg.rf.07c6e73267c9449d4e31a2d203ec2ca7.jpg,none,5,Hugo (validated),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),no_damage_train
+p5-007,s2_DJIw_391_jpg.rf.5f61ad89c84101c960d257bf94579885.jpg,missing_shingles,2,Hugo (validated) - flagged for 2nd look,"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),no_damage_train
+p5-008,s2_DJIw_436_JPG.rf.b81d254e4b989c575eb1902ec75c65f0.jpg,none,4,Hugo (validated),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),no_damage_train
+p5-009,s1_DJI_0009size13755525_jpg.rf.5d26b97c7d47de564c5319988f1b87fa.jpg,hail,2,Hugo (validated),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-010,s1_DJI_0009size13755525_jpg.rf.b38ddfd88f6d900894fffcdfb0815f0e.jpg,hail,2,Hugo (validated),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-011,s1_DJI_0181size12735018_jpg.rf.93ad82821969ce437632ee8cc654035f.jpg,hail,3,Hugo (validated),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-012,s1_DJIw_384_jpg.rf.2ab178647a79b7f24ddf816380c8337e.jpg,hail,2,Hugo (validated),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-013,s1_DJIw_384_jpg.rf.5e8f22f29570d864d47a5f6a5ee2190b.jpg,hail,3,Hugo (validated),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-014,s1_DJIw_384_jpg.rf.64ecc7440f1e66c0f62eadb8fa2fba4a.jpg,hail,3,Hugo (validated),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-015,s1_DJIw_384_jpg.rf.c2da8fa712baa4a4c3971c86bdbb2d4a.jpg,hail,2,Hugo (validated),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-016,s1_DJIw_384_jpg.rf.c342dae3e7eb753d5bbec78821b160f7.jpg,unusable,1,Hugo (validated) - flagged for 2nd look,"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-017,s1_DJIw_384_jpg.rf.c8003f4eb228a17f2d366d3c37282118.jpg,unusable,1,Hugo (validated),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-018,s1_DJIw_388_jpg.rf.0aea09eaec96c327f2d69c2ca87dc114.jpg,hail,2,Hugo (validated),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-019,s1_DJIw_388_jpg.rf.508f8b38f3077b43bc34ea405cbf366a.jpg,hail,2,Hugo (validated) - flagged for 2nd look,"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-020,s1_DJIw_390_jpg.rf.13439e89bead356ea9175e439892ebff.jpg,hail,2,Hugo (validated) - flagged for 2nd look,"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-021,s1_DJIw_390_jpg.rf.457d3e93fee709618b43f0dfbd1d8383.jpg,wind,4,Hugo (validated) - flagged for 2nd look,"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-022,s1_DJIw_390_jpg.rf.6b671631c74dd28ba9e2c1f57fc51197.jpg,hail,2,Hugo (validated) - flagged for 2nd look,"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-023,s1_DJIw_390_jpg.rf.7dcf2a6c6731f26e06ad4282377e804f.jpg,hail,2,Hugo (validated) - flagged for 2nd look,"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-024,s1_DJIw_390_jpg.rf.8bf973d7597c1565f93fc4fc5e6968e1.jpg,missing_shingles,5,Hugo (validated) - flagged for 2nd look,"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-025,s1_DJIw_390_jpg.rf.91f2024bc018f8e13edae07ae42e0f42.jpg,missing_shingles,4,Hugo (validated),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-026,s1_DJIw_390_jpg.rf.aafa057f758a709d32124bd37a985b10.jpg,missing_shingles,4,Hugo (validated) - flagged for 2nd look,"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-027,s1_DJIw_390_jpg.rf.ae6d21ae7f84cb2a38faf68b3c886edc.jpg,missing_shingles,4,Hugo (validated) - flagged for 2nd look,"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-028,s1_DJIw_390_jpg.rf.b44c1508dab3dac4c2640375d8a79fc2.jpg,missing_shingles,4,Hugo (validated) - flagged for 2nd look,"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-029,s1_DJIw_390_jpg.rf.bc5c6933b1a8d59414c97202d52bad6f.jpg,missing_shingles,4,Hugo (validated) - flagged for 2nd look,"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-030,s1_DJIw_390_jpg.rf.dc529e131dd960c649605679e7065e27.jpg,wind,4,Hugo (validated) - flagged for 2nd look,"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-031,s1_DJIw_390_jpg.rf.de9fa6945e634fa2091d6203b34101be.jpg,wind,2,Hugo (validated) - flagged for 2nd look,"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-032,s1_DJIw_390_jpg.rf.eba013b03d9274eaa48b9b02ff5eba2c.jpg,hail,4,Hugo (validated) - flagged for 2nd look,"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-033,s1_DJIw_390_jpg.rf.ee3c5738b1082010fc14de0df9fcc0b9.jpg,wind,4,Hugo (validated) - flagged for 2nd look,"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-034,s1_DJIw_390_jpg.rf.efd2fa91253e7c5217447d967edb8d4c.jpg,hail,4,Hugo (validated) - flagged for 2nd look,"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-035,s1_DJIw_390_jpg.rf.fae90473341af552f7b220216152d208.jpg,wind,4,Hugo (validated) - flagged for 2nd look,"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-036,s1_DJIw_393_jpg.rf.c6aad2ee6bf8a33d8e390e66ab8f36fe.jpg,hail,5,Hugo (validated) - flagged for 2nd look,"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-037,s1_DJIw_393_jpg.rf.db1b6193af60d2f86d120b328fbaece4.jpg,unusable,5,Hugo (validated) - flagged for 2nd look,"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-038,s1_DJIw_394_jpg.rf.0457f038190eb0d05f847c9426dc20ac.jpg,hail,5,Hugo (validated) - flagged for 2nd look,"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-039,s1_DJIw_394_jpg.rf.2a9cc1ea5917c0684b5f00526685e990.jpg,hail,5,Hugo (validated) - flagged for 2nd look,"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-040,s1_DJIw_394_jpg.rf.342db01a60a88db5af5e338cd6e3d3fd.jpg,hail,3,Hugo (validated),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-041,s1_DJIw_394_jpg.rf.692aa1056ccc5d6e9def0fb0cdf49782.jpg,hail,3,Hugo (validated) - flagged for 2nd look,"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-042,s1_DJIw_394_jpg.rf.a7ef482d379bf373e683944b45b880c6.jpg,hail,3,Hugo (validated) - flagged for 2nd look,"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-043,s1_DJIw_394_jpg.rf.b1ea8fafee8de535f5cfefa89f22dded.jpg,hail,4,Hugo (validated) - flagged for 2nd look,"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-044,s1_DJIw_394_jpg.rf.d53d3b5477d8576be37d8d04f59675d2.jpg,unusable,5,Hugo (validated) - flagged for 2nd look,"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-045,s1_DJIw_395_jpg.rf.00c3dd6ab89442316cc4448835e305e7.jpg,hail,3,Hugo (validated) - flagged for 2nd look,"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-046,s1_DJIw_395_jpg.rf.16c35457b7ca429143e2bdb80a1d9bde.jpg,hail,3,Hugo (validated) - flagged for 2nd look,"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-047,s1_DJIw_395_jpg.rf.3ab5ece157d0f1e1cd1ef714acb697fb.jpg,hail,3,Hugo (validated) - flagged for 2nd look,"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-048,s1_DJIw_395_jpg.rf.3b7cc728153f1da7723e4e8a865bff71.jpg,hail,3,Hugo (validated) - flagged for 2nd look,"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-049,s1_DJIw_395_jpg.rf.43d8969e140aefa8762cc5275a027e8c.jpg,hail,3,Hugo (validated) - flagged for 2nd look,"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-050,s1_DJIw_395_jpg.rf.61417e388ac812486971823f0e441561.jpg,hail,2,Hugo (validated) - flagged for 2nd look,"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-051,s1_DJIw_395_jpg.rf.729ad8ea54b93fcbdbf8a15919494c4c.jpg,hail,3,Hugo (validated) - flagged for 2nd look,"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-052,s1_DJIw_395_jpg.rf.8076009afcc7b43a5525585a1adf7f31.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-053,s1_DJIw_395_jpg.rf.88e0897cae4c24b7a5a8fa6e34f6d1f4.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-054,s1_DJIw_395_jpg.rf.899fc7b0ee81024c655fe0bbf93aa04e.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-055,s1_DJIw_395_jpg.rf.a0fb364d4af9fbc70d8a75b0255833ca.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-056,s1_DJIw_395_jpg.rf.bc470638b4faf22ef7551fd08326b417.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-057,s1_DJIw_395_jpg.rf.e0b71b6a4a632353cf906b5b010d197a.jpg,hail,4,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-058,s1_DJIw_401_jpg.rf.4f38eae207ca8d1b8ccb0f4402b48df1.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-059,s1_DJIw_402_jpg.rf.4289e3d5c5ab86e4dd8d0dddd33c0cb1.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-060,s1_DJIw_402_jpg.rf.65571911ded8303ddf4bb34f7075544f.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-061,s1_DJIw_402_jpg.rf.fde7476b9300b2b2b5087af61c12729c.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-062,s1_DJIw_403_jpg.rf.57fa64f63f168916f55dbef65b8cef93.jpg,unusable,5,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-063,s1_DJIw_403_jpg.rf.59c5ae84e46419e1d29429ac18e667f8.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-064,s1_DJIw_403_jpg.rf.6e65a0b126a32e65f51a3f871c661a3e.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-065,s1_DJIw_404_jpg.rf.5d172b9577b7f812abec1afc81c522fc.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-066,s1_DJIw_404_jpg.rf.8293608df9704840047a16e25f4fa201.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-067,s1_DJIw_405_jpg.rf.2bf3564f35f478791caa8e83e013a5f6.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-068,s1_DJIw_405_jpg.rf.66268171cb0b5aee39b485484f6334b9.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-069,s1_DJIw_406_jpg.rf.1e8277285b2d2cc453992afc5122b429.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-070,s1_DJIw_406_jpg.rf.70f07793a30c2777fdd51ce8c06c9d6e.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-071,s1_DJIw_406_jpg.rf.c9a8c0cefc97cab8ab9ae04de35d54a0.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-072,s1_DJIw_407_jpg.rf.604e1a9474f3d76ef0498ec83347a0d0.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-073,s1_DJIw_409_jpg.rf.4343897a208fb3ce6d232db62ef640d9.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-074,s1_DJIw_409_jpg.rf.74ea63c8de465f694f42959cd15dd693.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-075,s1_DJIw_409_jpg.rf.bbad5b8827b49081d22ced7f6f5bb585.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-076,s1_DJIw_409_jpg.rf.d726a44d524e03446742a06cd0413205.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-077,s1_DJIw_409_jpg.rf.f4a39c92e4fa09745def5a52a5c3c088.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-078,s1_DJIw_414_jpg.rf.83d5df0e1a4034085555e69d1102b069.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-079,s1_DJIw_414_jpg.rf.86977be4431696a34979e5dae5276ff2.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-080,s1_DJIw_414_jpg.rf.b2679c6b2d99bb96f68022efdaf95f08.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-081,s1_DJIw_416_jpg.rf.13870b92ae4993c64f3a09fabbb55802.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-082,s1_DJIw_416_jpg.rf.2810dd8c7111523ba0daabe297f07ffc.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-083,s1_DJIw_416_jpg.rf.2d564ef78bb5b61f04f992faee05e9df.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-084,s1_DJIw_416_jpg.rf.3a16d02a540f47fc087e2e45180171c1.jpg,hail,4,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-085,s1_DJIw_416_jpg.rf.a36177bc5f9ea64c3ed1cf039581ad9e.jpg,hail,4,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-086,s1_DJIw_416_jpg.rf.ea9a8dab7fe5189ea1d200a60031a9ec.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-087,s1_DJIw_416_jpg.rf.f786c758a7e84433e2a5ad706368ad46.jpg,hail,5,Hugo (flag correction),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-088,s1_DJIw_423_jpg.rf.115ba3e401cadb1f9767e345e848d38a.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-089,s1_DJIw_423_jpg.rf.2b9f29b88b0e11c2423926d77d24ec38.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-090,s1_DJIw_423_jpg.rf.3a78b7f65bc20290afb04a9cb5c6fad5.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-091,s1_DJIw_423_jpg.rf.635215db575ed64cb0676913062c72d8.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-092,s1_DJIw_423_jpg.rf.8e55b14d1a7b1706022766a3d8cacb39.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-093,s1_DJIw_423_jpg.rf.a24337012de4a3c07633f9eb9e844e4b.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-094,s1_DJIw_423_jpg.rf.a86f0c94c0208795b88eea1acd6d0ae9.jpg,unusable,4,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-095,s1_DJIw_423_jpg.rf.aceb883d9d91b2ceab0d8c28f250886a.jpg,unusable,4,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-096,s1_DJIw_423_jpg.rf.c881e79533056b12bd334efd0e68b1ca.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-097,s1_DJIw_423_jpg.rf.ec882b714b84caf079daadcc653fa942.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-098,s1_DJIw_423_jpg.rf.f0a903642cbceac50c461c8e65850df8.jpg,unusable,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-099,s1_DJIw_425_jpg.rf.31f85ac8d426e042e3c6f2069537962c.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-100,s1_DJIw_426_jpg.rf.e2d8949951bc7e8a3e7ea19ac3cac9e7.jpg,hail,1,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-101,s1_DJIw_426_jpg.rf.e8b5e754adfe2488bb9e4727cdbfa1fa.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-102,s1_DJIw_427_jpg.rf.73d1a7f026bc1f57c8a3634304dc44b2.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-103,s1_DJIw_428_jpg.rf.1ebab80dedfb656b14f3d34ef9fc919b.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-104,s1_DJIw_428_jpg.rf.9264ce76081eb0a2f2be112050f966e6.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-105,s1_DJIw_428_jpg.rf.9b0939e313a10508a14ca5c2ea397276.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-106,s1_DJIw_428_jpg.rf.e15399efa54f1e0e20d66cb6113b49ec.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-107,s1_DJIw_429_jpg.rf.97d49a51237c59cf79ae967ab096e49d.jpg,hail,1,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-108,s1_DJIw_431_JPG.rf.9fbaab355ae71da4adfc702474078fc6.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-109,s1_DJIw_434_JPG.rf.a110c93f196cd29be8f64ad0c244599d.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-110,s1_DJIw_435_JPG.rf.33eaa3d7d643e04e1ee1cb87be82ce31.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-111,s1_DJIw_435_JPG.rf.386cb77302bf569d036361e509aeb9fd.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-112,s1_DJIw_435_JPG.rf.6c0cd1f966fa23c01c77b35dbeba2356.jpg,hail,4,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-113,s1_DJIw_435_JPG.rf.a985f0c8c3f3fd56967f37bd9ca0e4e9.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-114,s1_DJIw_435_JPG.rf.da6cbce3142ff79bcd469450c1ae962b.jpg,hail,4,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-115,s1_DJIw_436_JPG.rf.a119da1ae87d60c08f6ec1e8d191de9f.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p5-116,s1_DJIw_436_JPG.rf.c555ce9c4a16468814204f2f319e444e.jpg,hail,1,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-001,s1_DJIw_438_JPG.rf.2bc3149e0c0cfb92b26287cca1809d32.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-002,s1_DJIw_439_JPG.rf.008843c118b13effafe44b33b5c9d4a2.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-003,s1_DJIw_439_JPG.rf.302252aa097dc33a58a10423c7664a11.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-004,s2_DJI_0006size11459643_jpg.rf.2d2a6b20aa3a196495dbaa5dc8cbf432.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-005,s2_DJI_0006size11459643_jpg.rf.4d78734fa8656047c05ca85da93f1a58.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-006,s2_DJI_0007size12391882_jpg.rf.a07bccf7ff5aa76f6567df555301cec3.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-007,s2_DJI_0010size13452784_jpg.rf.44f4f5be3a463248c02275812ed86262.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-008,s2_DJI_0010size13452784_jpg.rf.608d75067222f9dd9e7a5745c28cb8e1.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-009,s2_DJI_0015size11730018_jpg.rf.0d2573f948084c0d82d600b93de63ace.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-010,s2_DJI_0015size11730018_jpg.rf.6d4aca9cf756f7e61f62f13ad12eee95.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-011,s2_DJI_0015size11730018_jpg.rf.727981c9895ad903c2fca4f78240c7ac.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-012,s2_DJI_0026size13022406_jpg.rf.152a223def9443808fe27ab588245a46.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-013,s2_DJI_0026size13022406_jpg.rf.47ac12ab7aacefad0bc47935221ecccd.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-014,s2_DJI_0028size11627779_jpg.rf.21fbf6c9ae9b0a2c5a3e66b1b204f539.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-015,s2_DJI_0028size11627779_jpg.rf.ce9a9f315b98253d3a4835159978c380.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-016,s2_DJI_0028size11627779_jpg.rf.eb01fe434b07515254b8c903ba2df175.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-017,s2_DJI_0028size11627779_jpg.rf.ec36f1624e8c344efba61c6db63465c9.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-018,s2_DJI_0029size12307409_jpg.rf.19d39bf934915413f2891d0950281c17.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-019,s2_DJI_0029size12307409_jpg.rf.743ef6cf2496b20814d8dce9bb071940.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-020,s2_DJI_0031size13200869_jpg.rf.5c5a94e004932d2a5442800c13f3c3d5.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-021,s2_DJI_0032size13378554_jpg.rf.8022d009d230e8d550ef31603607da80.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-022,s2_DJI_0066size12560936_jpg.rf.23a59f9f8848c07b9606e5c390de776a.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-023,s2_DJI_0066size12560936_jpg.rf.55f98484e35b3abf60f77bf8f46c4a17.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-024,s2_DJI_0069size13097165_jpg.rf.2645c3b4f2a43d680d598543d1077b75.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-025,s2_DJI_0069size13097165_jpg.rf.ed296406a7e6593954b79bc1d3fb3783.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-026,s2_DJI_0177size13821573_jpg.rf.2f7c85f93534c40254d765717e238048.jpg,wind,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-027,s2_DJI_0177size13821573_jpg.rf.6760d8bc7f24dda2c7515e591adcf939.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-028,s2_DJI_0214size11384482_jpg.rf.34b1dda47986b685f0220e524cf5825c.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-029,s2_DJI_0219size11137962_jpg.rf.0ea52c259ad2bd03fba9a1d93426e2ec.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-030,s2_DJI_0219size11137962_jpg.rf.196b6c8d8bc436d359599d0f723784f2.jpg,hail,1,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-031,s2_DJI_0219size11137962_jpg.rf.3e4b78481359b497b7ee4f09771b450c.jpg,hail,1,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-032,s2_DJI_0219size11137962_jpg.rf.73c95b042f7c431947a735ba20e756e8.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-033,s2_DJI_0219size11137962_jpg.rf.c6a55b664e03a9a46124b4f08ca2f7de.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-034,s2_DJI_0219size11137962_jpg.rf.dba0739a479c722eb3f6b3dda6cc7d9b.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-035,s2_DJI_0219size11137962_jpg.rf.ead91ab121c19d3413339121e63ae0ab.jpg,hail,4,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-036,s2_DJIw_382_jpg.rf.8827592f32f5a0849eab4d06f1f8522e.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-037,s2_DJIw_382_jpg.rf.cc5a3567ccaa80b58a87a72c69c02605.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-038,s2_DJIw_382_jpg.rf.d6f16b110c2dfc9ea714aed3c68e55bd.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-039,s2_DJIw_383_jpg.rf.efc21f3ead2ee8f5f08e724c6fb7de8d.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-040,s2_DJIw_386_jpg.rf.0f7bfdf1d533f5f3c1b6da86d85f90aa.jpg,unusable,4,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-041,s2_DJIw_386_jpg.rf.67fec986f622dffeca178f38dc42d916.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-042,s2_DJIw_386_jpg.rf.c5cc5d3284283d017b392f67c3a7e430.jpg,unusable,4,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-043,s2_DJIw_390_jpg.rf.75e1b461852ae4882769f8af4d4cf108.jpg,missing_shingles,3,Claude (AI draft) - flagged by Hugo,"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-044,s2_DJIw_390_jpg.rf.7920d97532b4c683b4e5d8d84d0f6e42.jpg,missing_shingles,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-045,s2_DJIw_390_jpg.rf.cc25e745b1bd0a0944f3143d3ce86048.jpg,missing_shingles,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-046,s2_DJIw_393_jpg.rf.9c0e9039a82ab998ba09e408a358f089.jpg,hail,1,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-047,s2_DJIw_394_jpg.rf.9be8312c19c86ac8ed8e84306e2bd1ce.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-048,s2_DJIw_395_jpg.rf.124cf89066d7221eb683fb146143be3c.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-049,s2_DJIw_395_jpg.rf.5559adaf592e45c96c10eac4b383035e.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-050,s2_DJIw_395_jpg.rf.62dc02dde51e0b5358f4c9a9a0978a5d.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-051,s2_DJIw_395_jpg.rf.684271cf9d8937aa7edc734d9dacd90c.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-052,s2_DJIw_395_jpg.rf.77d91a89f6cdc5c2b26f896e9b255d9e.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-053,s2_DJIw_395_jpg.rf.9d74a19d53c0094d404c611b3131790f.jpg,hail,4,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-054,s2_DJIw_395_jpg.rf.de06657da229ec649dcc46ac68fa2291.jpg,hail,4,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-055,s2_DJIw_395_jpg.rf.f0da75ef19450221e9fcf942afaeec2b.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-056,s2_DJIw_397_jpg.rf.22a7fef568ada45c8e593c27751d9931.jpg,hail,4,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-057,s2_DJIw_399_jpg.rf.7388822c465379972469c7799791431b.jpg,hail,4,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-058,s2_DJIw_400_jpg.rf.97e1c53e0ec0a7fd236c0c73c0dab8c7.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-059,s2_DJIw_401_jpg.rf.070e0127ddfc8a8c94138f4da04bd486.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-060,s2_DJIw_401_jpg.rf.ac2bba34dc12b5de14cbff928b41ef0b.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-061,s2_DJIw_401_jpg.rf.b1ed421bdf921b86fe453c704d201be8.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-062,s2_DJIw_404_jpg.rf.987522212ce05d084d07e93c0e324b68.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-063,s2_DJIw_407_jpg.rf.43eff161d10c72a4bdc7132486ebc9db.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-064,s2_DJIw_407_jpg.rf.4e4fa3ee66c13d7844bd7116bf7ee3a6.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-065,s2_DJIw_407_jpg.rf.c25041ca7480abd13cac3efbe6b0fe9f.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-066,s2_DJIw_407_jpg.rf.f85411611e91a3f2b69cd72ee764836d.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-067,s2_DJIw_409_jpg.rf.462d85dd5b8cca8812df7456787d6c5e.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-068,s2_DJIw_409_jpg.rf.fc2d957d0aa170f06b5730c641d6f19f.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-069,s2_DJIw_414_jpg.rf.49d74fd71105875636c6f07293cee17a.jpg,hail,1,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-070,s2_DJIw_414_jpg.rf.d38c3bd9ff79cccdc517b2a49d61554b.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-071,s2_DJIw_414_jpg.rf.d40106f393717c3d7b0c498d0bd2b0a0.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-072,s2_DJIw_416_jpg.rf.5a1cf06fcbc842339f6d19746c3d0d8b.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-073,s2_DJIw_416_jpg.rf.b15e7985a26a8a2b07939d7984688366.jpg,hail,4,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-074,s2_DJIw_416_jpg.rf.c2f8aba8539fb51a4dcf18786ae83d0d.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-075,s2_DJIw_423_jpg.rf.13d43ec6bacd29bac26a73a282865d7c.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-076,s2_DJIw_423_jpg.rf.891fcd0beefd2c970e2586fb3404647e.jpg,hail,4,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-077,s2_DJIw_423_jpg.rf.bc439948ffca25de6020ff94fd18b2b9.jpg,hail,4,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-078,s2_DJIw_423_jpg.rf.c068446a7c70a6dd06cf266833154d0b.jpg,hail,4,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-079,s2_DJIw_423_jpg.rf.c2d6e390b5ecbe80e5d5217be35971ea.jpg,hail,4,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-080,s2_DJIw_423_jpg.rf.cb7b08a16b09d8c573fc64fe8e30d005.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-081,s2_DJIw_424_jpg.rf.1e5093326e6c63232ffd3bbb7e8118d7.jpg,hail,4,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-082,s2_DJIw_424_jpg.rf.30456cd425e8a5521618bccc4fe4981f.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-083,s2_DJIw_424_jpg.rf.f77fcc36f3206b5114592ee0c7610553.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-084,s2_DJIw_425_jpg.rf.58c7221c78b2ddfde3021b3e171a9624.jpg,hail,4,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-085,s2_DJIw_425_jpg.rf.ba986a492dbbd5cf94da365273f5ee95.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-086,s2_DJIw_426_jpg.rf.02d534a8dea3245281c7f7c643224e29.jpg,hail,1,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-087,s2_DJIw_426_jpg.rf.384cbbd888314071c2fd71d09d8a2c02.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-088,s2_DJIw_426_jpg.rf.796cc668b81be0437794c74b500b5628.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-089,s2_DJIw_426_jpg.rf.9107b8865880536af33d192e79a20569.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-090,s2_DJIw_426_jpg.rf.cbb0c33698e31b4cb313cb5031489967.jpg,hail,4,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-091,s2_DJIw_426_jpg.rf.f85ab2fdb24e5bddaa1ca22d7ae0363e.jpg,hail,4,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-092,s2_DJIw_429_jpg.rf.a33ff63402c82eff22c147f31e1eb6fc.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-093,s2_DJIw_429_jpg.rf.cd865cb4688b86406cda2d906e119016.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-094,s2_DJIw_429_jpg.rf.fe0d6842c5943d38e40c159421242029.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-095,s2_DJIw_432_JPG.rf.dc66397b929b1f5ca6dfd3de03286d4a.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-096,s2_DJIw_434_JPG.rf.71823aa04c6aceee5c028f4cd226cba3.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-097,s2_DJIw_435_JPG.rf.5345b774838d192af0a7dd4dee2a0b53.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-098,s2_DJIw_441_jpg.rf.436947ca4cb76fbefbf5a8a18b682d37.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-099,s2_DJIw_441_jpg.rf.76fe6fb92b179ad9b936067906a0f4fd.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-100,s2_DJIw_441_jpg.rf.fc38162ec479271dbe6f4b9eab2e75cf.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-101,s2_DJIw_442_jpg.rf.21842d6133428f5edc386c34e88e2465.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-102,s2_DJIw_442_jpg.rf.6d0ff252ae7272c461a9c15994c897db.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-103,s2_DJIw_442_jpg.rf.755258513480a5d60cf89363819b7fd9.jpg,hail,4,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-104,s2_DJIw_442_jpg.rf.d1a4b03e0aab9bbd25691247a6922a29.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_test
+p6-105,s1_05F1LHD1_EST30_JPG.rf.9603b12a7eca9dec409a48116680ecc4.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_train
+p6-106,s1_DJI_0005size12130932_jpg.rf.a3776fbdf5641dc1b0ae357fd132c651.jpg,unusable,5,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_train
+p6-107,s1_DJI_0016size12999564_jpg.rf.0b23ebe36d0fb61708425e9408412ee3.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_train
+p6-108,s1_DJI_0016size12999564_jpg.rf.3f255a577b257a9116846d5b40dd7f23.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_train
+p6-109,s1_DJI_0016size12999564_jpg.rf.671f2576ed440ea9c72634bfb42b47e6.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_train
+p6-110,s1_DJI_0119size12236789_jpg.rf.8d8df5e5c9b93c0ac1016e111a2d0886.jpg,wind,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_train
+p6-111,s1_DJI_0120size12460560_jpg.rf.f04b363e464c5ac23bb2c78661455591.jpg,wind,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_train
+p6-112,s1_DJI_0128size11830466_jpg.rf.c0a43621e3ac1a0ffa3a565a99925ff6.jpg,wind,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_train
+p6-113,s1_DJI_0398_JPG_jpg.rf.91abbb4873100f9d04778aae2fc99366.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_train
+p6-114,s1_DJI_0399_JPG_jpg.rf.058933bc6c6936b0f58394f5877c294c.jpg,hail,4,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_train
+p6-115,s1_DJI_0399_JPG_jpg.rf.45d2858127fb6c9ecaf71d307222514d.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_train
+p6-116,s1_DJI_0399_JPG_jpg.rf.9d8525cea45bd19d645d614ccc73d040.jpg,hail,4,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_train
+p6-117,s1_DJI_0399_JPG_jpg.rf.a3ebe9e7c1f711e026359db8b4107118.jpg,hail,4,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_train
+p6-118,s1_DJI_0399_JPG_jpg.rf.b516cc22ddf019e42426ed6c8711e799.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_train
+p6-119,s1_DJI_0399_JPG_jpg.rf.c398f67ed00e9797894fe35902fd6caf.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_train
+p6-120,s1_DJI_0400_JPG_jpg.rf.30459bcc5d136ce515530009a9416017.jpg,hail,4,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_train
+p6-121,s1_DJI_0400_JPG_jpg.rf.a358da7b0388e244846e85e1d915a2cb.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_train
+p6-122,s1_DJI_0420_JPG_jpg.rf.5f7096a288faf43dd1c09a034f2650bb.jpg,hail,4,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_train
+p6-123,s1_DJI_0420_JPG_jpg.rf.d9f1b75897da6ae41ddba2cbca7d03af.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_train
+p6-124,s1_DJIw_377_jpg.rf.62c8725fc157e603ddfd2fb562a5303a.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_train
+p6-125,s1_DJIw_377_jpg.rf.74ed034d4ed30e1fa047a54166b634cd.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_train
+p6-126,s1_DJIw_377_jpg.rf.b7849a4ba4890eb54ec81473427ede0a.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_train
+p6-127,s1_DJIw_377_jpg.rf.d9479caca583ff5da6944c0b674fcaff.jpg,unusable,4,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_train
+p6-128,s1_DJIw_377_jpg.rf.e51b2c0431552d4f4eff6df161484e7b.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_train
+p6-129,s1_DJIw_379_jpg.rf.1b7c559b5c08fd09802e1e2a26a7f52d.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_train
+p6-130,s1_DJIw_379_jpg.rf.4b45a4fd9ad7a5c5a21f52aade101e9a.jpg,hail,1,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_train
+p6-131,s1_DJIw_379_jpg.rf.6a029226616715bc16c6e8711d1f0cac.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_train
+p6-132,s1_DJIw_379_jpg.rf.88149800f08e1c3cbc4f0eb7dd73e129.jpg,hail,1,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_train
+p6-133,s1_DJIw_379_jpg.rf.ab646cae8d17b2d3f24767d94795aecf.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_train
+p6-134,s1_DJIw_381_jpg.rf.da202e82357853d3e3618ae846357e34.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_train
+p6-135,s1_DJIw_382_jpg.rf.09b4306322b5f233c48cba031ef22d7f.jpg,hail,1,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_train
+p6-136,s1_DJIw_382_jpg.rf.4638d9cb065f5caf47b5b6a9c20b4f2d.jpg,hail,1,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_train
+p6-137,s1_DJIw_382_jpg.rf.56e44262d3c0c1668a86d93ca9df4789.jpg,hail,1,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_train
+p6-138,s1_DJIw_382_jpg.rf.9d8faf5e6ed28f0ac07f51bfb5d9188c.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_train
+p6-139,s1_DJIw_382_jpg.rf.b5ada76a2a1c71db1cf6e59a4c4134c9.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_train
+p6-140,s1_DJIw_382_jpg.rf.c53dd35f676b7e83706f67d42a1ee3e7.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_train
+p6-141,s1_DJIw_382_jpg.rf.e5de9ce5d24a45e0d8bc2605e582049d.jpg,hail,1,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_train
+p6-142,s1_DJIw_385_jpg.rf.24635c45b8fc720c35f8d842b4f80d46.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_train
+p6-143,s1_DJIw_388_jpg.rf.07426f87b1d443c2fdf372bcb3258f0d.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_train
+p6-144,s1_DJIw_388_jpg.rf.0f4f5645dbee0d7242b21312694e29db.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_train
+p6-145,s1_DJIw_388_jpg.rf.34c44115352315a81be5a1458ac45957.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_train
+p6-146,s1_DJIw_388_jpg.rf.48b678a5e40010faba82174ccc0be84f.jpg,hail,3,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_train
+p6-147,s1_DJIw_388_jpg.rf.514beb392deeaef8f1c82b820a5b4b9b.jpg,hail,2,Claude (AI draft),"Roboflow Universe, RF_Clean parts 5-6",CC BY 4.0 (verify on dataset page),poten_hail_train
