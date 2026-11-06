@@ -442,11 +442,11 @@ def draw_pie(counts, pending, not_drawn, excluded, out: Path, title: str):
         ax.set_aspect("equal")
 
     # Table on the right. Every class is listed (zeros too) so rows never move between runs.
-    x0, xs, xh, xp, xt, xsh = 0.50, 0.525, 0.765, 0.845, 0.915, 0.975
+    x0, xs, xh, xt, xsh = 0.50, 0.525, 0.80, 0.885, 0.975
     top, step = 0.70, 0.098
     cols = [("Damage type", xs, "left")]
     if has_pending:
-        cols += [("Have", xh, "right"), ("Pending", xp, "right"), ("Total", xt, "right")]
+        cols += [("Have", xh, "right"), ("Total", xt, "right")]
     else:
         cols += [("Photos", xt, "right")]
     cols += [("Share", xsh, "right")]
@@ -461,7 +461,6 @@ def draw_pie(counts, pending, not_drawn, excluded, out: Path, title: str):
         t = counts[c] + pending[c]
         if has_pending:
             fig.text(xh, y + 0.004, f"{counts[c]:,}", fontsize=12, color=ink, va="center", ha="right")
-            fig.text(xp, y + 0.004, f"{pending[c]:,}", fontsize=12, color=muted, va="center", ha="right")
         fig.text(xt, y + 0.004, f"{t:,}", fontsize=12, color=ink, va="center", ha="right", fontweight="bold")
         fig.text(xsh, y + 0.004, f"{100 * t / total:.1f}%" if total else "-", fontsize=12, color=muted,
                  va="center", ha="right")
@@ -470,7 +469,6 @@ def draw_pie(counts, pending, not_drawn, excluded, out: Path, title: str):
     fig.text(xs, y - 0.008, "Usable total", fontsize=12, color=ink, va="center")
     if has_pending:
         fig.text(xh, y - 0.008, f"{sub_total:,}", fontsize=12, color=ink, va="center", ha="right")
-        fig.text(xp, y - 0.008, f"{total - sub_total:,}", fontsize=12, color=muted, va="center", ha="right")
     fig.text(xt, y - 0.008, f"{total:,}", fontsize=12, color=ink, va="center", ha="right", fontweight="bold")
     if has_pending:
         ky = y - 0.1
