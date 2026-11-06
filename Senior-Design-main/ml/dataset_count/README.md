@@ -22,8 +22,8 @@ python count_dataset.py --labels labels/rf_clean_parts5-6.csv \
 # labels/pending_teammates.csv so nothing is counted twice
 ```
 
-`--pending` takes `class,count[,who]` rows. Pending photos are drawn striped and lighter in the
-pie and listed in their own column, so photos in hand and photos still to come stay apart.
+`--pending` takes `class,count[,who]` rows. The chart shows one total per damage type (in hand + pending);
+`counts.csv` and `summary.md` keep the in-hand and pending numbers apart.
 They can't be checked for V1 copies or duplicates until they arrive.
 
 `labels/rf_clean_part7.csv` and `rf_clean_part8.csv` are copies of the sheets inside the

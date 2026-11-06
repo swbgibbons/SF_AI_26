@@ -388,7 +388,10 @@ def write_outputs(rows, out: Path, title: str, pending: Counter | None = None):
     lines += ["", "Sources counted:"] + [f"- {s}: {n}" for s, n in by_src.most_common()]
     (out / "summary.md").write_text("\n".join(lines) + "\n")
 
-    draw_pie(counts, pending, counts["unusable"] + counts["unlabeled"], len(excluded), out, title)
+    # The chart shows one total per damage type (photos in hand + reported by teammates);
+    # the have / pending split stays in counts.csv and summary.md.
+    combined = Counter({c: counts[c] + pending[c] for c in CLASSES})
+    draw_pie(combined, Counter(), counts["unusable"] + counts["unlabeled"], len(excluded), out, title)
     return counts, pie_total, excluded
 
 
@@ -484,7 +487,7 @@ def draw_pie(counts, pending, not_drawn, excluded, out: Path, title: str):
     if has_pending:
         sub = f"{total:,} usable photos: {sub_total:,} in hand, {total - sub_total:,} reported by teammates (V1 iStock photos removed)"
     else:
-        sub = f"{total:,} usable photos, licensing-safe (V1 iStock photos removed)"
+        sub = f"{total:,} usable photos (V1 iStock photos removed)"
     fig.text(0.04, 0.88, sub, ha="left", fontsize=11.5, color=muted)
     note = []
     if not_drawn:
