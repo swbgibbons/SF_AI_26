@@ -75,7 +75,9 @@ ALIASES = {
     "missing/broken": "missing_shingles", "cracked": "missing_shingles",
     "none": "no_damage", "no_damage": "no_damage", "undamaged": "no_damage",
     "clean": "no_damage", "normal": "no_damage", "intact": "no_damage",
+    "no_visible_damage": "no_damage",
     "unusable": "unusable", "bad": "unusable", "reject": "unusable",
+    "unclear/unusable": "unusable", "unclear": "unusable",
 }
 SPLIT_NAMES = {"train", "valid", "val", "validation", "test", "images", "labels"}
 
@@ -159,25 +161,53 @@ def _looks_like_image(f: Path) -> bool:
 
 # ---------------------------------------------------------------- readers
 def read_label_csv(path: Path) -> list[dict]:
+    """A label sheet. Also reads the RF_Clean `image_labels.csv` that ships inside a
+    teammate's export (columns image, damage_type, split, <type>_boxes_*): photos found
+    next to it are hashed, so V1 copies and duplicates are caught there too."""
     rows = []
+    on_disk = {f.name: f for f in _images_under(path.parent)}
     with open(path, newline="", encoding="utf-8-sig") as f:
         for r in csv.DictReader(f):
             r = {k.strip().lower(): (v or "").strip() for k, v in r.items() if k}
-            name = r.get("file") or r.get("filename") or r.get("path") or r.get("image_id") or ""
+            name = r.get("file") or r.get("filename") or r.get("path") or r.get("image") or r.get("image_id") or ""
             multi = [norm_class(x) for x in re.split(r"[;|]", r.get("labels", "")) if x.strip()]
-            primary = norm_class(r.get("label") or r.get("type") or r.get("class")) or (multi[0] if multi else None)
+            primary = (norm_class(r.get("label") or r.get("type") or r.get("class") or r.get("damage_type"))
+                       or (multi[0] if multi else None))
+            boxes = Counter()
+            for k, v in r.items():
+                m = re.fullmatch(r"(.+?)_boxes(?:_.+)?", k)
+                if m and norm_class(m.group(1)) and v.isdigit():
+                    boxes[norm_class(m.group(1))] += int(v)
+            disk = on_disk.get(Path(name).name)
             rows.append({
+                "path": disk,
+                "boxes": boxes,
                 "image_id": r.get("image_id") or Path(name).stem,
+                "in_training": r.get("in_training_set", ""),
                 "file": name,
                 "class": primary or "unlabeled",
                 "all_classes": sorted({c for c in multi + [primary] if c}),
-                "source": r.get("source") or path.name,
+                "source": r.get("source") or (f"{path.parent.parent.name}/{path.name}" if path.parent.name == "dataset" else path.name),
                 "license": r.get("license", ""),
                 "sha256": r.get("sha256") or None,
                 "labeled_by": r.get("labeled_by", ""),
                 "split": r.get("split", ""),
             })
     return rows
+
+
+def read_pending(path: Path) -> tuple[Counter, list[str]]:
+    """Counts reported by teammates who haven't sent their photos yet: rows of class,count[,who]."""
+    pending, who = Counter(), []
+    with open(path, newline="", encoding="utf-8-sig") as f:
+        for r in csv.DictReader(f):
+            r = {k.strip().lower(): (v or "").strip() for k, v in r.items() if k}
+            c = norm_class(r.get("class") or r.get("label") or r.get("type"))
+            if c and r.get("count", "").isdigit():
+                pending[c] += int(r["count"])
+                if r.get("who") and r["who"] not in who:
+                    who.append(r["who"])
+    return pending, who
 
 
 def _images_under(d: Path):
@@ -297,25 +327,30 @@ def collect(label_files, image_dirs, blocklist: Blocklist):
     return rows
 
 
-def write_outputs(rows, out: Path, title: str):
+def write_outputs(rows, out: Path, title: str, pending: Counter | None = None):
+    pending = pending or Counter()
     out.mkdir(parents=True, exist_ok=True)
     kept = [r for r in rows if not r["excluded"]]
     excluded = [r for r in rows if r["excluded"]]
     counts = Counter(r["class"] for r in kept)
     boxes = Counter()
     for r in kept:
-        boxes.update(r.get("boxes") or {})
+        if r["class"] not in ("unusable", "unlabeled"):  # boxes on photos left out of training don't count
+            boxes.update(r.get("boxes") or {})
     multi = sum(1 for r in kept if len([c for c in r["all_classes"] if c in PIE_CLASSES[:3]]) > 1)
     pie_total = sum(counts[c] for c in PIE_CLASSES)
+    pend_total = sum(pending[c] for c in PIE_CLASSES)
+    grand = pie_total + pend_total
 
     with open(out / "counts.csv", "w", newline="") as f:
         w = csv.writer(f)
-        w.writerow(["class", "images", "share_of_pie", "boxes"])
+        w.writerow(["class", "submitted_images", "pending_images", "total_images", "share_of_total", "boxes_submitted"])
         for c in CLASSES:
-            share = f"{100 * counts[c] / pie_total:.1f}%" if c in PIE_CLASSES and pie_total else ""
-            w.writerow([c, counts[c], share, boxes[c] or ""])
-        w.writerow(["TOTAL_usable", pie_total, "100%", ""])
-        w.writerow(["excluded_v1_or_duplicate", len(excluded), "", ""])
+            t = counts[c] + pending[c]
+            share = f"{100 * t / grand:.1f}%" if c in PIE_CLASSES and grand else ""
+            w.writerow([c, counts[c], pending[c], t, share, boxes[c] or ""])
+        w.writerow(["TOTAL_usable", pie_total, pend_total, grand, "100%", sum(boxes[c] for c in PIE_CLASSES) or ""])
+        w.writerow(["excluded_v1_or_duplicate", len(excluded), "", "", "", ""])
 
     with open(out / "images.csv", "w", newline="") as f:
         w = csv.writer(f)
@@ -325,10 +360,14 @@ def write_outputs(rows, out: Path, title: str):
                         r["license"], r["labeled_by"], r["sha256"] or "", r["excluded"] or ""])
 
     lines = [f"# {title}", "", f"Generated {dt.date.today().isoformat()} by `count_dataset.py`.", "",
-             "| Class | Images | Share of usable |", "|---|---:|---:|"]
+             "| Class | Submitted | Boxes | Pending | Total | Share |", "|---|---:|---:|---:|---:|---:|"]
     for c in PIE_CLASSES:
-        lines.append(f"| {DISPLAY[c]} | {counts[c]} | {100 * counts[c] / pie_total:.1f}% |" if pie_total else f"| {DISPLAY[c]} | 0 | |")
-    lines += [f"| **Usable total** | **{pie_total}** | |", "",
+        t = counts[c] + pending[c]
+        share = f"{100 * t / grand:.1f}%" if grand else ""
+        lines.append(f"| {DISPLAY[c]} | {counts[c]} | {boxes[c] or ''} | {pending[c]} | {t} | {share} |")
+    lines += [f"| **Usable total** | **{pie_total}** | {sum(boxes[c] for c in PIE_CLASSES) or ''} | **{pend_total}** | **{grand}** | |", "",
+              "Submitted = photos received and checked by this script. Pending = counts teammates reported "
+              "for photos not sent yet (not checked for V1 copies or duplicates).", "",
               f"- Unusable (kept out of training): {counts['unusable']}",
               f"- Not labeled yet: {counts['unlabeled']}",
               f"- Photos with more than one damage type: {multi}",
@@ -349,11 +388,18 @@ def write_outputs(rows, out: Path, title: str):
     lines += ["", "Sources counted:"] + [f"- {s}: {n}" for s, n in by_src.most_common()]
     (out / "summary.md").write_text("\n".join(lines) + "\n")
 
-    draw_pie(counts, pie_total, counts["unusable"] + counts["unlabeled"], len(excluded), out, title)
+    draw_pie(counts, pending, counts["unusable"] + counts["unlabeled"], len(excluded), out, title)
     return counts, pie_total, excluded
 
 
-def draw_pie(counts, total, not_drawn, excluded, out: Path, title: str):
+def _tint(hex_color: str, amount: float) -> str:
+    """Mix a colour toward white (amount 0..1)."""
+    h = hex_color.lstrip("#")
+    rgb = [int(h[i:i + 2], 16) for i in (0, 2, 4)]
+    return "#" + "".join(f"{round(v + (255 - v) * amount):02x}" for v in rgb)
+
+
+def draw_pie(counts, pending, not_drawn, excluded, out: Path, title: str):
     try:
         import matplotlib
         matplotlib.use("Agg")
@@ -364,43 +410,84 @@ def draw_pie(counts, total, not_drawn, excluded, out: Path, title: str):
     import matplotlib.lines  # noqa: F401
     import matplotlib.patches  # noqa: F401
 
-    cls = [c for c in PIE_CLASSES if counts[c]]
-    vals = [counts[c] for c in cls]
-    ink, muted, surface = "#0b0b0b", "#52514e", "#fcfcfb"
+    has_pending = sum(pending[c] for c in PIE_CLASSES) > 0
+    sub_total = sum(counts[c] for c in PIE_CLASSES)
+    total = sub_total + sum(pending[c] for c in PIE_CLASSES)
+    ink, muted, surface, rule = "#0b0b0b", "#52514e", "#fcfcfb", "#d6d5d0"
     plt.rcParams["font.family"] = "DejaVu Sans"
-    fig = plt.figure(figsize=(10, 5.8), dpi=200)
+    plt.rcParams["hatch.color"] = surface
+    plt.rcParams["hatch.linewidth"] = 1.6
+    fig = plt.figure(figsize=(11, 6.2), dpi=200)
     fig.patch.set_facecolor(surface)
-    ax = fig.add_axes([0.02, 0.1, 0.5, 0.72])
+    ax = fig.add_axes([0.01, 0.1, 0.46, 0.72])
     ax.set_facecolor(surface)
     ax.axis("off")
     if not total:
         ax.text(0.5, 0.5, "No usable photos yet", ha="center", va="center", color=muted, fontsize=16)
     else:
-        ax.pie(vals, colors=[COLORS[c] for c in cls], startangle=90, counterclock=False,
-               wedgeprops=dict(edgecolor=surface, linewidth=2.5))
+        # Each damage type is one slice: the solid part is photos we have, the striped,
+        # lighter part is photos teammates have reported but not sent yet.
+        vals, colors, hatches = [], [], []
+        for c in PIE_CLASSES:
+            for v, pend in ((counts[c], False), (pending[c], True)):
+                if v:
+                    vals.append(v)
+                    colors.append(_tint(COLORS[c], 0.45) if pend else COLORS[c])
+                    hatches.append("///" if pend else None)
+        wedges, _ = ax.pie(vals, colors=colors, startangle=90, counterclock=False,
+                           wedgeprops=dict(edgecolor=surface, linewidth=2.0))
+        for w, h in zip(wedges, hatches):
+            if h:
+                w.set_hatch(h)
         ax.set_aspect("equal")
-    # Legend table on the right: swatch, name, photo count, share. Every class is
-    # listed (zeros too) so the gap is visible and rows never move between runs.
-    top, step = 0.70, 0.105
-    fig.text(0.56, top + 0.07, "Damage type", fontsize=10, color=muted)
-    fig.text(0.85, top + 0.07, "Photos", fontsize=10, color=muted, ha="right")
-    fig.text(0.96, top + 0.07, "Share", fontsize=10, color=muted, ha="right")
+
+    # Table on the right. Every class is listed (zeros too) so rows never move between runs.
+    x0, xs, xh, xp, xt, xsh = 0.50, 0.525, 0.765, 0.845, 0.915, 0.975
+    top, step = 0.70, 0.098
+    cols = [("Damage type", xs, "left")]
+    if has_pending:
+        cols += [("Have", xh, "right"), ("Pending", xp, "right"), ("Total", xt, "right")]
+    else:
+        cols += [("Photos", xt, "right")]
+    cols += [("Share", xsh, "right")]
+    for label, x, ha in cols:
+        fig.text(x, top + 0.07, label, fontsize=10, color=muted, ha=ha)
     for i, c in enumerate(PIE_CLASSES):
         y = top - i * step
         fig.patches.append(matplotlib.patches.FancyBboxPatch(
-            (0.56, y - 0.012), 0.022, 0.036, boxstyle="round,pad=0,rounding_size=0.004",
+            (x0, y - 0.012), 0.017, 0.032, boxstyle="round,pad=0,rounding_size=0.004",
             transform=fig.transFigure, facecolor=COLORS[c], edgecolor="none"))
-        fig.text(0.595, y + 0.006, DISPLAY[c], fontsize=12.5, color=ink, va="center")
-        fig.text(0.85, y + 0.006, f"{counts[c]}", fontsize=12.5, color=ink, va="center", ha="right", fontweight="bold")
-        share = f"{100 * counts[c] / total:.1f}%" if total else "-"
-        fig.text(0.96, y + 0.006, share, fontsize=12.5, color=muted, va="center", ha="right")
-    y = top - len(PIE_CLASSES) * step + 0.02
-    fig.add_artist(matplotlib.lines.Line2D([0.56, 0.96], [y + 0.03, y + 0.03], color="#d6d5d0", lw=0.8))
-    fig.text(0.595, y - 0.01, "Usable total", fontsize=12.5, color=ink, va="center")
-    fig.text(0.85, y - 0.01, f"{total}", fontsize=12.5, color=ink, va="center", ha="right", fontweight="bold")
+        fig.text(xs, y + 0.004, DISPLAY[c], fontsize=12, color=ink, va="center")
+        t = counts[c] + pending[c]
+        if has_pending:
+            fig.text(xh, y + 0.004, f"{counts[c]:,}", fontsize=12, color=ink, va="center", ha="right")
+            fig.text(xp, y + 0.004, f"{pending[c]:,}", fontsize=12, color=muted, va="center", ha="right")
+        fig.text(xt, y + 0.004, f"{t:,}", fontsize=12, color=ink, va="center", ha="right", fontweight="bold")
+        fig.text(xsh, y + 0.004, f"{100 * t / total:.1f}%" if total else "-", fontsize=12, color=muted,
+                 va="center", ha="right")
+    y = top - len(PIE_CLASSES) * step + 0.025
+    fig.add_artist(matplotlib.lines.Line2D([x0, xsh], [y + 0.03, y + 0.03], color=rule, lw=0.8))
+    fig.text(xs, y - 0.008, "Usable total", fontsize=12, color=ink, va="center")
+    if has_pending:
+        fig.text(xh, y - 0.008, f"{sub_total:,}", fontsize=12, color=ink, va="center", ha="right")
+        fig.text(xp, y - 0.008, f"{total - sub_total:,}", fontsize=12, color=muted, va="center", ha="right")
+    fig.text(xt, y - 0.008, f"{total:,}", fontsize=12, color=ink, va="center", ha="right", fontweight="bold")
+    if has_pending:
+        ky = y - 0.1
+        fig.patches.append(matplotlib.patches.Rectangle((x0, ky - 0.012), 0.017, 0.032, transform=fig.transFigure,
+                                                        facecolor="#8a8984", edgecolor="none"))
+        fig.text(xs, ky + 0.004, "Have: received and checked", fontsize=10, color=muted, va="center")
+        r = matplotlib.patches.Rectangle((x0 + 0.22, ky - 0.012), 0.017, 0.032, transform=fig.transFigure,
+                                         facecolor=_tint("#8a8984", 0.45), edgecolor="none", hatch="///")
+        fig.patches.append(r)
+        fig.text(x0 + 0.245, ky + 0.004, "Pending: reported, not sent yet", fontsize=10, color=muted, va="center")
+
     fig.suptitle(title, x=0.04, y=0.955, ha="left", fontsize=17, fontweight="bold", color=ink)
-    sub = f"{total} usable photos, licensing-safe (V1 iStock photos removed)"
-    fig.text(0.04, 0.875, sub, ha="left", fontsize=11.5, color=muted)
+    if has_pending:
+        sub = f"{total:,} usable photos: {sub_total:,} in hand, {total - sub_total:,} reported by teammates (V1 iStock photos removed)"
+    else:
+        sub = f"{total:,} usable photos, licensing-safe (V1 iStock photos removed)"
+    fig.text(0.04, 0.88, sub, ha="left", fontsize=11.5, color=muted)
     note = []
     if not_drawn:
         note.append(f"{not_drawn} unusable / unlabeled photos not shown")
@@ -421,6 +508,7 @@ def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--labels", action="append", default=[], help="label sheet CSV (repeatable)")
     ap.add_argument("--images", action="append", default=[], help="photo folder or Roboflow export (repeatable)")
+    ap.add_argument("--pending", help="CSV of class,count[,who] reported for photos not sent yet")
     ap.add_argument("--blocklist", default=str(DEFAULT_BLOCKLIST), help="V1 blocklist file")
     ap.add_argument("--out", default="out", help="output folder")
     ap.add_argument("--title", default="Roof damage dataset by damage type")
@@ -428,11 +516,14 @@ def main(argv=None):
     if not a.labels and not a.images:
         ap.error("give at least one --labels or --images")
     rows = collect(a.labels, a.images, Blocklist(Path(a.blocklist)))
-    counts, total, excluded = write_outputs(rows, Path(a.out), a.title)
+    pending = read_pending(Path(a.pending))[0] if a.pending else Counter()
+    counts, total, excluded = write_outputs(rows, Path(a.out), a.title, pending)
+    print(f"{'':<28}{'have':>6}{'pending':>9}{'total':>7}")
     for c in CLASSES:
-        if counts[c]:
-            print(f"{DISPLAY[c]:<28}{counts[c]:>6}")
-    print(f"{'Usable total':<28}{total:>6}")
+        if counts[c] or pending[c]:
+            print(f"{DISPLAY[c]:<28}{counts[c]:>6}{pending[c]:>9}{counts[c] + pending[c]:>7}")
+    pt = sum(pending[c] for c in PIE_CLASSES)
+    print(f"{'Usable total':<28}{total:>6}{pt:>9}{total + pt:>7}")
     print(f"{'Excluded (V1 / duplicate)':<28}{len(excluded):>6}")
     print(f"Wrote {a.out}/pie.png, pie.svg, counts.csv, images.csv, summary.md")
     return 0

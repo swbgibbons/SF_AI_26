@@ -10,10 +10,25 @@ cd Senior-Design-main/ml/dataset_count
 # today's dataset (Roboflow hail batch, RF_Clean parts 5-6)
 python count_dataset.py --labels labels/rf_clean_parts5-6.csv --out out/
 
-# when a teammate's photos arrive: add their folder (or a Roboflow export) with --images
+# current combined count (Nov 6): parts 5-6, a teammate's parts 7-8, and the counts
+# other teammates reported for photos they haven't sent yet
 python count_dataset.py --labels labels/rf_clean_parts5-6.csv \
-    --images path/to/teammate_photos --out out/
+    --labels /mnt/project-files/dataset/incoming/rf_clean_part7/dataset/image_labels.csv \
+    --labels /mnt/project-files/dataset/incoming/rf_clean_part8/dataset/image_labels.csv \
+    --pending labels/pending_teammates.csv --out out/
+
+# when a teammate's photos arrive: add their folder (or a Roboflow export) with --images,
+# or the image_labels.csv inside their export with --labels, and lower their row in
+# labels/pending_teammates.csv so nothing is counted twice
 ```
+
+`--pending` takes `class,count[,who]` rows. Pending photos are drawn striped and lighter in the
+pie and listed in their own column, so photos in hand and photos still to come stay apart.
+They can't be checked for V1 copies or duplicates until they arrive.
+
+`labels/rf_clean_part7.csv` and `rf_clean_part8.csv` are copies of the sheets inside the
+teammate's zips (counts reproduce without the photos; pass the copies in `incoming/` to also hash
+the photos).
 
 Outputs in `out/`: `pie.png` (slides), `pie.svg`, `counts.csv`, `summary.md`
 (per-split table when the photos sit in train/valid/test folders), and `images.csv`
@@ -23,7 +38,7 @@ Outputs in `out/`: `pie.png` (slides), `pie.svg`, `counts.csv`, `summary.md`
 
 | Input | Layout |
 |---|---|
-| `--labels sheet.csv` | one row per photo: `image_id` or `file`, and `label` (hail, wind, missing_shingles, no_damage, unusable). Optional `labels` = `hail;wind` for photos with two types, `source`, `license`, `split`. |
+| `--labels sheet.csv` | one row per photo: `image_id`, `file` or `image`, and `label` or `damage_type` (hail, wind, missing_shingles, no_damage, unusable). Optional `labels` = `hail;wind` for photos with two types, `source`, `license`, `split`. |
 | `--images DIR` | a Roboflow **COCO** export (`_annotations.coco.json`), a Roboflow **YOLO** export (`data.yaml`), or plain folders named by type (`hail/`, `Wind Damage/`, `missing_shingles/`, `no_damage/` … at any depth, inside train/valid/test or not). |
 
 Folder and class names are matched loosely (`Hail_Damage`, `Missing_Shingle`, `undamaged` all work;

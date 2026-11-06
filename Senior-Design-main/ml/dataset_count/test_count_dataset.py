@@ -52,3 +52,25 @@ def test_counts_folders_coco_and_blocks_v1(tmp_path):
     assert len(excluded) == 4 and reasons.count("V1 photo") == 3
     for f in ("pie.png", "pie.svg", "counts.csv", "images.csv", "summary.md"):
         assert (tmp_path / "out" / f).exists()
+
+
+def test_teammate_sheet_and_pending(tmp_path):
+    ds = tmp_path / "part7" / "dataset"
+    _img(ds / "train" / "p7_000.jpg", (30, 0, 0))
+    sheet = ds / "image_labels.csv"
+    sheet.write_text(
+        "image,split,damage_type,hail_boxes_original,hail_boxes_added,in_training_set\n"
+        "p7_000.jpg,train,Hail,3,1,yes\n"
+        "p7_001.jpg,train,Unclear/unusable,2,0,\n"
+        "p7_002.jpg,test,No visible damage,0,0,\n"
+        "p7_003.jpg,train,Wind,0,0,\n")
+    pend = tmp_path / "pending.csv"
+    pend.write_text("class,count\nhail,5\nwind damage,7\nno damage,2\n")
+    pending, _ = cd.read_pending(pend)
+    rows = cd.collect([sheet], [], cd.Blocklist(None))
+    assert rows[0]["sha256"]  # photo found next to the sheet was hashed
+    counts, total, _ = cd.write_outputs(rows, tmp_path / "out", "t", pending)
+    assert (counts["hail"], counts["unusable"], counts["no_damage"], counts["wind"]) == (1, 1, 1, 1)
+    assert pending == {"hail": 5, "wind": 7, "no_damage": 2}
+    text = (tmp_path / "out" / "counts.csv").read_text()
+    assert "hail,1,5,6," in text and ",4" in text.splitlines()[1]  # 4 boxes, unusable photo's boxes ignored
