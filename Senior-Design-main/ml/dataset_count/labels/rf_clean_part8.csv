@@ -1,0 +1,158 @@
+image,part,source_photo,split,roof_type,roof_conf,damage_type,damage_conf,hail_boxes_original,hail_boxes_added,potential_damage_marks,adjuster_chalk,reviewed_by,reviewer_note,reviewer_flag,in_training_set,why_not
+p8_000_s2_DJI_0014size12855820_jpg.rf.d1623d75127538683d8c9e6d1c8fbda1.jpg,8,DJI_0014size12855820,train,Architectural asphalt shingle,90,Hail,75,2,0,0,no,your review,"hail damage, great for the training model.",,yes,
+p8_001_s2_DJI_0014size12855820_jpg.rf.e2e13a32aff0c24687188e81e1b688da.jpg,8,DJI_0014size12855820,train,Architectural asphalt shingle,90,Hail,60,1,0,0,no,your review,"hail damage, great for the training model.",,yes,
+p8_002_s2_DJI_0016size12999564_jpg.rf.478a41997c5e52940fa76b958a38c847.jpg,8,DJI_0016size12999564,train,Architectural asphalt shingle,85,Hail,40,1,0,0,no,your review,I can't tell if that's a shadow or feather.,,yes,
+p8_003_s2_DJI_0018size12885190_jpg.rf.c52a64f299a2c7d70f40d8e1471c05ca.jpg,8,DJI_0018size12885190,train,Architectural asphalt shingle,80,Hail,50,1,0,0,no,your review,I can't confidently tell you what that is..,,yes,
+p8_004_s2_DJI_0018size12885190_jpg.rf.dbcccc5cc2e5956a7d1a8d135ceecb0f.jpg,8,DJI_0018size12885190,train,Architectural asphalt shingle,80,Hail,50,1,0,0,no,your review,"idk if this is hail damage, unsure",,yes,
+p8_005_s2_DJI_0019size12332740_jpg.rf.0c25bdeb34651f5bf148c67d9ff5610d.jpg,8,DJI_0019size12332740,valid,Architectural asphalt shingle,90,Hail,70,1,0,0,no,your review,,,yes,
+p8_006_s2_DJI_0019size12332740_jpg.rf.3a4e913769e21242169e2865ded0f967.jpg,8,DJI_0019size12332740,valid,Architectural asphalt shingle,90,Hail,70,1,0,0,no,your review,,,yes,
+p8_007_s2_DJI_0019size12332740_jpg.rf.5df55e369c272ddd9de32e8560ddfc22.jpg,8,DJI_0019size12332740,valid,Architectural asphalt shingle,90,Hail,70,1,0,0,no,your review,"hail damage, great for the training model.",,yes,
+p8_008_s2_DJI_0021size11463920_jpg.rf.47bf01f378d48f7649a3becf0ff79204.jpg,8,DJI_0021size11463920,train,Architectural asphalt shingle,90,Hail,55,2,0,0,no,your review,"hail damage, great for the training model. Issue is for all these pics, could be a camera lens with dirt but for the sake of the training model, we will say these are hail damages.",,yes,
+p8_009_s2_DJI_0021size11463920_jpg.rf.4925f08485acd3ffbc9eb647b2aee1a7.jpg,8,DJI_0021size11463920,train,Architectural asphalt shingle,90,Hail,60,1,0,0,no,your review,,,yes,
+p8_010_s2_DJI_0025size12970696_jpg.rf.0a80f63b367be4e840e583f8da80d819.jpg,8,DJI_0025size12970696,test,Architectural asphalt shingle,85,Hail,55,1,0,0,no,your review,,,yes,
+p8_011_s2_DJI_0025size12970696_jpg.rf.1e7e613ebfaf0180dbc09e9edd181677.jpg,8,DJI_0025size12970696,test,Architectural asphalt shingle,85,Hail,55,1,0,0,no,your review,,,yes,
+p8_012_s2_DJI_0028size11627779_jpg.rf.8df350a25437b71bd8a66eab906198b6.jpg,8,DJI_0028size11627779,,Architectural asphalt shingle,75,Unclear/unusable,35,1,0,0,no,your review,,,no,damage type is Unclear/unusable
+p8_013_s2_DJI_0028size11627779_jpg.rf.dcd250e6f8c8d8234a70465e3073a6a2.jpg,8,DJI_0028size11627779,test,Architectural asphalt shingle,90,Hail,55,1,0,0,no,your review,,,yes,
+p8_014_s2_DJI_0031size13200869_jpg.rf.745e41396dc9b008873039741630dfc3.jpg,8,DJI_0031size13200869,test,Architectural asphalt shingle,90,Hail,40,1,0,0,no,your review,i agree with ur note,,yes,
+p8_015_s2_DJI_0032size13378554_jpg.rf.eba11610898aa3468334c92f9bdd010c.jpg,8,DJI_0032size13378554,train,Architectural asphalt shingle,85,Hail,30,1,0,0,no,your review,Lower confidence interval bc of shadows.,,yes,
+p8_016_s2_DJI_0067size12685506_jpg.rf.16983f928a5e6e765062020c5e7303dc.jpg,8,DJI_0067size12685506,valid,Architectural asphalt shingle,90,Hail,50,1,0,0,no,your review,Unclear due to shadow.,,yes,
+p8_017_s2_DJI_0067size12685506_jpg.rf.81e632a4dc1248fac83f61d829e30049.jpg,8,DJI_0067size12685506,valid,Architectural asphalt shingle,85,Hail,30,1,0,0,no,your review,I believe there are multiple damage spots that are undetected. Also a shadow issue.,,yes,
+p8_018_s2_DJI_0069size13097165_jpg.rf.1eef92ba6696b0be2116823977fcb0c3.jpg,8,DJI_0069size13097165,valid,Architectural asphalt shingle,75,Hail,55,1,0,0,no,your review,"Unboxed damage. But as for the damage itself, 55 %.",,yes,
+p8_019_s2_DJI_0069size13097165_jpg.rf.35f86bb1de524ec6e666edd49d97ad69.jpg,8,DJI_0069size13097165,valid,Architectural asphalt shingle,85,Hail,60,1,0,0,no,your review,,,yes,
+p8_020_s2_DJI_0070size13407865_jpg.rf.0ff4f8af4182bb08a968e1de2e3e41f5.jpg,8,DJI_0070size13407865,train,Architectural asphalt shingle,80,Hail,70,1,0,2,no,your review,,,yes,
+p8_021_s2_DJI_0070size13407865_jpg.rf.c03acd67979f1f05b8af930aa2a30ce6.jpg,8,DJI_0070size13407865,train,Architectural asphalt shingle,70,Hail,50,1,0,0,no,your review,"idk about this, lots of shadows.",,yes,
+p8_022_s2_DJI_0070size13407865_jpg.rf.cbf56231891b3a4e6c139b20a12f2a6f.jpg,8,DJI_0070size13407865,train,Architectural asphalt shingle,75,Hail,70,1,1,0,no,your review,,,yes,
+p8_023_s2_DJI_0070size13407865_jpg.rf.f764dbca21ca0c706fb9959aa7e47c5c.jpg,8,DJI_0070size13407865,train,Architectural asphalt shingle,75,Hail,55,1,1,0,no,your review,"For the blue box, cpuld potentially be hail damage but very low confidence interval.",,yes,
+p8_024_s2_DJI_0071size13036811_jpg.rf.eb055896b8fdb721d15eab2f2ad88beb.jpg,8,DJI_0071size13036811,,Architectural asphalt shingle,70,Unclear/unusable,70,2,0,0,no,your review,slightly blurry.,,no,damage type is Unclear/unusable
+p8_025_s2_DJI_0072size14033665_jpg.rf.2ba78531779a17c50fc46895968e959c.jpg,8,DJI_0072size14033665,valid,Architectural asphalt shingle,80,Hail,70,1,0,0,no,your review,,,yes,
+p8_026_s2_DJI_0073size13316431_jpg.rf.6ed3ef3ac4a10b86aecff72a69ba1879.jpg,8,DJI_0073size13316431,train,Architectural asphalt shingle,80,Hail,35,1,1,0,no,your review,,,yes,
+p8_027_s2_DJI_0073size13316431_jpg.rf.8446163eb849fcce767d7fe368b8c33d.jpg,8,DJI_0073size13316431,train,Architectural asphalt shingle,80,Hail,65,2,1,0,no,your review,,,yes,
+p8_028_s2_DJI_0074size15126992_jpg.rf.28d2b2cb123f4471cfd985e3f5728f27.jpg,8,DJI_0074size15126992,valid,Architectural asphalt shingle,80,Hail,30,1,6,0,no,your review,not sure about this,,yes,
+p8_029_s2_DJI_0116size10291816_jpg.rf.6825720889e8c2118813d4f58349d4f2.jpg,8,DJI_0116size10291816,valid,3-tab asphalt shingle,85,Hail,75,1,1,0,no,your review,,,yes,
+p8_030_s2_DJI_0116size10291816_jpg.rf.7152311dd9c6d7e7ed7c576780110f01.jpg,8,DJI_0116size10291816,valid,3-tab asphalt shingle,85,Hail,55,1,0,0,no,your review,,,yes,
+p8_031_s2_DJI_0116size10291816_jpg.rf.90e68b1b72ed2ff62345bb1cf115dbd2.jpg,8,DJI_0116size10291816,,3-tab asphalt shingle,80,Unclear/unusable,45,1,0,1,no,your review,Because i dont know what part of the roof that is.,,no,damage type is Unclear/unusable
+p8_032_s2_DJI_0117size13068475_jpg.rf.31ec43eb7929332716e3810357bcea39.jpg,8,DJI_0117size13068475,valid,3-tab asphalt shingle,85,Hail,55,1,0,0,no,your review,,,yes,
+p8_033_s2_DJI_0119size12236789_jpg.rf.12730541b6b00c36ee5afa897bf6e3f9.jpg,8,DJI_0119size12236789,valid,3-tab asphalt shingle,85,Hail,30,1,1,0,no,your review,"Ew, I don't like this image",,yes,
+p8_034_s2_DJI_0119size12236789_jpg.rf.26f69d64eb23c7757f9b3c595b46ffe1.jpg,8,DJI_0119size12236789,valid,3-tab asphalt shingle,85,Hail,30,1,0,0,no,your review,This image is not for me honestly...,,yes,
+p8_035_s2_DJI_0119size12236789_jpg.rf.32689a6f4095b23f757d61e0958397ed.jpg,8,DJI_0119size12236789,valid,3-tab asphalt shingle,80,Hail,55,1,1,0,no,your review,,,yes,
+p8_036_s2_DJI_0119size12236789_jpg.rf.627c41c39dce61cfda19e0a02118bd90.jpg,8,DJI_0119size12236789,,3-tab asphalt shingle,85,Unclear/unusable,100,1,0,0,no,your review,It doesn't look like hail damage to me!,,no,damage type is Unclear/unusable
+p8_037_s2_DJI_0119size12236789_jpg.rf.b942f9544cb390700ac2c66500f086bb.jpg,8,DJI_0119size12236789,valid,3-tab asphalt shingle,85,Hail,35,1,0,0,no,your review,,,yes,
+p8_038_s2_DJI_0119size12236789_jpg.rf.c6fc70b31dcf81d7aeac73240060d843.jpg,8,DJI_0119size12236789,,3-tab asphalt shingle,85,Unclear/unusable,90,1,0,0,no,your review,doesn't look like hail damage to me,,no,damage type is Unclear/unusable
+p8_039_s2_DJI_0119size12236789_jpg.rf.ed5b3a04c4aae2c7e74c2e9ba75ed9a8.jpg,8,DJI_0119size12236789,,3-tab asphalt shingle,80,Unclear/unusable,100,1,0,0,no,your review,unsure of this one. idek the damage.,,no,damage type is Unclear/unusable
+p8_040_s2_DJI_0119size12236789_jpg.rf.f9d1f2d8a67ab4b874753220256c03b9.jpg,8,DJI_0119size12236789,valid,3-tab asphalt shingle,80,Hail,35,1,0,0,no,your review,,,yes,
+p8_041_s2_DJI_0120size12460560_jpg.rf.8dbd26c17d09dc01213b05fda9df7f28.jpg,8,DJI_0120size12460560,valid,3-tab asphalt shingle,80,Hail,60,1,0,0,no,your review,,,yes,
+p8_042_s2_DJI_0120size12460560_jpg.rf.ad1514f3ec6df667831d11c3387f41d0.jpg,8,DJI_0120size12460560,,3-tab asphalt shingle,80,Unclear/unusable,95,1,0,2,no,your review,The unmarked damage is unclear.,,no,damage type is Unclear/unusable
+p8_043_s2_DJI_0127size11705607_jpg.rf.58a548f763cf8d2dac8490d2098eccef.jpg,8,DJI_0127size11705607,,3-tab asphalt shingle,75,Unclear/unusable,100,1,0,0,no,your review,unsure as to what that is.,,no,damage type is Unclear/unusable
+p8_044_s2_DJI_0178size13090153_jpg.rf.e9bff7286cd52fe752915de3e82a2d20.jpg,8,DJI_0178size13090153,train,Architectural asphalt shingle,80,Hail,35,2,0,2,no,your review,,,yes,
+p8_045_s2_DJI_0179size11850565_jpg.rf.e717a04b234dd9741f3e8371850eccfe.jpg,8,DJI_0179size11850565,train,Architectural asphalt shingle,90,Hail,55,1,0,0,no,your review,,,yes,
+p8_046_s2_DJI_0185size12728315_jpg.rf.c33c71021044e49e16f3409cda0dfbe6.jpg,8,DJI_0185size12728315,valid,Architectural asphalt shingle,85,Hail,70,1,0,0,no,your review,The only issue here is shadows.,,yes,
+p8_047_s2_DJI_0205size10002154_jpg.rf.049ae332754ea82c924f37615846a65b.jpg,8,DJI_0205size10002154,,3-tab asphalt shingle,80,Unclear/unusable,70,1,0,2,no,your review,"idk, what do you think?",,no,damage type is Unclear/unusable
+p8_048_s2_DJI_0205size10002154_jpg.rf.f9acbf363ddacb5b10f4c9f26cb2925a.jpg,8,DJI_0205size10002154,,3-tab asphalt shingle,80,Unclear/unusable,55,1,0,2,no,your review,"i also dont know, what do you think?",,no,damage type is Unclear/unusable
+p8_049_s2_DJI_0207size9901854_jpg.rf.e3c253af2547b1e1912ecbfc95689753.jpg,8,DJI_0207size9901854,train,3-tab asphalt shingle,75,Hail,30,1,0,1,no,your review,,,yes,
+p8_050_s2_DJI_0207size9901854_jpg.rf.f6c747e76d917886ea408b02f7dcca80.jpg,8,DJI_0207size9901854,,3-tab asphalt shingle,75,Unclear/unusable,70,1,0,1,no,your review,idk,,no,damage type is Unclear/unusable
+p8_051_s2_DJI_0211size12937020_jpg.rf.8a4702551a9e2b7c1034ff28214f278f.jpg,8,DJI_0211size12937020,,3-tab asphalt shingle,85,Unclear/unusable,65,1,0,0,no,your review,unsure,,no,damage type is Unclear/unusable
+p8_052_s2_DJI_0211size12937020_jpg.rf.cfdb2463e60065a0e82e0f10919120c6.jpg,8,DJI_0211size12937020,test,3-tab asphalt shingle,85,Hail,60,1,0,0,no,agent page (your check),,,yes,
+p8_053_s2_DJI_0212size11900464_jpg.rf.1d2e035d7d004d9fd4f71963d8a560d4.jpg,8,DJI_0212size11900464,test,3-tab asphalt shingle,70,Hail,70,1,1,0,no,agent page (your check),Looks right,,yes,
+p8_054_s2_DJI_0216size11508269_jpg.rf.ebce8276cf7136af12d15f189e489d7e.jpg,8,DJI_0216size11508269,test,3-tab asphalt shingle,80,Hail,60,1,0,0,no,agent page (your check),,,yes,
+p8_055_s2_DJI_0216size11508269_jpg.rf.fb8399b62dc638223058af16e2667848.jpg,8,DJI_0216size11508269,test,3-tab asphalt shingle,85,Hail,55,1,0,0,no,agent page (your check),,,yes,
+p8_056_s2_DJI_0218size11341347_jpg.rf.e9b00a5a875e06d3bc7e93b8c71d45d0.jpg,8,DJI_0218size11341347,,3-tab asphalt shingle,80,No visible damage,70,1,0,0,no,agent page (your check),,,no,damage type is No visible damage
+p8_057_s2_DJI_0221size12998868_jpg.rf.20e51e5224d736220b6491abfe0303c1.jpg,8,DJI_0221size12998868,train,3-tab asphalt shingle,80,Hail,45,1,0,0,no,agent page (your check),,,yes,
+p8_058_s2_DJI_0221size12998868_jpg.rf.628a8a099b79148926fb260dffaedf0a.jpg,8,DJI_0221size12998868,train,3-tab asphalt shingle,80,Hail,35,1,0,0,no,agent page (your check),,,yes,
+p8_059_s2_DJI_0400_JPG_jpg.rf.321393656c64633a81955ffc5bd803b6.jpg,8,DJI_0400,,Architectural asphalt shingle,65,Unclear/unusable,75,1,0,1,no,agent page (your check),Too zoomed in.,,no,damage type is Unclear/unusable
+p8_060_s2_DJI_0420_JPG_jpg.rf.e4bafc04d27f9ca40a90dea36e4b919e.jpg,8,DJI_0420,test,Architectural asphalt shingle,65,Hail,35,1,1,0,no,agent page (your check),"Too zoomed in, also unclear.",,yes,
+p8_061_s2_DJIw_377_jpg.rf.2b62c982c51b0fbe022636f5792fee46.jpg,8,DJIw_377,,Architectural asphalt shingle,90,Unclear/unusable,100,3,0,0,no,agent page (your check),Random white marks and shadow.,,no,damage type is Unclear/unusable
+p8_062_s2_DJIw_382_jpg.rf.12606249a90ac5b4a5f97af85f141c25.jpg,8,DJIw_382,valid,Architectural asphalt shingle,90,Hail,30,1,0,0,no,agent page (your check),,,yes,
+p8_063_s2_DJIw_382_jpg.rf.8734b888b6387383184520ca728e3110.jpg,8,DJIw_382,,Architectural asphalt shingle,90,Unclear/unusable,90,1,7,0,no,agent page (your check),,,no,damage type is Unclear/unusable
+p8_064_s2_DJIw_383_jpg.rf.d37421c53329ae8c5c13b63a01dee630.jpg,8,DJIw_383,,Architectural asphalt shingle,90,Unclear/unusable,60,1,1,0,no,agent page (your check),,,no,damage type is Unclear/unusable
+p8_065_s2_DJIw_385_jpg.rf.51593e42563664e3db68af99acd327bc.jpg,8,DJIw_385,,Architectural asphalt shingle,85,Unclear/unusable,75,1,0,0,no,agent page (your check),,,no,damage type is Unclear/unusable
+p8_066_s2_DJIw_386_jpg.rf.8e71463a19b89bcf74056c5b288497ac.jpg,8,DJIw_386,test,Architectural asphalt shingle,90,Hail,55,1,0,0,no,agent page (your check),,,yes,
+p8_067_s2_DJIw_386_jpg.rf.af9349c779826236bdabebf183022af6.jpg,8,DJIw_386,,Architectural asphalt shingle,90,Unclear/unusable,65,1,0,0,no,agent page (your check),,,no,damage type is Unclear/unusable
+p8_068_s2_DJIw_386_jpg.rf.c5e53de850f0b801fa13be213c70f56d.jpg,8,DJIw_386,,Architectural asphalt shingle,85,Unclear/unusable,80,5,0,0,no,agent page (your check),,,no,damage type is Unclear/unusable
+p8_069_s2_DJIw_388_jpg.rf.32620545d6808e4f1486305c4881b138.jpg,8,DJIw_388,train,Architectural asphalt shingle,90,Hail,90,5,1,0,no,agent page (your check),,,yes,
+p8_070_s2_DJIw_388_jpg.rf.8605e7dbf5a89681fa919959078b0d1a.jpg,8,DJIw_388,train,Architectural asphalt shingle,85,Hail,95,3,0,0,no,agent page (your check),,,yes,
+p8_071_s2_DJIw_388_jpg.rf.da2a7b280b77cbe41a5ebdc8af6d0e30.jpg,8,DJIw_388,train,Architectural asphalt shingle,90,Hail,55,2,1,0,no,agent page (your check),,,yes,
+p8_072_s2_DJIw_388_jpg.rf.e67170362f6bbc21617735aab748309b.jpg,8,DJIw_388,train,Architectural asphalt shingle,90,Hail,70,11,1,0,no,agent page (your check),I don't know about the blue marker.,I don't know about the blue marker. Because it's not the roof.,yes,
+p8_073_s2_DJIw_388_jpg.rf.ef0e2f1e1eb21254bb50ef2641606c00.jpg,8,DJIw_388,train,Architectural asphalt shingle,90,Hail,60,6,1,0,no,agent page (your check),,,yes,
+p8_074_s2_DJIw_389_jpg.rf.b196599e5b92f38bccc6ba3eb4ac875a.jpg,8,DJIw_389,,Wood shake,90,Unclear/unusable,60,1,0,0,no,agent page (your check),,,no,damage type is Unclear/unusable
+p8_075_s2_DJIw_393_jpg.rf.11e892a4a5af279b2be78f055eb765a6.jpg,8,DJIw_393,train,Architectural asphalt shingle,90,Hail,40,2,18,0,no,agent page (your check),A lot of unmarked damage.,,yes,
+p8_076_s2_DJIw_393_jpg.rf.344398fbe424138a51f061017a94ce18.jpg,8,DJIw_393,,Architectural asphalt shingle,90,Unclear/unusable,100,2,0,0,no,agent page (your check),,,no,damage type is Unclear/unusable
+p8_077_s2_DJIw_393_jpg.rf.3d06d76bfc381235fe3da9622f68fd67.jpg,8,DJIw_393,train,Architectural asphalt shingle,90,Hail,45,3,12,3,no,agent page (your check),A lot of unmarked damage.,,yes,
+p8_078_s2_DJIw_393_jpg.rf.56ef6c5b66482bbf971cce82bd4b5ee9.jpg,8,DJIw_393,,Architectural asphalt shingle,90,Unclear/unusable,100,2,0,0,no,agent page (your check),,,no,damage type is Unclear/unusable
+p8_079_s2_DJIw_393_jpg.rf.6097aa3096963ec58b8922db2b9857a1.jpg,8,DJIw_393,train,Architectural asphalt shingle,90,Hail,30,3,8,2,no,agent page (your check),A lot of unmarked damage.,,yes,
+p8_080_s2_DJIw_393_jpg.rf.68880b7de446ddab0885cb34854fc2ca.jpg,8,DJIw_393,train,Architectural asphalt shingle,90,Hail,35,3,9,1,no,agent page (your check),A lot of unmarked damage.,,yes,
+p8_081_s2_DJIw_393_jpg.rf.91b207daf6fa6a841f2e60f8b44efe27.jpg,8,DJIw_393,,Architectural asphalt shingle,90,Unclear/unusable,80,9,0,2,no,agent page (your check),A roof with another roof in the shadow and the floor. very complicated.,,no,damage type is Unclear/unusable
+p8_082_s2_DJIw_393_jpg.rf.f552d5ea291aa475f7110bc7db18133f.jpg,8,DJIw_393,train,Architectural asphalt shingle,90,Hail,45,1,14,0,no,agent page (your check),A lot of unmarked damage again.,,yes,
+p8_083_s2_DJIw_394_jpg.rf.681c86a73f1c25a9f487db37e85a450a.jpg,8,DJIw_394,train,Architectural asphalt shingle,90,Hail,65,6,2,0,no,agent page (your check),,,yes,
+p8_084_s2_DJIw_394_jpg.rf.8ae902de2a2927f672d8f05cf6828567.jpg,8,DJIw_394,train,Architectural asphalt shingle,90,Hail,65,6,0,2,no,agent page (your check),,,yes,
+p8_085_s2_DJIw_394_jpg.rf.b5b829b1ab6f83e79a428d62e9067692.jpg,8,DJIw_394,,Architectural asphalt shingle,80,Unclear/unusable,40,1,0,0,no,agent page (your check),,,no,damage type is Unclear/unusable
+p8_086_s2_DJIw_394_jpg.rf.c26a5bb7190359e02b0ca87ed1a6a355.jpg,8,DJIw_394,train,Architectural asphalt shingle,90,Hail,95,7,21,2,no,agent page (your check),,,yes,
+p8_087_s2_DJIw_394_jpg.rf.d8d6c4be283a677f8e1ceb7ba6b0313e.jpg,8,DJIw_394,train,Architectural asphalt shingle,90,Hail,95,5,26,2,no,agent page (your check),,,yes,
+p8_088_s2_DJIw_394_jpg.rf.d96de6ad3f1cb9ccf855c5073f10d698.jpg,8,DJIw_394,train,Architectural asphalt shingle,90,Hail,85,5,7,0,no,agent page (your check),,,yes,
+p8_089_s2_DJIw_394_jpg.rf.f03ecdfa1540b325c042dc02581719de.jpg,8,DJIw_394,train,Architectural asphalt shingle,90,Hail,60,5,3,0,no,agent page (your check),,,yes,
+p8_090_s2_DJIw_394_jpg.rf.f4bbc58ab4ce71dd0804396753e7bae1.jpg,8,DJIw_394,,Architectural asphalt shingle,90,Unclear/unusable,80,4,0,0,no,agent page (your check),Slightly blurry,,no,damage type is Unclear/unusable
+p8_091_s2_DJIw_399_jpg.rf.4b663bedb386262f3fa5a8c4aa9d4115.jpg,8,DJIw_399,train,Architectural asphalt shingle,90,Hail,60,3,0,0,no,agent page (your check),,,yes,
+p8_092_s2_DJIw_399_jpg.rf.d57fa71a1466f5788ff128d2ab66954e.jpg,8,DJIw_399,,Architectural asphalt shingle,90,Unclear/unusable,60,3,0,0,no,agent page (your check),,,no,damage type is Unclear/unusable
+p8_093_s2_DJIw_399_jpg.rf.e8d4c95d0cc7677df3525fcced6df1fa.jpg,8,DJIw_399,,Architectural asphalt shingle,90,Unclear/unusable,60,2,0,0,no,agent page (your check),Same photo as the last one.,"Box 2 is weird; I don't know what that is, really and truly.",no,damage type is Unclear/unusable
+p8_094_s2_DJIw_400_jpg.rf.14ec6eaa377b258b70a51d858d0d4493.jpg,8,DJIw_400,train,Architectural asphalt shingle,90,Hail,60,2,1,1,no,agent page (your check),,,yes,
+p8_095_s2_DJIw_400_jpg.rf.ad4e3f9f5246e8458aec7bd2132129ec.jpg,8,DJIw_400,train,Architectural asphalt shingle,90,Hail,40,1,0,1,no,agent page (your check),,,yes,
+p8_096_s2_DJIw_400_jpg.rf.cbcb7dfb7c7ad06e1256e89d5a9f8a33.jpg,8,DJIw_400,train,Architectural asphalt shingle,90,Hail,40,1,0,0,no,agent page (your check),,,yes,
+p8_097_s2_DJIw_400_jpg.rf.ecd70db475d0d3dc61c9afc5010e950a.jpg,8,DJIw_400,train,Architectural asphalt shingle,90,Hail,65,2,0,0,no,agent page (your check),,,yes,
+p8_098_s2_DJIw_401_jpg.rf.d374410ad066c36fb4f59727ce52e460.jpg,8,DJIw_401,train,Architectural asphalt shingle,90,Hail,55,6,0,1,no,agent page (your check),,Questionable.,yes,
+p8_099_s2_DJIw_401_jpg.rf.f03c6e714fee5091ebc54561519fcbac.jpg,8,DJIw_401,train,Architectural asphalt shingle,90,Hail,35,2,0,1,no,agent page (your check),,,yes,
+p8_100_s2_DJIw_401_jpg.rf.f04d16a77560841f43286014e10781c5.jpg,8,DJIw_401,train,Architectural asphalt shingle,90,Hail,60,7,0,5,no,agent page (your check),,,yes,
+p8_101_s2_DJIw_402_jpg.rf.0b4e7e9128b2b2e5faf5b9f8b1c698ec.jpg,8,DJIw_402,train,Architectural asphalt shingle,90,Hail,45,3,1,0,no,agent page (your check),,,yes,
+p8_102_s2_DJIw_402_jpg.rf.0c2f26c7cb2bbac704043d2bfbba8d56.jpg,8,DJIw_402,train,Architectural asphalt shingle,90,Hail,40,2,0,1,no,agent page (your check),,,yes,
+p8_103_s2_DJIw_402_jpg.rf.1d5a41056d15589d04ab217d5ccb3cef.jpg,8,DJIw_402,train,Architectural asphalt shingle,90,Hail,45,3,0,0,no,agent page (your check),,Because what the hell is this?,yes,
+p8_104_s2_DJIw_402_jpg.rf.914e8318c695fc0fceb50cf553e84150.jpg,8,DJIw_402,,Architectural asphalt shingle,90,Unclear/unusable,60,1,0,0,no,agent page (your check),,"Dude, I don't know",no,damage type is Unclear/unusable
+p8_105_s2_DJIw_402_jpg.rf.96261cade499a2704c50997b0cdada9f.jpg,8,DJIw_402,train,Architectural asphalt shingle,90,Hail,40,1,0,2,no,agent page (your check),,,yes,
+p8_106_s2_DJIw_402_jpg.rf.b03268071a2fecc0dd197f9cef82a882.jpg,8,DJIw_402,train,Architectural asphalt shingle,90,Hail,35,1,0,0,no,agent page (your check),,,yes,
+p8_107_s2_DJIw_402_jpg.rf.c19b1f432c64ee0982ac78adb74bfe72.jpg,8,DJIw_402,train,Architectural asphalt shingle,90,Hail,45,2,0,0,no,agent page (your check),,,yes,
+p8_108_s2_DJIw_403_jpg.rf.0fcdd15d579b006328615a2e56d403d8.jpg,8,DJIw_403,train,Architectural asphalt shingle,90,Hail,55,7,0,0,no,agent page (your check),,,yes,
+p8_109_s2_DJIw_403_jpg.rf.45b7d4edd23c5669ee898e9dca16e8b6.jpg,8,DJIw_403,train,Architectural asphalt shingle,90,Hail,40,2,2,0,no,agent page (your check),,,yes,
+p8_110_s2_DJIw_403_jpg.rf.74df0cfe8fd02aa0b2352471b3c9a087.jpg,8,DJIw_403,train,Architectural asphalt shingle,90,Hail,50,5,0,0,no,agent page (your check),,Usable but mostly green. Not my cup of tea.,yes,
+p8_111_s2_DJIw_403_jpg.rf.9ffa1a841811d7e122287b7218166530.jpg,8,DJIw_403,train,Architectural asphalt shingle,90,Hail,40,1,0,0,no,agent page (your check),,,yes,
+p8_112_s2_DJIw_403_jpg.rf.c9be21d2f671f668e479a1006ac2f0f0.jpg,8,DJIw_403,train,Architectural asphalt shingle,80,Hail,40,1,2,0,no,agent page (your check),,,yes,
+p8_113_s2_DJIw_403_jpg.rf.cb20747b4460f6a4f7756a81e5bbeaf4.jpg,8,DJIw_403,train,Architectural asphalt shingle,85,Hail,40,2,0,0,no,agent page (your check),,,yes,
+p8_114_s2_DJIw_403_jpg.rf.d80bc8ef31fa5f3900cbf3e64e4db4a5.jpg,8,DJIw_403,train,Architectural asphalt shingle,85,Hail,55,9,2,0,no,agent page (your check),,,yes,
+p8_115_s2_DJIw_405_jpg.rf.9245d8cd38bbfab9713f59955f22edcd.jpg,8,DJIw_405,valid,Architectural asphalt shingle,90,Hail,45,1,0,0,no,agent page (your check),,,yes,
+p8_116_s2_DJIw_405_jpg.rf.ab84991fd5d96d70a2f57cfc79f69037.jpg,8,DJIw_405,,Architectural asphalt shingle,90,Hail,55,2,0,0,yes,agent page (your check),,,no,adjuster chalk visible
+p8_117_s2_DJIw_405_jpg.rf.da347f64f6fb7f742f72d7e3ee19ac8a.jpg,8,DJIw_405,valid,Architectural asphalt shingle,90,Hail,40,1,0,0,no,agent page (your check),,,yes,
+p8_118_s2_DJIw_408_jpg.rf.012ef4ecd5d33540544256fee4690782.jpg,8,DJIw_408,train,Architectural asphalt shingle,90,Hail,40,1,0,0,no,agent page (your check),,,yes,
+p8_119_s2_DJIw_408_jpg.rf.4f0337e107b434fc36f08d05bce15aaa.jpg,8,DJIw_408,train,Architectural asphalt shingle,90,Hail,45,2,0,0,no,agent only (not checked),,,yes,
+p8_120_s2_DJIw_408_jpg.rf.a76c5b69f87456f3548b201ec0ad279e.jpg,8,DJIw_408,train,Architectural asphalt shingle,90,Hail,55,2,0,0,no,agent page (your check),,,yes,
+p8_121_s2_DJIw_410_jpg.rf.05c1a67dfaf84243d0c0b6024d5eb138.jpg,8,DJIw_410,valid,Architectural asphalt shingle,90,Hail,55,1,0,0,no,agent page (your check),,,yes,
+p8_122_s2_DJIw_410_jpg.rf.17af4730224c129626610d5789a9f53f.jpg,8,DJIw_410,,Architectural asphalt shingle,90,Hail,55,1,0,0,yes,agent page (your check),,,no,adjuster chalk visible
+p8_123_s2_DJIw_410_jpg.rf.4afad7b9a3cb6f377463976c642c3316.jpg,8,DJIw_410,valid,Architectural asphalt shingle,90,Hail,50,1,1,0,no,agent page (your check),,,yes,
+p8_124_s2_DJIw_410_jpg.rf.752636c77349a6c682ded9dd46b713f7.jpg,8,DJIw_410,valid,Architectural asphalt shingle,90,Hail,60,1,1,0,no,agent page (your check),,,yes,
+p8_125_s2_DJIw_410_jpg.rf.d356feb670d5feb17a35163b93e9fec5.jpg,8,DJIw_410,valid,Architectural asphalt shingle,90,Hail,50,1,0,0,no,agent page (your check),,,yes,
+p8_126_s2_DJIw_410_jpg.rf.d368bc3840aa3e9917565eacfaa01882.jpg,8,DJIw_410,,Architectural asphalt shingle,90,Hail,55,1,0,0,yes,agent page (your check),,,no,adjuster chalk visible
+p8_127_s2_DJIw_411_jpg.rf.e3a265e75956b8d2ae3f6dee085c7bd5.jpg,8,DJIw_411,train,Architectural asphalt shingle,90,Hail,45,1,0,1,no,agent page (your check),,,yes,
+p8_128_s2_DJIw_413_jpg.rf.47490fa81c42120822977f4bb1535a4b.jpg,8,DJIw_413,test,Architectural asphalt shingle,90,Hail,45,1,1,0,no,agent page (your check),,,yes,
+p8_129_s2_DJIw_413_jpg.rf.dd713fd26c3b9c6fda6db9cd5dbe45e1.jpg,8,DJIw_413,,Architectural asphalt shingle,90,Unclear/unusable,60,1,2,0,yes,agent page (your check),,,no,adjuster chalk visible
+p8_130_s2_DJIw_413_jpg.rf.e9ec20c7d0406996681fc895402df12d.jpg,8,DJIw_413,test,Architectural asphalt shingle,90,Hail,55,1,0,0,no,agent page (your check),,,yes,
+p8_131_s2_DJIw_417_jpg.rf.34e5222b6456b697ff1fb5c2396b1627.jpg,8,DJIw_417,train,Architectural asphalt shingle,90,Hail,90,6,6,2,no,agent page (your check),,,yes,
+p8_132_s2_DJIw_417_jpg.rf.7440a3eb8da36508ecfb9a4517ecaa0e.jpg,8,DJIw_417,train,Architectural asphalt shingle,90,Hail,90,12,5,0,no,agent page (your check),,,yes,
+p8_133_s2_DJIw_417_jpg.rf.c7e36ac198762ab97bbafd3996a8a1f8.jpg,8,DJIw_417,,Architectural asphalt shingle,90,Hail,55,5,3,0,yes,agent page (your check),,,no,adjuster chalk visible
+p8_134_s2_DJIw_419_jpg.rf.8f7ee852e49a8be20e853e21654a17b7.jpg,8,DJIw_419,test,Architectural asphalt shingle,90,Hail,55,5,5,1,no,agent page (your check),,,yes,
+p8_135_s2_DJIw_419_jpg.rf.d2fa379bc7271129f85d9aadf62b7925.jpg,8,DJIw_419,,Architectural asphalt shingle,90,Hail,55,3,0,0,yes,agent page (your check),,Hail and wind damage. Fun stuff1,no,adjuster chalk visible
+p8_136_s2_DJIw_420_jpg.rf.324b2f6d13fa5a0a151eba0c26255d7a.jpg,8,DJIw_420,,Architectural asphalt shingle,90,Hail,100,14,5,0,yes,agent page (your check),,,no,adjuster chalk visible
+p8_137_s2_DJIw_420_jpg.rf.82c17edc47009d2dc2604e144380204c.jpg,8,DJIw_420,,Architectural asphalt shingle,90,Hail,45,1,9,0,yes,agent page (your check),,,no,adjuster chalk visible
+p8_138_s2_DJIw_422_jpg.rf.531e417507bd8a0a106d77fc8e4b1ac0.jpg,8,DJIw_422,train,Architectural asphalt shingle,90,Hail,65,2,1,0,no,agent page (your check),,,yes,
+p8_139_s2_DJIw_422_jpg.rf.5c544e2aa9db52a8fd5f27a88b0581e9.jpg,8,DJIw_422,,Architectural asphalt shingle,90,Hail,50,5,0,0,yes,agent page (your check),,,no,adjuster chalk visible
+p8_140_s2_DJIw_424_jpg.rf.3f57ba8d3469d86cf546922d0026ed24.jpg,8,DJIw_424,,Architectural asphalt shingle,90,Hail,45,1,1,0,yes,agent page (your check),,,no,adjuster chalk visible
+p8_141_s2_DJIw_424_jpg.rf.7781d66663c3140c8d15bbe378287953.jpg,8,DJIw_424,,Architectural asphalt shingle,90,Unclear/unusable,60,1,2,0,no,agent page (your check),,,no,damage type is Unclear/unusable
+p8_142_s2_DJIw_425_jpg.rf.5309ea76e04ced4466b98be2e3f2b1c7.jpg,8,DJIw_425,,Architectural asphalt shingle,90,Unclear/unusable,100,2,0,0,yes,agent page (your check),,,no,adjuster chalk visible
+p8_143_s2_DJIw_425_jpg.rf.82100f18a37392065f78f3179f6c7e72.jpg,8,DJIw_425,,Architectural asphalt shingle,90,Unclear/unusable,70,2,0,0,yes,agent page (your check),,,no,adjuster chalk visible
+p8_144_s2_DJIw_426_jpg.rf.231a41d21609bb7844c3c158dbb75f57.jpg,8,DJIw_426,,Architectural asphalt shingle,90,Hail,65,6,2,2,yes,agent page (your check),,,no,adjuster chalk visible
+p8_145_s2_DJIw_426_jpg.rf.5bd8c6b39bc10ba015bb3c9d2ed14aae.jpg,8,DJIw_426,train,Architectural asphalt shingle,90,Hail,55,2,0,0,no,agent page (your check),,,yes,
+p8_146_s2_DJIw_426_jpg.rf.755e4f7986b77a4deaf7274669522d77.jpg,8,DJIw_426,train,Architectural asphalt shingle,90,Hail,65,6,4,4,no,agent page (your check),,,yes,
+p8_147_s2_DJIw_426_jpg.rf.96cadcbc1b68cb8786bb596dc9c96156.jpg,8,DJIw_426,,Architectural asphalt shingle,90,Hail,50,2,0,0,yes,agent page (your check),,,no,adjuster chalk visible
+p8_148_s2_DJIw_426_jpg.rf.a82a8965a25cbc82e6be22c2afc5989c.jpg,8,DJIw_426,,Architectural asphalt shingle,90,Hail,50,3,0,0,yes,agent page (your check),,,no,adjuster chalk visible
+p8_149_s2_DJIw_428_jpg.rf.344567ac176ca8667ffe2265ad1be066.jpg,8,DJIw_428,valid,Architectural asphalt shingle,85,Hail,55,8,3,0,no,agent page (your check),,,yes,
+p8_150_s2_DJIw_435_JPG.rf.5a74e9cb0b546f370d55fdac09b8cf63.jpg,8,DJIw_435,,Architectural asphalt shingle,85,Hail,55,9,2,0,yes,agent page (your check),,,no,adjuster chalk visible
+p8_151_s2_DJIw_441_jpg.rf.6ae668989ea1e67657d5f2e6cd8a9988.jpg,8,DJIw_441,train,Architectural asphalt shingle,90,Hail,70,5,1,0,no,agent page (your check),,,yes,
+p8_152_s2_DJIw_441_jpg.rf.869737d3c097c89cbcfa52cddacacbf9.jpg,8,DJIw_441,train,Architectural asphalt shingle,90,Hail,45,1,1,0,no,agent page (your check),,,yes,
+p8_153_s2_DJIw_441_jpg.rf.e7cbfcbba3b0823a1c2205724c81326e.jpg,8,DJIw_441,,Architectural asphalt shingle,90,Hail,60,4,2,0,yes,agent page (your check),,,no,adjuster chalk visible
+p8_154_s2_DJIw_441_jpg.rf.f182b4ea530441e157f068027c03ae2b.jpg,8,DJIw_441,train,Architectural asphalt shingle,90,Hail,55,2,0,0,no,agent page (your check),,,yes,
+p8_155_s2_DJIw_442_jpg.rf.1933a3edfc4cedc2795eaa466f4de8eb.jpg,8,DJIw_442,train,Architectural asphalt shingle,90,Hail,65,4,0,0,no,agent page (your check),,,yes,
+p8_156_s2_DJIw_442_jpg.rf.fdaebc325cee241d5a78dca9bd31b47c.jpg,8,DJIw_442,train,Architectural asphalt shingle,90,Hail,70,5,0,0,no,agent page (your check),,,yes,
