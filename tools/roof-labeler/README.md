@@ -17,7 +17,7 @@ Nothing to install. Open `labeler.html` in Chrome, Edge or Firefox. The photos n
 Progress autosaves in your browser. If you close the tab, reopen the same folder in the same browser and
 your edits come back. Autosave is not a backup, so export at the end of every session.
 
-The tool also reads plain YOLO `.txt` files that sit next to the photos with the same name
+The tool also reads plain YOLO `.txt` files, boxes or polygons, that sit next to the photos with the same name
 (`nr014.webp` + `nr014.txt`). When an `annotations.json` is present, its boxes win.
 
 ## Controls
@@ -25,11 +25,16 @@ The tool also reads plain YOLO `.txt` files that sit next to the photos with the
 | Action | Mouse | Key |
 |---|---|---|
 | Next / previous photo | ‹ › buttons, or click in the list | → / ← |
-| Draw a box | Drag on an empty part of the photo | |
-| Select, move | Click a box, drag it | |
-| Resize | Drag a corner handle of the selected box | |
-| Set class (new box, or the selected one) | Class buttons | 1 hail, 2 wind, 3 missing shingles |
-| Delete selected box | Delete box | Del / Backspace |
+| Box tool / Shape tool | Box, Shape buttons | B / P |
+| Draw a box (Box tool) | Drag on an empty part of the photo | |
+| Draw a shape (Shape tool) | Click each corner around the damage, then click the first point | Enter closes, Backspace drops the last point, Esc cancels |
+| Select, move | Click a shape, drag it | |
+| Reshape | Drag any corner of the selected shape. Corners move freely, so a box can be skewed to follow the roof | |
+| Add a corner | Drag one of the small diamonds on the edges | |
+| Remove a corner | Double-click it (or right-click) | |
+| Set class (new shape, or the selected one) | Class buttons | 1 hail, 2 wind, 3 missing shingles |
+| Delete selected shape | × on the shape, or Delete shape | Del / Backspace |
+| Undo | Undo | Ctrl+Z / Cmd+Z |
 | Flag / unflag photo | Flag | F |
 | Mark reviewed | Mark reviewed | R |
 | Deselect | | Esc |
@@ -49,11 +54,15 @@ The tool also reads plain YOLO `.txt` files that sit next to the photos with the
 If a spot fits two classes, pick the one that a roofer would write on the claim: a tab that is torn off
 and gone is `missing_shingles`, a tab that is creased but still there is `wind`.
 
-### Drawing boxes
+### Drawing shapes
+
+- Photos are taken at an angle, so damage rarely sits in an upright rectangle. Fit the outline to the
+  damaged area: start with a box and drag its corners onto the damage, or trace it with the Shape tool.
+  Four to eight corners is plenty.
 
 - One box per damaged area. Separate hits that are clearly apart get separate boxes, a cluster of hail
   hits on the same few shingles can share one.
-- Fit the box tight to the damage, with a small margin. Don't box the whole roof unless the whole
+- Fit the outline tight to the damage, with a small margin. Don't box the whole roof unless the whole
   visible slope really is stripped.
 - Box only roof covering. Gutters, fascia, siding and soffits are out of scope.
 - Leave a photo with no boxes when there is no roof damage. An empty label file is a valid
@@ -92,10 +101,12 @@ labeler and not flagged.
 ## What the export contains
 
 ```text
-labels/<photo>.txt   YOLO: class x_center y_center width height (normalized), empty = no damage
-classes.txt          hail, wind, missing_shingles (ids 0, 1, 2)
-flagged.txt          flagged photos and their notes
-annotations.json     every photo: boxes, flag, reviewed, note, labeledBy, editedBy, reviewedBy, updatedAt
+labels/<photo>.txt       YOLO boxes: class x_center y_center width height (normalized), empty = no damage.
+                         Each shape becomes the upright box around it, so this works with final_dataset as is.
+labels_seg/<photo>.txt   YOLO polygons: class x1 y1 x2 y2 ... (normalized), the exact outlines you drew
+classes.txt              hail, wind, missing_shingles (ids 0, 1, 2)
+flagged.txt              flagged photos and their notes
+annotations.json         every photo: shapes (points and bounding box), flag, reviewed, note, labeledBy, editedBy, reviewedBy, updatedAt
 ```
 
 If the tool is used without internet, the zip library can't load and the export falls back to
