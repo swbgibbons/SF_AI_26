@@ -7,18 +7,30 @@ Nothing to install. Open `labeler.html` in Chrome, Edge or Firefox. The photos n
 
 ## Quick start
 
-1. Unzip the batch you were given, for example `A_NewRoofImages_Annotated/not_used.zip`.
-2. If the batch has starter labels, copy them into the same folder and name the file `annotations.json`.
-   The 50 `not_used` photos have one: `starter/nr_not_used_annotations.json`.
-3. Open `labeler.html`, type your name at the top right, click **Open folder** and pick the photo folder.
+1. Get the photos as plain image files, together with their labels file (`.json`) if they have one.
+   For the 50 `nr` photos, use the ready-to-go kit Hugo shares (`roof-labeler-ready.zip`). It has this
+   tool and a `photos` folder with the photos and the first-pass labels already inside.
+   Don't use the `previews` zips: their boxes are printed into the pictures and can't be edited.
+2. Open `labeler.html` in your browser and type your name at the top right.
+3. Click **Open folder** and pick the photo folder. If your browser won't let you pick a folder, click
+   **Open files**, go into the folder, select everything (Cmd+A or Ctrl+A) and click Open.
 4. Work through the photos (see the guide below).
 5. Click **Export labels**. You get `<folder>_<your name>.zip`. Send it back or commit it, as agreed.
 
 Progress autosaves in your browser. If you close the tab, reopen the same folder in the same browser and
 your edits come back. Autosave is not a backup, so export at the end of every session.
 
-The tool also reads plain YOLO `.txt` files, boxes or polygons, that sit next to the photos with the same name
-(`nr014.webp` + `nr014.txt`). When an `annotations.json` is present, its boxes win.
+The tool also reads any `.json` annotations file in the folder (whatever it is called) and plain YOLO `.txt` files, boxes or polygons, that sit next to the photos with the same name
+(`nr014.webp` + `nr014.txt`). When a `.json` annotations file is present, its shapes win.
+
+## On a Mac
+
+- Use Chrome, Safari or Firefox. Double-click `labeler.html` in Finder; if it opens in a text editor
+  instead, right-click it, choose **Open With**, and pick your browser.
+- Downloading from GitHub: on the file's page click the download icon (**Download raw file**). Don't
+  copy the page or save the GitHub page itself, which saves GitHub's website instead of the tool.
+- The Delete key on a Mac keyboard deletes the selected shape. Cmd+Z undoes.
+- To remove a corner, double-click it, or Ctrl-click / two-finger click it.
 
 ## Controls
 
@@ -31,10 +43,10 @@ The tool also reads plain YOLO `.txt` files, boxes or polygons, that sit next to
 | Select, move | Click a shape, drag it | |
 | Reshape | Drag any corner of the selected shape. Corners move freely, so a box can be skewed to follow the roof | |
 | Add a corner | Drag one of the small diamonds on the edges | |
-| Remove a corner | Double-click it (or right-click) | |
+| Remove a corner | Double-click it, or right-click / Ctrl-click it | |
 | Set class (new shape, or the selected one) | Class buttons | 1 hail, 2 wind, 3 missing shingles |
-| Delete selected shape | × on the shape, or Delete shape | Del / Backspace |
-| Undo | Undo | Ctrl+Z / Cmd+Z |
+| Delete selected shape | × on the shape, or Delete shape | Delete / Backspace |
+| Undo | Undo | Ctrl+Z (Cmd+Z on a Mac) |
 | Flag / unflag photo | Flag | F |
 | Mark reviewed | Mark reviewed | R |
 | Deselect | | Esc |
