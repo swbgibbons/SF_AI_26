@@ -33,11 +33,15 @@ The tool also reads plain YOLO `.txt` files, boxes or polygons, that sit next to
 | Add a corner | Drag one of the small diamonds on the edges | |
 | Remove a corner | Double-click it (or right-click) | |
 | Set class (new shape, or the selected one) | Class buttons | 1 hail, 2 wind, 3 missing shingles |
-| Delete selected shape | × on the shape, or Delete shape | Del / Backspace |
+| Delete selected shape | × next to the shape (it sits just outside the shape, away from the corners; press and release on it), or Delete shape | Del / Backspace |
 | Undo | Undo | Ctrl+Z / Cmd+Z |
 | Flag / unflag photo | Flag | F |
 | Mark reviewed | Mark reviewed | R |
 | Deselect | | Esc |
+| Zoom in / out where the pointer is | Ctrl+scroll (Cmd+scroll on Mac), or pinch on a trackpad | |
+| Zoom in / out on the selected shape | − and + buttons | + / − (Ctrl/Cmd + and − also zoom the photo, not the page) |
+| Fit the whole photo | the % button | 0 |
+| Move around when zoomed | Scroll, hold Space and drag, or drag with the middle mouse button | |
 
 **Undo my changes** puts the current photo back to how it was when you opened the folder.
 

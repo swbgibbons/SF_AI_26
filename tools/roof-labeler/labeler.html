@@ -74,9 +74,11 @@ kbd{font-family:var(--f-mono);font-size:11px;opacity:.7}
 .cls{border:1px solid var(--line);background:var(--bg);border-radius:6px;padding:5px 10px;display:inline-flex;gap:6px;align-items:center}
 .cls[aria-pressed="true"]{border-color:var(--c);box-shadow:inset 0 0 0 1px var(--c)}
 .cur{font-family:var(--f-mono);font-weight:500;font-size:14px;min-width:120px}
-.stagewrap{flex:1;min-height:0;background:var(--stage);display:flex;align-items:center;justify-content:center;padding:16px;overflow:auto}
-.frame{position:relative;display:inline-block;line-height:0;touch-action:none;user-select:none;-webkit-user-select:none;cursor:crosshair}
-.frame img{display:block;max-width:100%;max-height:var(--fit,70vh);width:auto;height:auto;pointer-events:none}
+.stagewrap{flex:1;min-height:0;background:var(--stage);display:flex;padding:16px;overflow:auto;position:relative}
+.stagewrap.pan,.stagewrap.pan .frame{cursor:grab}
+.stagewrap.panning,.stagewrap.panning .frame{cursor:grabbing}
+.frame{position:relative;display:inline-block;margin:auto;flex:none;line-height:0;touch-action:none;user-select:none;-webkit-user-select:none;cursor:crosshair}
+.frame img{display:block;max-width:none;max-height:none;pointer-events:none}
 #ov{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
 .shape{fill:color-mix(in srgb,var(--c) 12%,transparent);stroke:var(--c);stroke-width:2;vector-effect:non-scaling-stroke;cursor:move;pointer-events:all}
 .shape.sel{fill:color-mix(in srgb,var(--c) 24%,transparent);stroke-width:3}
@@ -89,8 +91,11 @@ kbd{font-family:var(--f-mono);font-size:11px;opacity:.7}
 .vh.first{width:20px;height:20px;margin:-10px 0 0 -10px;background:var(--c);border-color:#fff}
 .mh{position:absolute;width:11px;height:11px;margin:-5.5px 0 0 -5.5px;background:var(--c);opacity:.6;border-radius:2px;transform:rotate(45deg);cursor:copy;touch-action:none}
 .mh:hover{opacity:1}
-.xdel{position:absolute;transform:translate(-50%,-50%);width:26px;height:26px;border-radius:50%;border:2px solid #fff;background:var(--flag);color:#fff;font:600 16px/1 var(--f-ui);display:grid;place-items:center;padding:0;cursor:pointer;box-shadow:0 1px 3px rgba(0,0,0,.35)}
+.xdel{position:absolute;transform:translate(-50%,-50%);width:26px;height:26px;z-index:2;border-radius:50%;border:2px solid #fff;background:var(--flag);color:#fff;font:600 16px/1 var(--f-ui);display:grid;place-items:center;padding:0;cursor:pointer;box-shadow:0 1px 3px rgba(0,0,0,.35)}
 .frame.poly-mode{cursor:copy}
+.zoom{display:flex;gap:4px;align-items:center}
+.zoom .btn{padding:6px 9px}
+#zlvl{font-family:var(--f-mono);font-size:12px;min-width:44px;text-align:center;font-variant-numeric:tabular-nums}
 .mode[aria-pressed="true"]{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
 .draft{position:absolute;border:2px dashed var(--c);pointer-events:none}
 .foot{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;padding-block:10px;padding-left:16px;padding-right:max(16px,env(safe-area-inset-right,0px));border-top:1px solid var(--line);background:var(--panel)}
@@ -182,6 +187,12 @@ kbd{font-family:var(--f-mono);font-size:11px;opacity:.7}
         <button class="btn" id="rev" type="button">Mark reviewed <kbd>R</kbd></button>
         <button class="btn" id="reset" type="button">Undo my changes</button>
       </div>
+      <span class="sep"></span>
+      <div class="grp zoom" role="group" aria-label="Zoom">
+        <button class="btn" id="zout" type="button" aria-label="Zoom out" title="Zoom out (−)">−</button>
+        <button class="btn" id="zfit" type="button" title="Fit the photo (0)"><span id="zlvl">100%</span></button>
+        <button class="btn" id="zin" type="button" aria-label="Zoom in" title="Zoom in (+)">+</button>
+      </div>
     </div>
     <div class="stagewrap" id="stagewrap">
       <div class="frame" id="frame"><img id="photo" alt=""><svg id="ov" viewBox="0 0 1 1" preserveAspectRatio="none" aria-hidden="true"></svg><div id="hl"></div></div>
@@ -190,7 +201,7 @@ kbd{font-family:var(--f-mono);font-size:11px;opacity:.7}
       <label for="note">Note</label>
       <input id="note" type="text" placeholder="Why it's flagged, what to fix…" autocomplete="off">
       <div class="hint" id="by"></div>
-      <div class="hint"><b>Box:</b> drag on the photo. <b>Shape:</b> click around the damage, then click the first point or press Enter. Click a shape to select it and drag it to move. Drag any corner anywhere, so a box can be skewed to follow the roof's angle. Drag a small diamond to add a corner, double-click a corner to remove it. × or Del deletes the shape, Ctrl+Z undoes, 1 2 3 change its class.</div>
+      <div class="hint"><b>Box:</b> drag on the photo. <b>Shape:</b> click around the damage, then click the first point or press Enter. Click a shape to select it and drag it to move. Drag any corner anywhere, so a box can be skewed to follow the roof's angle. Drag a small diamond to add a corner, double-click a corner to remove it. × or Del deletes the shape, Ctrl+Z undoes, 1 2 3 change its class. <b>Zoom:</b> Ctrl+scroll or pinch zooms where the pointer is, + and − zoom on the selected shape, 0 fits the photo. Scroll, or hold Space and drag, to move around.</div>
     </div>
   </section>
 </div>
@@ -282,7 +293,7 @@ function renderTools(){
   $("#by").innerHTML=parts.join(", ")+(self?' <span class="chip" style="color:var(--flag);border-color:var(--flag)">same person labeled and reviewed</span>':"");
 }
 function renderAll(){renderStats();renderList();renderTools();renderBoxes()}
-function go(i){if(i<0||i>=S.items.length)return;S.i=i;S.sel=-1;S.poly=null;const it=cur(),im=$("#photo");im.onload=()=>{it.w=im.naturalWidth;it.h=im.naturalHeight};im.src=it.url;im.alt=`Roof photo ${it.id}`;renderAll()}
+function go(i){if(i<0||i>=S.items.length)return;S.i=i;S.sel=-1;S.poly=null;const it=cur(),im=$("#photo");S.zoom=1;im.onload=()=>{it.w=im.naturalWidth;it.h=im.naturalHeight;layout()};im.src=it.url;im.alt=`Roof photo ${it.id}`;renderAll()}
 function needName(){if(who())return false;$("#whoWrap").classList.add("missing");$("#who").focus();toast("Type your name first so your edits are credited to you.");return true}
 function changed(opt={}){const it=cur();it.touched=true;it.updatedAt=new Date().toISOString();if(!opt.reviewOnly){if(!it.labeledBy)it.labeledBy=who();it.editedBy=who()}renderStats();renderList();renderTools();renderBoxes();persist()}
 
@@ -324,7 +335,7 @@ function renderBoxes(){
         m.style.left=(s.p[2*i]+s.p[2*j])/2*100+"%";m.style.top=(s.p[2*i+1]+s.p[2*j+1])/2*100+"%";hl.appendChild(m);
       }
       const x=document.createElement("button");x.type="button";x.className="xdel";x.title="Delete this shape (Del)";x.setAttribute("aria-label","Delete this shape");x.textContent="×";
-      x.style.left=b.x2*100+"%";x.style.top=b.y1*100+"%";hl.appendChild(x);
+      const xp=xPos(s,b,fr.getBoundingClientRect());x.style.left=xp.x+"px";x.style.top=xp.y+"px";x.onclick=e=>{e.stopPropagation();delSel()};hl.appendChild(x);
     }
   });
   if(S.poly&&S.poly.p.length){
@@ -332,6 +343,18 @@ function renderBoxes(){
     pl.setAttribute("points",ptsStr(S.poly.p.concat(extra)));pl.setAttribute("class",`drawing c${S.cls}`);ov.appendChild(pl);
     for(let i=0;i<S.poly.p.length;i+=2){const v=document.createElement("i");v.className=`vh c${S.cls}`+(i===0?" first":"");v.style.left=S.poly.p[i]*100+"%";v.style.top=S.poly.p[i+1]*100+"%";hl.appendChild(v)}
   }
+}
+/* Put the × outside the shape, clear of every corner and edge handle, so dragging a corner can't hit it.
+   Tries just outside each corner of the shape's bounding box, then just inside, and keeps it on the photo. */
+function xPos(s,b,r){
+  const W=r.width,H=r.height,O=24,M=15,n=s.p.length/2,hs=[];
+  for(let i=0;i<n;i++){const j=(i+1)%n;hs.push([s.p[2*i]*W,s.p[2*i+1]*H],[(s.p[2*i]+s.p[2*j])/2*W,(s.p[2*i+1]+s.p[2*j+1])/2*H])}
+  const X1=b.x1*W,X2=b.x2*W,Y1=b.y1*H,Y2=b.y2*H,c=[];
+  for(const k of[1,-1])for(const [cx,cy,sx,sy] of[[X2,Y1,1,-1],[X2,Y2,1,1],[X1,Y2,-1,1],[X1,Y1,-1,-1]])c.push({x:cx+k*sx*O,y:cy+k*sy*O});
+  let best=null,bd=-1;
+  for(const q of c){if(q.x<M||q.y<M||q.x>W-M||q.y>H-M)continue;
+    const d=Math.min(...hs.map(([hx,hy])=>Math.hypot(hx-q.x,hy-q.y)));if(d>=30)return q;if(d>bd){bd=d;best=q}}
+  return best||{x:Math.min(W-M,Math.max(M,X2-O)),y:Math.min(H-M,Math.max(M,Y1+O))};
 }
 function ptsStr(p){let s="";for(let i=0;i<p.length;i+=2)s+=p[i]+","+p[i+1]+" ";return s}
 
@@ -346,7 +369,7 @@ function finishPoly(){
 $("#frame").addEventListener("pointerdown",e=>{
   const it=cur();if(!it||e.button>0)return;
   const p=pt(e),t=e.target;
-  if(t.closest(".xdel")){e.preventDefault();delSel();return}
+  if(t.closest(".xdel"))return; // deletes on click (press and release on the ×), so a slip can be dragged off it
   if(S.poly){ // drawing a polygon: click adds a point, clicking the first point closes it
     if(S.poly.p.length>=6&&near(S.poly.p[0],S.poly.p[1],p,12)){finishPoly();return}
     S.poly.p.push(p.x,p.y);renderBoxes();e.preventDefault();return;
@@ -432,6 +455,8 @@ document.querySelectorAll(".filters button").forEach(b=>b.onclick=()=>{S.filter=
 document.addEventListener("keydown",e=>{
   if(!S.items.length)return;
   if(e.target.matches("input,textarea")){if(e.key==="Escape")e.target.blur();return}
+  if(e.key===" "){S.space=true;$("#stagewrap").classList.add("pan");e.preventDefault();return}
+  if(zoomKeys(e))return;
   if(shapeKeys(e))return;
   if(e.metaKey||e.ctrlKey||e.altKey)return;
   const k=e.key;
@@ -462,8 +487,64 @@ $("#export").onclick=async()=>{
   toast(left?`Exported. ${left} photos are not reviewed yet.`:"Exported. Every photo is reviewed.");
 };
 
-function fit(){const w=$("#stagewrap");const h=Math.max(240,w.clientHeight-32);document.documentElement.style.setProperty("--fit",(window.innerWidth<=760?Math.min(h,window.innerHeight*0.6):h)+"px")}
-addEventListener("resize",fit);
+/* ---------- zoom and pan ----------
+   The photo is sized in px: its fitted size times S.zoom. Zooming keeps the spot under the pointer
+   (or the selected shape) where it is on screen, instead of letting the view jump. */
+S.zoom=1;const ZMIN=1,ZMAX=8;
+function baseSize(){const w=$("#stagewrap"),im=$("#photo");const nw=im.naturalWidth,nh=im.naturalHeight;if(!nw||!nh)return null;
+  let aw=Math.max(120,w.offsetWidth-32),ah=Math.max(240,w.offsetHeight-32);if(window.innerWidth<=760)ah=Math.min(ah,window.innerHeight*0.6);
+  const k=Math.min(aw/nw,ah/nh);return {w:nw*k,h:nh*k}}
+function layout(){const b=baseSize(),im=$("#photo");if(!b)return;im.style.width=b.w*S.zoom+"px";im.style.height=b.h*S.zoom+"px";$("#zlvl").textContent=Math.round(S.zoom*100)+"%";renderBoxes()}
+function fit(){layout()}
+function zoomAt(z,cx,cy){ // cx,cy: screen point that should stay put
+  z=Math.min(ZMAX,Math.max(ZMIN,z));if(Math.abs(z-S.zoom)<1e-4)return;
+  const w=$("#stagewrap"),r0=$("#frame").getBoundingClientRect();
+  // While the photo still fits it stays centred, so the anchor can't be held yet. Remember the spot the
+  // gesture started on and keep aiming at it, so a run of wheel steps lands where the pointer was.
+  const A=S.zA;let fx,fy;
+  if(A&&Math.abs(A.cx-cx)<3&&Math.abs(A.cy-cy)<3&&Date.now()-A.t<1200){fx=A.fx;fy=A.fy}
+  else{fx=Math.min(1,Math.max(0,(cx-r0.left)/r0.width));fy=Math.min(1,Math.max(0,(cy-r0.top)/r0.height))}
+  S.zA={cx,cy,fx,fy,t:Date.now()};
+  S.zoom=z;layout();
+  const r1=$("#frame").getBoundingClientRect();
+  w.scrollLeft+=r1.left+fx*r1.width-cx;w.scrollTop+=r1.top+fy*r1.height-cy;
+}
+function zoomStep(f){ // buttons and keys: anchor on the selected shape if it is in view, else the middle of the view
+  const w=$("#stagewrap").getBoundingClientRect(),r=$("#frame").getBoundingClientRect(),it=cur();
+  let cx=w.left+w.width/2,cy=w.top+w.height/2;
+  if(it&&S.sel>=0&&it.boxes[S.sel]){const b=bboxOf(it.boxes[S.sel]);const sx=r.left+(b.x1+b.x2)/2*r.width,sy=r.top+(b.y1+b.y2)/2*r.height;
+    if(sx>=w.left&&sx<=w.right&&sy>=w.top&&sy<=w.bottom){cx=sx;cy=sy}}
+  zoomAt(S.zoom*f,cx,cy);
+}
+function zoomFit(){S.zoom=1;layout()}
+$("#zin").onclick=()=>zoomStep(1.5);$("#zout").onclick=()=>zoomStep(1/1.5);$("#zfit").onclick=zoomFit;
+$("#stagewrap").addEventListener("wheel",e=>{ // Ctrl/Cmd + scroll, and trackpad pinch (sent as ctrl+wheel)
+  if(!(e.ctrlKey||e.metaKey)||!S.items.length)return;e.preventDefault();
+  let d=e.deltaY*(e.deltaMode===1?16:e.deltaMode===2?400:1);d=Math.max(-60,Math.min(60,d));
+  zoomAt(S.zoom*Math.exp(-d*0.005),e.clientX,e.clientY);
+},{passive:false});
+let gs=1;["gesturestart","gesturechange"].forEach(t=>$("#stagewrap").addEventListener(t,e=>{ // Safari pinch
+  e.preventDefault();if(t==="gesturestart")gs=S.zoom;else zoomAt(gs*e.scale,e.clientX,e.clientY)},{passive:false}));
+/* Pan: hold Space and drag, or drag with the middle mouse button. */
+S.space=false;
+$("#stagewrap").addEventListener("pointerdown",e=>{
+  if(!(e.button===1||(S.space&&e.button===0)))return;
+  const w=$("#stagewrap");e.preventDefault();e.stopPropagation();
+  S.pan={x:e.clientX,y:e.clientY,l:w.scrollLeft,t:w.scrollTop};w.setPointerCapture(e.pointerId);w.classList.add("panning");
+},true);
+$("#stagewrap").addEventListener("pointermove",e=>{if(!S.pan)return;const w=$("#stagewrap");w.scrollLeft=S.pan.l-(e.clientX-S.pan.x);w.scrollTop=S.pan.t-(e.clientY-S.pan.y);e.stopPropagation()},true);
+["pointerup","pointercancel"].forEach(t=>$("#stagewrap").addEventListener(t,e=>{if(!S.pan)return;S.pan=null;$("#stagewrap").classList.remove("panning");e.stopPropagation()},true));
+$("#stagewrap").addEventListener("mousedown",e=>{if(e.button===1)e.preventDefault()}); // no autoscroll icon on Windows
+function zoomKeys(e){ // returns true when handled; Ctrl/Cmd + = - 0 zoom the photo instead of the whole page
+  const k=e.key;if(e.altKey)return false;
+  if(k==="+"||k==="="){zoomStep(1.5);e.preventDefault();return true}
+  if(k==="-"||k==="_"){zoomStep(1/1.5);e.preventDefault();return true}
+  if(k==="0"){zoomFit();e.preventDefault();return true}
+  return false;
+}
+document.addEventListener("keyup",e=>{if(e.key===" "){S.space=false;$("#stagewrap").classList.remove("pan");if(!e.target.matches("input,textarea"))e.preventDefault()}});
+addEventListener("blur",()=>{S.space=false;$("#stagewrap").classList.remove("pan")});
+addEventListener("resize",layout);
 $("#whoWrap").classList.toggle("missing",!who());
 </script>
 </body>
