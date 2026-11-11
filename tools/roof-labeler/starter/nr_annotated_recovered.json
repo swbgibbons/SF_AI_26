@@ -1,0 +1,3898 @@
+[
+{
+"id": "nr001",
+"file": "nr001.jpg",
+"split": "train",
+"width": 736,
+"height": 552,
+"boxes": [
+{
+"c": 2,
+"x1": 0.1411,
+"y1": 0.0504,
+"x2": 0.2456,
+"y2": 0.1674
+},
+{
+"c": 2,
+"x1": 0.3011,
+"y1": 0.2311,
+"x2": 0.4056,
+"y2": 0.4785
+},
+{
+"c": 2,
+"x1": 0.5011,
+"y1": 0.5511,
+"x2": 0.6889,
+"y2": 0.763
+}
+],
+"flagged": true,
+"note": "Boxes recovered from the preview image; some may be missing or merged. Compare with the original preview."
+},
+{
+"id": "nr004",
+"file": "nr004.webp",
+"split": "train",
+"width": 1080,
+"height": 1440,
+"boxes": [
+{
+"c": 1,
+"x1": 0.7215,
+"y1": 0.0411,
+"x2": 0.8385,
+"y2": 0.0967
+},
+{
+"c": 1,
+"x1": 0.4119,
+"y1": 0.0611,
+"x2": 0.4874,
+"y2": 0.13
+},
+{
+"c": 1,
+"x1": 0.403,
+"y1": 0.1322,
+"x2": 0.4859,
+"y2": 0.2178
+},
+{
+"c": 1,
+"x1": 0.403,
+"y1": 0.2411,
+"x2": 0.4844,
+"y2": 0.3289
+},
+{
+"c": 1,
+"x1": 0.403,
+"y1": 0.3522,
+"x2": 0.4859,
+"y2": 0.4356
+},
+{
+"c": 1,
+"x1": 0.3926,
+"y1": 0.5722,
+"x2": 0.4844,
+"y2": 0.7289
+}
+],
+"flagged": true,
+"note": "Boxes recovered from the preview image; some may be missing or merged. Compare with the original preview."
+},
+{
+"id": "nr005",
+"file": "nr005.webp",
+"split": "train",
+"width": 1080,
+"height": 1440,
+"boxes": [
+{
+"c": 1,
+"x1": 0.5526,
+"y1": 0.4322,
+"x2": 0.7585,
+"y2": 0.6567
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr006",
+"file": "nr006.webp",
+"split": "train",
+"width": 1080,
+"height": 1440,
+"boxes": [
+{
+"c": 1,
+"x1": 0.4607,
+"y1": 0.2722,
+"x2": 0.523,
+"y2": 0.3689
+},
+{
+"c": 1,
+"x1": 0.443,
+"y1": 0.4122,
+"x2": 0.5674,
+"y2": 0.4656
+},
+{
+"c": 1,
+"x1": 0.4607,
+"y1": 0.4678,
+"x2": 0.5437,
+"y2": 0.5389
+},
+{
+"c": 1,
+"x1": 0.4607,
+"y1": 0.4733,
+"x2": 0.5437,
+"y2": 0.5389
+},
+{
+"c": 1,
+"x1": 0.4622,
+"y1": 0.6211,
+"x2": 0.6281,
+"y2": 0.7256
+},
+{
+"c": 1,
+"x1": 0.0015,
+"y1": 0.7211,
+"x2": 0.077,
+"y2": 0.8778
+}
+],
+"flagged": true,
+"note": "Boxes recovered from the preview image; some may be missing or merged. Compare with the original preview."
+},
+{
+"id": "nr007",
+"file": "nr007.webp",
+"split": "train",
+"width": 1080,
+"height": 1440,
+"boxes": [
+{
+"c": 1,
+"x1": 0.5719,
+"y1": 0.4811,
+"x2": 0.6652,
+"y2": 0.6289
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr008",
+"file": "nr008.webp",
+"split": "train",
+"width": 1080,
+"height": 607,
+"boxes": [],
+"flagged": true,
+"note": "Boxes recovered from the preview image; some may be missing or merged. Compare with the original preview."
+},
+{
+"id": "nr010",
+"file": "nr010.jpg",
+"split": "train",
+"width": 3213,
+"height": 5712,
+"boxes": [
+{
+"c": 1,
+"x1": 0.3024,
+"y1": 0.3322,
+"x2": 0.7154,
+"y2": 0.5978
+}
+],
+"flagged": true,
+"note": "Boxes recovered from the preview image; some may be missing or merged. Compare with the original preview."
+},
+{
+"id": "nr011",
+"file": "nr011.jpg",
+"split": "train",
+"width": 736,
+"height": 920,
+"boxes": [
+{
+"c": 1,
+"x1": 0.3028,
+"y1": 0.3811,
+"x2": 0.6569,
+"y2": 0.6978
+},
+{
+"c": 1,
+"x1": 0.5819,
+"y1": 0.5411,
+"x2": 0.6569,
+"y2": 0.6978
+},
+{
+"c": 1,
+"x1": 0.1903,
+"y1": 0.5922,
+"x2": 0.3667,
+"y2": 0.6778
+}
+],
+"flagged": true,
+"note": "Boxes recovered from the preview image; some may be missing or merged. Compare with the original preview."
+},
+{
+"id": "nr012",
+"file": "nr012.jpg",
+"split": "train",
+"width": 4080,
+"height": 3072,
+"boxes": [
+{
+"c": 1,
+"x1": 0.7922,
+"y1": 0.4115,
+"x2": 0.9978,
+"y2": 0.5236
+},
+{
+"c": 1,
+"x1": 0.4222,
+"y1": 0.5708,
+"x2": 0.7689,
+"y2": 0.6829
+}
+],
+"flagged": true,
+"note": "Boxes recovered from the preview image; some may be missing or merged. Compare with the original preview."
+},
+{
+"id": "nr018",
+"file": "nr018.jpg",
+"split": "train",
+"width": 735,
+"height": 490,
+"boxes": [
+{
+"c": 1,
+"x1": 0.1822,
+"y1": 0.0917,
+"x2": 0.8989,
+"y2": 0.3533
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr019",
+"file": "nr019.webp",
+"split": "train",
+"width": 1080,
+"height": 810,
+"boxes": [
+{
+"c": 2,
+"x1": 0.1811,
+"y1": 0.3704,
+"x2": 0.4789,
+"y2": 0.4741
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr020",
+"file": "nr020.webp",
+"split": "train",
+"width": 1080,
+"height": 1440,
+"boxes": [],
+"flagged": true,
+"note": "Boxes recovered from the preview image; some may be missing or merged. Compare with the original preview."
+},
+{
+"id": "nr021",
+"file": "nr021.webp",
+"split": "train",
+"width": 1080,
+"height": 1440,
+"boxes": [
+{
+"c": 1,
+"x1": 0.0015,
+"y1": 0.2811,
+"x2": 0.7156,
+"y2": 0.9578
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr025",
+"file": "nr025.webp",
+"split": "train",
+"width": 1080,
+"height": 1440,
+"boxes": [
+{
+"c": 2,
+"x1": 0.3926,
+"y1": 0.4011,
+"x2": 0.723,
+"y2": 0.6989
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr028",
+"file": "nr028.webp",
+"split": "train",
+"width": 1080,
+"height": 810,
+"boxes": [
+{
+"c": 2,
+"x1": 0.3011,
+"y1": 0.4815,
+"x2": 0.7589,
+"y2": 0.6133
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr029",
+"file": "nr029.webp",
+"split": "train",
+"width": 1080,
+"height": 810,
+"boxes": [
+{
+"c": 2,
+"x1": 0.3011,
+"y1": 0.3215,
+"x2": 0.6589,
+"y2": 0.523
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr031",
+"file": "nr031.webp",
+"split": "train",
+"width": 1080,
+"height": 1440,
+"boxes": [
+{
+"c": 2,
+"x1": 0.2119,
+"y1": 0.3511,
+"x2": 0.3481,
+"y2": 0.4556
+},
+{
+"c": 2,
+"x1": 0.5007,
+"y1": 0.4411,
+"x2": 0.6385,
+"y2": 0.5056
+}
+],
+"flagged": true,
+"note": "Boxes recovered from the preview image; some may be missing or merged. Compare with the original preview."
+},
+{
+"id": "nr032",
+"file": "nr032.jpg",
+"split": "train",
+"width": 600,
+"height": 800,
+"boxes": [
+{
+"c": 1,
+"x1": 0.1822,
+"y1": 0.2811,
+"x2": 0.5733,
+"y2": 0.8589
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr036",
+"file": "nr036.jpg",
+"split": "train",
+"width": 800,
+"height": 600,
+"boxes": [
+{
+"c": 1,
+"x1": 0.6522,
+"y1": 0.3215,
+"x2": 0.9567,
+"y2": 0.7763
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr037",
+"file": "nr037.jpg",
+"split": "train",
+"width": 600,
+"height": 800,
+"boxes": [
+{
+"c": 1,
+"x1": 0.5926,
+"y1": 0.4811,
+"x2": 0.9067,
+"y2": 0.5578
+}
+],
+"flagged": true,
+"note": "Boxes recovered from the preview image; some may be missing or merged. Compare with the original preview."
+},
+{
+"id": "nr039",
+"file": "nr039.webp",
+"split": "train",
+"width": 1080,
+"height": 1622,
+"boxes": [
+{
+"c": 1,
+"x1": 0.4124,
+"y1": 0.3411,
+"x2": 0.5326,
+"y2": 0.4289
+}
+],
+"flagged": true,
+"note": "Boxes recovered from the preview image; some may be missing or merged. Compare with the original preview."
+},
+{
+"id": "nr040",
+"file": "nr040.jpg",
+"split": "train",
+"width": 768,
+"height": 768,
+"boxes": [],
+"flagged": true,
+"note": "Boxes recovered from the preview image; some may be missing or merged. Compare with the original preview."
+},
+{
+"id": "nr041",
+"file": "nr041.webp",
+"split": "train",
+"width": 900,
+"height": 1600,
+"boxes": [],
+"flagged": true,
+"note": "Boxes recovered from the preview image; some may be missing or merged. Compare with the original preview."
+},
+{
+"id": "nr046",
+"file": "nr046.webp",
+"split": "train",
+"width": 1080,
+"height": 1440,
+"boxes": [
+{
+"c": 1,
+"x1": 0.523,
+"y1": 0.3922,
+"x2": 0.7378,
+"y2": 0.4856
+},
+{
+"c": 1,
+"x1": 0.3926,
+"y1": 0.7011,
+"x2": 0.477,
+"y2": 0.7578
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr047",
+"file": "nr047.jpg",
+"split": "train",
+"width": 736,
+"height": 552,
+"boxes": [
+{
+"c": 1,
+"x1": 0.3022,
+"y1": 0.2504,
+"x2": 0.9578,
+"y2": 0.4948
+},
+{
+"c": 1,
+"x1": 0.5011,
+"y1": 0.4904,
+"x2": 0.9167,
+"y2": 0.8267
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr048",
+"file": "nr048.jpg",
+"split": "train",
+"width": 736,
+"height": 981,
+"boxes": [
+{
+"c": 1,
+"x1": 0.3719,
+"y1": 0.4722,
+"x2": 0.9941,
+"y2": 0.9978
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr049",
+"file": "nr049.jpg",
+"split": "train",
+"width": 736,
+"height": 981,
+"boxes": [
+{
+"c": 1,
+"x1": 0.2919,
+"y1": 0.3922,
+"x2": 0.6281,
+"y2": 0.6056
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr053",
+"file": "nr053.webp",
+"split": "train",
+"width": 1080,
+"height": 1440,
+"boxes": [
+{
+"c": 2,
+"x1": 0.3807,
+"y1": 0.1411,
+"x2": 0.997,
+"y2": 0.3756
+},
+{
+"c": 2,
+"x1": 0.0015,
+"y1": 0.3211,
+"x2": 0.3985,
+"y2": 0.5156
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr054",
+"file": "nr054.webp",
+"split": "train",
+"width": 1080,
+"height": 1440,
+"boxes": [
+{
+"c": 2,
+"x1": 0.203,
+"y1": 0.0911,
+"x2": 0.7985,
+"y2": 0.4156
+},
+{
+"c": 2,
+"x1": 0.603,
+"y1": 0.4411,
+"x2": 0.997,
+"y2": 0.7556
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr055",
+"file": "nr055.webp",
+"split": "train",
+"width": 1080,
+"height": 1440,
+"boxes": [
+{
+"c": 2,
+"x1": 0.2415,
+"y1": 0.2211,
+"x2": 0.8578,
+"y2": 0.4556
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr061",
+"file": "nr061.webp",
+"split": "train",
+"width": 1080,
+"height": 810,
+"boxes": [
+{
+"c": 1,
+"x1": 0.0222,
+"y1": 0.283,
+"x2": 0.4889,
+"y2": 0.8637
+},
+{
+"c": 1,
+"x1": 0.5522,
+"y1": 0.2919,
+"x2": 0.9978,
+"y2": 0.5037
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr062",
+"file": "nr062.webp",
+"split": "train",
+"width": 1080,
+"height": 1077,
+"boxes": [
+{
+"c": 1,
+"x1": 0.6222,
+"y1": 0.3619,
+"x2": 0.6656,
+"y2": 0.4187
+},
+{
+"c": 1,
+"x1": 0.1222,
+"y1": 0.5601,
+"x2": 0.1667,
+"y2": 0.618
+}
+],
+"flagged": true,
+"note": "Boxes recovered from the preview image; some may be missing or merged. Compare with the original preview."
+},
+{
+"id": "nr064",
+"file": "nr064.webp",
+"split": "train",
+"width": 1080,
+"height": 913,
+"boxes": [
+{
+"c": 1,
+"x1": 0.7222,
+"y1": 0.4008,
+"x2": 0.7978,
+"y2": 0.4455
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr066",
+"file": "nr066.webp",
+"split": "train",
+"width": 1080,
+"height": 1434,
+"boxes": [
+{
+"c": 1,
+"x1": 0.4425,
+"y1": 0.1811,
+"x2": 0.7035,
+"y2": 0.4689
+},
+{
+"c": 1,
+"x1": 0.4204,
+"y1": 0.5611,
+"x2": 0.7537,
+"y2": 0.8289
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr067",
+"file": "nr067.webp",
+"split": "train",
+"width": 1080,
+"height": 813,
+"boxes": [
+{
+"c": 1,
+"x1": 0.6322,
+"y1": 0.5324,
+"x2": 0.7778,
+"y2": 0.646
+}
+],
+"flagged": true,
+"note": "Boxes recovered from the preview image; some may be missing or merged. Compare with the original preview."
+},
+{
+"id": "nr070",
+"file": "nr070.jpg",
+"split": "train",
+"width": 640,
+"height": 480,
+"boxes": [
+{
+"c": 2,
+"x1": 0.4411,
+"y1": 0.2311,
+"x2": 0.6389,
+"y2": 0.2933
+},
+{
+"c": 2,
+"x1": 0.7922,
+"y1": 0.3111,
+"x2": 0.9978,
+"y2": 0.403
+},
+{
+"c": 2,
+"x1": 0.0011,
+"y1": 0.6415,
+"x2": 0.1056,
+"y2": 0.7378
+},
+{
+"c": 2,
+"x1": 0.7211,
+"y1": 0.7304,
+"x2": 0.9089,
+"y2": 0.8237
+}
+],
+"flagged": true,
+"note": "Boxes recovered from the preview image; some may be missing or merged. Compare with the original preview."
+},
+{
+"id": "nr073",
+"file": "nr073.webp",
+"split": "train",
+"width": 1080,
+"height": 1918,
+"boxes": [
+{
+"c": 1,
+"x1": 0.1834,
+"y1": 0.5011,
+"x2": 0.9546,
+"y2": 0.6278
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr074",
+"file": "nr074.webp",
+"split": "train",
+"width": 1080,
+"height": 1440,
+"boxes": [
+{
+"c": 1,
+"x1": 0.283,
+"y1": 0.2822,
+"x2": 0.9067,
+"y2": 0.8656
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr076",
+"file": "nr076.jpg",
+"split": "train",
+"width": 736,
+"height": 414,
+"boxes": [
+{
+"c": 2,
+"x1": 0.2011,
+"y1": 0.1403,
+"x2": 0.7889,
+"y2": 0.7708
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr078",
+"file": "nr078.webp",
+"split": "train",
+"width": 1080,
+"height": 810,
+"boxes": [
+{
+"c": 1,
+"x1": 0.1211,
+"y1": 0.3719,
+"x2": 0.5289,
+"y2": 0.5733
+},
+{
+"c": 1,
+"x1": 0.5922,
+"y1": 0.5526,
+"x2": 0.8289,
+"y2": 0.6533
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr079",
+"file": "nr079.webp",
+"split": "train",
+"width": 1080,
+"height": 1434,
+"boxes": [
+{
+"c": 2,
+"x1": 0.1224,
+"y1": 0.4111,
+"x2": 0.323,
+"y2": 0.6089
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr080",
+"file": "nr080.webp",
+"split": "train",
+"width": 1080,
+"height": 1440,
+"boxes": [],
+"flagged": true,
+"note": "Boxes recovered from the preview image; some may be missing or merged. Compare with the original preview."
+},
+{
+"id": "nr081",
+"file": "nr081.webp",
+"split": "train",
+"width": 1080,
+"height": 1440,
+"boxes": [
+{
+"c": 1,
+"x1": 0.5526,
+"y1": 0.3722,
+"x2": 0.9585,
+"y2": 0.5856
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr082",
+"file": "nr082.webp",
+"split": "train",
+"width": 1080,
+"height": 1440,
+"boxes": [
+{
+"c": 1,
+"x1": 0.4015,
+"y1": 0.4522,
+"x2": 0.6281,
+"y2": 0.5656
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr083",
+"file": "nr083.webp",
+"split": "train",
+"width": 1080,
+"height": 1440,
+"boxes": [
+{
+"c": 1,
+"x1": 0.0519,
+"y1": 0.2011,
+"x2": 0.8563,
+"y2": 0.5578
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr085",
+"file": "nr085.webp",
+"split": "train",
+"width": 1080,
+"height": 1440,
+"boxes": [
+{
+"c": 2,
+"x1": 0.323,
+"y1": 0.3911,
+"x2": 0.483,
+"y2": 0.4489
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr086",
+"file": "nr086.webp",
+"split": "train",
+"width": 1080,
+"height": 498,
+"boxes": [
+{
+"c": 1,
+"x1": 0.3011,
+"y1": 0.3831,
+"x2": 0.6189,
+"y2": 0.5494
+},
+{
+"c": 1,
+"x1": 0.3122,
+"y1": 0.5229,
+"x2": 0.6189,
+"y2": 0.5494
+}
+],
+"flagged": true,
+"note": "Boxes recovered from the preview image; some may be missing or merged. Compare with the original preview."
+},
+{
+"id": "nr087",
+"file": "nr087.webp",
+"split": "train",
+"width": 1080,
+"height": 498,
+"boxes": [
+{
+"c": 1,
+"x1": 0.3622,
+"y1": 0.3012,
+"x2": 0.5089,
+"y2": 0.4506
+},
+{
+"c": 1,
+"x1": 0.4222,
+"y1": 0.4024,
+"x2": 0.5089,
+"y2": 0.4506
+}
+],
+"flagged": true,
+"note": "Boxes recovered from the preview image; some may be missing or merged. Compare with the original preview."
+},
+{
+"id": "nr088",
+"file": "nr088.webp",
+"split": "train",
+"width": 1080,
+"height": 499,
+"boxes": [
+{
+"c": 1,
+"x1": 0.4722,
+"y1": 0.3341,
+"x2": 0.5778,
+"y2": 0.4207
+},
+{
+"c": 1,
+"x1": 0.3022,
+"y1": 0.3726,
+"x2": 0.4089,
+"y2": 0.4591
+},
+{
+"c": 1,
+"x1": 0.0011,
+"y1": 0.8438,
+"x2": 0.1578,
+"y2": 0.9207
+}
+],
+"flagged": true,
+"note": "Boxes recovered from the preview image; some may be missing or merged. Compare with the original preview."
+},
+{
+"id": "nr090",
+"file": "nr090.webp",
+"split": "train",
+"width": 1080,
+"height": 1440,
+"boxes": [
+{
+"c": 2,
+"x1": 0.4519,
+"y1": 0.3911,
+"x2": 0.6237,
+"y2": 0.5589
+}
+],
+"flagged": true,
+"note": "Boxes recovered from the preview image; some may be missing or merged. Compare with the original preview."
+},
+{
+"id": "nr094",
+"file": "nr094.webp",
+"split": "train",
+"width": 1080,
+"height": 1440,
+"boxes": [
+{
+"c": 2,
+"x1": 0.403,
+"y1": 0.4411,
+"x2": 0.7541,
+"y2": 0.7189
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr096",
+"file": "nr096.webp",
+"split": "train",
+"width": 1080,
+"height": 810,
+"boxes": [
+{
+"c": 1,
+"x1": 0.2522,
+"y1": 0.3422,
+"x2": 0.7567,
+"y2": 0.637
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr097",
+"file": "nr097.webp",
+"split": "train",
+"width": 1080,
+"height": 810,
+"boxes": [
+{
+"c": 1,
+"x1": 0.0522,
+"y1": 0.2207,
+"x2": 0.8578,
+"y2": 0.6059
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr098",
+"file": "nr098.webp",
+"split": "train",
+"width": 1080,
+"height": 810,
+"boxes": [
+{
+"c": 1,
+"x1": 0.0822,
+"y1": 0.3719,
+"x2": 0.8089,
+"y2": 0.8044
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr099",
+"file": "nr099.webp",
+"split": "train",
+"width": 1080,
+"height": 810,
+"boxes": [
+{
+"c": 1,
+"x1": 0.4122,
+"y1": 0.5615,
+"x2": 0.4789,
+"y2": 0.603
+},
+{
+"c": 1,
+"x1": 0.5922,
+"y1": 0.5615,
+"x2": 0.6589,
+"y2": 0.603
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr100",
+"file": "nr100.webp",
+"split": "train",
+"width": 1080,
+"height": 1440,
+"boxes": [
+{
+"c": 1,
+"x1": 0.4919,
+"y1": 0.4211,
+"x2": 0.5852,
+"y2": 0.5889
+},
+{
+"c": 1,
+"x1": 0.0015,
+"y1": 0.4411,
+"x2": 0.2948,
+"y2": 0.6089
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr101",
+"file": "nr101.webp",
+"split": "train",
+"width": 1080,
+"height": 1196,
+"boxes": [
+{
+"c": 1,
+"x1": 0.4022,
+"y1": 0.1411,
+"x2": 0.9582,
+"y2": 0.2656
+},
+{
+"c": 1,
+"x1": 0.6421,
+"y1": 0.3411,
+"x2": 0.7245,
+"y2": 0.4289
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr104",
+"file": "nr104.webp",
+"split": "train",
+"width": 1080,
+"height": 1440,
+"boxes": [
+{
+"c": 1,
+"x1": 0.083,
+"y1": 0.3611,
+"x2": 0.8267,
+"y2": 0.4778
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr105",
+"file": "nr105.webp",
+"split": "train",
+"width": 1080,
+"height": 810,
+"boxes": [
+{
+"c": 1,
+"x1": 0.1222,
+"y1": 0.3911,
+"x2": 0.3589,
+"y2": 0.523
+},
+{
+"c": 1,
+"x1": 0.7411,
+"y1": 0.3926,
+"x2": 0.9978,
+"y2": 0.523
+},
+{
+"c": 1,
+"x1": 0.8011,
+"y1": 0.6119,
+"x2": 0.9978,
+"y2": 0.7541
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr106",
+"file": "nr106.webp",
+"split": "train",
+"width": 1080,
+"height": 1440,
+"boxes": [
+{
+"c": 2,
+"x1": 0.5022,
+"y1": 0.5511,
+"x2": 0.8281,
+"y2": 0.6156
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr107",
+"file": "nr107.webp",
+"split": "train",
+"width": 482,
+"height": 356,
+"boxes": [
+{
+"c": 2,
+"x1": 0.4422,
+"y1": 0.4301,
+"x2": 0.7289,
+"y2": 0.7429
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr109",
+"file": "nr109.webp",
+"split": "train",
+"width": 1080,
+"height": 1440,
+"boxes": [
+{
+"c": 1,
+"x1": 0.5526,
+"y1": 0.4122,
+"x2": 0.7541,
+"y2": 0.5389
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr111",
+"file": "nr111.jpg",
+"split": "train",
+"width": 500,
+"height": 390,
+"boxes": [
+{
+"c": 2,
+"x1": 0.3022,
+"y1": 0.3803,
+"x2": 0.7889,
+"y2": 0.7336
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr112",
+"file": "nr112.webp",
+"split": "train",
+"width": 1080,
+"height": 1440,
+"boxes": [],
+"flagged": true,
+"note": "Boxes recovered from the preview image; some may be missing or merged. Compare with the original preview."
+},
+{
+"id": "nr115",
+"file": "nr115.webp",
+"split": "train",
+"width": 1080,
+"height": 810,
+"boxes": [],
+"flagged": true,
+"note": "Boxes recovered from the preview image; some may be missing or merged. Compare with the original preview."
+},
+{
+"id": "nr116",
+"file": "nr116.webp",
+"split": "train",
+"width": 1080,
+"height": 2340,
+"boxes": [
+{
+"c": 2,
+"x1": 0.241,
+"y1": 0.3411,
+"x2": 0.5783,
+"y2": 0.7089
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr117",
+"file": "nr117.webp",
+"split": "train",
+"width": 1080,
+"height": 719,
+"boxes": [
+{
+"c": 2,
+"x1": 0.4722,
+"y1": 0.3406,
+"x2": 0.6856,
+"y2": 0.7379
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr118",
+"file": "nr118.webp",
+"split": "train",
+"width": 1080,
+"height": 2340,
+"boxes": [
+{
+"c": 2,
+"x1": 0.3928,
+"y1": 0.2911,
+"x2": 0.7494,
+"y2": 0.6389
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr119",
+"file": "nr119.webp",
+"split": "train",
+"width": 1080,
+"height": 1434,
+"boxes": [
+{
+"c": 0,
+"x1": 0.3805,
+"y1": 0.4411,
+"x2": 0.5531,
+"y2": 0.5889
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr122",
+"file": "nr122.webp",
+"split": "train",
+"width": 1080,
+"height": 1440,
+"boxes": [],
+"flagged": true,
+"note": "Boxes recovered from the preview image; some may be missing or merged. Compare with the original preview."
+},
+{
+"id": "nr124",
+"file": "nr124.webp",
+"split": "train",
+"width": 1080,
+"height": 1440,
+"boxes": [
+{
+"c": 2,
+"x1": 0.2415,
+"y1": 0.6411,
+"x2": 0.5274,
+"y2": 0.7056
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr125",
+"file": "nr125.webp",
+"split": "train",
+"width": 1080,
+"height": 1440,
+"boxes": [
+{
+"c": 2,
+"x1": 0.2207,
+"y1": 0.6811,
+"x2": 0.4874,
+"y2": 0.7456
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr127",
+"file": "nr127.jpg",
+"split": "train",
+"width": 736,
+"height": 981,
+"boxes": [
+{
+"c": 1,
+"x1": 0.283,
+"y1": 0.3922,
+"x2": 0.6074,
+"y2": 0.5056
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr130",
+"file": "nr130.webp",
+"split": "train",
+"width": 1064,
+"height": 1035,
+"boxes": [
+{
+"c": 2,
+"x1": 0.4211,
+"y1": 0.1109,
+"x2": 0.4956,
+"y2": 0.208
+},
+{
+"c": 2,
+"x1": 0.1811,
+"y1": 0.7909,
+"x2": 0.4556,
+"y2": 0.9977
+}
+],
+"flagged": true,
+"note": "Boxes recovered from the preview image; some may be missing or merged. Compare with the original preview."
+},
+{
+"id": "nr131",
+"file": "nr131.webp",
+"split": "train",
+"width": 1080,
+"height": 753,
+"boxes": [
+{
+"c": 2,
+"x1": 0.3911,
+"y1": 0.1815,
+"x2": 0.6589,
+"y2": 0.3025
+},
+{
+"c": 2,
+"x1": 0.3122,
+"y1": 0.4411,
+"x2": 0.5889,
+"y2": 0.6035
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr132",
+"file": "nr132.jpg",
+"split": "train",
+"width": 736,
+"height": 736,
+"boxes": [
+{
+"c": 2,
+"x1": 0.3533,
+"y1": 0.3711,
+"x2": 0.7089,
+"y2": 0.6256
+},
+{
+"c": 2,
+"x1": 0.1411,
+"y1": 0.4911,
+"x2": 0.4089,
+"y2": 0.6856
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr134",
+"file": "nr134.webp",
+"split": "train",
+"width": 1080,
+"height": 1440,
+"boxes": [
+{
+"c": 1,
+"x1": 0.5526,
+"y1": 0.4711,
+"x2": 0.8578,
+"y2": 0.5956
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr135",
+"file": "nr135.webp",
+"split": "train",
+"width": 1080,
+"height": 1440,
+"boxes": [
+{
+"c": 1,
+"x1": 0.0519,
+"y1": 0.2522,
+"x2": 0.9556,
+"y2": 0.9978
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr137",
+"file": "nr137.webp",
+"split": "train",
+"width": 643,
+"height": 477,
+"boxes": [
+{
+"c": 1,
+"x1": 0.1811,
+"y1": 0.4416,
+"x2": 0.3589,
+"y2": 0.5539
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr138",
+"file": "nr138.webp",
+"split": "train",
+"width": 1080,
+"height": 1440,
+"boxes": [
+{
+"c": 2,
+"x1": 0.2504,
+"y1": 0.1911,
+"x2": 0.603,
+"y2": 0.8089
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr139",
+"file": "nr139.jpg",
+"split": "train",
+"width": 736,
+"height": 1005,
+"boxes": [
+{
+"c": 2,
+"x1": 0.1502,
+"y1": 0.4111,
+"x2": 0.7284,
+"y2": 0.6056
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr143",
+"file": "nr143.webp",
+"split": "train",
+"width": 1080,
+"height": 809,
+"boxes": [
+{
+"c": 2,
+"x1": 0.3811,
+"y1": 0.4407,
+"x2": 0.5889,
+"y2": 0.6039
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr145",
+"file": "nr145.webp",
+"split": "train",
+"width": 768,
+"height": 1024,
+"boxes": [
+{
+"c": 1,
+"x1": 0.2519,
+"y1": 0.2922,
+"x2": 0.5556,
+"y2": 0.8289
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr146",
+"file": "nr146.webp",
+"split": "train",
+"width": 768,
+"height": 1024,
+"boxes": [
+{
+"c": 1,
+"x1": 0.4607,
+"y1": 0.5722,
+"x2": 0.523,
+"y2": 0.7289
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr147",
+"file": "nr147.webp",
+"split": "train",
+"width": 1080,
+"height": 810,
+"boxes": [
+{
+"c": 1,
+"x1": 0.2322,
+"y1": 0.2919,
+"x2": 0.2889,
+"y2": 0.3452
+},
+{
+"c": 1,
+"x1": 0.8322,
+"y1": 0.4904,
+"x2": 0.8889,
+"y2": 0.5333
+}
+],
+"flagged": true,
+"note": "Boxes recovered from the preview image; some may be missing or merged. Compare with the original preview."
+},
+{
+"id": "nr148",
+"file": "nr148.webp",
+"split": "train",
+"width": 1080,
+"height": 810,
+"boxes": [
+{
+"c": 1,
+"x1": 0.7211,
+"y1": 0.3719,
+"x2": 0.7756,
+"y2": 0.5778
+},
+{
+"c": 1,
+"x1": 0.3411,
+"y1": 0.4815,
+"x2": 0.4289,
+"y2": 0.5541
+}
+],
+"flagged": true,
+"note": "Boxes recovered from the preview image; some may be missing or merged. Compare with the original preview."
+},
+{
+"id": "nr149",
+"file": "nr149.webp",
+"split": "train",
+"width": 1080,
+"height": 810,
+"boxes": [
+{
+"c": 1,
+"x1": 0.1622,
+"y1": 0.5111,
+"x2": 0.2289,
+"y2": 0.5644
+}
+],
+"flagged": true,
+"note": "Boxes recovered from the preview image; some may be missing or merged. Compare with the original preview."
+},
+{
+"id": "nr150",
+"file": "nr150.webp",
+"split": "train",
+"width": 1080,
+"height": 810,
+"boxes": [
+{
+"c": 2,
+"x1": 0.1522,
+"y1": 0.5007,
+"x2": 0.3989,
+"y2": 0.5733
+},
+{
+"c": 2,
+"x1": 0.8211,
+"y1": 0.5437,
+"x2": 0.9478,
+"y2": 0.6074
+},
+{
+"c": 2,
+"x1": 0.3867,
+"y1": 0.6163,
+"x2": 0.3978,
+"y2": 0.6326
+},
+{
+"c": 2,
+"x1": 0.5511,
+"y1": 0.6326,
+"x2": 0.6778,
+"y2": 0.6978
+}
+],
+"flagged": true,
+"note": "Boxes recovered from the preview image; some may be missing or merged. Compare with the original preview."
+},
+{
+"id": "nr151",
+"file": "nr151.webp",
+"split": "train",
+"width": 423,
+"height": 564,
+"boxes": [
+{
+"c": 2,
+"x1": 0.2015,
+"y1": 0.2911,
+"x2": 0.4578,
+"y2": 0.4256
+},
+{
+"c": 2,
+"x1": 0.3007,
+"y1": 0.6111,
+"x2": 0.5274,
+"y2": 0.7556
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr152",
+"file": "nr152.webp",
+"split": "train",
+"width": 423,
+"height": 564,
+"boxes": [
+{
+"c": 2,
+"x1": 0.3007,
+"y1": 0.2711,
+"x2": 0.6237,
+"y2": 0.6089
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr153",
+"file": "nr153.webp",
+"split": "train",
+"width": 1080,
+"height": 1440,
+"boxes": [
+{
+"c": 1,
+"x1": 0.0015,
+"y1": 0.0811,
+"x2": 0.9941,
+"y2": 0.5089
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr154",
+"file": "nr154.webp",
+"split": "train",
+"width": 1080,
+"height": 1440,
+"boxes": [
+{
+"c": 1,
+"x1": 0.8015,
+"y1": 0.5611,
+"x2": 0.9941,
+"y2": 0.8589
+}
+],
+"flagged": true,
+"note": "Boxes recovered from the preview image; some may be missing or merged. Compare with the original preview."
+},
+{
+"id": "nr155",
+"file": "nr155.webp",
+"split": "train",
+"width": 1080,
+"height": 1440,
+"boxes": [
+{
+"c": 1,
+"x1": 0.1022,
+"y1": 0.2522,
+"x2": 0.557,
+"y2": 0.4278
+},
+{
+"c": 1,
+"x1": 0.5911,
+"y1": 0.3922,
+"x2": 0.8578,
+"y2": 0.5756
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr156",
+"file": "nr156.webp",
+"split": "train",
+"width": 1080,
+"height": 1434,
+"boxes": [
+{
+"c": 2,
+"x1": 0.0015,
+"y1": 0.3711,
+"x2": 0.9941,
+"y2": 0.6289
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr157",
+"file": "nr157.jpg",
+"split": "train",
+"width": 735,
+"height": 490,
+"boxes": [
+{
+"c": 1,
+"x1": 0.4022,
+"y1": 0.3917,
+"x2": 0.9978,
+"y2": 0.8233
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr165",
+"file": "nr165.png",
+"split": "train",
+"width": 797,
+"height": 761,
+"boxes": [
+{
+"c": 1,
+"x1": 0.4022,
+"y1": 0.2922,
+"x2": 0.6089,
+"y2": 0.4051
+},
+{
+"c": 1,
+"x1": 0.5811,
+"y1": 0.6717,
+"x2": 0.7278,
+"y2": 0.7858
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr166",
+"file": "nr166.png",
+"split": "train",
+"width": 828,
+"height": 770,
+"boxes": [
+{
+"c": 1,
+"x1": 0.6122,
+"y1": 0.3118,
+"x2": 0.7589,
+"y2": 0.4552
+},
+{
+"c": 1,
+"x1": 0.0522,
+"y1": 0.362,
+"x2": 0.7978,
+"y2": 0.4671
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr169",
+"file": "nr169.png",
+"split": "train",
+"width": 620,
+"height": 770,
+"boxes": [
+{
+"c": 2,
+"x1": 0.3903,
+"y1": 0.1211,
+"x2": 0.6234,
+"y2": 0.9089
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr172",
+"file": "nr172.png",
+"split": "train",
+"width": 624,
+"height": 762,
+"boxes": [
+{
+"c": 1,
+"x1": 0.1818,
+"y1": 0.2811,
+"x2": 0.5577,
+"y2": 0.4756
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr175",
+"file": "nr175.png",
+"split": "train",
+"width": 622,
+"height": 773,
+"boxes": [
+{
+"c": 2,
+"x1": 0.2818,
+"y1": 0.4711,
+"x2": 0.9586,
+"y2": 0.6556
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr176",
+"file": "nr176.png",
+"split": "train",
+"width": 1119,
+"height": 810,
+"boxes": [],
+"flagged": true,
+"note": "Boxes recovered from the preview image; some may be missing or merged. Compare with the original preview."
+},
+{
+"id": "nr178",
+"file": "nr178.png",
+"split": "train",
+"width": 619,
+"height": 761,
+"boxes": [
+{
+"c": 2,
+"x1": 0.2008,
+"y1": 0.2211,
+"x2": 0.9536,
+"y2": 0.8989
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr182",
+"file": "nr182.webp",
+"split": "train",
+"width": 959,
+"height": 1271,
+"boxes": [
+{
+"c": 2,
+"x1": 0.053,
+"y1": 0.3711,
+"x2": 0.9971,
+"y2": 0.6256
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr184",
+"file": "nr184.webp",
+"split": "train",
+"width": 1080,
+"height": 810,
+"boxes": [
+{
+"c": 2,
+"x1": 0.2522,
+"y1": 0.2015,
+"x2": 0.6556,
+"y2": 0.8578
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr185",
+"file": "nr185.webp",
+"split": "train",
+"width": 1080,
+"height": 810,
+"boxes": [
+{
+"c": 1,
+"x1": 0.0211,
+"y1": 0.3926,
+"x2": 0.9978,
+"y2": 0.5556
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr186",
+"file": "nr186.webp",
+"split": "train",
+"width": 1080,
+"height": 810,
+"boxes": [
+{
+"c": 2,
+"x1": 0.2522,
+"y1": 0.3007,
+"x2": 0.9589,
+"y2": 0.923
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr187",
+"file": "nr187.webp",
+"split": "train",
+"width": 1080,
+"height": 1315,
+"boxes": [
+{
+"c": 1,
+"x1": 0.1028,
+"y1": 0.2911,
+"x2": 0.7077,
+"y2": 0.4556
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr188",
+"file": "nr188.webp",
+"split": "train",
+"width": 1080,
+"height": 1440,
+"boxes": [
+{
+"c": 1,
+"x1": 0.4015,
+"y1": 0.3922,
+"x2": 0.8548,
+"y2": 0.4778
+}
+],
+"flagged": true,
+"note": "Boxes recovered from the preview image; some may be missing or merged. Compare with the original preview."
+},
+{
+"id": "nr189",
+"file": "nr189.webp",
+"split": "train",
+"width": 1080,
+"height": 1440,
+"boxes": [
+{
+"c": 1,
+"x1": 0.1022,
+"y1": 0.1722,
+"x2": 0.997,
+"y2": 0.6056
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr191",
+"file": "nr191.webp",
+"split": "train",
+"width": 1080,
+"height": 813,
+"boxes": [
+{
+"c": 2,
+"x1": 0.4522,
+"y1": 0.3407,
+"x2": 0.6056,
+"y2": 0.6283
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr192",
+"file": "nr192.jpg",
+"split": "train",
+"width": 735,
+"height": 491,
+"boxes": [
+{
+"c": 0,
+"x1": 0.6411,
+"y1": 0.5408,
+"x2": 0.7189,
+"y2": 0.6123
+},
+{
+"c": 0,
+"x1": 0.8211,
+"y1": 0.6007,
+"x2": 0.9978,
+"y2": 0.7321
+},
+{
+"c": 0,
+"x1": 0.3211,
+"y1": 0.6306,
+"x2": 0.4189,
+"y2": 0.7221
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr194",
+"file": "nr194.jpg",
+"split": "train",
+"width": 736,
+"height": 736,
+"boxes": [
+{
+"c": 1,
+"x1": 0.1522,
+"y1": 0.3922,
+"x2": 0.3289,
+"y2": 0.5256
+},
+{
+"c": 1,
+"x1": 0.5011,
+"y1": 0.3922,
+"x2": 0.9978,
+"y2": 0.5556
+},
+{
+"c": 1,
+"x1": 0.6922,
+"y1": 0.5722,
+"x2": 0.8289,
+"y2": 0.6456
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr195",
+"file": "nr195.jpg",
+"split": "train",
+"width": 736,
+"height": 736,
+"boxes": [
+{
+"c": 1,
+"x1": 0.2522,
+"y1": 0.3911,
+"x2": 0.8567,
+"y2": 0.5589
+},
+{
+"c": 1,
+"x1": 0.5922,
+"y1": 0.7522,
+"x2": 0.7289,
+"y2": 0.8256
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr204",
+"file": "nr204.webp",
+"split": "train",
+"width": 1080,
+"height": 1440,
+"boxes": [
+{
+"c": 1,
+"x1": 0.8519,
+"y1": 0.4011,
+"x2": 0.9437,
+"y2": 0.4589
+},
+{
+"c": 1,
+"x1": 0.8815,
+"y1": 0.5322,
+"x2": 0.997,
+"y2": 0.6256
+},
+{
+"c": 1,
+"x1": 0.483,
+"y1": 0.5411,
+"x2": 0.5644,
+"y2": 0.6089
+},
+{
+"c": 1,
+"x1": 0.4311,
+"y1": 0.8122,
+"x2": 0.523,
+"y2": 0.9089
+},
+{
+"c": 1,
+"x1": 0.5822,
+"y1": 0.8722,
+"x2": 0.6637,
+"y2": 0.9889
+},
+{
+"c": 1,
+"x1": 0.8726,
+"y1": 0.8811,
+"x2": 0.9852,
+"y2": 0.9978
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr205",
+"file": "nr205.webp",
+"split": "train",
+"width": 1080,
+"height": 1440,
+"boxes": [
+{
+"c": 1,
+"x1": 0.2533,
+"y1": 0.4911,
+"x2": 0.7585,
+"y2": 0.6856
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr206",
+"file": "nr206.webp",
+"split": "train",
+"width": 1080,
+"height": 1440,
+"boxes": [
+{
+"c": 1,
+"x1": 0.2207,
+"y1": 0.5122,
+"x2": 0.5778,
+"y2": 0.7367
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr207",
+"file": "nr207.webp",
+"split": "train",
+"width": 1080,
+"height": 1440,
+"boxes": [
+{
+"c": 1,
+"x1": 0.1526,
+"y1": 0.4722,
+"x2": 0.4578,
+"y2": 0.5656
+},
+{
+"c": 1,
+"x1": 0.3822,
+"y1": 0.5011,
+"x2": 0.4578,
+"y2": 0.5656
+}
+],
+"flagged": true,
+"note": "Boxes recovered from the preview image; some may be missing or merged. Compare with the original preview."
+},
+{
+"id": "nr208",
+"file": "nr208.webp",
+"split": "train",
+"width": 1080,
+"height": 1440,
+"boxes": [
+{
+"c": 1,
+"x1": 0.3037,
+"y1": 0.5311,
+"x2": 0.997,
+"y2": 0.6256
+},
+{
+"c": 1,
+"x1": 0.1526,
+"y1": 0.6411,
+"x2": 0.283,
+"y2": 0.7889
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr209",
+"file": "nr209.jpg",
+"split": "train",
+"width": 736,
+"height": 552,
+"boxes": [
+{
+"c": 2,
+"x1": 0.1211,
+"y1": 0.1911,
+"x2": 0.9089,
+"y2": 0.5541
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr210",
+"file": "nr210.jpg",
+"split": "train",
+"width": 512,
+"height": 382,
+"boxes": [
+{
+"c": 2,
+"x1": 0.2211,
+"y1": 0.2802,
+"x2": 0.8289,
+"y2": 0.8227
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr212",
+"file": "nr212.webp",
+"split": "train",
+"width": 1080,
+"height": 1440,
+"boxes": [
+{
+"c": 2,
+"x1": 0.3511,
+"y1": 0.5411,
+"x2": 0.4874,
+"y2": 0.6056
+}
+],
+"flagged": true,
+"note": "Boxes recovered from the preview image; some may be missing or merged. Compare with the original preview."
+},
+{
+"id": "nr215",
+"file": "nr215.webp",
+"split": "train",
+"width": 1080,
+"height": 810,
+"boxes": [
+{
+"c": 2,
+"x1": 0.4411,
+"y1": 0.3807,
+"x2": 0.8089,
+"y2": 0.5733
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr216",
+"file": "nr216.webp",
+"split": "train",
+"width": 1080,
+"height": 1440,
+"boxes": [
+{
+"c": 1,
+"x1": 0.323,
+"y1": 0.3011,
+"x2": 0.4178,
+"y2": 0.4256
+},
+{
+"c": 1,
+"x1": 0.3215,
+"y1": 0.4322,
+"x2": 0.4267,
+"y2": 0.5767
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr217",
+"file": "nr217.webp",
+"split": "train",
+"width": 1080,
+"height": 608,
+"boxes": [
+{
+"c": 1,
+"x1": 0.5811,
+"y1": 0.3807,
+"x2": 0.6489,
+"y2": 0.4241
+},
+{
+"c": 1,
+"x1": 0.4222,
+"y1": 0.432,
+"x2": 0.5089,
+"y2": 0.4813
+},
+{
+"c": 1,
+"x1": 0.2022,
+"y1": 0.6114,
+"x2": 0.2689,
+"y2": 0.6509
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr218",
+"file": "nr218.webp",
+"split": "train",
+"width": 1080,
+"height": 615,
+"boxes": [],
+"flagged": true,
+"note": "Boxes recovered from the preview image; some may be missing or merged. Compare with the original preview."
+},
+{
+"id": "nr220",
+"file": "nr220.jpg",
+"split": "train",
+"width": 236,
+"height": 157,
+"boxes": [
+{
+"c": 2,
+"x1": 0.4022,
+"y1": 0.3005,
+"x2": 0.6589,
+"y2": 0.5526
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr221",
+"file": "nr221.jpg",
+"split": "train",
+"width": 733,
+"height": 681,
+"boxes": [],
+"flagged": true,
+"note": "Boxes recovered from the preview image; some may be missing or merged. Compare with the original preview."
+},
+{
+"id": "nr222",
+"file": "nr222.jpg",
+"split": "train",
+"width": 736,
+"height": 1308,
+"boxes": [
+{
+"c": 1,
+"x1": 0.1324,
+"y1": 0.1811,
+"x2": 0.6225,
+"y2": 0.6489
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr223",
+"file": "nr223.webp",
+"split": "train",
+"width": 1080,
+"height": 2344,
+"boxes": [
+{
+"c": 1,
+"x1": 0.4747,
+"y1": 0.7611,
+"x2": 0.6265,
+"y2": 0.8056
+}
+],
+"flagged": true,
+"note": "Boxes recovered from the preview image; some may be missing or merged. Compare with the original preview."
+},
+{
+"id": "nr224",
+"file": "nr224.webp",
+"split": "train",
+"width": 729,
+"height": 1583,
+"boxes": [
+{
+"c": 1,
+"x1": 0.0531,
+"y1": 0.3711,
+"x2": 0.4758,
+"y2": 0.4656
+},
+{
+"c": 1,
+"x1": 0.413,
+"y1": 0.5011,
+"x2": 0.5556,
+"y2": 0.5356
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr227",
+"file": "nr227.webp",
+"split": "train",
+"width": 1080,
+"height": 608,
+"boxes": [],
+"flagged": true,
+"note": "Boxes recovered from the preview image; some may be missing or merged. Compare with the original preview."
+},
+{
+"id": "nr237",
+"file": "nr237.webp",
+"split": "train",
+"width": 1080,
+"height": 810,
+"boxes": [
+{
+"c": 1,
+"x1": 0.3022,
+"y1": 0.3007,
+"x2": 0.6978,
+"y2": 0.5556
+},
+{
+"c": 1,
+"x1": 0.7122,
+"y1": 0.8222,
+"x2": 0.8989,
+"y2": 0.9437
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr238",
+"file": "nr238.webp",
+"split": "train",
+"width": 1080,
+"height": 1440,
+"boxes": [
+{
+"c": 2,
+"x1": 0.2207,
+"y1": 0.4611,
+"x2": 0.8178,
+"y2": 0.6356
+},
+{
+"c": 2,
+"x1": 0.0519,
+"y1": 0.5911,
+"x2": 0.4578,
+"y2": 0.7756
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr239",
+"file": "nr239.webp",
+"split": "train",
+"width": 1080,
+"height": 1440,
+"boxes": [],
+"flagged": true,
+"note": "Boxes recovered from the preview image; some may be missing or merged. Compare with the original preview."
+},
+{
+"id": "nr022",
+"file": "nr022.jpg",
+"split": "val",
+"width": 736,
+"height": 1349,
+"boxes": [
+{
+"c": 2,
+"x1": 0.002,
+"y1": 0.5411,
+"x2": 0.4114,
+"y2": 0.8589
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr034",
+"file": "nr034.jpg",
+"split": "val",
+"width": 600,
+"height": 800,
+"boxes": [
+{
+"c": 1,
+"x1": 0.1422,
+"y1": 0.3811,
+"x2": 0.8978,
+"y2": 0.8256
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr035",
+"file": "nr035.jpg",
+"split": "val",
+"width": 600,
+"height": 800,
+"boxes": [
+{
+"c": 1,
+"x1": 0.5822,
+"y1": 0.3611,
+"x2": 0.6533,
+"y2": 0.4489
+},
+{
+"c": 1,
+"x1": 0.4533,
+"y1": 0.4611,
+"x2": 0.5437,
+"y2": 0.5489
+},
+{
+"c": 1,
+"x1": 0.4119,
+"y1": 0.5611,
+"x2": 0.5141,
+"y2": 0.6489
+},
+{
+"c": 1,
+"x1": 0.3319,
+"y1": 0.6522,
+"x2": 0.4548,
+"y2": 0.7689
+},
+{
+"c": 1,
+"x1": 0.283,
+"y1": 0.7622,
+"x2": 0.4044,
+"y2": 0.8889
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr069",
+"file": "nr069.webp",
+"split": "val",
+"width": 768,
+"height": 1024,
+"boxes": [
+{
+"c": 2,
+"x1": 0.3926,
+"y1": 0.4411,
+"x2": 0.523,
+"y2": 0.6289
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr075",
+"file": "nr075.webp",
+"split": "val",
+"width": 1080,
+"height": 1440,
+"boxes": [
+{
+"c": 1,
+"x1": 0.2504,
+"y1": 0.5011,
+"x2": 0.5067,
+"y2": 0.5967
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr084",
+"file": "nr084.jpg",
+"split": "val",
+"width": 736,
+"height": 368,
+"boxes": [
+{
+"c": 2,
+"x1": 0.3911,
+"y1": 0.2511,
+"x2": 0.7089,
+"y2": 0.52
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr103",
+"file": "nr103.webp",
+"split": "val",
+"width": 1080,
+"height": 1440,
+"boxes": [
+{
+"c": 1,
+"x1": 0.403,
+"y1": 0.4611,
+"x2": 0.6281,
+"y2": 0.6256
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr121",
+"file": "nr121.webp",
+"split": "val",
+"width": 1080,
+"height": 1440,
+"boxes": [
+{
+"c": 1,
+"x1": 0.203,
+"y1": 0.3722,
+"x2": 0.6281,
+"y2": 0.4656
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr126",
+"file": "nr126.webp",
+"split": "val",
+"width": 1080,
+"height": 810,
+"boxes": [
+{
+"c": 2,
+"x1": 0.1411,
+"y1": 0.1407,
+"x2": 0.8589,
+"y2": 0.9037
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr133",
+"file": "nr133.webp",
+"split": "val",
+"width": 1080,
+"height": 810,
+"boxes": [
+{
+"c": 2,
+"x1": 0.1411,
+"y1": 0.5615,
+"x2": 0.4089,
+"y2": 0.6237
+},
+{
+"c": 2,
+"x1": 0.5411,
+"y1": 0.5615,
+"x2": 0.7589,
+"y2": 0.6237
+},
+{
+"c": 2,
+"x1": 0.5411,
+"y1": 0.7304,
+"x2": 0.7589,
+"y2": 0.7837
+},
+{
+"c": 2,
+"x1": 0.0711,
+"y1": 0.7511,
+"x2": 0.3589,
+"y2": 0.803
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr136",
+"file": "nr136.webp",
+"split": "val",
+"width": 1080,
+"height": 392,
+"boxes": [
+{
+"c": 1,
+"x1": 0.1722,
+"y1": 0.0948,
+"x2": 0.2589,
+"y2": 0.2049
+},
+{
+"c": 1,
+"x1": 0.5022,
+"y1": 0.4128,
+"x2": 0.6089,
+"y2": 0.5168
+},
+{
+"c": 1,
+"x1": 0.8522,
+"y1": 0.6483,
+"x2": 0.9289,
+"y2": 0.7798
+}
+],
+"flagged": true,
+"note": "Boxes recovered from the preview image; some may be missing or merged. Compare with the original preview."
+},
+{
+"id": "nr141",
+"file": "nr141.jpg",
+"split": "val",
+"width": 640,
+"height": 426,
+"boxes": [
+{
+"c": 1,
+"x1": 0.1011,
+"y1": 0.2421,
+"x2": 0.9978,
+"y2": 0.7229
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr142",
+"file": "nr142.jpg",
+"split": "val",
+"width": 285,
+"height": 374,
+"boxes": [
+{
+"c": 2,
+"x1": 0.3003,
+"y1": 0.2411,
+"x2": 0.8032,
+"y2": 0.7289
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr160",
+"file": "nr160.webp",
+"split": "val",
+"width": 1080,
+"height": 486,
+"boxes": [
+{
+"c": 1,
+"x1": 0.3811,
+"y1": 0.3037,
+"x2": 0.6089,
+"y2": 0.5704
+},
+{
+"c": 1,
+"x1": 0.4222,
+"y1": 0.5407,
+"x2": 0.6089,
+"y2": 0.5704
+}
+],
+"flagged": true,
+"note": "Boxes recovered from the preview image; some may be missing or merged. Compare with the original preview."
+},
+{
+"id": "nr167",
+"file": "nr167.png",
+"split": "val",
+"width": 623,
+"height": 828,
+"boxes": [
+{
+"c": 2,
+"x1": 0.1728,
+"y1": 0.5411,
+"x2": 0.6278,
+"y2": 0.6656
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr168",
+"file": "nr168.png",
+"split": "val",
+"width": 623,
+"height": 785,
+"boxes": [
+{
+"c": 2,
+"x1": 0.4706,
+"y1": 0.0011,
+"x2": 0.5882,
+"y2": 0.0878
+},
+{
+"c": 2,
+"x1": 0.3838,
+"y1": 0.2311,
+"x2": 0.4678,
+"y2": 0.3256
+},
+{
+"c": 2,
+"x1": 0.423,
+"y1": 0.3711,
+"x2": 0.5238,
+"y2": 0.4889
+},
+{
+"c": 2,
+"x1": 0.3123,
+"y1": 0.6311,
+"x2": 0.3838,
+"y2": 0.7289
+}
+],
+"flagged": true,
+"note": "Boxes recovered from the preview image; some may be missing or merged. Compare with the original preview."
+},
+{
+"id": "nr174",
+"file": "nr174.png",
+"split": "val",
+"width": 612,
+"height": 780,
+"boxes": [
+{
+"c": 2,
+"x1": 0.051,
+"y1": 0.4611,
+"x2": 0.5283,
+"y2": 0.5256
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr177",
+"file": "nr177.png",
+"split": "val",
+"width": 625,
+"height": 768,
+"boxes": [
+{
+"c": 2,
+"x1": 0.362,
+"y1": 0.4911,
+"x2": 0.5642,
+"y2": 0.5889
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr193",
+"file": "nr193.jpg",
+"split": "val",
+"width": 600,
+"height": 550,
+"boxes": [
+{
+"c": 1,
+"x1": 0.2522,
+"y1": 0.2024,
+"x2": 0.8578,
+"y2": 0.6255
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr219",
+"file": "nr219.webp",
+"split": "val",
+"width": 1080,
+"height": 1440,
+"boxes": [
+{
+"c": 2,
+"x1": 0.2607,
+"y1": 0.1611,
+"x2": 0.3837,
+"y2": 0.3789
+}
+],
+"flagged": true,
+"note": "Boxes recovered from the preview image; some may be missing or merged. Compare with the original preview."
+},
+{
+"id": "nr226",
+"file": "nr226.webp",
+"split": "val",
+"width": 1080,
+"height": 857,
+"boxes": [
+{
+"c": 1,
+"x1": 0.3622,
+"y1": 0.1611,
+"x2": 0.6778,
+"y2": 0.8459
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr228",
+"file": "nr228.webp",
+"split": "val",
+"width": 1080,
+"height": 1080,
+"boxes": [],
+"flagged": true,
+"note": "Boxes recovered from the preview image; some may be missing or merged. Compare with the original preview."
+},
+{
+"id": "nr229",
+"file": "nr229.webp",
+"split": "val",
+"width": 806,
+"height": 806,
+"boxes": [
+{
+"c": 1,
+"x1": 0.0322,
+"y1": 0.3311,
+"x2": 0.9978,
+"y2": 0.7367
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr230",
+"file": "nr230.webp",
+"split": "val",
+"width": 1080,
+"height": 810,
+"boxes": [
+{
+"c": 1,
+"x1": 0.6422,
+"y1": 0.3704,
+"x2": 0.7589,
+"y2": 0.4533
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr234",
+"file": "nr234.webp",
+"split": "val",
+"width": 1080,
+"height": 646,
+"boxes": [],
+"flagged": true,
+"note": "Boxes recovered from the preview image; some may be missing or merged. Compare with the original preview."
+},
+{
+"id": "nr235",
+"file": "nr235.webp",
+"split": "val",
+"width": 1080,
+"height": 491,
+"boxes": [
+{
+"c": 1,
+"x1": 0.6222,
+"y1": 0.4132,
+"x2": 0.9978,
+"y2": 0.4792
+}
+],
+"flagged": true,
+"note": "Boxes recovered from the preview image; some may be missing or merged. Compare with the original preview."
+},
+{
+"id": "nr240",
+"file": "nr240.webp",
+"split": "val",
+"width": 1080,
+"height": 1440,
+"boxes": [
+{
+"c": 2,
+"x1": 0.1822,
+"y1": 0.4011,
+"x2": 0.5274,
+"y2": 0.5656
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr241",
+"file": "nr241.webp",
+"split": "val",
+"width": 1080,
+"height": 1440,
+"boxes": [
+{
+"c": 1,
+"x1": 0.3007,
+"y1": 0.1122,
+"x2": 0.637,
+"y2": 0.6567
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr013",
+"file": "nr013.jpg",
+"split": "test",
+"width": 735,
+"height": 490,
+"boxes": [
+{
+"c": 1,
+"x1": 0.2211,
+"y1": 0.2017,
+"x2": 0.8489,
+"y2": 0.595
+},
+{
+"c": 1,
+"x1": 0.7411,
+"y1": 0.7217,
+"x2": 0.8689,
+"y2": 0.8533
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr015",
+"file": "nr015.webp",
+"split": "test",
+"width": 1080,
+"height": 810,
+"boxes": [
+{
+"c": 1,
+"x1": 0.3322,
+"y1": 0.2919,
+"x2": 0.6189,
+"y2": 0.3733
+},
+{
+"c": 1,
+"x1": 0.5822,
+"y1": 0.4415,
+"x2": 0.9978,
+"y2": 0.5541
+},
+{
+"c": 1,
+"x1": 0.4011,
+"y1": 0.603,
+"x2": 0.9978,
+"y2": 0.7541
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr016",
+"file": "nr016.webp",
+"split": "test",
+"width": 1080,
+"height": 1440,
+"boxes": [
+{
+"c": 1,
+"x1": 0.203,
+"y1": 0.3011,
+"x2": 0.6548,
+"y2": 0.5978
+},
+{
+"c": 1,
+"x1": 0.283,
+"y1": 0.5822,
+"x2": 0.6578,
+"y2": 0.5967
+}
+],
+"flagged": true,
+"note": "Boxes recovered from the preview image; some may be missing or merged. Compare with the original preview."
+},
+{
+"id": "nr024",
+"file": "nr024.webp",
+"split": "test",
+"width": 1080,
+"height": 828,
+"boxes": [
+{
+"c": 2,
+"x1": 0.2811,
+"y1": 0.5203,
+"x2": 0.6989,
+"y2": 0.813
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr027",
+"file": "nr027.webp",
+"split": "test",
+"width": 640,
+"height": 360,
+"boxes": [
+{
+"c": 1,
+"x1": 0.5411,
+"y1": 0.4209,
+"x2": 0.7889,
+"y2": 0.5711
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr033",
+"file": "nr033.jpg",
+"split": "test",
+"width": 600,
+"height": 800,
+"boxes": [
+{
+"c": 1,
+"x1": 0.1022,
+"y1": 0.4322,
+"x2": 0.7956,
+"y2": 0.6089
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr038",
+"file": "nr038.jpg",
+"split": "test",
+"width": 600,
+"height": 800,
+"boxes": [
+{
+"c": 1,
+"x1": 0.1911,
+"y1": 0.3922,
+"x2": 0.7881,
+"y2": 0.6256
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr043",
+"file": "nr043.webp",
+"split": "test",
+"width": 1080,
+"height": 1440,
+"boxes": [
+{
+"c": 2,
+"x1": 0.3022,
+"y1": 0.3911,
+"x2": 0.6874,
+"y2": 0.4756
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr068",
+"file": "nr068.webp",
+"split": "test",
+"width": 1080,
+"height": 1440,
+"boxes": [
+{
+"c": 1,
+"x1": 0.243,
+"y1": 0.4511,
+"x2": 0.8074,
+"y2": 0.5856
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr077",
+"file": "nr077.jpg",
+"split": "test",
+"width": 735,
+"height": 490,
+"boxes": [
+{
+"c": 2,
+"x1": 0.0522,
+"y1": 0.1017,
+"x2": 0.5789,
+"y2": 0.7233
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr123",
+"file": "nr123.jpg",
+"split": "test",
+"width": 1576,
+"height": 2100,
+"boxes": [
+{
+"c": 1,
+"x1": 0.4726,
+"y1": 0.1122,
+"x2": 0.6281,
+"y2": 0.2256
+},
+{
+"c": 1,
+"x1": 0.5407,
+"y1": 0.2333,
+"x2": 0.683,
+"y2": 0.3489
+},
+{
+"c": 1,
+"x1": 0.6622,
+"y1": 0.7211,
+"x2": 0.9067,
+"y2": 0.8567
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr128",
+"file": "nr128.webp",
+"split": "test",
+"width": 1080,
+"height": 810,
+"boxes": [
+{
+"c": 2,
+"x1": 0.5522,
+"y1": 0.5407,
+"x2": 0.8089,
+"y2": 0.6637
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr129",
+"file": "nr129.webp",
+"split": "test",
+"width": 1080,
+"height": 810,
+"boxes": [
+{
+"c": 2,
+"x1": 0.2511,
+"y1": 0.5407,
+"x2": 0.6589,
+"y2": 0.6741
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr140",
+"file": "nr140.jpg",
+"split": "test",
+"width": 736,
+"height": 736,
+"boxes": [
+{
+"c": 1,
+"x1": 0.4022,
+"y1": 0.4011,
+"x2": 0.7178,
+"y2": 0.8256
+},
+{
+"c": 1,
+"x1": 0.0011,
+"y1": 0.4122,
+"x2": 0.1056,
+"y2": 0.5289
+},
+{
+"c": 1,
+"x1": 0.6922,
+"y1": 0.4611,
+"x2": 0.9056,
+"y2": 0.5578
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr144",
+"file": "nr144.webp",
+"split": "test",
+"width": 1080,
+"height": 1440,
+"boxes": [
+{
+"c": 2,
+"x1": 0.1822,
+"y1": 0.3711,
+"x2": 0.683,
+"y2": 0.9889
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr162",
+"file": "nr162.png",
+"split": "test",
+"width": 626,
+"height": 825,
+"boxes": [
+{
+"c": 2,
+"x1": 0.4627,
+"y1": 0.2911,
+"x2": 0.5739,
+"y2": 0.8289
+}
+],
+"flagged": true,
+"note": "Boxes recovered from the preview image; some may be missing or merged. Compare with the original preview."
+},
+{
+"id": "nr170",
+"file": "nr170.png",
+"split": "test",
+"width": 618,
+"height": 756,
+"boxes": [
+{
+"c": 2,
+"x1": 0.341,
+"y1": 0.2511,
+"x2": 0.5584,
+"y2": 0.3056
+},
+{
+"c": 2,
+"x1": 0.2418,
+"y1": 0.2911,
+"x2": 0.3546,
+"y2": 0.3389
+},
+{
+"c": 2,
+"x1": 0.0408,
+"y1": 0.5611,
+"x2": 0.4076,
+"y2": 0.6356
+},
+{
+"c": 2,
+"x1": 0.6712,
+"y1": 0.7211,
+"x2": 0.9579,
+"y2": 0.8056
+}
+],
+"flagged": true,
+"note": "Boxes recovered from the preview image; some may be missing or merged. Compare with the original preview."
+},
+{
+"id": "nr179",
+"file": "nr179.png",
+"split": "test",
+"width": 630,
+"height": 775,
+"boxes": [
+{
+"c": 2,
+"x1": 0.2514,
+"y1": 0.2411,
+"x2": 0.9945,
+"y2": 0.9978
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr180",
+"file": "nr180.png",
+"split": "test",
+"width": 621,
+"height": 770,
+"boxes": [
+{
+"c": 2,
+"x1": 0.1019,
+"y1": 0.2711,
+"x2": 0.9573,
+"y2": 0.6256
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr196",
+"file": "nr196.webp",
+"split": "test",
+"width": 1080,
+"height": 1440,
+"boxes": [
+{
+"c": 1,
+"x1": 0.403,
+"y1": 0.1811,
+"x2": 0.7037,
+"y2": 0.9978
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr197",
+"file": "nr197.webp",
+"split": "test",
+"width": 1080,
+"height": 1440,
+"boxes": [
+{
+"c": 1,
+"x1": 0.4904,
+"y1": 0.0011,
+"x2": 0.6652,
+"y2": 0.8289
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr198",
+"file": "nr198.webp",
+"split": "test",
+"width": 1080,
+"height": 1440,
+"boxes": [
+{
+"c": 1,
+"x1": 0.4726,
+"y1": 0.0922,
+"x2": 0.6237,
+"y2": 0.9978
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr199",
+"file": "nr199.webp",
+"split": "test",
+"width": 1080,
+"height": 1440,
+"boxes": [],
+"flagged": true,
+"note": "Boxes recovered from the preview image; some may be missing or merged. Compare with the original preview."
+},
+{
+"id": "nr200",
+"file": "nr200.webp",
+"split": "test",
+"width": 1080,
+"height": 1440,
+"boxes": [
+{
+"c": 1,
+"x1": 0.1422,
+"y1": 0.3122,
+"x2": 0.8548,
+"y2": 0.4689
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr201",
+"file": "nr201.webp",
+"split": "test",
+"width": 1080,
+"height": 820,
+"boxes": [],
+"flagged": true,
+"note": "Boxes recovered from the preview image; some may be missing or merged. Compare with the original preview."
+},
+{
+"id": "nr202",
+"file": "nr202.webp",
+"split": "test",
+"width": 1080,
+"height": 607,
+"boxes": [
+{
+"c": 1,
+"x1": 0.3522,
+"y1": 0.4427,
+"x2": 0.5289,
+"y2": 0.5711
+}
+],
+"flagged": false,
+"note": ""
+},
+{
+"id": "nr203",
+"file": "nr203.webp",
+"split": "test",
+"width": 1080,
+"height": 607,
+"boxes": [
+{
+"c": 1,
+"x1": 0.4211,
+"y1": 0.4328,
+"x2": 0.5889,
+"y2": 0.5711
+}
+],
+"flagged": false,
+"note": ""
+}
+]

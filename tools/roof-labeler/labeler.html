@@ -134,8 +134,10 @@ kbd{font-family:var(--f-mono);font-size:11px;opacity:.7}
   <div class="spacer"></div>
   <label class="who" id="whoWrap" for="who">Your name <input id="who" type="text" placeholder="e.g. Sam" autocomplete="off"></label>
   <span class="save" id="save" aria-live="polite"></span>
-  <label class="btn" for="pick" title="Open a folder of photos">Open folder</label>
+  <button class="btn" id="openDir" type="button" title="Pick the folder that holds the photos">Open folder</button>
+  <button class="btn" id="openFiles" type="button" title="Select the photos (and their .txt or .json labels) yourself">Open files</button>
   <input id="pick" type="file" webkitdirectory directory multiple hidden>
+  <input id="pickFiles" type="file" multiple hidden>
   <button class="btn primary" id="export" type="button" disabled>Export labels</button>
 </header>
 <div class="notice" id="notice" hidden></div>
@@ -146,8 +148,10 @@ kbd{font-family:var(--f-mono);font-size:11px;opacity:.7}
     <ol>
       <li>Type your name at the top right.</li>
       <li>Click <b>Open folder</b> and pick the folder with the photos (.jpg, .png, .webp).</li>
-      <li>If the folder also has YOLO <code>.txt</code> labels or an <code>annotations.json</code>, those boxes, flags and notes load too.</li>
+      <li>If the folder also has YOLO <code>.txt</code> labels or a <code>.json</code> annotations file (any name), those shapes, flags and notes load too and you can edit them.</li>
+      <li>If <b>Open folder</b> won't let you pick, use <b>Open files</b> instead: select all the photos and the <code>.json</code> file (Cmd+A selects everything).</li>
     </ol>
+    <p>Photos that already have colored boxes printed on them (the <code>previews</code> zips) can't be edited, because those boxes are part of the picture. Open the plain photos with their <code>.json</code> file instead.</p>
     <p>Follow the labeling guide in <code>tools/roof-labeler/README.md</code> for what to box and when to flag.</p>
   </div>
 </div>
@@ -201,7 +205,7 @@ kbd{font-family:var(--f-mono);font-size:11px;opacity:.7}
       <label for="note">Note</label>
       <input id="note" type="text" placeholder="Why it's flagged, what to fix…" autocomplete="off">
       <div class="hint" id="by"></div>
-      <div class="hint"><b>Box:</b> drag on the photo. <b>Shape:</b> click around the damage, then click the first point or press Enter. Click a shape to select it and drag it to move. Drag any corner anywhere, so a box can be skewed to follow the roof's angle. Drag a small diamond to add a corner, double-click a corner to remove it. × or Del deletes the shape, Ctrl+Z undoes, 1 2 3 change its class. <b>Zoom:</b> Ctrl+scroll or pinch zooms where the pointer is, + and − zoom on the selected shape, 0 fits the photo. Scroll, or hold Space and drag, to move around.</div>
+      <div class="hint"><b>Box:</b> drag on the photo. <b>Shape:</b> click around the damage, then click the first point or press Enter. Click a shape to select it and drag it to move. Drag any corner anywhere, so a box can be skewed to follow the roof's angle. Drag a small diamond to add a corner, double-click a corner to remove it. × or Delete deletes the shape, Ctrl+Z (Cmd+Z on a Mac) undoes, 1 2 3 change its class. On a Mac trackpad, Ctrl-click or two-finger click a corner to remove it. <b>Zoom:</b> Ctrl+scroll or pinch zooms where the pointer is, + and − zoom on the selected shape, 0 fits the photo. Scroll, or hold Space and drag, to move around.</div>
     </div>
   </section>
 </div>
@@ -235,28 +239,31 @@ function apply(it,d){if(!d)return;if(Array.isArray(d.boxes))it.boxes=d.boxes.map
 
 /* ---------- loading a folder ---------- */
 function parseYolo(txt){return txt.split(/\r?\n/).map(l=>l.trim().split(/\s+/).map(Number)).filter(a=>a.length>=5&&a.every(n=>!isNaN(n))&&a[0]>=0&&a[0]<3).map(a=>{const c=a[0];if(a.length===5){const[,xc,yc,w,h]=a;return norm({c,x1:clamp(xc-w/2),y1:clamp(yc-h/2),x2:clamp(xc+w/2),y2:clamp(yc+h/2)})}return {c,p:a.slice(1,1+2*Math.floor((a.length-1)/2)).map(clamp)}}).filter(s=>s.p.length>=6)}
-$("#pick").addEventListener("change",async e=>{
+async function openFiles(e){
   const files=[...e.target.files];e.target.value="";
   const imgs=files.filter(f=>IMG.test(f.name)).sort((a,b)=>a.name.localeCompare(b.name));
   if(!imgs.length){toast("No .jpg, .png or .webp photos in that folder.");return}
   const txt=new Map(files.filter(f=>/\.txt$/i.test(f.name)&&!/^(classes|flagged)\.txt$/i.test(f.name)).map(f=>[stem(f.name),f]));
-  const ann=files.find(f=>/annotations\.json$/i.test(f.name));
+  let annArr=null,ann=null;
+  for(const f of files.filter(f=>/\.json$/i.test(f.name))){try{const a=JSON.parse(await f.text());if(Array.isArray(a)&&a.some(x=>x&&(x.id||x.file))){annArr=a;ann=f;break}}catch(err){}}
   S.urls.forEach(u=>URL.revokeObjectURL(u));S.urls=[];
-  const rel=imgs[0].webkitRelativePath||"";S.batch=(rel.split("/")[0]||"photos")+":"+imgs.length;
+  const rel=imgs[0].webkitRelativePath||"";S.batch=(rel.split("/")[0]||"photos")+":"+imgs.length+":"+imgs[0].name;
   S.items=[];
   for(const f of imgs){const u=URL.createObjectURL(f);S.urls.push(u);
     const it={id:stem(f.name),file:f.name,url:u,boxes:[],flagged:false,reviewed:false,note:"",labeledBy:"",editedBy:"",reviewedBy:"",w:null,h:null};
     if(txt.has(it.id))it.boxes=parseYolo(await txt.get(it.id).text());
     S.items.push(it)}
   let annCount=0;
-  if(ann){try{const arr=JSON.parse(await ann.text());for(const d of arr){const it=S.items.find(x=>x.id===(d.id||stem(d.file||"")));if(it){apply(it,d);annCount++;if(d.width)it.w=d.width;if(d.height)it.h=d.height}}}catch(err){toast("annotations.json could not be read, so only the .txt labels loaded.")}}
+  if(annArr){try{const arr=annArr;for(const d of arr){const it=S.items.find(x=>x.id===(d.id||stem(d.file||"")));if(it){apply(it,d);annCount++;if(d.width)it.w=d.width;if(d.height)it.h=d.height}}}catch(err){toast("annotations.json could not be read, so only the .txt labels loaded.")}}
   S.items.forEach(it=>it.base=snapshot(it));
   let restored=0;try{const o=JSON.parse(localStorage.getItem(key())||"{}");S.items.forEach(it=>{if(o[it.id]){apply(it,o[it.id]);it.touched=true;restored++}})}catch(err){}
   $("#start").hidden=true;$("#app").hidden=false;$("#export").disabled=false;fit();
   setSave(restored?`Restored ${restored} edited photos from this browser`:"Autosaved in this browser");
   toast(`${imgs.length} photos, ${txt.size} label files${ann?`, notes for ${annCount}`:""} loaded`);
   S.i=0;go(0);
-});
+}
+$("#pick").addEventListener("change",openFiles);$("#pickFiles").addEventListener("change",openFiles);
+$("#openDir").onclick=()=>$("#pick").click();$("#openFiles").onclick=()=>$("#pickFiles").click();
 
 /* ---------- list ---------- */
 function visible(){return S.items.map((it,i)=>[it,i]).filter(([it])=>S.filter==="all"||(S.filter==="flag"&&it.flagged)||(S.filter==="todo"&&!it.reviewed)||(S.filter==="done"&&it.reviewed))}
@@ -293,8 +300,9 @@ function renderTools(){
   $("#by").innerHTML=parts.join(", ")+(self?' <span class="chip" style="color:var(--flag);border-color:var(--flag)">same person labeled and reviewed</span>':"");
 }
 function renderAll(){renderStats();renderList();renderTools();renderBoxes()}
-function go(i){if(i<0||i>=S.items.length)return;S.i=i;S.sel=-1;S.poly=null;const it=cur(),im=$("#photo");S.zoom=1;im.onload=()=>{it.w=im.naturalWidth;it.h=im.naturalHeight;layout()};im.src=it.url;im.alt=`Roof photo ${it.id}`;renderAll()}
-function needName(){if(who())return false;$("#whoWrap").classList.add("missing");$("#who").focus();toast("Type your name first so your edits are credited to you.");return true}
+function go(i){if(i<0||i>=S.items.length)return;S.i=i;S.sel=-1;S.poly=null;const it=cur(),im=$("#photo");S.zoom=1;im.onload=()=>{if(!it.w){it.w=im.naturalWidth;it.h=im.naturalHeight}layout()};im.src=it.url;im.alt=`Roof photo ${it.id}`;renderAll()}
+function needName(){if(!who()&&!S.nudged){S.nudged=true;$("#whoWrap").classList.add("missing");toast("Add your name at the top right so your edits are credited to you.")}return false}
+function requireName(why){if(who())return false;$("#whoWrap").classList.add("missing");$("#who").focus();toast(`Type your name at the top right before ${why}.`);return true}
 function changed(opt={}){const it=cur();it.touched=true;it.updatedAt=new Date().toISOString();if(!opt.reviewOnly){if(!it.labeledBy)it.labeledBy=who();it.editedBy=who()}renderStats();renderList();renderTools();renderBoxes();persist()}
 
 /* ---------- shapes ---------- */
@@ -320,7 +328,7 @@ const SVGNS="http://www.w3.org/2000/svg";
 function setMode(m){S.mode=m;S.poly=null;document.querySelectorAll(".mode").forEach(b=>b.setAttribute("aria-pressed",b.dataset.m===m));renderBoxes()}
 function renderBoxes(){
   const fr=$("#frame"),ov=$("#ov"),hl=$("#hl");ov.innerHTML="";hl.innerHTML="";
-  const it=cur();$("#del").disabled=S.sel<0;if(!it)return;
+  const it=cur();$("#del").disabled=S.sel<0;S.xpos=null;if(!it)return;
   fr.classList.toggle("poly-mode",S.mode==="poly");
   it.boxes.forEach((s,k)=>{
     const g=document.createElementNS(SVGNS,"polygon");g.setAttribute("points",ptsStr(s.p));g.setAttribute("class",`shape c${s.c}`+(k===S.sel?" sel":""));g.dataset.k=k;ov.appendChild(g);
@@ -335,7 +343,7 @@ function renderBoxes(){
         m.style.left=(s.p[2*i]+s.p[2*j])/2*100+"%";m.style.top=(s.p[2*i+1]+s.p[2*j+1])/2*100+"%";hl.appendChild(m);
       }
       const x=document.createElement("button");x.type="button";x.className="xdel";x.title="Delete this shape (Del)";x.setAttribute("aria-label","Delete this shape");x.textContent="×";
-      const xp=xPos(s,b,fr.getBoundingClientRect());x.style.left=xp.x+"px";x.style.top=xp.y+"px";x.onclick=e=>{e.stopPropagation();delSel()};hl.appendChild(x);
+      const xp=xPos(s,b,fr.getBoundingClientRect());S.xpos=xp;x.style.left=xp.x+"px";x.style.top=xp.y+"px";hl.appendChild(x);
     }
   });
   if(S.poly&&S.poly.p.length){
@@ -366,15 +374,26 @@ function finishPoly(){
   if(P.p.length>=6){if(needName())return;pushUndo(it);it.boxes.push({c:S.cls,p:P.p.slice()});S.sel=it.boxes.length-1;S.poly=null;changed()}
   else{S.poly=null;renderBoxes();toast("A shape needs at least 3 points")}
 }
+/* ---------- hit testing in script, so selection doesn't depend on SVG/handle event targets (Safari, trackpads) ---------- */
+function pxDist(ax,ay,p){return Math.hypot((ax-p.x)*p.px,(ay-p.y)*p.py)}
+function inPoly(P,x,y){let c=false;const n=P.length/2;for(let i=0,j=n-1;i<n;j=i++){const xi=P[2*i],yi=P[2*i+1],xj=P[2*j],yj=P[2*j+1];if((yi>y)!==(yj>y)&&x<(xj-xi)*(y-yi)/(yj-yi)+xi)c=!c}return c}
+function segDist(ax,ay,bx,by,p){const X=p.x*p.px,Y=p.y*p.py,x1=ax*p.px,y1=ay*p.py,x2=bx*p.px,y2=by*p.py,dx=x2-x1,dy=y2-y1,L=dx*dx+dy*dy;let t=L?((X-x1)*dx+(Y-y1)*dy)/L:0;t=Math.max(0,Math.min(1,t));return Math.hypot(X-(x1+t*dx),Y-(y1+t*dy))}
+function hitVertex(p){const it=cur();if(!it||S.sel<0)return -1;const s=it.boxes[S.sel];let best=-1,bd=14;for(let i=0;i<s.p.length/2;i++){const d=pxDist(s.p[2*i],s.p[2*i+1],p);if(d<bd){bd=d;best=i}}return best}
+function hitMid(p){const it=cur();if(!it||S.sel<0)return -1;const s=it.boxes[S.sel],n=s.p.length/2;for(let i=0;i<n;i++){const j=(i+1)%n;if(pxDist((s.p[2*i]+s.p[2*j])/2,(s.p[2*i+1]+s.p[2*j+1])/2,p)<10)return i}return -1}
+function hitX(p){const it=cur();if(!it||S.sel<0||!S.xpos)return false;return Math.hypot(p.x*p.px-S.xpos.x,p.y*p.py-S.xpos.y)<15}
+function hitShape(p){const it=cur();if(!it)return -1;let best=-1,ba=Infinity;
+  it.boxes.forEach((s,k)=>{let on=inPoly(s.p,p.x,p.y);if(!on){const n=s.p.length/2;for(let i=0;i<n&&!on;i++){const j=(i+1)%n;if(segDist(s.p[2*i],s.p[2*i+1],s.p[2*j],s.p[2*j+1],p)<8)on=true}}
+    if(on){const a=area(s);if(a<ba){ba=a;best=k}}});return best}
 $("#frame").addEventListener("pointerdown",e=>{
-  const it=cur();if(!it||e.button>0)return;
+  S.xdown=false;const it=cur();if(!it||e.button>0)return;
   const p=pt(e),t=e.target;
-  if(t.closest(".xdel"))return; // deletes on click (press and release on the ×), so a slip can be dragged off it
+  if(!S.poly&&(t.closest(".xdel")||hitX(p))){e.preventDefault();S.xdown=true;return} // deletes on release over the ×, so a slip can be dragged off it
   if(S.poly){ // drawing a polygon: click adds a point, clicking the first point closes it
     if(S.poly.p.length>=6&&near(S.poly.p[0],S.poly.p[1],p,12)){finishPoly();return}
     S.poly.p.push(p.x,p.y);renderBoxes();e.preventDefault();return;
   }
-  const vh=t.closest(".vh"),mh=t.closest(".mh"),sh=t.closest(".shape");
+  const hv=hitVertex(p),hm=hv<0?hitMid(p):-1,hs=(hv<0&&hm<0)?hitShape(p):-1;
+  const vh=hv>=0?{dataset:{v:hv}}:null,mh=hm>=0?{dataset:{m:hm}}:null,sh=hs>=0?{dataset:{k:hs}}:null;
   if(vh&&S.sel>=0){const v=+vh.dataset.v;if(S.lastV&&S.lastV.v===v&&Date.now()-S.lastV.t<450){S.lastV=null;e.preventDefault();removeVertex(v);return}S.lastV={v,t:Date.now()};S.drag={mode:"vertex",v:+vh.dataset.v,pre:JSON.stringify(it.boxes),moved:false}}
   else if(mh&&S.sel>=0){const s=it.boxes[S.sel],i=+mh.dataset.m,n=s.p.length/2,j=(i+1)%n;
     S.drag={mode:"vertex",v:i+1,pre:JSON.stringify(it.boxes),moved:true};s.p.splice(2*(i+1),0,(s.p[2*i]+s.p[2*j])/2,(s.p[2*i+1]+s.p[2*j+1])/2)}
@@ -414,7 +433,7 @@ function endDrag(){
   if(needName()){it.boxes=JSON.parse(d.pre);renderBoxes();return}
   const st=UNDO.get(it.id)||[];st.push(d.pre);UNDO.set(it.id,st);changed();
 }
-$("#frame").addEventListener("pointerup",endDrag);
+$("#frame").addEventListener("pointerup",e=>{if(S.xdown){S.xdown=false;if(hitX(pt(e)))delSel();return}endDrag()});
 $("#frame").addEventListener("pointercancel",endDrag);
 function removeVertex(v){const it=cur();if(!it||S.sel<0)return;const s=it.boxes[S.sel];
   if(s.p.length<=6){toast("A shape needs at least 3 corners. Use × to delete the whole shape.");return}
@@ -422,7 +441,7 @@ function removeVertex(v){const it=cur();if(!it||S.sel<0)return;const s=it.boxes[
 $("#frame").addEventListener("dblclick",e=>{
   if(S.poly){e.preventDefault();S.poly.p.splice(-2,2);finishPoly();return} // the dblclick's own click added a duplicate point
 });
-$("#frame").addEventListener("contextmenu",e=>{const vh=e.target.closest(".vh");if(vh&&S.sel>=0&&!S.poly){e.preventDefault();removeVertex(+vh.dataset.v)}});
+$("#frame").addEventListener("contextmenu",e=>{if(S.sel<0||S.poly)return;const v=hitVertex(pt(e));if(v>=0){e.preventDefault();removeVertex(v)}});
 document.querySelectorAll(".mode").forEach(b=>b.onclick=()=>setMode(b.dataset.m));
 function shapeKeys(e){ // returns true when handled
   const k=e.key;
@@ -442,7 +461,7 @@ function shapeKeys(e){ // returns true when handled
 function setClass(c){const it=cur();S.cls=c;if(it&&S.sel>=0){if(needName())return;pushUndo(it);it.boxes[S.sel].c=c;changed()}else renderTools()}
 function delSel(){const it=cur();if(!it||S.sel<0||needName())return;pushUndo(it);it.boxes.splice(S.sel,1);S.sel=-1;changed()}
 function toggleFlag(){const it=cur();if(!it||needName())return;it.flagged=!it.flagged;changed({reviewOnly:true})}
-function toggleRev(){const it=cur();if(!it||needName())return;it.reviewed=!it.reviewed;it.reviewedBy=it.reviewed?who():"";changed({reviewOnly:true});if(it.reviewed&&S.filter==="todo")nextVisible(1)}
+function toggleRev(){const it=cur();if(!it||requireName("marking photos reviewed"))return;it.reviewed=!it.reviewed;it.reviewedBy=it.reviewed?who():"";changed({reviewOnly:true});if(it.reviewed&&S.filter==="todo")nextVisible(1)}
 function nextVisible(dir){const v=visible().map(x=>x[1]);if(!v.length)return;const pos=v.findIndex(i=>dir>0?i>S.i:i<S.i);
   if(dir>0)go(pos>=0?v[pos]:v[0]);else{const back=v.filter(i=>i<S.i);go(back.length?back[back.length-1]:v[v.length-1])}}
 document.querySelectorAll(".cls").forEach(b=>b.onclick=()=>setClass(+b.dataset.c));
@@ -472,7 +491,8 @@ document.addEventListener("keydown",e=>{
 /* ---------- export ---------- */
 function save(blob,name){const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},1000)}
 $("#export").onclick=async()=>{
-  if(needName())return;
+  if(requireName("exporting"))return;
+  S.items.forEach(it=>{if(it.touched&&!it.labeledBy&&it.boxes.length)it.labeledBy=who();if(it.touched&&!it.editedBy)it.editedBy=who()});
   const json=JSON.stringify(S.items.map(x=>({id:x.id,file:x.file,width:x.w,height:x.h,flagged:x.flagged,reviewed:x.reviewed,note:x.note,labeledBy:x.labeledBy,editedBy:x.editedBy,reviewedBy:x.reviewedBy,updatedAt:x.updatedAt||"",boxes:x.boxes.map(b=>({class:CLS[b.c],c:b.c,points:b.p.map(round),bbox:Object.fromEntries(Object.entries(bboxOf(b)).map(([k,v])=>[k,round(v)]))}))})),null,1);
   const tag=(S.batch.split(":")[0]||"labels").replace(/[^\w-]+/g,"_")+"_"+who().replace(/[^\w-]+/g,"_");
   if(typeof JSZip==="undefined"){save(new Blob([json],{type:"application/json"}),"annotations.json");toast("Offline, so only annotations.json was saved. It holds every box, flag and note.");return}
