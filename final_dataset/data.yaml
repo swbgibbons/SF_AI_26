@@ -1,7 +1,0 @@
-path: .
-train: ['Hail/Training/images', 'Wind/Training/images', 'Missing Shingles/Training/images', 'No Damage/Training/images']
-val: ['Hail/Validation/images', 'Wind/Validation/images', 'Missing Shingles/Validation/images', 'No Damage/Validation/images']
-test: ['Hail/Testing/images', 'Wind/Testing/images', 'Missing Shingles/Testing/images', 'No Damage/Testing/images']
-
-nc: 3
-names: ['hail', 'wind', 'missing_shingles']
