@@ -1,0 +1,736 @@
+[
+ {
+  "id": "nr002",
+  "file": "nr002.jpg",
+  "w": 400,
+  "h": 300,
+  "flagged": true,
+  "note": "Darker shingles look like replacements, not damage",
+  "boxes": []
+ },
+ {
+  "id": "nr003",
+  "file": "nr003.jpg",
+  "w": 235,
+  "h": 128,
+  "flagged": true,
+  "note": "Tiny 235x128 image",
+  "boxes": [
+   {
+    "c": 2,
+    "x1": 0.38,
+    "y1": 0.3,
+    "x2": 0.72,
+    "y2": 0.75
+   }
+  ]
+ },
+ {
+  "id": "nr009",
+  "file": "nr009.jpg",
+  "w": 3024,
+  "h": 4032,
+  "flagged": false,
+  "note": "Torn/lifted starter shingles along eave",
+  "boxes": [
+   {
+    "c": 1,
+    "x1": 0.03,
+    "y1": 0.45,
+    "x2": 0.78,
+    "y2": 0.5
+   }
+  ]
+ },
+ {
+  "id": "nr014",
+  "file": "nr014.webp",
+  "w": 1080,
+  "h": 1440,
+  "flagged": true,
+  "note": "Wet, hazy photo; creased shingle",
+  "boxes": [
+   {
+    "c": 1,
+    "x1": 0.66,
+    "y1": 0.7,
+    "x2": 0.8,
+    "y2": 0.82
+   }
+  ]
+ },
+ {
+  "id": "nr017",
+  "file": "nr017.webp",
+  "w": 1080,
+  "h": 1440,
+  "flagged": true,
+  "note": "Lifted edge at eave, hard to see",
+  "boxes": [
+   {
+    "c": 1,
+    "x1": 0.25,
+    "y1": 0.64,
+    "x2": 0.55,
+    "y2": 0.7
+   }
+  ]
+ },
+ {
+  "id": "nr023",
+  "file": "nr023.webp",
+  "w": 1080,
+  "h": 1440,
+  "flagged": false,
+  "note": "Shingles missing, metal exposed",
+  "boxes": [
+   {
+    "c": 2,
+    "x1": 0.2,
+    "y1": 0.2,
+    "x2": 0.72,
+    "y2": 0.8
+   }
+  ]
+ },
+ {
+  "id": "nr026",
+  "file": "nr026.webp",
+  "w": 1080,
+  "h": 1440,
+  "flagged": false,
+  "note": "Ridge cap missing",
+  "boxes": [
+   {
+    "c": 2,
+    "x1": 0.48,
+    "y1": 0.38,
+    "x2": 0.66,
+    "y2": 0.7
+   }
+  ]
+ },
+ {
+  "id": "nr030",
+  "file": "nr030.webp",
+  "w": 1080,
+  "h": 1440,
+  "flagged": false,
+  "note": "Creased/lifted shingle",
+  "boxes": [
+   {
+    "c": 1,
+    "x1": 0.5,
+    "y1": 0.56,
+    "x2": 0.62,
+    "y2": 0.67
+   }
+  ]
+ },
+ {
+  "id": "nr042",
+  "file": "nr042.webp",
+  "w": 1080,
+  "h": 1440,
+  "flagged": true,
+  "note": "Ridge cap pieces gone, distant shot",
+  "boxes": [
+   {
+    "c": 1,
+    "x1": 0.31,
+    "y1": 0.355,
+    "x2": 0.54,
+    "y2": 0.39
+   }
+  ]
+ },
+ {
+  "id": "nr044",
+  "file": "nr044.webp",
+  "w": 1080,
+  "h": 1440,
+  "flagged": true,
+  "note": "No visible damage",
+  "boxes": []
+ },
+ {
+  "id": "nr045",
+  "file": "nr045.webp",
+  "w": 1080,
+  "h": 1921,
+  "flagged": true,
+  "note": "Arrow points to lifted shingle",
+  "boxes": [
+   {
+    "c": 1,
+    "x1": 0.42,
+    "y1": 0.44,
+    "x2": 0.6,
+    "y2": 0.52
+   }
+  ]
+ },
+ {
+  "id": "nr050",
+  "file": "nr050.jpg",
+  "w": 736,
+  "h": 981,
+  "flagged": false,
+  "note": "Torn shingles, deck exposed",
+  "boxes": [
+   {
+    "c": 2,
+    "x1": 0.0,
+    "y1": 0.38,
+    "x2": 0.65,
+    "y2": 0.62
+   }
+  ]
+ },
+ {
+  "id": "nr051",
+  "file": "nr051.jpg",
+  "w": 736,
+  "h": 981,
+  "flagged": false,
+  "note": "Shingle courses removed, deck exposed",
+  "boxes": [
+   {
+    "c": 2,
+    "x1": 0.28,
+    "y1": 0.13,
+    "x2": 0.76,
+    "y2": 0.75
+   }
+  ]
+ },
+ {
+  "id": "nr052",
+  "file": "nr052.jpg",
+  "w": 736,
+  "h": 981,
+  "flagged": false,
+  "note": "Large area of shingles torn off",
+  "boxes": [
+   {
+    "c": 2,
+    "x1": 0.42,
+    "y1": 0.05,
+    "x2": 0.95,
+    "y2": 0.95
+   }
+  ]
+ },
+ {
+  "id": "nr056",
+  "file": "nr056.jpg",
+  "w": 736,
+  "h": 1313,
+  "flagged": true,
+  "note": "Possible lifted shingles",
+  "boxes": [
+   {
+    "c": 1,
+    "x1": 0.28,
+    "y1": 0.37,
+    "x2": 0.66,
+    "y2": 0.48
+   }
+  ]
+ },
+ {
+  "id": "nr057",
+  "file": "nr057.webp",
+  "w": 1080,
+  "h": 620,
+  "flagged": true,
+  "note": "No clear damage at this resolution",
+  "boxes": []
+ },
+ {
+  "id": "nr058",
+  "file": "nr058.webp",
+  "w": 1080,
+  "h": 1440,
+  "flagged": true,
+  "note": "Possible creased tabs",
+  "boxes": [
+   {
+    "c": 1,
+    "x1": 0.28,
+    "y1": 0.6,
+    "x2": 0.52,
+    "y2": 0.74
+   }
+  ]
+ },
+ {
+  "id": "nr059",
+  "file": "nr059.webp",
+  "w": 1080,
+  "h": 1440,
+  "flagged": true,
+  "note": "Gray patch where tab may be missing",
+  "boxes": [
+   {
+    "c": 2,
+    "x1": 0.1,
+    "y1": 0.3,
+    "x2": 0.28,
+    "y2": 0.56
+   }
+  ]
+ },
+ {
+  "id": "nr060",
+  "file": "nr060.webp",
+  "w": 1080,
+  "h": 1440,
+  "flagged": false,
+  "note": "Creased/lifted shingles along a column",
+  "boxes": [
+   {
+    "c": 1,
+    "x1": 0.38,
+    "y1": 0.2,
+    "x2": 0.55,
+    "y2": 0.95
+   },
+   {
+    "c": 1,
+    "x1": 0.8,
+    "y1": 0.75,
+    "x2": 1.0,
+    "y2": 0.92
+   }
+  ]
+ },
+ {
+  "id": "nr063",
+  "file": "nr063.webp",
+  "w": 1080,
+  "h": 2338,
+  "flagged": true,
+  "note": "Blurry, no visible damage",
+  "boxes": []
+ },
+ {
+  "id": "nr071",
+  "file": "nr071.webp",
+  "w": 1080,
+  "h": 1440,
+  "flagged": true,
+  "note": "Small lift near ridge",
+  "boxes": [
+   {
+    "c": 1,
+    "x1": 0.44,
+    "y1": 0.51,
+    "x2": 0.56,
+    "y2": 0.56
+   }
+  ]
+ },
+ {
+  "id": "nr072",
+  "file": "nr072.webp",
+  "w": 1080,
+  "h": 1440,
+  "flagged": true,
+  "note": "Lifted shingle near ridge",
+  "boxes": [
+   {
+    "c": 1,
+    "x1": 0.46,
+    "y1": 0.67,
+    "x2": 0.62,
+    "y2": 0.73
+   }
+  ]
+ },
+ {
+  "id": "nr089",
+  "file": "nr089.webp",
+  "w": 1080,
+  "h": 810,
+  "flagged": true,
+  "note": "Snow covered, distant",
+  "boxes": []
+ },
+ {
+  "id": "nr091",
+  "file": "nr091.webp",
+  "w": 1080,
+  "h": 810,
+  "flagged": true,
+  "note": "Snow; damage is to fascia not shingles",
+  "boxes": []
+ },
+ {
+  "id": "nr092",
+  "file": "nr092.webp",
+  "w": 1080,
+  "h": 1440,
+  "flagged": true,
+  "note": "Snow, distant",
+  "boxes": []
+ },
+ {
+  "id": "nr093",
+  "file": "nr093.webp",
+  "w": 1080,
+  "h": 810,
+  "flagged": true,
+  "note": "Damage is to trim/fascia not shingles",
+  "boxes": []
+ },
+ {
+  "id": "nr095",
+  "file": "nr095.webp",
+  "w": 1000,
+  "h": 563,
+  "flagged": false,
+  "note": "Shingle missing around pipe",
+  "boxes": [
+   {
+    "c": 2,
+    "x1": 0.4,
+    "y1": 0.52,
+    "x2": 0.56,
+    "y2": 0.75
+   }
+  ]
+ },
+ {
+  "id": "nr102",
+  "file": "nr102.webp",
+  "w": 1080,
+  "h": 1440,
+  "flagged": false,
+  "note": "Tabs missing across the slope",
+  "boxes": [
+   {
+    "c": 2,
+    "x1": 0.0,
+    "y1": 0.27,
+    "x2": 1.0,
+    "y2": 0.97
+   }
+  ]
+ },
+ {
+  "id": "nr108",
+  "file": "nr108.jpg",
+  "w": 736,
+  "h": 1308,
+  "flagged": false,
+  "note": "Shingles removed around vent",
+  "boxes": [
+   {
+    "c": 2,
+    "x1": 0.0,
+    "y1": 0.3,
+    "x2": 0.55,
+    "y2": 0.82
+   }
+  ]
+ },
+ {
+  "id": "nr110",
+  "file": "nr110.webp",
+  "w": 651,
+  "h": 1409,
+  "flagged": false,
+  "note": "Circled lifted shingles at ridge",
+  "boxes": [
+   {
+    "c": 1,
+    "x1": 0.3,
+    "y1": 0.32,
+    "x2": 0.9,
+    "y2": 0.42
+   }
+  ]
+ },
+ {
+  "id": "nr113",
+  "file": "nr113.jpg",
+  "w": 736,
+  "h": 1576,
+  "flagged": false,
+  "note": "Shingles torn off, deck exposed",
+  "boxes": [
+   {
+    "c": 2,
+    "x1": 0.0,
+    "y1": 0.3,
+    "x2": 0.75,
+    "y2": 0.58
+   }
+  ]
+ },
+ {
+  "id": "nr114",
+  "file": "nr114.webp",
+  "w": 1080,
+  "h": 810,
+  "flagged": false,
+  "note": "Row of missing tabs",
+  "boxes": [
+   {
+    "c": 2,
+    "x1": 0.24,
+    "y1": 0.37,
+    "x2": 0.88,
+    "y2": 0.43
+   }
+  ]
+ },
+ {
+  "id": "nr120",
+  "file": "nr120.jpg",
+  "w": 736,
+  "h": 921,
+  "flagged": true,
+  "note": "Replacement shingles, no damage",
+  "boxes": []
+ },
+ {
+  "id": "nr158",
+  "file": "nr158.webp",
+  "w": 1080,
+  "h": 664,
+  "flagged": true,
+  "note": "Tarp on neighbouring roof",
+  "boxes": [
+   {
+    "c": 2,
+    "x1": 0.85,
+    "y1": 0.12,
+    "x2": 0.97,
+    "y2": 0.18
+   }
+  ]
+ },
+ {
+  "id": "nr159",
+  "file": "nr159.webp",
+  "w": 1080,
+  "h": 1093,
+  "flagged": true,
+  "note": "Tarps over damaged areas",
+  "boxes": [
+   {
+    "c": 2,
+    "x1": 0.32,
+    "y1": 0.45,
+    "x2": 0.84,
+    "y2": 0.58
+   },
+   {
+    "c": 2,
+    "x1": 0.1,
+    "y1": 0.82,
+    "x2": 0.24,
+    "y2": 0.86
+   },
+   {
+    "c": 2,
+    "x1": 0.78,
+    "y1": 0.75,
+    "x2": 0.92,
+    "y2": 0.78
+   }
+  ]
+ },
+ {
+  "id": "nr163",
+  "file": "nr163.png",
+  "w": 625,
+  "h": 822,
+  "flagged": false,
+  "note": "Lifted shingles near ridge",
+  "boxes": [
+   {
+    "c": 1,
+    "x1": 0.52,
+    "y1": 0.41,
+    "x2": 0.73,
+    "y2": 0.47
+   }
+  ]
+ },
+ {
+  "id": "nr164",
+  "file": "nr164.png",
+  "w": 627,
+  "h": 811,
+  "flagged": true,
+  "note": "Square patches, could be test cuts",
+  "boxes": [
+   {
+    "c": 2,
+    "x1": 0.5,
+    "y1": 0.27,
+    "x2": 0.6,
+    "y2": 0.34
+   },
+   {
+    "c": 2,
+    "x1": 0.61,
+    "y1": 0.71,
+    "x2": 0.75,
+    "y2": 0.8
+   }
+  ]
+ },
+ {
+  "id": "nr173",
+  "file": "nr173.png",
+  "w": 1468,
+  "h": 778,
+  "flagged": true,
+  "note": "No visible damage",
+  "boxes": []
+ },
+ {
+  "id": "nr181",
+  "file": "nr181.webp",
+  "w": 960,
+  "h": 2142,
+  "flagged": true,
+  "note": "Close-up, no clear damage",
+  "boxes": []
+ },
+ {
+  "id": "nr183",
+  "file": "nr183.webp",
+  "w": 1080,
+  "h": 1440,
+  "flagged": false,
+  "note": "Cracked ridge cap",
+  "boxes": [
+   {
+    "c": 1,
+    "x1": 0.35,
+    "y1": 0.38,
+    "x2": 0.78,
+    "y2": 0.6
+   }
+  ]
+ },
+ {
+  "id": "nr190",
+  "file": "nr190.webp",
+  "w": 1080,
+  "h": 1440,
+  "flagged": true,
+  "note": "Flat roof, torn membrane",
+  "boxes": [
+   {
+    "c": 2,
+    "x1": 0.0,
+    "y1": 0.3,
+    "x2": 1.0,
+    "y2": 0.6
+   }
+  ]
+ },
+ {
+  "id": "nr211",
+  "file": "nr211.webp",
+  "w": 1080,
+  "h": 607,
+  "flagged": true,
+  "note": "Dark row: lifted or replaced",
+  "boxes": [
+   {
+    "c": 1,
+    "x1": 0.42,
+    "y1": 0.4,
+    "x2": 0.97,
+    "y2": 0.55
+   }
+  ]
+ },
+ {
+  "id": "nr213",
+  "file": "nr213.jpg",
+  "w": 3213,
+  "h": 5712,
+  "flagged": true,
+  "note": "Heavy granule loss, mat exposed",
+  "boxes": []
+ },
+ {
+  "id": "nr214",
+  "file": "nr214.jpg",
+  "w": 4032,
+  "h": 3024,
+  "flagged": true,
+  "note": "Gutter/trim only, no shingles",
+  "boxes": []
+ },
+ {
+  "id": "nr225",
+  "file": "nr225.webp",
+  "w": 1080,
+  "h": 810,
+  "flagged": true,
+  "note": "No visible damage",
+  "boxes": []
+ },
+ {
+  "id": "nr231",
+  "file": "nr231.webp",
+  "w": 1080,
+  "h": 2163,
+  "flagged": true,
+  "note": "Phone screenshot",
+  "boxes": []
+ },
+ {
+  "id": "nr232",
+  "file": "nr232.webp",
+  "w": 1080,
+  "h": 2337,
+  "flagged": true,
+  "note": "Phone screenshot",
+  "boxes": []
+ },
+ {
+  "id": "nr233",
+  "file": "nr233.webp",
+  "w": 1080,
+  "h": 1135,
+  "flagged": true,
+  "note": "No clear damage",
+  "boxes": []
+ },
+ {
+  "id": "nr236",
+  "file": "nr236.webp",
+  "w": 1080,
+  "h": 810,
+  "flagged": true,
+  "note": "Ridge vent, no clear damage",
+  "boxes": []
+ },
+ {
+  "id": "nr242",
+  "file": "nr242.jpg",
+  "w": 736,
+  "h": 981,
+  "flagged": false,
+  "note": "Shingles stripped, deck exposed",
+  "boxes": [
+   {
+    "c": 2,
+    "x1": 0.1,
+    "y1": 0.03,
+    "x2": 1.0,
+    "y2": 1.0
+   }
+  ]
+ }
+]

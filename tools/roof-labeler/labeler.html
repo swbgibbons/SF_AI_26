@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Roof Damage Labeler</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: inspector's light-table. Sticky top bar, photo list on the left, the photo and its boxes filling the right. */
+:root{
+  --bg:#eef0ee; --panel:#f8f9f7; --ink:#1d2321; --muted:#5f6a66; --line:#d3d8d4; --sel:#e3e8e4;
+  --accent:#2f6b57; --accent-ink:#fff; --flag:#c2410c; --ok:#2f7d4a;
+  --hail:#d48a06; --wind:#2563eb; --missing:#dc2645;
+  --stage:#d9ddd9;
+  --f-ui:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#141917; --panel:#1b211f; --ink:#e4e9e6; --muted:#97a39e; --line:#2c3532; --sel:#25302c;
+  --accent:#5fb394; --accent-ink:#0d1512; --flag:#fb8a4c; --ok:#5cc47f;
+  --hail:#f2b33a; --wind:#5b8dff; --missing:#ff5c76; --stage:#0f1312; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141917; --panel:#1b211f; --ink:#e4e9e6; --muted:#97a39e; --line:#2c3532; --sel:#25302c;
+  --accent:#5fb394; --accent-ink:#0d1512; --flag:#fb8a4c; --ok:#5cc47f;
+  --hail:#f2b33a; --wind:#5b8dff; --missing:#ff5c76; --stage:#0f1312; color-scheme:dark}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-ui);font-size:14px;display:flex;flex-direction:column}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--panel)}
+button,input,select{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--panel);border-bottom:1px solid var(--line);
+  padding-block:10px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+  display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px}
+.top h1{font-size:16px;font-weight:600;margin:0;letter-spacing:.01em}
+.stats{display:flex;gap:14px;flex-wrap:wrap;color:var(--muted);font-variant-numeric:tabular-nums;font-size:13px}
+.stats b{color:var(--ink);font-weight:600}
+.spacer{flex:1}
+.save{font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+.save.err{color:var(--flag)}
+.btn{border:1px solid var(--line);background:var(--bg);border-radius:6px;padding:6px 11px;display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+.btn:hover{border-color:var(--muted)}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn.on-flag{background:var(--flag);border-color:var(--flag);color:#fff}
+.btn.on-ok{background:var(--ok);border-color:var(--ok);color:#fff}
+.btn:disabled{opacity:.45;cursor:default}
+kbd{font-family:var(--f-mono);font-size:11px;opacity:.7}
+.main{flex:1;min-height:0;display:grid;grid-template-columns:270px 1fr}
+.side,.work{min-width:0}
+.side{border-right:1px solid var(--line);background:var(--panel);display:flex;flex-direction:column;min-height:0}
+.filters{display:flex;gap:4px;padding:10px 12px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.filters button{border:1px solid transparent;background:none;border-radius:999px;padding:3px 10px;font-size:12px;color:var(--muted)}
+.filters button[aria-pressed="true"]{border-color:var(--line);background:var(--bg);color:var(--ink);font-weight:500}
+.list{overflow:auto;flex:1;list-style:none;margin:0;padding:6px}
+.row{display:grid;grid-template-columns:56px 1fr auto;gap:10px;align-items:center;padding:6px;border-radius:6px;cursor:pointer}
+.row:hover{background:var(--sel)}
+.row[aria-current="true"]{background:var(--sel);box-shadow:inset 3px 0 0 var(--accent)}
+.row img{width:56px;height:42px;object-fit:cover;border-radius:3px;background:var(--stage);display:block}
+.row .name{font-family:var(--f-mono);font-size:13px}
+.row .sub{display:flex;gap:4px;align-items:center;margin-top:3px;min-height:10px}
+.dot{width:8px;height:8px;border-radius:2px;display:inline-block}
+.c0{--c:var(--hail)}.c1{--c:var(--wind)}.c2{--c:var(--missing)}
+.dot{background:var(--c)}
+.marks{display:flex;gap:6px;font-size:12px;font-weight:600}
+.mk-flag{color:var(--flag)}.mk-ok{color:var(--ok)}
+.empty-list{padding:16px;color:var(--muted)}
+.work{display:flex;flex-direction:column;min-width:0;min-height:0}
+.tools{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding-block:10px;padding-left:16px;padding-right:max(16px,env(safe-area-inset-right,0px));border-bottom:1px solid var(--line)}
+.tools .grp{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.tools .sep{width:1px;height:22px;background:var(--line)}
+.cls{border:1px solid var(--line);background:var(--bg);border-radius:6px;padding:5px 10px;display:inline-flex;gap:6px;align-items:center}
+.cls[aria-pressed="true"]{border-color:var(--c);box-shadow:inset 0 0 0 1px var(--c)}
+.cur{font-family:var(--f-mono);font-weight:500;font-size:14px;min-width:120px}
+.stagewrap{flex:1;min-height:0;background:var(--stage);display:flex;align-items:center;justify-content:center;padding:16px;overflow:auto}
+.frame{position:relative;display:inline-block;line-height:0;touch-action:none;user-select:none;-webkit-user-select:none;cursor:crosshair}
+.frame img{display:block;max-width:100%;max-height:var(--fit,70vh);width:auto;height:auto;pointer-events:none}
+.box{position:absolute;border:2px solid var(--c);background:color-mix(in srgb,var(--c) 10%,transparent);cursor:move}
+.box .tag{position:absolute;left:-2px;top:-20px;background:var(--c);color:#fff;font:500 11px/1 var(--f-mono);padding:4px 5px;white-space:nowrap;border-radius:3px 3px 0 0;pointer-events:none}
+.box.below .tag{top:auto;bottom:-20px;border-radius:0 0 3px 3px}
+.box.sel{border-width:3px;background:color-mix(in srgb,var(--c) 20%,transparent)}
+.h{position:absolute;width:14px;height:14px;background:#fff;border:2px solid var(--c);border-radius:2px;display:none}
+.box.sel .h{display:block}
+.h.nw{left:-8px;top:-8px;cursor:nwse-resize}.h.ne{right:-8px;top:-8px;cursor:nesw-resize}
+.h.sw{left:-8px;bottom:-8px;cursor:nesw-resize}.h.se{right:-8px;bottom:-8px;cursor:nwse-resize}
+.draft{position:absolute;border:2px dashed var(--c);pointer-events:none}
+.foot{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;padding-block:10px;padding-left:16px;padding-right:max(16px,env(safe-area-inset-right,0px));border-top:1px solid var(--line);background:var(--panel)}
+.foot label{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.06em}
+.foot input{flex:1;min-width:200px;border:1px solid var(--line);background:var(--bg);border-radius:6px;padding:6px 9px}
+.hint{color:var(--muted);font-size:12px;width:100%}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:9px 14px;border-radius:6px;font-size:13px;z-index:20}
+.who{display:flex;gap:6px;align-items:center;font-size:13px;color:var(--muted)}
+.who input{width:130px;border:1px solid var(--line);background:var(--bg);border-radius:6px;padding:5px 8px;color:var(--ink)}
+.who.missing input{border-color:var(--flag)}
+.start{flex:1;display:grid;place-items:center;padding:32px max(16px,env(safe-area-inset-right,0px)) 32px max(16px,env(safe-area-inset-left,0px))}
+.card{max-width:560px;display:grid;gap:14px;line-height:1.5}
+.card h2{margin:0;font-size:20px;text-wrap:balance}
+.card p{margin:0;color:var(--muted)}
+.card ol{margin:0;padding-left:20px;color:var(--muted)}
+.card code{font-family:var(--f-mono);font-size:12.5px}
+.chip{font-size:11px;border-radius:999px;padding:1px 7px;border:1px solid var(--line);color:var(--muted)}
+.notice{background:color-mix(in srgb,var(--flag) 14%,var(--panel));padding:8px 16px;font-size:13px}
+@media (max-width:760px){
+  .main{grid-template-columns:1fr;grid-template-rows:auto 1fr}
+  .side,.work{min-width:0}
+.side{border-right:0;border-bottom:1px solid var(--line)}
+  .list{display:flex;overflow-x:auto;overflow-y:hidden;gap:4px;padding:6px 16px}
+  .row{grid-template-columns:auto;padding:4px;gap:2px;flex:none}
+  .row .meta,.row .marks{display:none}
+  .row.flagged img{outline:2px solid var(--flag)}
+  .tools .sep{display:none}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header class="top">
+  <h1>Roof Damage Labeler</h1>
+  <div class="stats" id="stats"></div>
+  <div class="spacer"></div>
+  <label class="who" id="whoWrap" for="who">Your name <input id="who" type="text" placeholder="e.g. Sam" autocomplete="off"></label>
+  <span class="save" id="save" aria-live="polite"></span>
+  <label class="btn" for="pick" title="Open a folder of photos">Open folder</label>
+  <input id="pick" type="file" webkitdirectory directory multiple hidden>
+  <button class="btn primary" id="export" type="button" disabled>Export labels</button>
+</header>
+<div class="notice" id="notice" hidden></div>
+<div class="start" id="start">
+  <div class="card">
+    <h2>Open a folder of roof photos to start labeling</h2>
+    <p>Everything stays on your computer. Progress autosaves in this browser, and <b>Export labels</b> gives you the zip to hand back.</p>
+    <ol>
+      <li>Type your name at the top right.</li>
+      <li>Click <b>Open folder</b> and pick the folder with the photos (.jpg, .png, .webp).</li>
+      <li>If the folder also has YOLO <code>.txt</code> labels or an <code>annotations.json</code>, those boxes, flags and notes load too.</li>
+    </ol>
+    <p>Follow the labeling guide in <code>tools/roof-labeler/README.md</code> for what to box and when to flag.</p>
+  </div>
+</div>
+<div class="main" id="app" hidden>
+  <aside class="side">
+    <div class="filters" role="group" aria-label="Filter photos">
+      <button type="button" data-f="all" aria-pressed="true">All</button>
+      <button type="button" data-f="flag" aria-pressed="false">Flagged</button>
+      <button type="button" data-f="todo" aria-pressed="false">Not reviewed</button>
+      <button type="button" data-f="done" aria-pressed="false">Reviewed</button>
+    </div>
+    <ul class="list" id="list"></ul>
+  </aside>
+  <section class="work">
+    <div class="tools">
+      <div class="grp">
+        <button class="btn" id="prev" type="button" aria-label="Previous photo">‹ <kbd>←</kbd></button>
+        <span class="cur" id="cur">—</span>
+        <button class="btn" id="next" type="button" aria-label="Next photo"><kbd>→</kbd> ›</button>
+      </div>
+      <span class="sep"></span>
+      <div class="grp" role="group" aria-label="Damage class">
+        <button class="cls c0" type="button" data-c="0" aria-pressed="false"><span class="dot"></span>Hail <kbd>1</kbd></button>
+        <button class="cls c1" type="button" data-c="1" aria-pressed="false"><span class="dot"></span>Wind <kbd>2</kbd></button>
+        <button class="cls c2" type="button" data-c="2" aria-pressed="true"><span class="dot"></span>Missing shingles <kbd>3</kbd></button>
+      </div>
+      <span class="sep"></span>
+      <div class="grp">
+        <button class="btn" id="del" type="button" disabled>Delete box <kbd>Del</kbd></button>
+        <button class="btn" id="flag" type="button">Flag <kbd>F</kbd></button>
+        <button class="btn" id="rev" type="button">Mark reviewed <kbd>R</kbd></button>
+        <button class="btn" id="reset" type="button">Undo my changes</button>
+      </div>
+    </div>
+    <div class="stagewrap" id="stagewrap">
+      <div class="frame" id="frame"><img id="photo" alt=""></div>
+    </div>
+    <div class="foot">
+      <label for="note">Note</label>
+      <input id="note" type="text" placeholder="Why it's flagged, what to fix…" autocomplete="off">
+      <div class="hint" id="by"></div>
+      <div class="hint">Drag on the photo to draw a box in the selected class. Click a box to select it, drag to move, pull a corner to resize. Keys 1 2 3 change the selected box's class.</div>
+    </div>
+  </section>
+</div>
+<div class="toast" id="toast" hidden></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script>
+const CLS=["hail","wind","missing_shingles"];
+const IMG=/\.(jpe?g|png|webp)$/i;
+const $=s=>document.querySelector(s);
+const S={items:[],i:0,filter:"all",cls:2,sel:-1,drag:null,batch:"",urls:[]};
+let toastT,saveT;
+function toast(m){const t=$("#toast");t.textContent=m;t.hidden=false;clearTimeout(toastT);toastT=setTimeout(()=>t.hidden=true,3000)}
+function setSave(t,err){const e=$("#save");e.textContent=t;e.classList.toggle("err",!!err)}
+const cur=()=>S.items[S.i];
+const clamp=v=>Math.min(1,Math.max(0,v));
+const round=v=>Math.round(v*10000)/10000;
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const stem=n=>n.replace(/^.*\//,"").replace(/\.[^.]+$/,"");
+function who(){return $("#who").value.trim()}
+try{$("#who").value=localStorage.getItem("roof-labeler-name")||""}catch(e){}
+$("#who").addEventListener("input",()=>{try{localStorage.setItem("roof-labeler-name",who())}catch(e){};$("#whoWrap").classList.toggle("missing",!who())});
+
+/* ---------- autosave (this browser) ---------- */
+const key=()=>"roof-labeler:"+S.batch;
+function snapshot(it){return {boxes:it.boxes.map(b=>({c:b.c,x1:round(b.x1),y1:round(b.y1),x2:round(b.x2),y2:round(b.y2)})),flagged:!!it.flagged,reviewed:!!it.reviewed,note:it.note||"",labeledBy:it.labeledBy||"",editedBy:it.editedBy||"",reviewedBy:it.reviewedBy||"",updatedAt:it.updatedAt||""}}
+function persist(){clearTimeout(saveT);setSave("Saving…");saveT=setTimeout(()=>{
+  try{const o={};S.items.forEach(it=>{if(it.touched)o[it.id]=snapshot(it)});localStorage.setItem(key(),JSON.stringify(o));setSave("Autosaved in this browser")}
+  catch(e){setSave("Autosave failed. Export now to keep your work.",true)}},400)}
+function apply(it,d){if(!d)return;if(Array.isArray(d.boxes))it.boxes=d.boxes.map(b=>({c:typeof b.c==="number"?b.c:CLS.indexOf(b.class),x1:b.x1,y1:b.y1,x2:b.x2,y2:b.y2})).filter(b=>b.c>=0);
+  for(const k of["flagged","reviewed"])if(k in d)it[k]=!!d[k];for(const k of["note","labeledBy","editedBy","reviewedBy","updatedAt"])if(d[k]!=null)it[k]=d[k]}
+
+/* ---------- loading a folder ---------- */
+function parseYolo(txt){return txt.split(/\r?\n/).map(l=>l.trim().split(/\s+/).map(Number)).filter(a=>a.length>=5&&a.every(n=>!isNaN(n))).map(([c,xc,yc,w,h])=>({c,x1:clamp(xc-w/2),y1:clamp(yc-h/2),x2:clamp(xc+w/2),y2:clamp(yc+h/2)})).filter(b=>b.c>=0&&b.c<3)}
+$("#pick").addEventListener("change",async e=>{
+  const files=[...e.target.files];e.target.value="";
+  const imgs=files.filter(f=>IMG.test(f.name)).sort((a,b)=>a.name.localeCompare(b.name));
+  if(!imgs.length){toast("No .jpg, .png or .webp photos in that folder.");return}
+  const txt=new Map(files.filter(f=>/\.txt$/i.test(f.name)&&!/^(classes|flagged)\.txt$/i.test(f.name)).map(f=>[stem(f.name),f]));
+  const ann=files.find(f=>/annotations\.json$/i.test(f.name));
+  S.urls.forEach(u=>URL.revokeObjectURL(u));S.urls=[];
+  const rel=imgs[0].webkitRelativePath||"";S.batch=(rel.split("/")[0]||"photos")+":"+imgs.length;
+  S.items=[];
+  for(const f of imgs){const u=URL.createObjectURL(f);S.urls.push(u);
+    const it={id:stem(f.name),file:f.name,url:u,boxes:[],flagged:false,reviewed:false,note:"",labeledBy:"",editedBy:"",reviewedBy:"",w:null,h:null};
+    if(txt.has(it.id))it.boxes=parseYolo(await txt.get(it.id).text());
+    S.items.push(it)}
+  let annCount=0;
+  if(ann){try{const arr=JSON.parse(await ann.text());for(const d of arr){const it=S.items.find(x=>x.id===(d.id||stem(d.file||"")));if(it){apply(it,d);annCount++;if(d.width)it.w=d.width;if(d.height)it.h=d.height}}}catch(err){toast("annotations.json could not be read, so only the .txt labels loaded.")}}
+  S.items.forEach(it=>it.base=snapshot(it));
+  let restored=0;try{const o=JSON.parse(localStorage.getItem(key())||"{}");S.items.forEach(it=>{if(o[it.id]){apply(it,o[it.id]);it.touched=true;restored++}})}catch(err){}
+  $("#start").hidden=true;$("#app").hidden=false;$("#export").disabled=false;fit();
+  setSave(restored?`Restored ${restored} edited photos from this browser`:"Autosaved in this browser");
+  toast(`${imgs.length} photos, ${txt.size} label files${ann?`, notes for ${annCount}`:""} loaded`);
+  S.i=0;go(0);
+});
+
+/* ---------- list ---------- */
+function visible(){return S.items.map((it,i)=>[it,i]).filter(([it])=>S.filter==="all"||(S.filter==="flag"&&it.flagged)||(S.filter==="todo"&&!it.reviewed)||(S.filter==="done"&&it.reviewed))}
+function renderStats(){
+  const n=S.items.length,f=S.items.filter(x=>x.flagged).length,r=S.items.filter(x=>x.reviewed).length;
+  const cnt=[0,0,0];S.items.forEach(x=>x.boxes.forEach(b=>cnt[b.c]++));
+  $("#stats").innerHTML=n?`<span><b>${n}</b> photos</span><span><b>${r}</b> reviewed</span><span><b>${f}</b> flagged</span><span><b>${cnt[0]}</b> hail · <b>${cnt[1]}</b> wind · <b>${cnt[2]}</b> missing</span>`:"";
+}
+function renderList(){
+  const ul=$("#list");const v=visible();
+  if(!v.length){ul.innerHTML=`<li class="empty-list">No photos match this filter.</li>`;return}
+  ul.innerHTML="";
+  for(const [it,i] of v){
+    const li=document.createElement("li");li.className="row"+(it.flagged?" flagged":"");li.tabIndex=0;
+    li.setAttribute("aria-current",i===S.i?"true":"false");
+    li.innerHTML=`<img loading="lazy" src="${it.url}" alt=""><div class="meta"><div class="name">${esc(it.id)}</div><div class="sub">${it.boxes.map(b=>`<span class="dot c${b.c}"></span>`).join("")||`<span style="font-size:11px;color:var(--muted)">no boxes</span>`}</div></div><div class="marks">${it.flagged?'<span class="mk-flag" title="Flagged">⚑</span>':""}${it.reviewed?'<span class="mk-ok" title="Reviewed">✓</span>':""}</div>`;
+    li.onclick=()=>go(i);li.onkeydown=e=>{if(e.key==="Enter")go(i)};
+    ul.appendChild(li);
+  }
+  const a=ul.querySelector('[aria-current="true"]');if(a)a.scrollIntoView({block:"nearest",inline:"nearest"});
+}
+
+/* ---------- stage ---------- */
+function renderBoxes(){
+  const fr=$("#frame");fr.querySelectorAll(".box,.draft").forEach(n=>n.remove());
+  const it=cur();if(!it)return;
+  it.boxes.forEach((b,k)=>{
+    const d=document.createElement("div");d.className=`box c${b.c}`+(k===S.sel?" sel":"")+(b.y1<0.05?" below":"");
+    Object.assign(d.style,{left:b.x1*100+"%",top:b.y1*100+"%",width:(b.x2-b.x1)*100+"%",height:(b.y2-b.y1)*100+"%"});
+    d.dataset.k=k;d.innerHTML=`<span class="tag">${CLS[b.c]}</span><i class="h nw" data-h="nw"></i><i class="h ne" data-h="ne"></i><i class="h sw" data-h="sw"></i><i class="h se" data-h="se"></i>`;
+    fr.appendChild(d);
+  });
+  $("#del").disabled=S.sel<0;
+}
+function renderTools(){
+  const it=cur();if(!it)return;
+  $("#cur").textContent=`${it.id}  ${S.i+1}/${S.items.length}`;
+  const f=$("#flag");f.className="btn"+(it.flagged?" on-flag":"");f.innerHTML=(it.flagged?"⚑ Flagged":"Flag")+" <kbd>F</kbd>";f.setAttribute("aria-pressed",it.flagged);
+  const r=$("#rev");r.className="btn"+(it.reviewed?" on-ok":"");r.innerHTML=(it.reviewed?"✓ Reviewed":"Mark reviewed")+" <kbd>R</kbd>";r.setAttribute("aria-pressed",it.reviewed);
+  const activeC=S.sel>=0?it.boxes[S.sel].c:S.cls;
+  document.querySelectorAll(".cls").forEach(b=>b.setAttribute("aria-pressed",+b.dataset.c===activeC));
+  if(document.activeElement!==$("#note"))$("#note").value=it.note||"";
+  const parts=[];if(it.labeledBy)parts.push(`Labeled by ${esc(it.labeledBy)}`);if(it.editedBy&&it.editedBy!==it.labeledBy)parts.push(`last edited by ${esc(it.editedBy)}`);if(it.reviewed&&it.reviewedBy)parts.push(`reviewed by ${esc(it.reviewedBy)}`);
+  const self=it.reviewed&&it.reviewedBy&&it.reviewedBy===it.labeledBy;
+  $("#by").innerHTML=parts.join(", ")+(self?' <span class="chip" style="color:var(--flag);border-color:var(--flag)">same person labeled and reviewed</span>':"");
+}
+function renderAll(){renderStats();renderList();renderTools();renderBoxes()}
+function go(i){if(i<0||i>=S.items.length)return;S.i=i;S.sel=-1;const it=cur(),im=$("#photo");im.onload=()=>{it.w=im.naturalWidth;it.h=im.naturalHeight};im.src=it.url;im.alt=`Roof photo ${it.id}`;renderAll()}
+function needName(){if(who())return false;$("#whoWrap").classList.add("missing");$("#who").focus();toast("Type your name first so your edits are credited to you.");return true}
+function changed(opt={}){const it=cur();it.touched=true;it.updatedAt=new Date().toISOString();if(!opt.reviewOnly){if(!it.labeledBy)it.labeledBy=who();it.editedBy=who()}renderStats();renderList();renderTools();renderBoxes();persist()}
+
+/* ---------- pointer editing ---------- */
+function pt(e){const r=$("#frame").getBoundingClientRect();return {x:clamp((e.clientX-r.left)/r.width),y:clamp((e.clientY-r.top)/r.height)}}
+$("#frame").addEventListener("pointerdown",e=>{
+  const it=cur();if(!it||e.button>0)return;
+  const p=pt(e);const h=e.target.closest(".h"),bx=e.target.closest(".box");
+  if(bx){S.sel=+bx.dataset.k;const b=it.boxes[S.sel];S.drag={mode:h?h.dataset.h:"move",p0:p,b0:{...b},moved:false}}
+  else{S.sel=-1;S.drag={mode:"draw",p0:p,moved:false}}
+  $("#frame").setPointerCapture(e.pointerId);renderTools();renderBoxes();e.preventDefault();
+});
+$("#frame").addEventListener("pointermove",e=>{
+  const d=S.drag;if(!d)return;const p=pt(e),it=cur();
+  if(Math.abs(p.x-d.p0.x)+Math.abs(p.y-d.p0.y)>0.004)d.moved=true;
+  if(d.mode==="draw"){
+    let dr=$("#frame").querySelector(".draft");
+    if(!dr){dr=document.createElement("div");dr.className="draft c"+S.cls;$("#frame").appendChild(dr)}
+    const x1=Math.min(p.x,d.p0.x),y1=Math.min(p.y,d.p0.y);
+    Object.assign(dr.style,{left:x1*100+"%",top:y1*100+"%",width:Math.abs(p.x-d.p0.x)*100+"%",height:Math.abs(p.y-d.p0.y)*100+"%"});
+    d.p=p;return;
+  }
+  const b=it.boxes[S.sel],o=d.b0,dx=p.x-d.p0.x,dy=p.y-d.p0.y;
+  if(d.mode==="move"){const w=o.x2-o.x1,h=o.y2-o.y1;b.x1=Math.min(1-w,Math.max(0,o.x1+dx));b.y1=Math.min(1-h,Math.max(0,o.y1+dy));b.x2=b.x1+w;b.y2=b.y1+h}
+  else{
+    if(d.mode.includes("w"))b.x1=clamp(o.x1+dx); if(d.mode.includes("e"))b.x2=clamp(o.x2+dx);
+    if(d.mode.includes("n"))b.y1=clamp(o.y1+dy); if(d.mode.includes("s"))b.y2=clamp(o.y2+dy);
+  }
+  renderBoxes();
+});
+function endDrag(){
+  const d=S.drag;if(!d)return;S.drag=null;const it=cur();
+  if(d.mode==="draw"){
+    $("#frame").querySelector(".draft")?.remove();
+    if(d.moved&&d.p){const b={c:S.cls,x1:Math.min(d.p.x,d.p0.x),y1:Math.min(d.p.y,d.p0.y),x2:Math.max(d.p.x,d.p0.x),y2:Math.max(d.p.y,d.p0.y)};
+      if(b.x2-b.x1>0.008&&b.y2-b.y1>0.008){if(needName()){renderBoxes();return}it.boxes.push(b);S.sel=it.boxes.length-1;changed();return}}
+    renderTools();renderBoxes();return;
+  }
+  const b=it.boxes[S.sel];const[x1,x2]=[Math.min(b.x1,b.x2),Math.max(b.x1,b.x2)],[y1,y2]=[Math.min(b.y1,b.y2),Math.max(b.y1,b.y2)];Object.assign(b,{x1,x2,y1,y2});
+  if(d.moved){if(needName()){Object.assign(b,d.b0);renderBoxes();return}changed()}else renderBoxes();
+}
+$("#frame").addEventListener("pointerup",endDrag);
+$("#frame").addEventListener("pointercancel",endDrag);
+
+/* ---------- controls ---------- */
+function setClass(c){const it=cur();S.cls=c;if(it&&S.sel>=0){if(needName())return;it.boxes[S.sel].c=c;changed()}else renderTools()}
+function delSel(){const it=cur();if(!it||S.sel<0||needName())return;it.boxes.splice(S.sel,1);S.sel=-1;changed()}
+function toggleFlag(){const it=cur();if(!it||needName())return;it.flagged=!it.flagged;changed({reviewOnly:true})}
+function toggleRev(){const it=cur();if(!it||needName())return;it.reviewed=!it.reviewed;it.reviewedBy=it.reviewed?who():"";changed({reviewOnly:true});if(it.reviewed&&S.filter==="todo")nextVisible(1)}
+function nextVisible(dir){const v=visible().map(x=>x[1]);if(!v.length)return;const pos=v.findIndex(i=>dir>0?i>S.i:i<S.i);
+  if(dir>0)go(pos>=0?v[pos]:v[0]);else{const back=v.filter(i=>i<S.i);go(back.length?back[back.length-1]:v[v.length-1])}}
+document.querySelectorAll(".cls").forEach(b=>b.onclick=()=>setClass(+b.dataset.c));
+$("#del").onclick=delSel;$("#flag").onclick=toggleFlag;$("#rev").onclick=toggleRev;
+$("#prev").onclick=()=>nextVisible(-1);$("#next").onclick=()=>nextVisible(1);
+$("#reset").onclick=()=>{const it=cur();if(!it)return;apply(it,it.base);it.touched=true;S.sel=-1;renderAll();persist();toast(`${it.id}: back to how it was when the folder was opened`)};
+$("#note").addEventListener("input",e=>{const it=cur();if(!it)return;it.note=e.target.value;it.touched=true;persist()});
+$("#note").addEventListener("blur",()=>{if(S.items.length)renderList()});
+document.querySelectorAll(".filters button").forEach(b=>b.onclick=()=>{S.filter=b.dataset.f;document.querySelectorAll(".filters button").forEach(x=>x.setAttribute("aria-pressed",x===b));renderList()});
+document.addEventListener("keydown",e=>{
+  if(!S.items.length)return;
+  if(e.target.matches("input,textarea")){if(e.key==="Escape")e.target.blur();return}
+  if(e.metaKey||e.ctrlKey||e.altKey)return;
+  const k=e.key;
+  if(k==="ArrowRight"||k==="j"){nextVisible(1);e.preventDefault()}
+  else if(k==="ArrowLeft"||k==="k"){nextVisible(-1);e.preventDefault()}
+  else if(k==="1"||k==="2"||k==="3")setClass(+k-1);
+  else if(k==="Delete"||k==="Backspace"){delSel();e.preventDefault()}
+  else if(k==="f"||k==="F")toggleFlag();
+  else if(k==="r"||k==="R")toggleRev();
+  else if(k==="Escape"){S.sel=-1;renderTools();renderBoxes()}
+});
+
+/* ---------- export ---------- */
+function save(blob,name){const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},1000)}
+function yolo(it){return it.boxes.map(b=>`${b.c} ${((b.x1+b.x2)/2).toFixed(6)} ${((b.y1+b.y2)/2).toFixed(6)} ${(b.x2-b.x1).toFixed(6)} ${(b.y2-b.y1).toFixed(6)}`).join("\n")+(it.boxes.length?"\n":"")}
+$("#export").onclick=async()=>{
+  if(needName())return;
+  const json=JSON.stringify(S.items.map(x=>({id:x.id,file:x.file,width:x.w,height:x.h,flagged:x.flagged,reviewed:x.reviewed,note:x.note,labeledBy:x.labeledBy,editedBy:x.editedBy,reviewedBy:x.reviewedBy,updatedAt:x.updatedAt||"",boxes:x.boxes.map(b=>({class:CLS[b.c],c:b.c,x1:round(b.x1),y1:round(b.y1),x2:round(b.x2),y2:round(b.y2)}))})),null,1);
+  const tag=(S.batch.split(":")[0]||"labels").replace(/[^\w-]+/g,"_")+"_"+who().replace(/[^\w-]+/g,"_");
+  if(typeof JSZip==="undefined"){save(new Blob([json],{type:"application/json"}),"annotations.json");toast("Offline, so only annotations.json was saved. It holds every box, flag and note.");return}
+  const z=new JSZip();const lab=z.folder("labels");
+  S.items.forEach(it=>lab.file(it.id+".txt",yolo(it)));
+  z.file("classes.txt",CLS.join("\n")+"\n");
+  z.file("flagged.txt",S.items.filter(x=>x.flagged).map(x=>`${x.file}\t${x.note||""}`).join("\n")+"\n");
+  z.file("annotations.json",json);
+  save(await z.generateAsync({type:"blob"}),tag+".zip");
+  const left=S.items.filter(x=>!x.reviewed).length;
+  toast(left?`Exported. ${left} photos are not reviewed yet.`:"Exported. Every photo is reviewed.");
+};
+
+function fit(){const w=$("#stagewrap");const h=Math.max(240,w.clientHeight-32);document.documentElement.style.setProperty("--fit",(window.innerWidth<=760?Math.min(h,window.innerHeight*0.6):h)+"px")}
+addEventListener("resize",fit);
+$("#whoWrap").classList.toggle("missing",!who());
+</script>
+</body>
+</html>
