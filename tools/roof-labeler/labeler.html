@@ -289,7 +289,7 @@ function renderTools(){
   $("#by").innerHTML=parts.join(", ")+(self?' <span class="chip" style="color:var(--flag);border-color:var(--flag)">same person labeled and reviewed</span>':"");
 }
 function renderAll(){renderStats();renderList();renderTools();renderBoxes()}
-function go(i){if(i<0||i>=S.items.length)return;S.i=i;S.sel=-1;S.poly=null;const it=cur(),im=$("#photo");im.onload=()=>{it.w=im.naturalWidth;it.h=im.naturalHeight};im.src=it.url;im.alt=`Roof photo ${it.id}`;renderAll()}
+function go(i){if(i<0||i>=S.items.length)return;S.i=i;S.sel=-1;S.poly=null;const it=cur(),im=$("#photo");im.onload=()=>{if(!it.w){it.w=im.naturalWidth;it.h=im.naturalHeight}};im.src=it.url;im.alt=`Roof photo ${it.id}`;renderAll()}
 function needName(){if(!who()&&!S.nudged){S.nudged=true;$("#whoWrap").classList.add("missing");toast("Add your name at the top right so your edits are credited to you.")}return false}
 function requireName(why){if(who())return false;$("#whoWrap").classList.add("missing");$("#who").focus();toast(`Type your name at the top right before ${why}.`);return true}
 function changed(opt={}){const it=cur();it.touched=true;it.updatedAt=new Date().toISOString();if(!opt.reviewOnly){if(!it.labeledBy)it.labeledBy=who();it.editedBy=who()}renderStats();renderList();renderTools();renderBoxes();persist()}
