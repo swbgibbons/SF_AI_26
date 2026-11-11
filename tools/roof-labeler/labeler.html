@@ -351,15 +351,26 @@ function finishPoly(){
   if(P.p.length>=6){if(needName())return;pushUndo(it);it.boxes.push({c:S.cls,p:P.p.slice()});S.sel=it.boxes.length-1;S.poly=null;changed()}
   else{S.poly=null;renderBoxes();toast("A shape needs at least 3 points")}
 }
+/* ---------- hit testing in script, so selection doesn't depend on SVG/handle event targets (Safari, trackpads) ---------- */
+function pxDist(ax,ay,p){return Math.hypot((ax-p.x)*p.px,(ay-p.y)*p.py)}
+function inPoly(P,x,y){let c=false;const n=P.length/2;for(let i=0,j=n-1;i<n;j=i++){const xi=P[2*i],yi=P[2*i+1],xj=P[2*j],yj=P[2*j+1];if((yi>y)!==(yj>y)&&x<(xj-xi)*(y-yi)/(yj-yi)+xi)c=!c}return c}
+function segDist(ax,ay,bx,by,p){const X=p.x*p.px,Y=p.y*p.py,x1=ax*p.px,y1=ay*p.py,x2=bx*p.px,y2=by*p.py,dx=x2-x1,dy=y2-y1,L=dx*dx+dy*dy;let t=L?((X-x1)*dx+(Y-y1)*dy)/L:0;t=Math.max(0,Math.min(1,t));return Math.hypot(X-(x1+t*dx),Y-(y1+t*dy))}
+function hitVertex(p){const it=cur();if(!it||S.sel<0)return -1;const s=it.boxes[S.sel];let best=-1,bd=14;for(let i=0;i<s.p.length/2;i++){const d=pxDist(s.p[2*i],s.p[2*i+1],p);if(d<bd){bd=d;best=i}}return best}
+function hitMid(p){const it=cur();if(!it||S.sel<0)return -1;const s=it.boxes[S.sel],n=s.p.length/2;for(let i=0;i<n;i++){const j=(i+1)%n;if(pxDist((s.p[2*i]+s.p[2*j])/2,(s.p[2*i+1]+s.p[2*j+1])/2,p)<10)return i}return -1}
+function hitX(p){const it=cur();if(!it||S.sel<0)return false;const b=bboxOf(it.boxes[S.sel]);return pxDist(b.x2,b.y1,p)<15}
+function hitShape(p){const it=cur();if(!it)return -1;let best=-1,ba=Infinity;
+  it.boxes.forEach((s,k)=>{let on=inPoly(s.p,p.x,p.y);if(!on){const n=s.p.length/2;for(let i=0;i<n&&!on;i++){const j=(i+1)%n;if(segDist(s.p[2*i],s.p[2*i+1],s.p[2*j],s.p[2*j+1],p)<8)on=true}}
+    if(on){const a=area(s);if(a<ba){ba=a;best=k}}});return best}
 $("#frame").addEventListener("pointerdown",e=>{
   const it=cur();if(!it||e.button>0)return;
   const p=pt(e),t=e.target;
-  if(t.closest(".xdel")){e.preventDefault();delSel();return}
+  if(!S.poly&&(t.closest(".xdel")||hitX(p))){e.preventDefault();delSel();return}
   if(S.poly){ // drawing a polygon: click adds a point, clicking the first point closes it
     if(S.poly.p.length>=6&&near(S.poly.p[0],S.poly.p[1],p,12)){finishPoly();return}
     S.poly.p.push(p.x,p.y);renderBoxes();e.preventDefault();return;
   }
-  const vh=t.closest(".vh"),mh=t.closest(".mh"),sh=t.closest(".shape");
+  const hv=hitVertex(p),hm=hv<0?hitMid(p):-1,hs=(hv<0&&hm<0)?hitShape(p):-1;
+  const vh=hv>=0?{dataset:{v:hv}}:null,mh=hm>=0?{dataset:{m:hm}}:null,sh=hs>=0?{dataset:{k:hs}}:null;
   if(vh&&S.sel>=0){const v=+vh.dataset.v;if(S.lastV&&S.lastV.v===v&&Date.now()-S.lastV.t<450){S.lastV=null;e.preventDefault();removeVertex(v);return}S.lastV={v,t:Date.now()};S.drag={mode:"vertex",v:+vh.dataset.v,pre:JSON.stringify(it.boxes),moved:false}}
   else if(mh&&S.sel>=0){const s=it.boxes[S.sel],i=+mh.dataset.m,n=s.p.length/2,j=(i+1)%n;
     S.drag={mode:"vertex",v:i+1,pre:JSON.stringify(it.boxes),moved:true};s.p.splice(2*(i+1),0,(s.p[2*i]+s.p[2*j])/2,(s.p[2*i+1]+s.p[2*j+1])/2)}
@@ -407,7 +418,7 @@ function removeVertex(v){const it=cur();if(!it||S.sel<0)return;const s=it.boxes[
 $("#frame").addEventListener("dblclick",e=>{
   if(S.poly){e.preventDefault();S.poly.p.splice(-2,2);finishPoly();return} // the dblclick's own click added a duplicate point
 });
-$("#frame").addEventListener("contextmenu",e=>{const vh=e.target.closest(".vh");if(vh&&S.sel>=0&&!S.poly){e.preventDefault();removeVertex(+vh.dataset.v)}});
+$("#frame").addEventListener("contextmenu",e=>{if(S.sel<0||S.poly)return;const v=hitVertex(pt(e));if(v>=0){e.preventDefault();removeVertex(v)}});
 document.querySelectorAll(".mode").forEach(b=>b.onclick=()=>setMode(b.dataset.m));
 function shapeKeys(e){ // returns true when handled
   const k=e.key;
