@@ -1,150 +1,124 @@
-# RF-DETR Training Setup
+# RF-DETR Training
 
-This directory trains a bounding-box detector for `wind` and `hail`. It is separate
-from the Django/React application, but belongs to the same repository. Training is
-not started by the website. No inherited checkpoint is required: RF-DETR starts
-from its general pretrained weights and downloads them when the model is created.
+Trains the RoofInsight roof damage detector on the COCO dataset `roof_damage_rfdetr.zip`
+(1,583 images, train / valid / test). It is separate from the Django/React app; the website
+never starts training.
 
-This entry point is for object detection, not whole-photo `damaged`/`not damaged`
-classification. Photo-level labels can support a separate classifier, but do not
-meet this script's bounding-box dataset contract. If the team starts with a
-classifier, localization still requires a separate training step with box labels;
-this folder does not implement that classifier or an automatic conversion from
-photo labels into boxes.
+Classes, with the same ids as the v1 RF-DETR model:
 
-## Status
+| id | class |
+|---|---|
+| 0 | wind |
+| 1 | hail |
+| 2 | missing_shingles |
 
-The entry point and dependency specification are prepared for a future GPU machine.
-Dependencies have not been installed here and an actual RF-DETR training run has
-not been verified. The team is arranging access to a suitable GPU computer and
-preparing its dataset. The current laptop has a 4 GB NVIDIA GPU and recently ran
-out of storage during model recovery; it is not the planned full-training machine.
-An SSD adds storage, not GPU memory. The old exported model is not used by this script.
+Photos with no boxes are no-damage examples. There is no `undamaged` class.
 
 ## Files
 
-- `train.py`: dataset checks and the RF-DETR training entry point.
-- `requirements.txt`: pinned RF-DETR version and training dependencies.
-- `test_train.py`: offline tests; no RF-DETR install or GPU required.
-- `.gitignore`: excludes local environments, datasets, runs, and model artifacts.
+- `train.py`: dataset checks plus the RF-DETR training entry point (Colab or any NVIDIA GPU machine).
+- `train_colab.ipynb`: the same thing as a Colab notebook that saves checkpoints to Google Drive.
+- `requirements.txt`: pinned RF-DETR version.
+- `test_train.py`: offline tests; no GPU or RF-DETR install needed.
 
-## Dataset Contract
+## Requirements
 
-Use a COCO object-detection export with this layout:
+- NVIDIA GPU with 16 GB or more (a Colab T4 is fine for `nano`, `small` and `medium`).
+- Python 3.10 or newer.
+- About 2 GB of disk for the unzipped dataset and 3 to 5 GB for one run's checkpoints.
+- Internet access for `pip install` and the first download of RF-DETR's pretrained weights.
 
-```text
-roof-dataset/
-    train/
-        _annotations.coco.json
-        image files referenced by that JSON
-    valid/
-        _annotations.coco.json
-        image files referenced by that JSON
-    test/                         optional; keep held out for final evaluation
-        _annotations.coco.json
-        image files referenced by that JSON
+## Option A: Google Colab
+
+1. In Google Drive make `MyDrive/RoofInsight/` and copy in `roof_damage_rfdetr.zip` and `training/train.py`.
+2. Open `train_colab.ipynb` in Colab (File > Upload notebook), choose a T4 GPU runtime.
+3. Edit the settings cell if needed and run all cells.
+
+Checkpoints go to `MyDrive/RoofInsight/runs/<RUN_NAME>/`. If Colab disconnects, reconnect and run all
+cells again with the same `RUN_NAME`; training resumes from the last finished epoch.
+
+## Option B: lab or cloud GPU machine (Linux or Windows)
+
+```bash
+python3 -m venv training/.venv
+# Install a CUDA build of PyTorch first if the machine needs one: https://pytorch.org/get-started/locally/
+training/.venv/bin/python -m pip install -r training/requirements.txt
+training/.venv/bin/python -c "import torch; print('GPU:', torch.cuda.is_available())"
+
+# 1. check the dataset (no GPU needed; a .zip or an unzipped folder both work)
+training/.venv/bin/python training/train.py --dataset /data/roof_damage_rfdetr.zip --check-only
+
+# 2. short pilot to check memory and speed
+training/.venv/bin/python training/train.py --dataset /data/roof_damage_rfdetr.zip \
+    --output /data/runs/pilot --epochs 2
+
+# 3. full run
+training/.venv/bin/python training/train.py --dataset /data/roof_damage_rfdetr.zip \
+    --output /data/runs/medium-run-001 --model medium --epochs 50
 ```
 
-Each JSON must declare exactly these categories:
+On Windows use `training\.venv\Scripts\python.exe` instead of `training/.venv/bin/python`.
+For long runs on a remote machine, start the command inside `tmux` or `screen` so it survives a dropped SSH session.
 
-```json
-[{"id": 0, "name": "wind"}, {"id": 1, "name": "hail"}]
+## Options
+
+| option | default | meaning |
+|---|---|---|
+| `--dataset` | required | dataset folder, or the zip (extracted once, next to the zip or to `--extract-to`) |
+| `--output` | required to train | run / checkpoint folder |
+| `--model` | `medium` | `nano` (v1 size), `small`, `medium`, `base`, `large` |
+| `--epochs` | 50 | total epochs (also the target when resuming) |
+| `--batch-size` | 4 | images per step, or `auto` to size it to GPU memory |
+| `--grad-accum-steps` | 4 | effective batch = batch size x this |
+| `--lr` | 1e-4 | learning rate |
+| `--resolution` | model default | square input size |
+| `--pretrain` | RF-DETR COCO weights | start from other weights, e.g. the v1 `checkpoint_best_total.pth` (same model size) |
+| `--resume` | `auto` | `auto` resumes from the newest `.ckpt` in `--output`; `none` refuses a non-empty folder; or a `.ckpt` path |
+| `--checkpoint-interval` | 10 | keep an archive checkpoint every N epochs |
+| `--early-stopping`, `--patience` | off, 10 | stop when validation mAP stops improving |
+| `--device` | `cuda` | `cpu` only for tiny experiments; there is no silent CPU fallback |
+
+If you get "CUDA out of memory", halve `--batch-size` and double `--grad-accum-steps`.
+
+## What a run writes
+
+| file | what it is |
+|---|---|
+| `last.ckpt` | full training state, rewritten after every epoch; this is what resume uses (about 0.5 GB) |
+| `checkpoint_<epoch>.ckpt` | archive copies every `--checkpoint-interval` epochs (about 0.5 GB each) |
+| `checkpoint_best_total.pth` | **the best weights by validation mAP; keep this one** |
+| `checkpoint_best_ema.pth`, `last_ema.pth` | other weight snapshots |
+| `metrics.csv` | per-epoch validation metrics, plus test metrics at the end |
+| `training_config.json`, `run_info.json` | exact settings, versions, GPU and every launch / resume |
+
+To save Drive space, set `--checkpoint-interval` equal to `--epochs` so only `last.ckpt` is kept.
+
+## Using the trained model
+
+```python
+from rfdetr import RFDETRMedium   # same class as --model
+model = RFDETRMedium(pretrain_weights="runs/medium-run-001/checkpoint_best_total.pth")
+detections = model.predict("roof.jpg", threshold=0.4)   # class_id 0 wind, 1 hail, 2 missing_shingles
 ```
 
-Annotations must contain an ID, image ID, category ID, and a `bbox` in pixel units:
-`[left, top, width, height]`. Image records need ID, filename, width, and height.
-Both train and validation splits need annotated examples of both classes. Negative
-photos remain in the image list with no damage annotations; do not add an
-`undamaged` object class. Whole-photo labels alone do not satisfy this contract.
-If the dataset exporter uses different category IDs or an extra parent category,
-coordinate a reviewed conversion first; this script does not silently relabel data.
+A checkpoint is not automatically connected to the backend. Evaluate on the test split, then export
+(`model.export()` writes ONNX) and check the class mapping before wiring it into the app.
 
-Keep photos from the same roof out of multiple splits. The checks validate JSON,
-image-file existence, class IDs, and box bounds, not labeling quality, actual image
-decoding, or duplicate roofs. Keep large datasets outside GitHub and do not upload
-private inspection photos to a service without the team's authorization.
+## What has been verified
 
-## GPU Machine Setup
+On a CPU-only machine with a 22-image subset of this dataset: the full dataset passes the checks; `nano` and
+`medium` each train one epoch and write all files above; a second launch with the same `--output` resumed from
+`last.ckpt`; and `--pretrain` with the v1 fine-tuned nano weights loads. A full 50-epoch GPU run has not
+been done yet, so speed and final accuracy are still to be measured.
 
-Use Python 3.11 and an NVIDIA GPU accessible to PyTorch. A school GPU machine or an
-approved cloud GPU is suitable. GPU memory needs depend on model, image size, and
-batch size; the script starts with Nano and batch size 1, not a guaranteed hardware
-minimum. Run a short pilot before planning a long job. Confirm storage, permissions,
-available training time, and cloud costs with the machine owner.
+## Offline tests
 
-Clone the project onto that machine. Training does not require starting the backend
-or frontend, or initializing the frontend submodule. From the repository root on Windows:
-
-```powershell
-py -3.11 -m venv training/.venv
-```
-
-Before installing requirements, use the official [PyTorch installation selector](https://pytorch.org/get-started/locally/)
-to choose a GPU-compatible PyTorch build for the machine's OS and driver. Run its
-installation command with `training/.venv/Scripts/python.exe -m pip` instead of bare
-`pip`, so it installs into this environment. Do not install into the Django environment.
-Then:
-
-```powershell
-training/.venv/Scripts/python.exe -m pip install -r training/requirements.txt
-training/.venv/Scripts/python.exe -c "import torch; print('GPU available:', torch.cuda.is_available())"
-```
-
-On Linux, create the environment with `python3.11 -m venv training/.venv` and use
-`training/.venv/bin/python` in place of the Windows interpreter path. Internet access
-is needed for dependency installation and the initial pretrained-weight download.
-The RF-DETR version is pinned; its transitive dependencies are not fully locked yet.
-Record the working environment after the first verified GPU run.
-
-## Check and Train
-
-Structure checks work with standard Python alone, before installing training packages:
-
-```powershell
-py -3.11 training/train.py --dataset D:/roof-dataset --check-only
-```
-
-Replace `D:` with the actual dataset drive. No GPU, downloads, or output writes occur
-with `--check-only`. Run a short pilot on the configured GPU machine:
-
-```powershell
-training/.venv/Scripts/python.exe training/train.py --dataset D:/roof-dataset --output D:/roof-runs/pilot-001 --epochs 1
-```
-
-After reviewing the pilot, start a separate full run:
-
-```powershell
-training/.venv/Scripts/python.exe training/train.py --dataset D:/roof-dataset --output D:/roof-runs/run-001 --epochs 50
-```
-
-The epoch count is a starting setting, not a promise of accuracy. `--model small`,
-`--batch-size`, and `--grad-accum-steps` are configurable. CPU training is an explicit
-`--device cpu` option for limited experiments, not an automatic GPU fallback. Workers
-default to zero for portability. Existing nonempty run directories are refused;
-this starter does not implement resuming interrupted training. Test-set evaluation
-is not automatically run during training.
-
-RF-DETR writes its checkpoints and training logs into the output directory. Preserve
-the dataset version, class mapping, command, environment versions, and results together.
-Do not commit model files or datasets into Git. A trained checkpoint is not automatically
-an ONNX file and is not automatically connected to the application. After training,
-evaluate on held-out roofs, export a selected model, and verify its input/output layout
-and class mapping before integrating it with the existing backend.
-
-## Offline Tests
-
-From the repository root:
-
-```powershell
-py -3.11 -B -m unittest discover -s training -p "test_*.py" -v
+```bash
+python -B -m unittest discover -s training -p "test_*.py" -v
 ```
 
 ## References
 
 - [RF-DETR repository](https://github.com/roboflow/rf-detr)
 - [Training API](https://rfdetr.roboflow.com/latest/learn/train/)
-- [Dataset formats](https://rfdetr.roboflow.com/latest/learn/train/dataset-formats/)
 - [Pinned package release](https://pypi.org/project/rfdetr/1.11.2/)
-
-The online `latest` documentation can change; review it against the pinned package
-before modifying this setup.

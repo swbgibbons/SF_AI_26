@@ -1,3 +1,3 @@
-# Install in a separate Python 3.11 environment, not the Django environment.
-# Install the GPU-compatible PyTorch build first; see README.md.
+# Install in its own Python 3.10+ environment, not the Django environment.
+# On a plain GPU machine, install a CUDA build of PyTorch first; see README.md. Colab already has one.
 rfdetr[train]==1.11.2
