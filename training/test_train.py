@@ -20,11 +20,12 @@ class TrainingSetupTests(unittest.TestCase):
         self.root = Path(self.temporary.name)
         self.dataset = self.root / "dataset"
         self.data = {
-            "categories": [{"id": 0, "name": "wind"}, {"id": 1, "name": "hail"}],
+            "categories": [{"id": 0, "name": "wind"}, {"id": 1, "name": "hail"}, {"id": 2, "name": "missing_shingles"}],
             "images": [{"id": 1, "file_name": "roof.jpg", "width": 100, "height": 100}],
             "annotations": [
                 {"id": 1, "image_id": 1, "category_id": 0, "bbox": [10, 10, 20, 20]},
                 {"id": 2, "image_id": 1, "category_id": 1, "bbox": [50, 50, 20, 20]},
+                {"id": 3, "image_id": 1, "category_id": 2, "bbox": [30, 60, 10, 10]},
             ],
         }
         for split in ("train", "valid"):
@@ -37,9 +38,16 @@ class TrainingSetupTests(unittest.TestCase):
         (self.dataset / split / "_annotations.coco.json").write_text(json.dumps(data), encoding="utf-8")
 
     def test_valid_dataset(self):
-        self.assertEqual(train.validate_dataset(self.dataset), {
-            "train": {"images": 1, "boxes": 2}, "valid": {"images": 1, "boxes": 2},
-        })
+        expected = {"images": 1, "boxes": 3, "no_damage_images": 0,
+                    "boxes_per_class": {"wind": 1, "hail": 1, "missing_shingles": 1}}
+        self.assertEqual(train.validate_dataset(self.dataset), {"train": expected, "valid": expected})
+
+    def test_zip_with_wrapper_folder_is_extracted(self):
+        import shutil
+        archive = shutil.make_archive(str(self.root / "roof_damage_rfdetr"), "zip", self.root, "dataset")
+        found = train.prepare_dataset(archive, self.root / "extracted")
+        self.assertEqual(found, (self.root / "extracted" / "dataset").resolve())
+        self.assertIn("train", train.validate_dataset(found))
 
     def test_missing_photos(self):
         (self.dataset / "train" / "roof.jpg").unlink()
@@ -50,7 +58,7 @@ class TrainingSetupTests(unittest.TestCase):
         data = copy.deepcopy(self.data)
         data["annotations"] = []
         self.write_split("train", data)
-        with self.assertRaisesRegex(ValueError, "both wind and hail"):
+        with self.assertRaisesRegex(ValueError, "every class"):
             train.validate_dataset(self.dataset)
 
     def test_reversed_classes_are_not_silently_changed(self):
@@ -58,7 +66,7 @@ class TrainingSetupTests(unittest.TestCase):
         data["categories"][0]["name"] = "hail"
         data["categories"][1]["name"] = "wind"
         self.write_split("train", data)
-        with self.assertRaisesRegex(ValueError, "0=wind and 1=hail"):
+        with self.assertRaisesRegex(ValueError, "0=wind, 1=hail, 2=missing_shingles"):
             train.validate_dataset(self.dataset)
 
     def test_invalid_boxes(self):
@@ -87,7 +95,7 @@ class TrainingSetupTests(unittest.TestCase):
     def test_nonempty_output_is_preserved(self):
         output = self.root / "results"
         output.mkdir()
-        existing = output / "existing.ckpt"
+        existing = output / "notes.txt"
         existing.write_bytes(b"keep")
         with patch("train.run_training") as start, redirect_stdout(io.StringIO()):
             with self.assertRaises(SystemExit) as error:
@@ -102,33 +110,43 @@ class TrainingSetupTests(unittest.TestCase):
                 train.main(["--dataset", str(self.dataset), "--output", str(self.dataset / "results")])
             start.assert_not_called()
 
+    def test_existing_checkpoint_is_resumed(self):
+        output = self.root / "results"
+        output.mkdir()
+        (output / "last.ckpt").write_bytes(b"ckpt")
+        with patch("train.run_training") as start, redirect_stdout(io.StringIO()):
+            train.main(["--dataset", str(self.dataset), "--output", str(output)])
+        self.assertEqual(start.call_args.args[3], (output / "last.ckpt").resolve())
+
     def test_training_options_forwarded(self):
         constructor = Mock()
         modules = {
-            "torch": SimpleNamespace(cuda=SimpleNamespace(is_available=lambda: True)),
-            "rfdetr": SimpleNamespace(RFDETRNano=constructor, RFDETRSmall=Mock()),
+            "torch": SimpleNamespace(cuda=SimpleNamespace(
+                is_available=lambda: True,
+                get_device_properties=lambda index: SimpleNamespace(name="T4", total_memory=16 * 2**30))),
+            "rfdetr": SimpleNamespace(RFDETRMedium=constructor),
         }
         output = self.root / "results"
-        with patch.dict("sys.modules", modules), redirect_stdout(io.StringIO()):
+        with patch.dict("sys.modules", modules), patch("train.write_run_info"), redirect_stdout(io.StringIO()):
             train.main(["--dataset", str(self.dataset), "--output", str(output), "--epochs", "1"])
         constructor.assert_called_once_with(device="cuda")
-        constructor.return_value.train.assert_called_once_with(
-            dataset_dir=str(self.dataset.resolve()), output_dir=str(output.resolve()),
-            epochs=1, batch_size=1, grad_accum_steps=1, num_workers=0, seed=42,
-            device="cuda", run_test=False,
-        )
+        kwargs = constructor.return_value.train.call_args.kwargs
+        self.assertEqual(kwargs["dataset_dir"], str(self.dataset.resolve()))
+        self.assertEqual(kwargs["output_dir"], str(output.resolve()))
+        self.assertEqual(kwargs["class_names"], ["wind", "hail", "missing_shingles"])
+        self.assertEqual((kwargs["epochs"], kwargs["batch_size"], kwargs["grad_accum_steps"]), (1, 4, 4))
+        self.assertNotIn("resume", kwargs)
 
     def test_missing_gpu_does_not_fall_back_to_cpu(self):
         constructor = Mock()
         modules = {
             "torch": SimpleNamespace(cuda=SimpleNamespace(is_available=lambda: False)),
-            "rfdetr": SimpleNamespace(RFDETRNano=constructor, RFDETRSmall=Mock()),
+            "rfdetr": SimpleNamespace(RFDETRMedium=constructor),
         }
         with patch.dict("sys.modules", modules):
             with self.assertRaisesRegex(RuntimeError, "No usable NVIDIA GPU"):
-                train.run_training(SimpleNamespace(device="cuda"))
+                train.run_training(SimpleNamespace(device="cuda", model="medium"), self.dataset, {}, None)
         constructor.assert_not_called()
-
 
 if __name__ == "__main__":
     unittest.main()
